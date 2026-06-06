@@ -29,14 +29,14 @@ except ImportError:
     pass
 
 DEFAULT_CHANNELS = [
-    {"index": 0x6064, "name": "Position", "unit": "pulses", "color": "#00FF88", "enabled": True},
-    {"index": 0x606C, "name": "Velocity", "unit": "rpm", "color": "#FF8800", "enabled": True},
-    {"index": 0x6078, "name": "Current", "unit": "%", "color": "#FF4444", "enabled": True},
-    {"index": 0x6077, "name": "Torque", "unit": "%", "color": "#44AAFF", "enabled": True},
-    {"index": 0x60F4, "name": "Foll.Err", "unit": "pulses", "color": "#FF44FF", "enabled": False},
-    {"index": 0x60FD, "name": "DIO", "unit": "bits", "color": "#FFFF44", "enabled": False},
-    {"index": 0x6041, "name": "Status", "unit": "hex", "color": "#44FFAA", "enabled": False},
-    {"index": 0x6061, "name": "OpMode", "unit": "code", "color": "#AAAAAA", "enabled": False},
+    {"index": 0x6064, "name": "Position", "unit": "pulses", "color": "#00FF88", "enabled": True, "label": "Position Actual"},
+    {"index": 0x606C, "name": "Velocity", "unit": "rpm", "color": "#FF8800", "enabled": True, "label": "Velocity Actual"},
+    {"index": 0x6078, "name": "Current", "unit": "%", "color": "#FF4444", "enabled": True, "label": "Current Actual"},
+    {"index": 0x6077, "name": "Torque", "unit": "%", "color": "#44AAFF", "enabled": True, "label": "Torque Actual"},
+    {"index": 0x60F4, "name": "Foll.Err", "unit": "pulses", "color": "#E066CC", "enabled": True, "label": "Following Error"},
+    {"index": 0x60FD, "name": "DIO", "unit": "bits", "color": "#FFCC00", "enabled": True, "label": "Digital Inputs"},
+    {"index": 0x6041, "name": "Status", "unit": "hex", "color": "#22DD88", "enabled": True, "label": "Statusword"},
+    {"index": 0x6061, "name": "OpMode", "unit": "code", "color": "#CCCCCC", "enabled": True, "label": "Op Mode Display"},
 ]
 
 # ── Legacy anomaly rules (kept for reference; replaced by AI pipeline) ──

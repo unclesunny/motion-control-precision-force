@@ -36,14 +36,14 @@ except ImportError:
 
 # ── Channel definitions ──────────────────────────────────────
 CHANNELS = [
-    {"name": "Position", "unit": "pulses", "color": "#00FF88"},
-    {"name": "Velocity", "unit": "rpm",    "color": "#FF8800"},
-    {"name": "Current",  "unit": "%",      "color": "#FF4444"},
-    {"name": "Torque",   "unit": "%",      "color": "#44AAFF"},
-    {"name": "Foll.Err", "unit": "pulses", "color": "#FF44FF"},
-    {"name": "DIO",      "unit": "bits",   "color": "#FFFF44"},
-    {"name": "Status",   "unit": "hex",    "color": "#44FFAA"},
-    {"name": "OpMode",   "unit": "code",   "color": "#AAAAAA"},
+    {"name": "Position Actual", "unit": "pulses", "color": "#00FF88"},
+    {"name": "Velocity Actual", "unit": "rpm",    "color": "#FF8800"},
+    {"name": "Current Actual",  "unit": "%",      "color": "#FF4444"},
+    {"name": "Torque Actual",   "unit": "%",      "color": "#44AAFF"},
+    {"name": "Following Error", "unit": "pulses", "color": "#E066CC"},
+    {"name": "Digital Inputs",  "unit": "bits",   "color": "#FFCC00"},
+    {"name": "Statusword",      "unit": "hex",    "color": "#22DD88"},
+    {"name": "Op Mode Display", "unit": "code",   "color": "#CCCCCC"},
 ]
 N_CH = 8
 
@@ -85,7 +85,7 @@ class TkScope:
                 pass
 
         # Channel visibility (4 channels on by default)
-        self.ch_visible = [True, True, True, True, False, False, False, False]
+        self.ch_visible = [True] * N_CH  # all 8 channels on by default
 
         # ── Build UI ──────────────────────────────────────────
         self.root = tk.Tk()

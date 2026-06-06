@@ -30,7 +30,7 @@ CHANNELS = [
 class ScopeEngine:
     def __init__(self):
         self.buf_size = 60000
-        self.data = np.zeros((4, self.buf_size), dtype=np.float32)
+        self.data = np.zeros((8, self.buf_size), dtype=np.float32)
         self.head = 0
         self.count = 0
         self._running = True
@@ -44,10 +44,14 @@ class ScopeEngine:
             t = time.perf_counter() - t0
             s = self.count / 1000.0
             vals = [
-                1000.0 * math.sin(2*math.pi*2.0*s),
-                500.0  * math.sin(2*math.pi*3.5*s + 0.5),
-                80.0   + 30.0 * math.sin(2*math.pi*5.0*s),
-                60.0   * math.sin(2*math.pi*2.0*s + 1.2),
+                1000.0 * math.sin(2*math.pi*2.0*s),              # Position
+                500.0  * math.sin(2*math.pi*3.5*s + 0.5),        # Velocity
+                80.0   + 30.0 * math.sin(2*math.pi*5.0*s),        # Current
+                60.0   * math.sin(2*math.pi*2.0*s + 1.2),         # Torque
+                15.0   * math.sin(2*math.pi*7.0*s),               # Foll.Err
+                float(self.count % 100 > 50),                     # DIO
+                0x0237 if self.count % 200 < 100 else 0x0007,     # Status
+                float((self.count // 50) % 8),                    # OpMode
             ]
             with self._lock:
                 for i, v in enumerate(vals):
@@ -130,16 +134,20 @@ button:hover{background:#3A3A5E}
 </div>
 <script>
 const CH = [
-  {name:"Position", unit:"pulses", color:"#00FF88"},
-  {name:"Velocity", unit:"rpm",    color:"#FF8800"},
-  {name:"Current",  unit:"%",      color:"#FF4444"},
-  {name:"Torque",   unit:"%",      color:"#44AAFF"},
+  {name:"Position Actual", unit:"pulses", color:"#00FF88"},
+  {name:"Velocity Actual", unit:"rpm",    color:"#FF8800"},
+  {name:"Current Actual",  unit:"%",      color:"#FF4444"},
+  {name:"Torque Actual",   unit:"%",      color:"#44AAFF"},
+  {name:"Following Error", unit:"pulses", color:"#E066CC"},
+  {name:"Digital Inputs",      unit:"bits",   color:"#FFCC00"},
+  {name:"Statusword",   unit:"hex",    color:"#22DD88"},
+  {name:"Op Mode Display",   unit:"code",   color:"#CCCCCC"},
 ];
 let pause = false, tw = 5.0, frameN = 0, lastFps = performance.now();
 
 // Build channel toggle list
 const chlist = document.getElementById('chlist');
-let chVisible = [true,true,true,true];
+let chVisible = [true,true,true,true,false,false,false,false];
 CH.forEach((ch, i) => {
   const d = document.createElement('div');
   d.className = 'ch-row ch-on';
@@ -207,7 +215,7 @@ function draw() {
   }
 
   let drawn = 0;
-  for (let ci = 0; ci < 4; ci++) {
+  for (let ci = 0; ci < 8; ci++) {
     if (!chVisible[ci]) continue;
     let y0 = drawn * chH + 25, y1 = (drawn + 1) * chH - 10;
     let yRng = y1 - y0;
@@ -261,7 +269,7 @@ function draw() {
   // Stats
   if (bufData.length > 100) {
     let lines = [];
-    for (let ci = 0; ci < 4; ci++) {
+    for (let ci = 0; ci < 8; ci++) {
       let arr = [];
       for (let r of bufData.slice(-500)) arr.push(r[ci]);
       let mn = 0, mx = 0;

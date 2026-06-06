@@ -105,8 +105,17 @@ def main():
         launch_demo()
         return
 
-    if "--env" in args:
+    if "--env" in args or "--check" in args:
         print_env()
+        return
+
+    # Check for numpy
+    try:
+        import numpy  # noqa: F401
+    except ImportError:
+        print("ERROR: numpy is required. Install it first:")
+        print("  pip install numpy")
+        print("Then run: python run_scope.py")
         return
 
     # Print environment info

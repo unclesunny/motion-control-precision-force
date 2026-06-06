@@ -36,10 +36,10 @@ except ImportError:
     pass
 
 # ── Constants ────────────────────────────────────────────
-CH_COLORS  = ["#00FF88","#FF8800","#FF4444","#44AAFF","#FF44FF","#FFFF44","#44FFAA","#AAAAAA"]
-CH_NAMES   = ["Position","Velocity","Current","Torque","Foll.Err","DIO","Status","OpMode"]
+CH_COLORS  = ["#00FF88","#FF8800","#FF4444","#44AAFF","#E066CC","#FFCC00","#22DD88","#CCCCCC"]
+CH_NAMES   = ["Position Actual","Velocity Actual","Current Actual","Torque Actual","Following Error","Digital Inputs","Statusword","Op Mode Display"]
 CH_UNITS   = ["pulses","rpm","%","%","pulses","bits","hex","code"]
-CH_DEFAULT = [True, True, True, True, False, False, False, False]
+CH_DEFAULT = [True, True, True, True, True, True, True, True]
 BG_COLOR   = "#1A1A2E"
 TEXT_COLOR = "#CCCCCC"
 
