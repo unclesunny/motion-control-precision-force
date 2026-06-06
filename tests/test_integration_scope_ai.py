@@ -30,7 +30,7 @@ class TestAIPipelineAttachesToEngine:
         # ai_pipeline is optional (graceful degradation), but if present it works
         if engine.ai_pipeline is not None:
             assert engine.ai_pipeline.analyzers is not None
-            assert len(engine.ai_pipeline.analyzers) in (0, 3)  # 0 Free, 3 Pro
+            assert len(engine.ai_pipeline.analyzers) == 3
 
     def test_engine_runs_without_crashing(self, scope_engine_sim):
         """ScopeEngine should start and stop cleanly."""
@@ -61,20 +61,25 @@ class TestCurrentAnomalyDetection:
     """Test AI pipeline detects current anomalies from scope data."""
 
     def test_saturation_triggers_annotation(self, ai_pipeline):
-        """Inject a current spike into the pipeline directly (Pro only)."""
-        if not ai_pipeline.pro_available:
-            pytest.skip("Pro license required for AI detection")
+        """Inject a current spike into the pipeline directly."""
         ch_names = ["Position", "Velocity", "Current", "Torque",
                     "Foll.Err", "DIO", "Status", "OpMode"]
-        buffer_stats = {"Current": {"mean": 80.0, "std": 10.0, "min": 50.0, "max": 120.0,
-                                    "rms": 82.0, "peak_to_peak": 70.0}}
+        buffer_stats = {
+            "Current": {"mean": 80.0, "std": 10.0, "min": 50.0, "max": 120.0,
+                        "rms": 82.0, "peak_to_peak": 70.0},
+        }
+
+        # Saturation spike — first detection starts at "info"
         annotations = ai_pipeline.analyze(
             [1000.0, 500.0, 250.0, 60.0, 10.0, 0.0, 0x0237, 1.0],
-            ch_names, buffer_stats)
+            ch_names, buffer_stats,
+        )
         current_anns = [a for a in annotations if a.channel == "Current"]
         assert len(current_anns) > 0
-        assert_annotation_structure(current_anns[0])
-        assert current_anns[0].category == "current_saturation"
+        ann = current_anns[0]
+        assert_annotation_structure(ann)
+        assert ann.severity in ("info", "warning", "critical")
+        assert ann.category == "current_saturation"
 
     def test_normal_data_no_false_positives(self, ai_pipeline):
         """Normal sine waves should not trigger spurious annotations."""
@@ -115,9 +120,7 @@ class TestTrackingErrorDetection:
     """Test AI pipeline detects tracking errors."""
 
     def test_hardware_limit_triggers_critical(self, ai_pipeline):
-        """Following error exceeding absolute limit (Pro only)."""
-        if not ai_pipeline.pro_available:
-            pytest.skip("Pro license required for AI detection")
+        """Following error exceeding absolute limit should trigger an alert."""
         ch_names = ["Position", "Velocity", "Current", "Torque",
                     "Foll.Err", "DIO", "Status", "OpMode"]
         buffer_stats = {}
@@ -147,9 +150,7 @@ class TestPipelineBatchAnalysis:
         assert critical_count == 0  # synthetic data is clean
 
     def test_batch_reset_between_runs(self, ai_pipeline):
-        """Pipeline should be resettable (Pro only)."""
-        if not ai_pipeline.pro_available:
-            pytest.skip("Pro license required")
+        """Pipeline should be resettable between batch runs."""
         ch_names = ["Position", "Velocity", "Current", "Torque"]
         buffer_stats = {"Current": {"mean": 80.0, "std": 10.0, "min": 50.0, "max": 120.0,
                                     "rms": 82.0, "peak_to_peak": 70.0}}
@@ -170,9 +171,7 @@ class TestGracefulDegradation:
         assert len(_LEGACY_ANOMALY_RULES) == 4
 
     def test_ai_pipeline_can_be_disabled(self, ai_pipeline):
-        """Individual analyzers can be toggled (Pro only)."""
-        if not ai_pipeline.pro_available:
-            pytest.skip("Pro license required")
+        """Individual analyzers can be toggled."""
         ai_pipeline.disable_analyzer("CurrentAnomaly")
         analyzer = ai_pipeline.get_analyzer("CurrentAnomaly")
         assert analyzer is not None

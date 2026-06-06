@@ -56,15 +56,24 @@ motion-control-precision-force/
 │   ├── servotronix-cdhd/        ← Servotronix CDHD (429 obj)
 │   └── lenze-i700/              ← Lenze i700 (421 obj)
 │
-├── 06-ai-analyzer/              ← AI 分析引擎 (10 文件, 63 测试)
-│   ├── ai_analyzer/             ← Python 包
-│   │   ├── analyzer_pipeline.py ← 三检测器编排
+├── 06-ai-analyzer/              ← AI 分析引擎 (Free 版: 基础统计)
+│   ├── ai_analyzer/             ← Python 包 (MIT 开源)
+│   │   ├── analyzer_pipeline.py ← 管线编排 (自动检测 Pro 模块)
+│   │   ├── ai_annotator.py      ← 置信度校准
+│   │   ├── analyzer_base.py     ← AIAnnotation / AnalyzerBase ABC
+│   │   ├── config.py            ← 共享常量
+│   │   └── __init__.py          ← 公共 API
+│   └── tests/                   ← Free 版测试
+│
+├── pro/                         ← Pro 商业授权 (不入 Git)
+│   ├── ai_analyzer/             ← Pro AI 模块
 │   │   ├── current_anomaly.py   ← 电流异常 (z-score + IQR + CUSUM)
 │   │   ├── tracking_error.py    ← 跟随误差分析
 │   │   ├── mechanical_resonance.py ← FFT 谐振检测
-│   │   ├── ai_annotator.py      ← 置信度校准 + 严重度升级
+│   │   ├── parameter_recommender.py ← 参数调参建议
+│   │   ├── tuning_rules.py      ← 调参知识库
 │   │   └── analyzer_bridge.py   ← AI&ML Agent 桥接
-│   └── tests/                   ← 43 单元测试
+│   └── tests/                   ← Pro 版测试 (55)
 │
 ├── 07-codesys-fb/               ← CODESYS 功能块 (5 FBs + DUT)
 ├── 08-docs/                     ← 开发者 + 用户文档
@@ -93,10 +102,30 @@ motion-control-precision-force/
 | Phase 2 力控闭环 | ⬜ | PPO + 力传感器 |
 | Phase 3 产品化 | ⬜ | 文档 + CI/CD |
 
+## Free vs Pro
+
+| 功能 | Free (MIT) | Pro (商业授权) |
+|------|-----------|--------------|
+| 8 通道示波器 (3 前端) | ✅ | ✅ |
+| 12 品牌参数查询 | ✅ | ✅ |
+| EtherCAT 采集引擎 | ✅ | ✅ |
+| 基础统计 (min/max/rms) | ✅ | ✅ |
+| CSV 波形导出 | ✅ | ✅ |
+| **AI 电流异常检测** | — | ✅ |
+| **AI 跟踪误差分析** | — | ✅ |
+| **AI 机械谐振检测 (FFT)** | — | ✅ |
+| **AI 参数调参建议** | — | ✅ |
+| **品牌感知推荐** | — | ✅ |
+| 工业协议 (OPC UA/MES) | — | ✅ |
+| PHM 趋势预测 | — | ✅ |
+| PDF/Excel 报表 | — | ✅ |
+| OEM 贴牌 | — | ✅ |
+
 ## 测试
 
 ```bash
-python -m pytest 06-ai-analyzer/tests/ tests/ -v   # 63 tests
+python -m pytest tests/ -v             # 71 Free tests (4 Pro tests auto-skip)
+python -m pytest pro/tests/ -v         # 55 Pro tests (需 Pro 授权)
 ```
 
 ## 技术规格
