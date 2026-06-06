@@ -30,6 +30,9 @@ SERVER_IS_RUNNING.txt
 03-ethercat-master/src/SOEM/**/*.exe
 03-ethercat-master/src/SOEM/**/*.dll
 
+# Generated documentation HTML (keep source, skip generated)
+03-ethercat-master/src/SOEM/doc/
+
 # Large CHM decompiled HTML (keep the parser, skip output)
 05-servo-params/delta-a3/chm_html/
 
