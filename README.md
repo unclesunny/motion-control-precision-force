@@ -111,4 +111,4 @@ python -m pytest 06-ai-analyzer/tests/ tests/ -v   # 63 tests
 | 伺服品牌 | **12** (台达/安川/松下/汇川/埃斯顿/英威腾/雷赛/Elmo/Servotronix/Lenze) |
 | CoE 对象总数 | **3,245** |
 | 开发语言 | C (SOEM) + Python 3.11+ + ST (CODESYS) |
-| 许可证 | GPLv2 |
+| 许可证 | MIT (社区版) / 商业授权 (Pro 版) |

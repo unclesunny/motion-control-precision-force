@@ -5,7 +5,8 @@ description: Governing principles for the Precision Force Control project. All c
 
 # Motion Control — Precision Force Control Project Constitution
 
-> 本宪法是项目最高治理文件。与同级 AI&ML Agent 项目共享知识，但独立治理。
+> 本宪法是项目最高治理文件。与同级 AI&ML Agent 项目共享知识，但独立治理。  
+> 许可证: MIT (社区版) | 商业授权 (Pro 版) — 详见 LICENSE
 
 ## 第一条 — 项目身份
 
@@ -33,6 +34,8 @@ description: Governing principles for the Precision Force Control project. All c
 - G3: 不重复已有模块
 - G4: 不接受空壳演示代码
 - G5: CODESYS ST 含完整 FB 定义
+- G6: Pro 闭源模块独立于 `pro/` 目录, 不入 Git, 商业授权单独分发
+- G7: 社区版 (Free) 保持 MIT 开源, 任何人可下载/修改/商用学习, 但量产商用需评估商业授权
 
 ## 第三条 — 同级项目知识共享规则
 

@@ -40,6 +40,9 @@ SERVER_IS_RUNNING.txt
 06-ai-analyzer/models/*.pth
 06-ai-analyzer/models/*.pkl
 
+# Pro modules (commercial license, not public)
+pro/
+
 # Test cache
 .pytest_cache/
 *.pyc
