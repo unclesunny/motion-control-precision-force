@@ -1,0 +1,175 @@
+{
+  "vendor": {
+    "id": "#x000002E1",
+    "name": "Servotronix Motion Control Ltd."
+  },
+  "count": 8,
+  "mappings": [
+    {
+      "index": "0x1600",
+      "name": "RxPDO 1",
+      "direction": "Rx",
+      "sm": 2,
+      "entries": [
+        {
+          "index": "0x6040",
+          "name": "ControlWord",
+          "type": "UINT",
+          "bit_size": 16
+        },
+        {
+          "index": "0x6060",
+          "name": "Modes of operation",
+          "type": "SINT",
+          "bit_size": 8
+        }
+      ]
+    },
+    {
+      "index": "0x1601",
+      "name": "RxPDO 2",
+      "direction": "Rx",
+      "sm": 2,
+      "entries": [
+        {
+          "index": "0x607A",
+          "name": "Target position",
+          "type": "DINT",
+          "bit_size": 32
+        },
+        {
+          "index": "0x6081",
+          "name": "Profile velocity",
+          "type": "UDINT",
+          "bit_size": 32
+        }
+      ]
+    },
+    {
+      "index": "0x1602",
+      "name": "RxPDO 3",
+      "direction": "Rx",
+      "sm": 2,
+      "entries": [
+        {
+          "index": "0x60FF",
+          "name": "Target Velocity",
+          "type": "DINT",
+          "bit_size": 32
+        }
+      ]
+    },
+    {
+      "index": "0x1603",
+      "name": "RxPDO 4",
+      "direction": "Rx",
+      "sm": 2,
+      "entries": [
+        {
+          "index": "0x6071",
+          "name": "Target torque",
+          "type": "INT",
+          "bit_size": 16
+        },
+        {
+          "index": "0x60FE",
+          "name": "Digital Outpus",
+          "type": "UDINT",
+          "bit_size": 32
+        },
+        {
+          "index": "0x60B2",
+          "name": "Torque Offset",
+          "type": "INT",
+          "bit_size": 16
+        }
+      ]
+    },
+    {
+      "index": "0x1A00",
+      "name": "TxPDO 1",
+      "direction": "Tx",
+      "sm": 3,
+      "entries": [
+        {
+          "index": "0x6041",
+          "name": "StatusWord",
+          "type": "UINT",
+          "bit_size": 16
+        },
+        {
+          "index": "0x6061",
+          "name": "Modes of operation display",
+          "type": "SINT",
+          "bit_size": 8
+        },
+        {
+          "index": "0x6077",
+          "name": "Torque Actual Value",
+          "type": "INT",
+          "bit_size": 16
+        }
+      ]
+    },
+    {
+      "index": "0x1A01",
+      "name": "TxPDO 2",
+      "direction": "Tx",
+      "sm": 3,
+      "entries": [
+        {
+          "index": "0x6064",
+          "name": "Position actual value",
+          "type": "DINT",
+          "bit_size": 32
+        }
+      ]
+    },
+    {
+      "index": "0x1A02",
+      "name": "TxPDO 3",
+      "direction": "Tx",
+      "sm": 3,
+      "entries": [
+        {
+          "index": "0x6074",
+          "name": "Torque Demand Value ",
+          "type": "INT",
+          "bit_size": 16
+        },
+        {
+          "index": "0x20F2",
+          "name": "Analog Input 1",
+          "type": "INT",
+          "bit_size": 16
+        }
+      ]
+    },
+    {
+      "index": "0x1A03",
+      "name": "TxPDO 4",
+      "direction": "Tx",
+      "sm": 3,
+      "entries": [
+        {
+          "index": "0x60FD",
+          "name": "Digital inputs",
+          "type": "UDINT",
+          "bit_size": 32
+        },
+        {
+          "index": "0x20B6",
+          "name": "manu_spec_Machine_HW_Position_External_command",
+          "type": "DINT",
+          "bit_size": 32
+        },
+        {
+          "index": "0x60F4",
+          "name": "Following Error Actual Value ",
+          "type": "DINT",
+          "bit_size": 32
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,42 @@
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+dist/
+build/
+.venv/
+venv/
+
+# IDE
+.vscode/
+.idea/
+.vs/
+*.swp
+*.swo
+
+# OS
+.DS_Store
+Thumbs.db
+Desktop.ini
+
+# Project specific
+SERVER_IS_RUNNING.txt
+*.task
+
+# Binary artifacts (keep source, ignore builds)
+03-ethercat-master/src/SOEM/build/
+03-ethercat-master/src/SOEM/**/*.o
+03-ethercat-master/src/SOEM/**/*.a
+03-ethercat-master/src/SOEM/**/*.exe
+03-ethercat-master/src/SOEM/**/*.dll
+
+# Large CHM decompiled HTML (keep the parser, skip output)
+05-servo-params/delta-a3/chm_html/
+
+# AI models (too large, generated)
+06-ai-analyzer/models/*.pth
+06-ai-analyzer/models/*.pkl
+
+# Test cache
+.pytest_cache/
+*.pyc

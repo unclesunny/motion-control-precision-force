@@ -1,0 +1,654 @@
+{
+  "vendor": {
+    "id": "17185",
+    "name": "Leadshine Technology Co.,Ltd."
+  },
+  "count": 18,
+  "mappings": [
+    {
+      "index": "0x1600",
+      "name": "Receive PDO 1",
+      "direction": "Rx",
+      "sm": 2,
+      "entries": [
+        {
+          "index": "0x6040",
+          "name": "Control Word",
+          "type": "UINT",
+          "bit_size": 16
+        },
+        {
+          "index": "0x607A",
+          "name": "Profile Target Position",
+          "type": "DINT",
+          "bit_size": 32
+        },
+        {
+          "index": "0x60B8",
+          "name": "Touch Probe Function",
+          "type": "UINT",
+          "bit_size": 16
+        }
+      ]
+    },
+    {
+      "index": "0x1601",
+      "name": "Receive PDO 2",
+      "direction": "Rx",
+      "sm": 0,
+      "entries": [
+        {
+          "index": "0x6040",
+          "name": "Control word",
+          "type": "UINT",
+          "bit_size": 16
+        },
+        {
+          "index": "0x607A",
+          "name": "Profile Target Position",
+          "type": "DINT",
+          "bit_size": 32
+        },
+        {
+          "index": "0x6081",
+          "name": "Profile Velocity",
+          "type": "UDINT",
+          "bit_size": 32
+        },
+        {
+          "index": "0x6083",
+          "name": "Profile Target Acceleration",
+          "type": "UDINT",
+          "bit_size": 32
+        },
+        {
+          "index": "0x6084",
+          "name": "Profile Target Deceleration",
+          "type": "UDINT",
+          "bit_size": 32
+        },
+        {
+          "index": "0x6060",
+          "name": "Modes of Operation",
+          "type": "USINT",
+          "bit_size": 8
+        }
+      ]
+    },
+    {
+      "index": "0x1602",
+      "name": "Receive PDO 3",
+      "direction": "Rx",
+      "sm": 0,
+      "entries": [
+        {
+          "index": "0x6040",
+          "name": "Control Word",
+          "type": "UINT",
+          "bit_size": 16
+        },
+        {
+          "index": "0x60FF",
+          "name": "Target Velocity",
+          "type": "DINT",
+          "bit_size": 32
+        },
+        {
+          "index": "0x6083",
+          "name": "Profile Acceleration",
+          "type": "UDINT",
+          "bit_size": 32
+        },
+        {
+          "index": "0x6084",
+          "name": "Profile Deceleration",
+          "type": "UDINT",
+          "bit_size": 32
+        },
+        {
+          "index": "0x6060",
+          "name": "Modes of Operation",
+          "type": "USINT",
+          "bit_size": 8
+        }
+      ]
+    },
+    {
+      "index": "0x1603",
+      "name": "Receive PDO 4",
+      "direction": "Rx",
+      "sm": 0,
+      "entries": [
+        {
+          "index": "0x6040",
+          "name": "Control Word",
+          "type": "UINT",
+          "bit_size": 16
+        },
+        {
+          "index": "0x6098",
+          "name": "Homing Method",
+          "type": "SINT",
+          "bit_size": 8
+        },
+        {
+          "index": "0x6099",
+          "name": "Homing Velocity (fast)",
+          "type": "UDINT",
+          "bit_size": 32
+        },
+        {
+          "index": "0x6099",
+          "name": "Homing Velocity (slow)",
+          "type": "UDINT",
+          "bit_size": 32
+        },
+        {
+          "index": "0x609A",
+          "name": "Homing Acceleration",
+          "type": "UDINT",
+          "bit_size": 32
+        },
+        {
+          "index": "0x607C",
+          "name": "Homing Offset",
+          "type": "DINT",
+          "bit_size": 32
+        },
+        {
+          "index": "0x6060",
+          "name": "Modes of Operation",
+          "type": "USINT",
+          "bit_size": 8
+        }
+      ]
+    },
+    {
+      "index": "0x1A00",
+      "name": "Transmit PDO 1",
+      "direction": "Tx",
+      "sm": 3,
+      "entries": [
+        {
+          "index": "0x603F",
+          "name": "Last Error Code",
+          "type": "UINT",
+          "bit_size": 16
+        },
+        {
+          "index": "0x6041",
+          "name": "Status Word",
+          "type": "UINT",
+          "bit_size": 16
+        },
+        {
+          "index": "0x6061",
+          "name": "Modes of Operation display",
+          "type": "SINT",
+          "bit_size": 8
+        },
+        {
+          "index": "0x6064",
+          "name": "Position Actual Value",
+          "type": "DINT",
+          "bit_size": 32
+        },
+        {
+          "index": "0x60B9",
+          "name": "Touch Probe Status",
+          "type": "UINT",
+          "bit_size": 16
+        },
+        {
+          "index": "0x60BA",
+          "name": "Touch Probe 1 Positive Value",
+          "type": "DINT",
+          "bit_size": 32
+        },
+        {
+          "index": "0x60FD",
+          "name": "Digital Inputs",
+          "type": "UDINT",
+          "bit_size": 32
+        }
+      ]
+    },
+    {
+      "index": "0x1A01",
+      "name": "Transmit PDO 2",
+      "direction": "Tx",
+      "sm": 0,
+      "entries": []
+    },
+    {
+      "index": "0x1600",
+      "name": "Receive PDO 1",
+      "direction": "Rx",
+      "sm": 2,
+      "entries": [
+        {
+          "index": "0x6040",
+          "name": "Control Word",
+          "type": "UINT",
+          "bit_size": 16
+        },
+        {
+          "index": "0x607A",
+          "name": "Profile Target Position",
+          "type": "DINT",
+          "bit_size": 32
+        },
+        {
+          "index": "0x60B8",
+          "name": "Touch Probe Function",
+          "type": "UINT",
+          "bit_size": 16
+        }
+      ]
+    },
+    {
+      "index": "0x1601",
+      "name": "Receive PDO 2",
+      "direction": "Rx",
+      "sm": 0,
+      "entries": [
+        {
+          "index": "0x6040",
+          "name": "Control word",
+          "type": "UINT",
+          "bit_size": 16
+        },
+        {
+          "index": "0x607A",
+          "name": "Profile Target Position",
+          "type": "DINT",
+          "bit_size": 32
+        },
+        {
+          "index": "0x6081",
+          "name": "Profile Velocity",
+          "type": "UDINT",
+          "bit_size": 32
+        },
+        {
+          "index": "0x6083",
+          "name": "Profile Target Acceleration",
+          "type": "UDINT",
+          "bit_size": 32
+        },
+        {
+          "index": "0x6084",
+          "name": "Profile Target Deceleration",
+          "type": "UDINT",
+          "bit_size": 32
+        },
+        {
+          "index": "0x6060",
+          "name": "Modes of Operation",
+          "type": "USINT",
+          "bit_size": 8
+        }
+      ]
+    },
+    {
+      "index": "0x1602",
+      "name": "Receive PDO 3",
+      "direction": "Rx",
+      "sm": 0,
+      "entries": [
+        {
+          "index": "0x6040",
+          "name": "Control Word",
+          "type": "UINT",
+          "bit_size": 16
+        },
+        {
+          "index": "0x60FF",
+          "name": "Target Velocity",
+          "type": "DINT",
+          "bit_size": 32
+        },
+        {
+          "index": "0x6083",
+          "name": "Profile Acceleration",
+          "type": "UDINT",
+          "bit_size": 32
+        },
+        {
+          "index": "0x6084",
+          "name": "Profile Deceleration",
+          "type": "UDINT",
+          "bit_size": 32
+        },
+        {
+          "index": "0x6060",
+          "name": "Modes of Operation",
+          "type": "USINT",
+          "bit_size": 8
+        }
+      ]
+    },
+    {
+      "index": "0x1603",
+      "name": "Receive PDO 4",
+      "direction": "Rx",
+      "sm": 0,
+      "entries": [
+        {
+          "index": "0x6040",
+          "name": "Control Word",
+          "type": "UINT",
+          "bit_size": 16
+        },
+        {
+          "index": "0x6098",
+          "name": "Homing Method",
+          "type": "SINT",
+          "bit_size": 8
+        },
+        {
+          "index": "0x6099",
+          "name": "Homing Velocity (fast)",
+          "type": "UDINT",
+          "bit_size": 32
+        },
+        {
+          "index": "0x6099",
+          "name": "Homing Velocity (slow)",
+          "type": "UDINT",
+          "bit_size": 32
+        },
+        {
+          "index": "0x609A",
+          "name": "Homing Acceleration",
+          "type": "UDINT",
+          "bit_size": 32
+        },
+        {
+          "index": "0x607C",
+          "name": "Homing Offset",
+          "type": "DINT",
+          "bit_size": 32
+        },
+        {
+          "index": "0x6060",
+          "name": "Modes of Operation",
+          "type": "USINT",
+          "bit_size": 8
+        }
+      ]
+    },
+    {
+      "index": "0x1A00",
+      "name": "Transmit PDO 1",
+      "direction": "Tx",
+      "sm": 3,
+      "entries": [
+        {
+          "index": "0x603F",
+          "name": "Last Error Code",
+          "type": "UINT",
+          "bit_size": 16
+        },
+        {
+          "index": "0x6041",
+          "name": "Status Word",
+          "type": "UINT",
+          "bit_size": 16
+        },
+        {
+          "index": "0x6061",
+          "name": "Modes of Operation display",
+          "type": "SINT",
+          "bit_size": 8
+        },
+        {
+          "index": "0x6064",
+          "name": "Position Actual Value",
+          "type": "DINT",
+          "bit_size": 32
+        },
+        {
+          "index": "0x60B9",
+          "name": "Touch Probe Status",
+          "type": "UINT",
+          "bit_size": 16
+        },
+        {
+          "index": "0x60BA",
+          "name": "Touch Probe 1 Positive Value",
+          "type": "DINT",
+          "bit_size": 32
+        },
+        {
+          "index": "0x60FD",
+          "name": "Digital Inputs",
+          "type": "UDINT",
+          "bit_size": 32
+        }
+      ]
+    },
+    {
+      "index": "0x1A01",
+      "name": "Transmit PDO 2",
+      "direction": "Tx",
+      "sm": 0,
+      "entries": []
+    },
+    {
+      "index": "0x1600",
+      "name": "Receive PDO 1",
+      "direction": "Rx",
+      "sm": 2,
+      "entries": [
+        {
+          "index": "0x6040",
+          "name": "Control Word",
+          "type": "UINT",
+          "bit_size": 16
+        },
+        {
+          "index": "0x607A",
+          "name": "Profile Target Position",
+          "type": "DINT",
+          "bit_size": 32
+        },
+        {
+          "index": "0x60B8",
+          "name": "Touch Probe Function",
+          "type": "UINT",
+          "bit_size": 16
+        }
+      ]
+    },
+    {
+      "index": "0x1601",
+      "name": "Receive PDO 2",
+      "direction": "Rx",
+      "sm": 0,
+      "entries": [
+        {
+          "index": "0x6040",
+          "name": "Control word",
+          "type": "UINT",
+          "bit_size": 16
+        },
+        {
+          "index": "0x607A",
+          "name": "Profile Target Position",
+          "type": "DINT",
+          "bit_size": 32
+        },
+        {
+          "index": "0x6081",
+          "name": "Profile Velocity",
+          "type": "UDINT",
+          "bit_size": 32
+        },
+        {
+          "index": "0x6083",
+          "name": "Profile Target Acceleration",
+          "type": "UDINT",
+          "bit_size": 32
+        },
+        {
+          "index": "0x6084",
+          "name": "Profile Target Deceleration",
+          "type": "UDINT",
+          "bit_size": 32
+        },
+        {
+          "index": "0x6060",
+          "name": "Modes of Operation",
+          "type": "USINT",
+          "bit_size": 8
+        }
+      ]
+    },
+    {
+      "index": "0x1602",
+      "name": "Receive PDO 3",
+      "direction": "Rx",
+      "sm": 0,
+      "entries": [
+        {
+          "index": "0x6040",
+          "name": "Control Word",
+          "type": "UINT",
+          "bit_size": 16
+        },
+        {
+          "index": "0x60FF",
+          "name": "Target Velocity",
+          "type": "DINT",
+          "bit_size": 32
+        },
+        {
+          "index": "0x6083",
+          "name": "Profile Acceleration",
+          "type": "UDINT",
+          "bit_size": 32
+        },
+        {
+          "index": "0x6084",
+          "name": "Profile Deceleration",
+          "type": "UDINT",
+          "bit_size": 32
+        },
+        {
+          "index": "0x6060",
+          "name": "Modes of Operation",
+          "type": "USINT",
+          "bit_size": 8
+        }
+      ]
+    },
+    {
+      "index": "0x1603",
+      "name": "Receive PDO 4",
+      "direction": "Rx",
+      "sm": 0,
+      "entries": [
+        {
+          "index": "0x6040",
+          "name": "Control Word",
+          "type": "UINT",
+          "bit_size": 16
+        },
+        {
+          "index": "0x6098",
+          "name": "Homing Method",
+          "type": "SINT",
+          "bit_size": 8
+        },
+        {
+          "index": "0x6099",
+          "name": "Homing Velocity (fast)",
+          "type": "UDINT",
+          "bit_size": 32
+        },
+        {
+          "index": "0x6099",
+          "name": "Homing Velocity (slow)",
+          "type": "UDINT",
+          "bit_size": 32
+        },
+        {
+          "index": "0x609A",
+          "name": "Homing Acceleration",
+          "type": "UDINT",
+          "bit_size": 32
+        },
+        {
+          "index": "0x607C",
+          "name": "Homing Offset",
+          "type": "DINT",
+          "bit_size": 32
+        },
+        {
+          "index": "0x6060",
+          "name": "Modes of Operation",
+          "type": "USINT",
+          "bit_size": 8
+        }
+      ]
+    },
+    {
+      "index": "0x1A00",
+      "name": "Transmit PDO 1",
+      "direction": "Tx",
+      "sm": 3,
+      "entries": [
+        {
+          "index": "0x603F",
+          "name": "Last Error Code",
+          "type": "UINT",
+          "bit_size": 16
+        },
+        {
+          "index": "0x6041",
+          "name": "Status Word",
+          "type": "UINT",
+          "bit_size": 16
+        },
+        {
+          "index": "0x6061",
+          "name": "Modes of Operation display",
+          "type": "SINT",
+          "bit_size": 8
+        },
+        {
+          "index": "0x6064",
+          "name": "Position Actual Value",
+          "type": "DINT",
+          "bit_size": 32
+        },
+        {
+          "index": "0x60B9",
+          "name": "Touch Probe Status",
+          "type": "UINT",
+          "bit_size": 16
+        },
+        {
+          "index": "0x60BA",
+          "name": "Touch Probe 1 Positive Value",
+          "type": "DINT",
+          "bit_size": 32
+        },
+        {
+          "index": "0x60FD",
+          "name": "Digital Inputs",
+          "type": "UDINT",
+          "bit_size": 32
+        }
+      ]
+    },
+    {
+      "index": "0x1A01",
+      "name": "Transmit PDO 2",
+      "direction": "Tx",
+      "sm": 0,
+      "entries": []
+    }
+  ]
+}

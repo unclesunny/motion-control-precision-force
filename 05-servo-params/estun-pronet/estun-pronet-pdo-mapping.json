@@ -1,0 +1,397 @@
+{
+  "vendor": {
+    "id": "#x0000060A",
+    "name": "ESTUN AUTOMATION TECHNOLOGY CO.,LTD"
+  },
+  "count": 8,
+  "mappings": [
+    {
+      "index": "0x1600",
+      "name": " Receive PDO Mapping 1",
+      "direction": "Rx",
+      "sm": 0,
+      "entries": [
+        {
+          "index": "0x6040",
+          "name": "Controlword",
+          "type": "UINT",
+          "bit_size": 16
+        },
+        {
+          "index": "0x607A",
+          "name": "Target position",
+          "type": "DINT",
+          "bit_size": 32
+        },
+        {
+          "index": "0x60FF",
+          "name": "Target velocity",
+          "type": "DINT",
+          "bit_size": 32
+        },
+        {
+          "index": "0x6071",
+          "name": "Target torque",
+          "type": "INT",
+          "bit_size": 16
+        },
+        {
+          "index": "0x6060",
+          "name": "Modes of operation",
+          "type": "SINT",
+          "bit_size": 8
+        },
+        {
+          "index": "0x60B2",
+          "name": "Torque Offset",
+          "type": "INT",
+          "bit_size": 16
+        },
+        {
+          "index": "0x60B8",
+          "name": "Touch probe function",
+          "type": "UINT",
+          "bit_size": 16
+        },
+        {
+          "index": "0x60FE",
+          "name": "Physical outputs",
+          "type": "UDINT",
+          "bit_size": 32
+        }
+      ]
+    },
+    {
+      "index": "0x1601",
+      "name": "CiA402 PP Mode (RX)",
+      "direction": "Rx",
+      "sm": 0,
+      "entries": [
+        {
+          "index": "0x6040",
+          "name": "Controlword",
+          "type": "UINT",
+          "bit_size": 16
+        },
+        {
+          "index": "0x607A",
+          "name": "Target Position",
+          "type": "DINT",
+          "bit_size": 32
+        }
+      ]
+    },
+    {
+      "index": "0x1602",
+      "name": "CoE CSP Mode (RX)",
+      "direction": "Rx",
+      "sm": 2,
+      "entries": [
+        {
+          "index": "0x6040",
+          "name": "Controlword",
+          "type": "UINT",
+          "bit_size": 16
+        },
+        {
+          "index": "0x607A",
+          "name": "Target Position",
+          "type": "DINT",
+          "bit_size": 32
+        },
+        {
+          "index": "0x60B8",
+          "name": "Touch Probe Function",
+          "type": "UINT",
+          "bit_size": 16
+        },
+        {
+          "index": "0x60FE",
+          "name": "Physical Output",
+          "type": "UDINT",
+          "bit_size": 32
+        }
+      ]
+    },
+    {
+      "index": "0x1603",
+      "name": " Receive PDO Mapping 2",
+      "direction": "Rx",
+      "sm": 0,
+      "entries": [
+        {
+          "index": "0x6040",
+          "name": "Controlword",
+          "type": "UINT",
+          "bit_size": 16
+        },
+        {
+          "index": "0x607A",
+          "name": "Target position",
+          "type": "DINT",
+          "bit_size": 32
+        },
+        {
+          "index": "0x60FF",
+          "name": "Target velocity",
+          "type": "DINT",
+          "bit_size": 32
+        },
+        {
+          "index": "0x6071",
+          "name": "Target torque",
+          "type": "INT",
+          "bit_size": 16
+        },
+        {
+          "index": "0x6060",
+          "name": "Modes of operation",
+          "type": "SINT",
+          "bit_size": 8
+        },
+        {
+          "index": "0x60B8",
+          "name": "Touch probe function",
+          "type": "UINT",
+          "bit_size": 16
+        },
+        {
+          "index": "0x607F",
+          "name": "Max profile velocity",
+          "type": "UDINT",
+          "bit_size": 32
+        },
+        {
+          "index": "0x60E0",
+          "name": "Positive torque limit value",
+          "type": "UINT",
+          "bit_size": 16
+        },
+        {
+          "index": "0x60E1",
+          "name": "Negative torque limit value",
+          "type": "UINT",
+          "bit_size": 16
+        }
+      ]
+    },
+    {
+      "index": "0x1A00",
+      "name": "Transmit PDO Mapping 1",
+      "direction": "Tx",
+      "sm": 0,
+      "entries": [
+        {
+          "index": "0x603F",
+          "name": "Error code",
+          "type": "UINT",
+          "bit_size": 16
+        },
+        {
+          "index": "0x6041",
+          "name": "Statusword",
+          "type": "UINT",
+          "bit_size": 16
+        },
+        {
+          "index": "0x6064",
+          "name": "Position actual value",
+          "type": "DINT",
+          "bit_size": 32
+        },
+        {
+          "index": "0x6077",
+          "name": "Torque actual value",
+          "type": "INT",
+          "bit_size": 16
+        },
+        {
+          "index": "0x60F4",
+          "name": "FollowingErrorActualValue",
+          "type": "DINT",
+          "bit_size": 32
+        },
+        {
+          "index": "0x6061",
+          "name": "Modes of operation display",
+          "type": "SINT",
+          "bit_size": 8
+        },
+        {
+          "index": "0x60B9",
+          "name": "Touch probe status",
+          "type": "UINT",
+          "bit_size": 16
+        },
+        {
+          "index": "0x60BA",
+          "name": "Touch probe pos1 pos value",
+          "type": "DINT",
+          "bit_size": 32
+        },
+        {
+          "index": "0x60FD",
+          "name": "Digital inputs",
+          "type": "UDINT",
+          "bit_size": 32
+        },
+        {
+          "index": "0x606C",
+          "name": "Velocity actual value",
+          "type": "DINT",
+          "bit_size": 32
+        }
+      ]
+    },
+    {
+      "index": "0x1A01",
+      "name": "CiA402 PP Mode (TX)",
+      "direction": "Tx",
+      "sm": 0,
+      "entries": [
+        {
+          "index": "0x6041",
+          "name": "Statusword",
+          "type": "UINT",
+          "bit_size": 16
+        },
+        {
+          "index": "0x6064",
+          "name": "Position actual value",
+          "type": "DINT",
+          "bit_size": 32
+        },
+        {
+          "index": "0x6077",
+          "name": "Torque actual value",
+          "type": "INT",
+          "bit_size": 16
+        }
+      ]
+    },
+    {
+      "index": "0x1A02",
+      "name": "CoE CSP Mode ((TX)",
+      "direction": "Tx",
+      "sm": 3,
+      "entries": [
+        {
+          "index": "0x6041",
+          "name": "Statusword",
+          "type": "UINT",
+          "bit_size": 16
+        },
+        {
+          "index": "0x6064",
+          "name": "Position actual value",
+          "type": "DINT",
+          "bit_size": 32
+        },
+        {
+          "index": "0x6077",
+          "name": "Torque actual value",
+          "type": "INT",
+          "bit_size": 16
+        },
+        {
+          "index": "0x60F4",
+          "name": "FollowingErrorActualValue",
+          "type": "DINT",
+          "bit_size": 32
+        },
+        {
+          "index": "0x60B9",
+          "name": "Touch Probe Status",
+          "type": "UINT",
+          "bit_size": 16
+        },
+        {
+          "index": "0x60BA",
+          "name": "Touch Probe Pos1 Pos Value",
+          "type": "DINT",
+          "bit_size": 32
+        },
+        {
+          "index": "0x60BC",
+          "name": "Touch Probe Pos2 Pos Value",
+          "type": "DINT",
+          "bit_size": 32
+        },
+        {
+          "index": "0x60FD",
+          "name": "Digital Inputs",
+          "type": "UDINT",
+          "bit_size": 32
+        }
+      ]
+    },
+    {
+      "index": "0x1A03",
+      "name": "Transmit PDO Mapping 2",
+      "direction": "Tx",
+      "sm": 0,
+      "entries": [
+        {
+          "index": "0x603F",
+          "name": "Error code",
+          "type": "UINT",
+          "bit_size": 16
+        },
+        {
+          "index": "0x6041",
+          "name": "Statusword",
+          "type": "UINT",
+          "bit_size": 16
+        },
+        {
+          "index": "0x6064",
+          "name": "Position actual value",
+          "type": "DINT",
+          "bit_size": 32
+        },
+        {
+          "index": "0x6077",
+          "name": "Torque actual value",
+          "type": "INT",
+          "bit_size": 16
+        },
+        {
+          "index": "0x6061",
+          "name": "Modes of operation display",
+          "type": "SINT",
+          "bit_size": 8
+        },
+        {
+          "index": "0x60B9",
+          "name": "Touch probe status",
+          "type": "UINT",
+          "bit_size": 16
+        },
+        {
+          "index": "0x60BA",
+          "name": "Touch probe pos1 pos value",
+          "type": "DINT",
+          "bit_size": 32
+        },
+        {
+          "index": "0x60BC",
+          "name": "Touch probe pos2 pos value",
+          "type": "DINT",
+          "bit_size": 32
+        },
+        {
+          "index": "0x60FD",
+          "name": "Digital inputs",
+          "type": "UDINT",
+          "bit_size": 32
+        },
+        {
+          "index": "0x606C",
+          "name": "Velocity actual value",
+          "type": "DINT",
+          "bit_size": 32
+        }
+      ]
+    }
+  ]
+}

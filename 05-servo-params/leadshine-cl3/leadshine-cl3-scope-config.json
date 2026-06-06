@@ -1,0 +1,173 @@
+{
+  "brand": "leadshine-cl3",
+  "vendor": "Leadshine Technology Co.,Ltd.",
+  "device": "CL3-EC507(COE)",
+  "channels": [
+    {
+      "id": "CH1",
+      "label": "Position",
+      "unit": "pulses",
+      "available": true,
+      "sources": [
+        {
+          "index": "0x6064",
+          "name": "Position actual value",
+          "type": "DINT",
+          "bit_size": 32,
+          "pdo_dir": "T",
+          "role": "primary"
+        },
+        {
+          "index": "0x6062",
+          "name": "Position demand value",
+          "type": "DINT",
+          "bit_size": 32,
+          "pdo_dir": "",
+          "role": "reference"
+        }
+      ]
+    },
+    {
+      "id": "CH2",
+      "label": "Velocity",
+      "unit": "rpm",
+      "available": true,
+      "sources": [
+        {
+          "index": "0x606C",
+          "name": "Velocity actual value",
+          "type": "DINT",
+          "bit_size": 32,
+          "pdo_dir": "",
+          "role": "primary"
+        },
+        {
+          "index": "0x606B",
+          "name": "Velocity demand value",
+          "type": "DINT",
+          "bit_size": 32,
+          "pdo_dir": "",
+          "role": "reference"
+        }
+      ]
+    },
+    {
+      "id": "CH3",
+      "label": "Current",
+      "unit": "%",
+      "available": false,
+      "sources": []
+    },
+    {
+      "id": "CH4",
+      "label": "Torque",
+      "unit": "%",
+      "available": false,
+      "sources": []
+    },
+    {
+      "id": "CH5",
+      "label": "Following Error",
+      "unit": "pulses",
+      "available": false,
+      "sources": []
+    },
+    {
+      "id": "CH6",
+      "label": "Digital IO",
+      "unit": "bitfield",
+      "available": true,
+      "sources": [
+        {
+          "index": "0x60FD",
+          "name": "Digital inputs",
+          "type": "UDINT",
+          "bit_size": 32,
+          "pdo_dir": "T",
+          "role": "primary"
+        }
+      ]
+    },
+    {
+      "id": "CH7",
+      "label": "Status / Custom",
+      "unit": "hex",
+      "available": true,
+      "sources": [
+        {
+          "index": "0x6041",
+          "name": "Statusword",
+          "type": "UINT",
+          "bit_size": 16,
+          "pdo_dir": "T",
+          "role": "primary"
+        },
+        {
+          "index": "0x603F",
+          "name": "Error code",
+          "type": "UINT",
+          "bit_size": 16,
+          "pdo_dir": "T",
+          "role": "fallback"
+        }
+      ]
+    },
+    {
+      "id": "CH8",
+      "label": "Op Mode / Profile",
+      "unit": "code",
+      "available": true,
+      "sources": [
+        {
+          "index": "0x6061",
+          "name": "Modes of operation display",
+          "type": "USINT",
+          "bit_size": 8,
+          "pdo_dir": "T",
+          "role": "primary"
+        },
+        {
+          "index": "0x6060",
+          "name": "Modes of operation",
+          "type": "USINT",
+          "bit_size": 8,
+          "pdo_dir": "R",
+          "role": "reference"
+        },
+        {
+          "index": "0x60FF",
+          "name": "Target velocity",
+          "type": "DINT",
+          "bit_size": 32,
+          "pdo_dir": "R",
+          "role": "profile"
+        }
+      ]
+    }
+  ],
+  "available_channels": 5,
+  "trigger_sources": [
+    {
+      "index": "0x1001",
+      "name": "Error Register",
+      "access": "ro"
+    },
+    {
+      "index": "0x603F",
+      "name": "Last Error Code",
+      "access": "ro"
+    },
+    {
+      "index": "0x6041",
+      "name": "Status Word",
+      "access": "ro"
+    },
+    {
+      "index": "0x60FD",
+      "name": "Digital Inputs",
+      "access": "ro"
+    }
+  ],
+  "sample_rate_max_hz": 10000,
+  "dc_cycle_us": 1000
+}

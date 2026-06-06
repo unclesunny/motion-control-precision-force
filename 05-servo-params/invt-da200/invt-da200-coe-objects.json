@@ -1,0 +1,5485 @@
+{
+  "vendor": {
+    "id": "#x616",
+    "name": "INVT INDUSTRIAL"
+  },
+  "device": {
+    "type": "INVT_DA200_261",
+    "product_code": "#x0",
+    "name": "DA200-N EtherCAT(CoE) Drive"
+  },
+  "source_file": "INVT_DA200_EtherCAT_V261_190820.xml",
+  "count": 547,
+  "objects": [
+    {
+      "index": "0x1000",
+      "name": "Device type",
+      "type": "UDINT",
+      "bit_size": 32,
+      "access": "ro",
+      "pdo_mapping": "",
+      "default": "131474",
+      "category": "communication"
+    },
+    {
+      "index": "0x1001",
+      "name": "Error register",
+      "type": "SINT",
+      "bit_size": 8,
+      "access": "ro",
+      "pdo_mapping": "",
+      "default": "00",
+      "category": "communication"
+    },
+    {
+      "index": "0x1008",
+      "name": "Device name",
+      "type": "STRING(19)",
+      "bit_size": 152,
+      "access": "ro",
+      "pdo_mapping": "",
+      "default": "494E56545F44413230305F4574686572434154",
+      "category": "communication"
+    },
+    {
+      "index": "0x1009",
+      "name": "Hardware version",
+      "type": "STRING(15)",
+      "bit_size": 120,
+      "access": "ro",
+      "pdo_mapping": "",
+      "default": "494E56545F44413230305F56322E30",
+      "category": "communication"
+    },
+    {
+      "index": "0x100A",
+      "name": "Software version",
+      "type": "STRING(16)",
+      "bit_size": 128,
+      "access": "ro",
+      "pdo_mapping": "",
+      "default": "494E56545F44413230305F56322E3631",
+      "category": "communication"
+    },
+    {
+      "index": "0x1018",
+      "name": "Identity",
+      "type": "DT1018",
+      "bit_size": 144,
+      "access": "ro",
+      "pdo_mapping": "",
+      "default": null,
+      "category": "communication"
+    },
+    {
+      "index": "0x1600",
+      "name": "DO RxPDO-Map0",
+      "type": "DT1600",
+      "bit_size": 240,
+      "access": "rw",
+      "pdo_mapping": "",
+      "default": null,
+      "category": "communication"
+    },
+    {
+      "index": "0x1601",
+      "name": "DO RxPDO-Map1",
+      "type": "DT1601",
+      "bit_size": 80,
+      "access": "rw",
+      "pdo_mapping": "",
+      "default": null,
+      "category": "communication"
+    },
+    {
+      "index": "0x1602",
+      "name": "DO RxPDO-Map2",
+      "type": "DT1602",
+      "bit_size": 80,
+      "access": "rw",
+      "pdo_mapping": "",
+      "default": null,
+      "category": "communication"
+    },
+    {
+      "index": "0x1603",
+      "name": "DO RxPDO-Map3",
+      "type": "DT1603",
+      "bit_size": 80,
+      "access": "rw",
+      "pdo_mapping": "",
+      "default": null,
+      "category": "communication"
+    },
+    {
+      "index": "0x1A00",
+      "name": "DI TxPDO-Map0",
+      "type": "DT1a00",
+      "bit_size": 336,
+      "access": "rw",
+      "pdo_mapping": "",
+      "default": null,
+      "category": "communication"
+    },
+    {
+      "index": "0x1A01",
+      "name": "DI TxPDO-Map1",
+      "type": "DT1a01",
+      "bit_size": 80,
+      "access": "rw",
+      "pdo_mapping": "",
+      "default": null,
+      "category": "communication"
+    },
+    {
+      "index": "0x1A02",
+      "name": "DI TxPDO-Map2",
+      "type": "DT1a02",
+      "bit_size": 80,
+      "access": "rw",
+      "pdo_mapping": "",
+      "default": null,
+      "category": "communication"
+    },
+    {
+      "index": "0x1A03",
+      "name": "DI TxPDO-Map3",
+      "type": "DT1a03",
+      "bit_size": 80,
+      "access": "rw",
+      "pdo_mapping": "",
+      "default": null,
+      "category": "communication"
+    },
+    {
+      "index": "0x1C00",
+      "name": "Sync manager type",
+      "type": "DT1C00",
+      "bit_size": 48,
+      "access": "ro",
+      "pdo_mapping": "",
+      "default": null,
+      "category": "communication"
+    },
+    {
+      "index": "0x1C12",
+      "name": "RxPDO assign",
+      "type": "DT1C12",
+      "bit_size": 32,
+      "access": "rw",
+      "pdo_mapping": "",
+      "default": null,
+      "category": "communication"
+    },
+    {
+      "index": "0x1C13",
+      "name": "TxPDO assign",
+      "type": "DT1C13",
+      "bit_size": 32,
+      "access": "rw",
+      "pdo_mapping": "",
+      "default": null,
+      "category": "communication"
+    },
+    {
+      "index": "0x1C32",
+      "name": "SM output parameter",
+      "type": "DT1C32",
+      "bit_size": 176,
+      "access": "ro",
+      "pdo_mapping": "",
+      "default": null,
+      "category": "communication"
+    },
+    {
+      "index": "0x1C33",
+      "name": "SM input parameter",
+      "type": "DT1C33",
+      "bit_size": 176,
+      "access": "ro",
+      "pdo_mapping": "",
+      "default": null,
+      "category": "communication"
+    },
+    {
+      "index": "0x2000",
+      "name": "[P0.00]MotorType",
+      "type": "DINT",
+      "bit_size": 32,
+      "access": "rw",
+      "pdo_mapping": "",
+      "default": "0000",
+      "category": "manufacturer"
+    },
+    {
+      "index": "0x2001",
+      "name": "[P0.01]Encorder type selection",
+      "type": "INT",
+      "bit_size": 16,
+      "access": "rw",
+      "pdo_mapping": "",
+      "default": "0000",
+      "category": "manufacturer"
+    },
+    {
+      "index": "0x2002",
+      "name": "[P0.02]Motor Forward Direction",
+      "type": "INT",
+      "bit_size": 16,
+      "access": "rw",
+      "pdo_mapping": "",
+      "default": "0000",
+      "category": "manufacturer"
+    },
+    {
+      "index": "0x2003",
+      "name": "[P0.03]Control Mode Selection",
+      "type": "INT",
+      "bit_size": 16,
+      "access": "rw",
+      "pdo_mapping": "",
+      "default": "0000",
+      "category": "manufacturer"
+    },
+    {
+      "index": "0x2004",
+      "name": "[P0.04]Internal servo enbaling",
+      "type": "INT",
+      "bit_size": 16,
+      "access": "rw",
+      "pdo_mapping": "",
+      "default": "0000",
+      "category": "manufacturer"
+    },
+    {
+      "index": "0x2005",
+      "name": "[P0.05]Jog speed",
+      "type": "INT",
+      "bit_size": 16,
+      "access": "rw",
+      "pdo_mapping": "",
+      "default": "0000",
+      "category": "manufacturer"
+    },
+    {
+      "index": "0x2006",
+      "name": "[P0.06]Numerator of encoder pulse output",
+      "type": "DINT",
+      "bit_size": 32,
+      "access": "rw",
+      "pdo_mapping": "",
+      "default": "0000",
+      "category": "manufacturer"
+    },
+    {
+      "index": "0x2007",
+      "name": "[P0.07]Denominator of encoder pulse output",
+      "type": "DINT",
+      "bit_size": 32,
+      "access": "rw",
+      "pdo_mapping": "",
+      "default": "0000",
+      "category": "manufacturer"
+    },
+    {
+      "index": "0x2008",
+      "name": "[P0.08]Pulse feedback direction reversing",
+      "type": "INT",
+      "bit_size": 16,
+      "access": "rw",
+      "pdo_mapping": "",
+      "default": "0000",
+      "category": "manufacturer"
+    },
+    {
+      "index": "0x2009",
+      "name": "[P0.09]Torque limit mode selection",
+      "type": "INT",
+      "bit_size": 16,
+      "access": "rw",
+      "pdo_mapping": "",
+      "default": "0000",
+      "category": "manufacturer"
+    },
+    {
+      "index": "0x200A",
+      "name": "[P0.10]1st Torque limit(0.1)",
+      "type": "INT",
+      "bit_size": 16,
+      "access": "rw",
+      "pdo_mapping": "",
+      "default": "0000",
+      "category": "manufacturer"
+    },
+    {
+      "index": "0x200B",
+      "name": "[P0.11]2st Torque limit(0.1)",
+      "type": "INT",
+      "bit_size": 16,
+      "access": "rw",
+      "pdo_mapping": "",
+      "default": "0000",
+      "category": "manufacturer"
+    },
+    {
+      "index": "0x200D",
+      "name": "[P0.13]Power of the external braking resistor",
+      "type": "INT",
+      "bit_size": 16,
+      "access": "rw",
+      "pdo_mapping": "",
+      "default": "0000",
+      "category": "manufacturer"
+    },
+    {
+      "index": "0x200E",
+      "name": "[P0.14]Resistance of the external braking resistor",
+      "type": "INT",
+      "bit_size": 16,
+      "access": "rw",
+      "pdo_mapping": "",
+      "default": "0000",
+      "category": "manufacturer"
+    },
+    {
+      "index": "0x200F",
+      "name": "[P0.15]Default monitoring parameters",
+      "type": "INT",
+      "bit_size": 16,
+      "access": "rw",
+      "pdo_mapping": "",
+      "default": "0000",
+      "category": "manufacturer"
+    },
+    {
+      "index": "0x2010",
+      "name": "[P0.16]Parameters modification operation locking",
+      "type": "INT",
+      "bit_size": 16,
+      "access": "rw",
+      "pdo_mapping": "",
+      "default": "0000",
+      "category": "manufacturer"
+    },
+    {
+      "index": "0x2011",
+      "name": "[P0.17]EEPROM save mode selection",
+      "type": "INT",
+      "bit_size": 16,
+      "access": "rw",
+      "pdo_mapping": "",
+      "default": "0000",
+      "category": "manufacturer"
+    },
+    {
+      "index": "0x2012",
+      "name": "[P0.18]Manufacturer password",
+      "type": "UINT",
+      "bit_size": 16,
+      "access": "rw",
+      "pdo_mapping": "",
+      "default": "0000",
+      "category": "manufacturer"
+    },
+    {
+      "index": "0x2014",
+      "name": "[P0.20]Position command selection",
+      "type": "INT",
+      "bit_size": 16,
+      "access": "rw",
+      "pdo_mapping": "",
+      "default": "0000",
+      "category": "manufacturer"
+    },
+    {
+      "index": "0x2016",
+      "name": "[P0.22]Pulse counts per revolution",
+      "type": "DINT",
+      "bit_size": 32,
+      "access": "rw",
+      "pdo_mapping": "",
+      "default": "0000",
+      "category": "manufacturer"
+    },
+    {
+      "index": "0x2017",
+      "name": "[P0.23]Pulse input mode selection",
+      "type": "INT",
+      "bit_size": 16,
+      "access": "rw",
+      "pdo_mapping": "",
+      "default": "0000",
+      "category": "manufacturer"
+    },
+    {
+      "index": "0x2018",
+      "name": "[P0.24]Pulse input direction reversing",
+      "type": "INT",
+      "bit_size": 16,
+      "access": "rw",
+      "pdo_mapping": "",
+      "default": "0000",
+      "category": "manufacturer"
+    },
+    {
+      "index": "0x2019",
+      "name": "[P0.25]Numerator of the 1st electronic gear",
+      "type": "DINT",
+      "bit_size": 32,
+      "access": "rw",
+      "pdo_mapping": "",
+      "default": "0000",
+      "category": "manufacturer"
+    },
+    {
+      "index": "0x201A",
+      "name": "[P0.26]Denominator of the electronic gear",
+      "type": "DINT",
+      "bit_size": 32,
+      "access": "rw",
+      "pdo_mapping": "",
+      "default": "0000",
+      "category": "manufacturer"
+    },
+    {
+      "index": "0x201B",
+      "name": "[P0.27]Numerator of the 2nd electronic gear",
+      "type": "DINT",
+      "bit_size": 32,
+      "access": "rw",
+      "pdo_mapping": "",
+      "default": "0000",
+      "category": "manufacturer"
+    },
+    {
+      "index": "0x201C",
+      "name": "[P0.28]Numerator of the 3rd electronic gear",
+      "type": "DINT",
+      "bit_size": 32,
+      "access": "rw",
+      "pdo_mapping": "",
+      "default": "0000",
+      "category": "manufacturer"
+    },
+    {
+      "index": "0x201D",
+      "name": "[P0.29]Numerator of the 4rd electronic gear",
+      "type": "DINT",
+      "bit_size": 32,
+      "access": "rw",
+      "pdo_mapping": "",
+      "default": "0000",
+      "category": "manufacturer"
+    },
+    {
+      "index": "0x2021",
+      "name": "[P0.33]Position command LPF filter time(0.1)",
+      "type": "INT",
+      "bit_size": 16,
+      "access": "rw",
+      "pdo_mapping": "",
+      "default": "0000",
+      "category": "manufacturer"
+    },
+    {
+      "index": "0x2022",
+      "name": "[P0.34]Position command FIR fiter time(0.1)",
+      "type": "INT",
+      "bit_size": 16,
+      "access": "rw",
+      "pdo_mapping": "",
+      "default": "0000",
+      "category": "manufacturer"
+    },
+    {
+      "index": "0x2023",
+      "name": "[P0.35]Positive position software limit",
+      "type": "DINT",
+      "bit_size": 32,
+      "access": "rw",
+      "pdo_mapping": "",
+      "default": "0000",
+      "category": "manufacturer"
+    },
+    {
+      "index": "0x2024",
+      "name": "[P0.36]Negative position software limit",
+      "type": "DINT",
+      "bit_size": 32,
+      "access": "rw",
+      "pdo_mapping": "",
+      "default": "0000",
+      "category": "manufacturer"
+    },
+    {
+      "index": "0x2025",
+      "name": "[P0.37]Position control mode selection",
+      "type": "INT",
+      "bit_size": 16,
+      "access": "rw",
+      "pdo_mapping": "",
+      "default": "0000",
+      "category": "manufacturer"
+    },
+    {
+      "index": "0x2026",
+      "name": "[P0.38]Full close loop mode",
+      "type": "INT",
+      "bit_size": 16,
+      "access": "rw",
+      "pdo_mapping": "",
+      "default": "0000",
+      "category": "manufacturer"
+    },
+    {
+      "index": "0x2028",
+      "name": "[P0.40]Speed command selection",
+      "type": "INT",
+      "bit_size": 16,
+      "access": "rw",
+      "pdo_mapping": "",
+      "default": "0000",
+      "category": "manufacturer"
+    },
+    {
+      "index": "0x2029",
+      "name": "[P0.41]Speed command derection selection",
+      "type": "INT",
+      "bit_size": 16,
+      "access": "rw",
+      "pdo_mapping": "",
+      "default": "0000",
+      "category": "manufacturer"
+    },
+    {
+      "index": "0x202A",
+      "name": "[P0.42]Gain of Analog input 1",
+      "type": "DINT",
+      "bit_size": 32,
+      "access": "rw",
+      "pdo_mapping": "",
+      "default": "0000",
+      "category": "manufacturer"
+    },
+    {
+      "index": "0x202B",
+      "name": "[P0.43]Polarity of Analog input 1",
+      "type": "INT",
+      "bit_size": 16,
+      "access": "rw",
+      "pdo_mapping": "",
+      "default": "0000",
+      "category": "manufacturer"
+    },
+    {
+      "index": "0x202D",
+      "name": "[P0.45]Dead zone of Analog input 1(0.001)",
+      "type": "INT",
+      "bit_size": 16,
+      "access": "rw",
+      "pdo_mapping": "",
+      "default": "0000",
+      "category": "manufacturer"
+    },
+    {
+      "index": "0x202E",
+      "name": "[P0.46]Internal speed command 1 / speed limit 1",
+      "type": "INT",
+      "bit_size": 16,
+      "access": "rw",
+      "pdo_mapping": "",
+      "default": "0000",
+      "category": "manufacturer"
+    },
+    {
+      "index": "0x202F",
+      "name": "[P0.47]Internal speed command 2 / speed limit 2",
+      "type": "INT",
+      "bit_size": 16,
+      "access": "rw",
+      "pdo_mapping": "",
+      "default": "0000",
+      "category": "manufacturer"
+    },
+    {
+      "index": "0x2030",
+      "name": "[P0.48]Internal speed command 3 / speed limit 3",
+      "type": "INT",
+      "bit_size": 16,
+      "access": "rw",
+      "pdo_mapping": "",
+      "default": "0000",
+      "category": "manufacturer"
+    },
+    {
+      "index": "0x2031",
+      "name": "[P0.49]Internal speed command 4 / speed limit 4",
+      "type": "INT",
+      "bit_size": 16,
+      "access": "rw",
+      "pdo_mapping": "",
+      "default": "0000",
+      "category": "manufacturer"
+    },
+    {
+      "index": "0x2032",
+      "name": "[P0.50]Internal speed command 5",
+      "type": "INT",
+      "bit_size": 16,
+      "access": "rw",
+      "pdo_mapping": "",
+      "default": "0000",
+      "category": "manufacturer"
+    },
+    {
+      "index": "0x2033",
+      "name": "[P0.51]Internal speed command 6",
+      "type": "INT",
+      "bit_size": 16,
+      "access": "rw",
+      "pdo_mapping": "",
+      "default": "0000",
+      "category": "manufacturer"
+    },
+    {
+      "index": "0x2034",
+      "name": "[P0.52]Internal speed command 7",
+      "type": "INT",
+      "bit_size": 16,
+      "access": "rw",
+      "pdo_mapping": "",
+      "default": "0000",
+      "category": "manufacturer"
+    },
+    {
+      "index": "0x2035",
+      "name": "[P0.53]Internal speed command 8",
+      "type": "INT",
+      "bit_size": 16,
+      "access": "rw",
+      "pdo_mapping": "",
+      "default": "0000",
+      "category": "manufacturer"
+    },
+    {
+      "index": "0x2036",
+      "name": "[P0.54]Acceleration time",
+      "type": "DINT",
+      "bit_size": 32,
+      "access": "rw",
+      "pdo_mapping": "",
+      "default": "0000",
+      "category": "manufacturer"
+    },
+    {
+      "index": "0x2037",
+      "name": "[P0.55]Deceleration time",
+      "type": "DINT",
+      "bit_size": 32,
+      "access": "rw",
+      "pdo_mapping": "",
+      "default": "0000",
+      "category": "manufacturer"
+    },
+    {
+      "index": "0x2038",
+      "name": "[P0.56]Acceleration S curve time",
+      "type": "INT",
+      "bit_size": 16,
+      "access": "rw",
+      "pdo_mapping": "",
+      "default": "0000",
+      "category": "manufacturer"
+    },
+    {
+      "index": "0x2039",
+      "name": "[P0.57]Deceleration S curve time",
+      "type": "INT",
+      "bit_size": 16,
+      "access": "rw",
+      "pdo_mapping": "",
+      "default": "0000",
+      "category": "manufacturer"
+    },
+    {
+      "index": "0x203A",
+      "name": "[P0.58]Zero speed clamping mode selection",
+      "type": "INT",
+      "bit_size": 16,
+      "access": "rw",
+      "pdo_mapping": "",
+      "default": "0000",
+      "category": "manufacturer"
+    },
+    {
+      "index": "0x203B",
+      "name": "[P0.59]Speed threshold of zero speed clamp",
+      "type": "INT",
+      "bit_size": 16,
+      "access": "rw",
+      "pdo_mapping": "",
+      "default": "0000",
+      "category": "manufacturer"
+    },
+    {
+      "index": "0x203C",
+      "name": "[P0.60]Torque command selection",
+      "type": "INT",
+      "bit_size": 16,
+      "access": "rw",
+      "pdo_mapping": "",
+      "default": "0000",
+      "category": "manufacturer"
+    },
+    {
+      "index": "0x203D",
+      "name": "[P0.61]Torque command derection selection",
+      "type": "INT",
+      "bit_size": 16,
+      "access": "rw",
+      "pdo_mapping": "",
+      "default": "0000",
+      "category": "manufacturer"
+    },
+    {
+      "index": "0x203E",
+      "name": "[P0.62]Polarity of Analog input 2",
+      "type": "DINT",
+      "bit_size": 32,
+      "access": "rw",
+      "pdo_mapping": "",
+      "default": "0000",
+      "category": "manufacturer"
+    },
+    {
+      "index": "0x203F",
+      "name": "[P0.63]Polarity of Analog input 2",
+      "type": "INT",
+      "bit_size": 16,
+      "access": "rw",
+      "pdo_mapping": "",
+      "default": "0000",
+      "category": "manufacturer"
+    },
+    {
+      "index": "0x2041",
+      "name": "[P0.65]Dead zone of Analog input 2(0.001)",
+      "type": "INT",
+      "bit_size": 16,
+      "access": "rw",
+      "pdo_mapping": "",
+      "default": "0000",
+      "category": "manufacturer"
+    },
+    {
+      "index": "0x2042",
+      "name": "[P0.66]Internal torque command (0.1)",
+      "type": "INT",
+      "bit_size": 16,
+      "access": "rw",
+      "pdo_mapping": "",
+      "default": "0000",
+      "category": "manufacturer"
+    },
+    {
+      "index": "0x2043",
+      "name": "[P0.67]Speed limitation source selection",
+      "type": "INT",
+      "bit_size": 16,
+      "access": "rw",
+      "pdo_mapping": "",
+      "default": "0000",
+      "category": "manufacturer"
+    },
+    {
+      "index": "0x2044",
+      "name": "[P0.68]Torque command ramp time",
+      "type": "INT",
+      "bit_size": 16,
+      "access": "rw",
+      "pdo_mapping": "",
+      "default": "0000",
+      "category": "manufacturer"
+    },
+    {
+      "index": "0x2045",
+      "name": "[P0.69]Quick stop time",
+      "type": "INT",
+      "bit_size": 16,
+      "access": "rw",
+      "pdo_mapping": "",
+      "default": "0000",
+      "category": "manufacturer"
+    },
+    {
+      "index": "0x2046",
+      "name": "[P0.70]Type of absolute encoder",
+      "type": "INT",
+      "bit_size": 16,
+      "access": "rw",
+      "pdo_mapping": "",
+      "default": "0000",
+      "category": "manufacturer"
+    },
+    {
+      "index": "0x2047",
+      "name": "[P0.71]Absolute encoder clear turns",
+      "type": "INT",
+      "bit_size": 16,
+      "access": "rw",
+      "pdo_mapping": "",
+      "default": "0000",
+      "category": "manufacturer"
+    },
+    {
+      "index": "0x205A",
+      "name": "[P0.90]Speed limit from speed to position mode switching",
+      "type": "INT",
+      "bit_size": 16,
+      "access": "rw",
+      "pdo_mapping": "",
+      "default": "0000",
+      "category": "manufacturer"
+    },
+    {
+      "index": "0x205B",
+      "name": "[P0.91]Positioning reference from speed to position mode switching",
+      "type": "DINT",
+      "bit_size": 32,
+      "access": "rw",
+      "pdo_mapping": "",
+      "default": "0000",
+      "category": "manufacturer"
+    },
+    {
+      "index": "0x205C",
+      "name": "[P0.92]Exit mode from position control mode",
+      "type": "INT",
+      "bit_size": 16,
+      "access": "rw",
+      "pdo_mapping": "",
+      "default": "0000",
+      "category": "manufacturer"
+    },
+    {
+      "index": "0x205D",
+      "name": "[P0.93]Exit mode from speed control mode",
+      "type": "INT",
+      "bit_size": 16,
+      "access": "rw",
+      "pdo_mapping": "",
+      "default": "0000",
+      "category": "manufacturer"
+    },
+    {
+      "index": "0x2063",
+      "name": "[P0.99]Speed detection Fir filter order",
+      "type": "INT",
+      "bit_size": 16,
+      "access": "rw",
+      "pdo_mapping": "",
+      "default": "0000",
+      "category": "manufacturer"
+    },
+    {
+      "index": "0x2100",
+      "name": "[P1.00]1Online auto tune",
+      "type": "INT",
+      "bit_size": 16,
+      "access": "rw",
+      "pdo_mapping": "",
+      "default": "0000",
+      "category": "manufacturer"
+    },
+    {
+      "index": "0x2101",
+      "name": "[P1.01]1st Rotational inertia ratio",
+      "type": "INT",
+      "bit_size": 16,
+      "access": "rw",
+      "pdo_mapping": "",
+      "default": "0000",
+      "category": "manufacturer"
+    },
+    {
+      "index": "0x2102",
+      "name": "[P1.02]2nd Rotational inertia ratio",
+      "type": "INT",
+      "bit_size": 16,
+      "access": "rw",
+      "pdo_mapping": "",
+      "default": "0000",
+      "category": "manufacturer"
+    },
+    {
+      "index": "0x2103",
+      "name": "[P1.03]Machine rigidity setting",
+      "type": "INT",
+      "bit_size": 16,
+      "access": "rw",
+      "pdo_mapping": "",
+      "default": "0000",
+      "category": "manufacturer"
+    },
+    {
+      "index": "0x2104",
+      "name": "[P1.04]Inertia identification switch",
+      "type": "DINT",
+      "bit_size": 32,
+      "access": "rw",
+      "pdo_mapping": "",
+      "default": "0000",
+      "category": "manufacturer"
+    },
+    {
+      "index": "0x2105",
+      "name": "[P1.05]Inertia identification operation",
+      "type": "INT",
+      "bit_size": 16,
+      "access": "rw",
+      "pdo_mapping": "",
+      "default": "0000",
+      "category": "manufacturer"
+    },
+    {
+      "index": "0x2106",
+      "name": "[P1.06]Mechanical movement(0.1)",
+      "type": "INT",
+      "bit_size": 16,
+      "access": "rw",
+      "pdo_mapping": "",
+      "default": "0000",
+      "category": "manufacturer"
+    },
+    {
+      "index": "0x2107",
+      "name": "[P1.07]Identification of inertia acceleration time constant",
+      "type": "INT",
+      "bit_size": 16,
+      "access": "rw",
+      "pdo_mapping": "",
+      "default": "0000",
+      "category": "manufacturer"
+    },
+    {
+      "index": "0x2108",
+      "name": "[P1.08]Inertia identification grade",
+      "type": "INT",
+      "bit_size": 16,
+      "access": "rw",
+      "pdo_mapping": "",
+      "default": "0000",
+      "category": "manufacturer"
+    },
+    {
+      "index": "0x2113",
+      "name": "[P1.19]Resonance frequency test valid level(0.1)",
+      "type": "INT",
+      "bit_size": 16,
+      "access": "rw",
+      "pdo_mapping": "",
+      "default": "0000",
+      "category": "manufacturer"
+    },
+    {
+      "index": "0x2114",
+      "name": "[P1.20]Resonance frequency test mode",
+      "type": "INT",
+      "bit_size": 16,
+      "access": "rw",
+      "pdo_mapping": "",
+      "default": "0000",
+      "category": "manufacturer"
+    },
+    {
+      "index": "0x2115",
+      "name": "[P1.21]1st Mechanical resonance frequency",
+      "type": "INT",
+      "bit_size": 16,
+      "access": "rw",
+      "pdo_mapping": "",
+      "default": "0000",
+      "category": "manufacturer"
+    },
+    {
+      "index": "0x2116",
+      "name": "[P1.22]2nd Mechanical resonance frequency",
+      "type": "INT",
+      "bit_size": 16,
+      "access": "rw",
+      "pdo_mapping": "",
+      "default": "0000",
+      "category": "manufacturer"
+    },
+    {
+      "index": "0x2117",
+      "name": "[P1.23]1st Trap wave center frequency",
+      "type": "INT",
+      "bit_size": 16,
+      "access": "rw",
+      "pdo_mapping": "",
+      "default": "0000",
+      "category": "manufacturer"
+    },
+    {
+      "index": "0x2118",
+      "name": "[P1.24]1st Trap wave Q value(0.01)",
+      "type": "INT",
+      "bit_size": 16,
+      "access": "rw",
+      "pdo_mapping": "",
+      "default": "0000",
+      "category": "manufacturer"
+    },
+    {
+      "index": "0x2119",
+      "name": "[P1.25]1st Trap wave depth",
+      "type": "INT",
+      "bit_size": 16,
+      "access": "rw",
+      "pdo_mapping": "",
+      "default": "0000",
+      "category": "manufacturer"
+    },
+    {
+      "index": "0x211A",
+      "name": "[P1.26]2nd Trap wave center frequency",
+      "type": "INT",
+      "bit_size": 16,
+      "access": "rw",
+      "pdo_mapping": "",
+      "default": "0000",
+      "category": "manufacturer"
+    },
+    {
+      "index": "0x211B",
+      "name": "[P1.27]2nd Trap wave Q value(0.01)",
+      "type": "INT",
+      "bit_size": 16,
+      "access": "rw",
+      "pdo_mapping": "",
+      "default": "0000",
+      "category": "manufacturer"
+    },
+    {
+      "index": "0x211C",
+      "name": "[P1.28]2nd  Trap wave depth",
+      "type": "INT",
+      "bit_size": 16,
+      "access": "rw",
+      "pdo_mapping": "",
+      "default": "0000",
+      "category": "manufacturer"
+    },
+    {
+      "index": "0x211D",
+      "name": "[P1.29]3rd  Trap wave center frequency",
+      "type": "INT",
+      "bit_size": 16,
+      "access": "rw",
+      "pdo_mapping": "",
+      "default": "0000",
+      "category": "manufacturer"
+    },
+    {
+      "index": "0x211E",
+      "name": "[P1.30]3rd Trap wave Q value(0.01)",
+      "type": "INT",
+      "bit_size": 16,
+      "access": "rw",
+      "pdo_mapping": "",
+      "default": "0000",
+      "category": "manufacturer"
+    },
+    {
+      "index": "0x211F",
+      "name": "[P1.31]3rd Trap wave depth",
+      "type": "INT",
+      "bit_size": 16,
+      "access": "rw",
+      "pdo_mapping": "",
+      "default": "0000",
+      "category": "manufacturer"
+    },
+    {
+      "index": "0x2120",
+      "name": "[P1.32]4th  Trap wave center frequency",
+      "type": "INT",
+      "bit_size": 16,
+      "access": "rw",
+      "pdo_mapping": "",
+      "default": "0000",
+      "category": "manufacturer"
+    },
+    {
+      "index": "0x2121",
+      "name": "[P1.33]4th Trap wave Q value(0.01)",
+      "type": "INT",
+      "bit_size": 16,
+      "access": "rw",
+      "pdo_mapping": "",
+      "default": "0000",
+      "category": "manufacturer"
+    },
+    {
+      "index": "0x2122",
+      "name": "[P1.34]4th Trap wave depth",
+      "type": "INT",
+      "bit_size": 16,
+      "access": "rw",
+      "pdo_mapping": "",
+      "default": "0000",
+      "category": "manufacturer"
+    },
+    {
+      "index": "0x2123",
+      "name": "[P1.35]Position command",
+      "type": "INT",
+      "bit_size": 16,
+      "access": "rw",
+      "pdo_mapping": "",
+      "default": "0000",
+      "category": "manufacturer"
+    },
+    {
+      "index": "0x2124",
+      "name": "[P1.36]1st Vibration suppression of frequency(0.1)",
+      "type": "INT",
+      "bit_size": 16,
+      "access": "rw",
+      "pdo_mapping": "",
+      "default": "0000",
+      "category": "manufacturer"
+    },
+    {
+      "index": "0x2125",
+      "name": "[P1.37]1st Vibration filter value(0.01)",
+      "type": "INT",
+      "bit_size": 16,
+      "access": "rw",
+      "pdo_mapping": "",
+      "default": "0000",
+      "category": "manufacturer"
+    },
+    {
+      "index": "0x2126",
+      "name": "[P1.38]2nd Vibration suppression of frequency(0.1)",
+      "type": "INT",
+      "bit_size": 16,
+      "access": "rw",
+      "pdo_mapping": "",
+      "default": "0000",
+      "category": "manufacturer"
+    },
+    {
+      "index": "0x2127",
+      "name": "[P1.39]2nd Vibration filter value(0.01)",
+      "type": "INT",
+      "bit_size": 16,
+      "access": "rw",
+      "pdo_mapping": "",
+      "default": "0000",
+      "category": "manufacturer"
+    },
+    {
+      "index": "0x2200",
+      "name": "[P2.00]1st Speed gain(0.1)",
+      "type": "INT",
+      "bit_size": 16,
+      "access": "rw",
+      "pdo_mapping": "",
+      "default": "0000",
+      "category": "manufacturer"
+    },
+    {
+      "index": "0x2201",
+      "name": "[P2.01]1st Speed integration time constant(0.1)",
+      "type": "INT",
+      "bit_size": 16,
+      "access": "rw",
+      "pdo_mapping": "",
+      "default": "0000",
+      "category": "manufacturer"
+    },
+    {
+      "index": "0x2202",
+      "name": "[P2.02]1st Position gain(0.1)",
+      "type": "INT",
+      "bit_size": 16,
+      "access": "rw",
+      "pdo_mapping": "",
+      "default": "0000",
+      "category": "manufacturer"
+    },
+    {
+      "index": "0x2203",
+      "name": "[P2.03]1st Speed detection filter time",
+      "type": "INT",
+      "bit_size": 16,
+      "access": "rw",
+      "pdo_mapping": "",
+      "default": "0000",
+      "category": "manufacturer"
+    },
+    {
+      "index": "0x2204",
+      "name": "[P2.04]1st Torque filter(0.01)",
+      "type": "INT",
+      "bit_size": 16,
+      "access": "rw",
+      "pdo_mapping": "",
+      "default": "0000",
+      "category": "manufacturer"
+    },
+    {
+      "index": "0x2205",
+      "name": "[P2.05]2nd Speed gain(0.1)",
+      "type": "INT",
+      "bit_size": 16,
+      "access": "rw",
+      "pdo_mapping": "",
+      "default": "0000",
+      "category": "manufacturer"
+    },
+    {
+      "index": "0x2206",
+      "name": "[P2.06]2nd Speed integration time constant(0.1)",
+      "type": "INT",
+      "bit_size": 16,
+      "access": "rw",
+      "pdo_mapping": "",
+      "default": "0000",
+      "category": "manufacturer"
+    },
+    {
+      "index": "0x2207",
+      "name": "[P2.07]2nd Position gain(0.1)",
+      "type": "INT",
+      "bit_size": 16,
+      "access": "rw",
+      "pdo_mapping": "",
+      "default": "0000",
+      "category": "manufacturer"
+    },
+    {
+      "index": "0x2208",
+      "name": "[P2.08]2nd Speed detection filter time",
+      "type": "INT",
+      "bit_size": 16,
+      "access": "rw",
+      "pdo_mapping": "",
+      "default": "0000",
+      "category": "manufacturer"
+    },
+    {
+      "index": "0x2209",
+      "name": "[P2.09]2nd Torque filter(0.01)",
+      "type": "INT",
+      "bit_size": 16,
+      "access": "rw",
+      "pdo_mapping": "",
+      "default": "0000",
+      "category": "manufacturer"
+    },
+    {
+      "index": "0x220A",
+      "name": "[P2.10]Speed feed-forward gain(0.1)",
+      "type": "INT",
+      "bit_size": 16,
+      "access": "rw",
+      "pdo_mapping": "",
+      "default": "0000",
+      "category": "manufacturer"
+    },
+    {
+      "index": "0x220B",
+      "name": "[P2.11]Speed feed-forward filter time(0.1)",
+      "type": "INT",
+      "bit_size": 16,
+      "access": "rw",
+      "pdo_mapping": "",
+      "default": "0000",
+      "category": "manufacturer"
+    },
+    {
+      "index": "0x220C",
+      "name": "[P2.12]Torque feed-forward gain(0.1)",
+      "type": "INT",
+      "bit_size": 16,
+      "access": "rw",
+      "pdo_mapping": "",
+      "default": "0000",
+      "category": "manufacturer"
+    },
+    {
+      "index": "0x220D",
+      "name": "[P2.13]Torque feed-forward filter time(0.01)",
+      "type": "INT",
+      "bit_size": 16,
+      "access": "rw",
+      "pdo_mapping": "",
+      "default": "0000",
+      "category": "manufacturer"
+    },
+    {
+      "index": "0x220E",
+      "name": "[P2.14]1st IPPI gain",
+      "type": "INT",
+      "bit_size": 16,
+      "access": "rw",
+      "pdo_mapping": "",
+      "default": "0000",
+      "category": "manufacturer"
+    },
+    {
+      "index": "0x220F",
+      "name": "[P2.15]2st IPPI gain",
+      "type": "INT",
+      "bit_size": 16,
+      "access": "rw",
+      "pdo_mapping": "",
+      "default": "0000",
+      "category": "manufacturer"
+    },
+    {
+      "index": "0x2214",
+      "name": "[P2.20]2nd Speed gain mode",
+      "type": "INT",
+      "bit_size": 16,
+      "access": "rw",
+      "pdo_mapping": "",
+      "default": "0000",
+      "category": "manufacturer"
+    },
+    {
+      "index": "0x2216",
+      "name": "[P2.22]Position control switch mode",
+      "type": "INT",
+      "bit_size": 16,
+      "access": "rw",
+      "pdo_mapping": "",
+      "default": "0000",
+      "category": "manufacturer"
+    },
+    {
+      "index": "0x2217",
+      "name": "[P2.23]Position control switch delay time",
+      "type": "INT",
+      "bit_size": 16,
+      "access": "rw",
+      "pdo_mapping": "",
+      "default": "0000",
+      "category": "manufacturer"
+    },
+    {
+      "index": "0x2218",
+      "name": "[P2.24]Position control switch level",
+      "type": "INT",
+      "bit_size": 16,
+      "access": "rw",
+      "pdo_mapping": "",
+      "default": "0000",
+      "category": "manufacturer"
+    },
+    {
+      "index": "0x2219",
+      "name": "[P2.25]Position control switch hyst",
+      "type": "INT",
+      "bit_size": 16,
+      "access": "rw",
+      "pdo_mapping": "",
+      "default": "0000",
+      "category": "manufacturer"
+    },
+    {
+      "index": "0x221A",
+      "name": "[P2.26]Position gain switch time",
+      "type": "INT",
+      "bit_size": 16,
+      "access": "rw",
+      "pdo_mapping": "",
+      "default": "0000",
+      "category": "manufacturer"
+    },
+    {
+      "index": "0x221B",
+      "name": "[P2.27]Position gain switch time",
+      "type": "INT",
+      "bit_size": 16,
+      "access": "rw",
+      "pdo_mapping": "",
+      "default": "0000",
+      "category": "manufacturer"
+    },
+    {
+      "index": "0x221C",
+      "name": "[P2.28]Speed control switch mode",
+      "type": "INT",
+      "bit_size": 16,
+      "access": "rw",
+      "pdo_mapping": "",
+      "default": "0000",
+      "category": "manufacturer"
+    },
+    {
+      "index": "0x221D",
+      "name": "[P2.29]Speed control switch delay time",
+      "type": "INT",
+      "bit_size": 16,
+      "access": "rw",
+      "pdo_mapping": "",
+      "default": "0000",
+      "category": "manufacturer"
+    },
+    {
+      "index": "0x221E",
+      "name": "[P2.30]Speed control switch level",
+      "type": "INT",
+      "bit_size": 16,
+      "access": "rw",
+      "pdo_mapping": "",
+      "default": "0000",
+      "category": "manufacturer"
+    },
+    {
+      "index": "0x221F",
+      "name": "[P2.31]Speed control switch hyst",
+      "type": "INT",
+      "bit_size": 16,
+      "access": "rw",
+      "pdo_mapping": "",
+      "default": "0000",
+      "category": "manufacturer"
+    },
+    {
+      "index": "0x2220",
+      "name": "[P2.32]Torque control switch mode",
+      "type": "INT",
+      "bit_size": 16,
+      "access": "rw",
+      "pdo_mapping": "",
+      "default": "0000",
+      "category": "manufacturer"
+    },
+    {
+      "index": "0x2221",
+      "name": "[P2.33]Torque feed-forward filter time",
+      "type": "INT",
+      "bit_size": 16,
+      "access": "rw",
+      "pdo_mapping": "",
+      "default": "0000",
+      "category": "manufacturer"
+    },
+    {
+      "index": "0x2222",
+      "name": "[P2.34]Torque control switch level",
+      "type": "INT",
+      "bit_size": 16,
+      "access": "rw",
+      "pdo_mapping": "",
+      "default": "0000",
+      "category": "manufacturer"
+    },
+    {
+      "index": "0x2229",
+      "name": "[P2.41]Perturbatio observer enable",
+      "type": "INT",
+      "bit_size": 16,
+      "access": "rw",
+      "pdo_mapping": "",
+      "default": "0000",
+      "category": "manufacturer"
+    },
+    {
+      "index": "0x222A",
+      "name": "[P2.42]Perturbation torque compensation",
+      "type": "INT",
+      "bit_size": 16,
+      "access": "rw",
+      "pdo_mapping": "",
+      "default": "0000",
+      "category": "manufacturer"
+    },
+    {
+      "index": "0x222B",
+      "name": "[P2.43]Perturbation observer filter",
+      "type": "INT",
+      "bit_size": 16,
+      "access": "rw",
+      "pdo_mapping": "",
+      "default": "0000",
+      "category": "manufacturer"
+    },
+    {
+      "index": "0x222C",
+      "name": "[P2.44]Torque command offset(0.1)",
+      "type": "INT",
+      "bit_size": 16,
+      "access": "rw",
+      "pdo_mapping": "",
+      "default": "0000",
+      "category": "manufacturer"
+    },
+    {
+      "index": "0x2232",
+      "name": "[P2.50]Full-loop vibration suppressor enable",
+      "type": "INT",
+      "bit_size": 16,
+      "access": "rw",
+      "pdo_mapping": "",
+      "default": "0000",
+      "category": "manufacturer"
+    },
+    {
+      "index": "0x2233",
+      "name": "[P2.51]Full-loop vibration suppressor cut-off frequency(0.1)",
+      "type": "INT",
+      "bit_size": 16,
+      "access": "rw",
+      "pdo_mapping": "",
+      "default": "0000",
+      "category": "manufacturer"
+    },
+    {
+      "index": "0x2234",
+      "name": "[P2.52]Full-loop vibration suppressor compensation gain",
+      "type": "INT",
+      "bit_size": 16,
+      "access": "rw",
+      "pdo_mapping": "",
+      "default": "0000",
+      "category": "manufacturer"
+    },
+    {
+      "index": "0x2235",
+      "name": "[P2.53]Mode selection of midfrequency-vibration suppression",
+      "type": "UINT",
+      "bit_size": 16,
+      "access": "rw",
+      "pdo_mapping": "",
+      "default": "0000",
+      "category": "manufacturer"
+    },
+    {
+      "index": "0x2236",
+      "name": "[P2.54]Suppression frequency of 1st midfrequency-vibration suppressor",
+      "type": "UINT",
+      "bit_size": 16,
+      "access": "rw",
+      "pdo_mapping": "",
+      "default": "0000",
+      "category": "manufacturer"
+    },
+    {
+      "index": "0x2237",
+      "name": "[P2.55]fine tune of freq of 1st midfrequency-vibration suppressor",
+      "type": "UINT",
+      "bit_size": 16,
+      "access": "rw",
+      "pdo_mapping": "",
+      "default": "0000",
+      "category": "manufacturer"
+    },
+    {
+      "index": "0x2238",
+      "name": "[P2.56]attenuation gain of midfreq-vibration suppression",
+      "type": "UINT",
+      "bit_size": 16,
+      "access": "rw",
+      "pdo_mapping": "",
+      "default": "0000",
+      "category": "manufacturer"
+    },
+    {
+      "index": "0x2239",
+      "name": "[P2.57]fine tune of midfrequency-vibration suppression's 1filter(0.01)",
+      "type": "INT",
+      "bit_size": 16,
+      "access": "rw",
+      "pdo_mapping": "",
+      "default": "0000",
+      "category": "manufacturer"
+    },
+    {
+      "index": "0x223A",
+      "name": "[P2.58]fine tune of midfrequency-vibration suppression's 2filter(0.01)",
+      "type": "INT",
+      "bit_size": 16,
+      "access": "rw",
+      "pdo_mapping": "",
+      "default": "0000",
+      "category": "manufacturer"
+    },
+    {
+      "index": "0x223C",
+      "name": "[P2.60]Speed observer enable",
+      "type": "INT",
+      "bit_size": 16,
+      "access": "rw",
+      "pdo_mapping": "",
+      "default": "0000",
+      "category": "manufacturer"
+    },
+    {
+      "index": "0x223D",
+      "name": "[P2.61]Speed observer gain",
+      "type": "INT",
+      "bit_size": 16,
+      "access": "rw",
+      "pdo_mapping": "",
+      "default": "0000",
+      "category": "manufacturer"
+    },
+    {
+      "index": "0x2246",
+      "name": "[P2.70]Friction compensation max-speed",
+      "type": "INT",
+      "bit_size": 16,
+      "access": "rw",
+      "pdo_mapping": "",
+      "default": "0000",
+      "category": "manufacturer"
+    },
+    {
+      "index": "0x2247",
+      "name": "[P2.71]Positive torque coefficient of friction compensation(0.1)",
+      "type": "INT",
+      "bit_size": 16,
+      "access": "rw",
+      "pdo_mapping": "",
+      "default": "0000",
+      "category": "manufacturer"
+    },
+    {
+      "index": "0x2248",
+      "name": "[P2.72]Negative torque coefficient of friction compensation(0.1)",
+      "type": "INT",
+      "bit_size": 16,
+      "access": "rw",
+      "pdo_mapping": "",
+      "default": "0000",
+      "category": "manufacturer"
+    },
+    {
+      "index": "0x2249",
+      "name": "[P2.73]Friction compensation enable",
+      "type": "INT",
+      "bit_size": 16,
+      "access": "rw",
+      "pdo_mapping": "",
+      "default": "0000",
+      "category": "manufacturer"
+    },
+    {
+      "index": "0x224A",
+      "name": "[P2.74]Tuningless Enable",
+      "type": "INT",
+      "bit_size": 16,
+      "access": "rw",
+      "pdo_mapping": "",
+      "default": "0000",
+      "category": "manufacturer"
+    },
+    {
+      "index": "0x224B",
+      "name": "[P2.75]Tuningless Gain(0.1)",
+      "type": "INT",
+      "bit_size": 16,
+      "access": "rw",
+      "pdo_mapping": "",
+      "default": "0000",
+      "category": "manufacturer"
+    },
+    {
+      "index": "0x224C",
+      "name": "[P2.76]Tuningless Robust Gain",
+      "type": "INT",
+      "bit_size": 16,
+      "access": "rw",
+      "pdo_mapping": "",
+      "default": "0000",
+      "category": "manufacturer"
+    },
+    {
+      "index": "0x224D",
+      "name": "[P2.77]Tuningless Disturb Observer Filter1(0.1)",
+      "type": "INT",
+      "bit_size": 16,
+      "access": "rw",
+      "pdo_mapping": "",
+      "default": "0000",
+      "category": "manufacturer"
+    },
+    {
+      "index": "0x224E",
+      "name": "[P2.78]Tuningless Disturb Observer Filter2(0.1)",
+      "type": "INT",
+      "bit_size": 16,
+      "access": "rw",
+      "pdo_mapping": "",
+      "default": "0000",
+      "category": "manufacturer"
+    },
+    {
+      "index": "0x224F",
+      "name": "[P2.79]Tuningless Speed Reference Phase Filter Enable",
+      "type": "INT",
+      "bit_size": 16,
+      "access": "rw",
+      "pdo_mapping": "",
+      "default": "0000",
+      "category": "manufacturer"
+    },
+    {
+      "index": "0x2250",
+      "name": "[P2.80]Tuningless Speed observer gain",
+      "type": "INT",
+      "bit_size": 16,
+      "access": "rw",
+      "pdo_mapping": "",
+      "default": "0000",
+      "category": "manufacturer"
+    },
+    {
+      "index": "0x2251",
+      "name": "[P2.81]Tuningless Speed Reference Filter(0.1)",
+      "type": "DINT",
+      "bit_size": 32,
+      "access": "rw",
+      "pdo_mapping": "",
+      "default": "0000",
+      "category": "manufacturer"
+    },
+    {
+      "index": "0x2252",
+      "name": "[P2.82]Tuningless Speed Reference Phase Cmp(0.1)",
+      "type": "DINT",
+      "bit_size": 32,
+      "access": "rw",
+      "pdo_mapping": "",
+      "default": "0000",
+      "category": "manufacturer"
+    },
+    {
+      "index": "0x2253",
+      "name": "[P2.83]Tuningless Disturb Compensate Torque Filter(0.01)",
+      "type": "DINT",
+      "bit_size": 32,
+      "access": "rw",
+      "pdo_mapping": "",
+      "default": "0000",
+      "category": "manufacturer"
+    },
+    {
+      "index": "0x2254",
+      "name": "[P2.84]Tuningless Speed Observer Input Filter(0.01)",
+      "type": "DINT",
+      "bit_size": 32,
+      "access": "rw",
+      "pdo_mapping": "",
+      "default": "0000",
+      "category": "manufacturer"
+    },
+    {
+      "index": "0x2255",
+      "name": "[P2.85]Torque feed-forward Select",
+      "type": "INT",
+      "bit_size": 16,
+      "access": "rw",
+      "pdo_mapping": "",
+      "default": "0000",
+      "category": "manufacturer"
+    },
+    {
+      "index": "0x2256",
+      "name": "[P2.86]Fluxweakening function Select",
+      "type": "DINT",
+      "bit_size": 32,
+      "access": "rw",
+      "pdo_mapping": "",
+      "default": "0000",
+      "category": "manufacturer"
+    },
+    {
+      "index": "0x2257",
+      "name": "[P2.87]Fluxweakening Vdc Utilization Ratio(0.1)",
+      "type": "DINT",
+      "bit_size": 32,
+      "access": "rw",
+      "pdo_mapping": "",
+      "default": "0000",
+      "category": "manufacturer"
+    },
+    {
+      "index": "0x2258",
+      "name": "[P2.88]Fluxweakening Openloop Bandwidth(0.1)",
+      "type": "DINT",
+      "bit_size": 32,
+      "access": "rw",
+      "pdo_mapping": "",
+      "default": "0000",
+      "category": "manufacturer"
+    },
+    {
+      "index": "0x2259",
+      "name": "[P2.89]Fluxweakening Closeloop Bandwidth(0.1)",
+      "type": "DINT",
+      "bit_size": 32,
+      "access": "rw",
+      "pdo_mapping": "",
+      "default": "0000",
+      "category": "manufacturer"
+    },
+    {
+      "index": "0x225A",
+      "name": "[P2.90]Max Id in Closeloop Fluxweakening(0.1)",
+      "type": "DINT",
+      "bit_size": 32,
+      "access": "rw",
+      "pdo_mapping": "",
+      "default": "0000",
+      "category": "manufacturer"
+    },
+    {
+      "index": "0x2300",
+      "name": "[P3.00]Digital 1 input selection",
+      "type": "UINT",
+      "bit_size": 16,
+      "access": "rw",
+      "pdo_mapping": "",
+      "default": "0000",
+      "category": "manufacturer"
+    },
+    {
+      "index": "0x2301",
+      "name": "[P3.01]Digital 2 input selection",
+      "type": "UINT",
+      "bit_size": 16,
+      "access": "rw",
+      "pdo_mapping": "",
+      "default": "0000",
+      "category": "manufacturer"
+    },
+    {
+      "index": "0x2302",
+      "name": "[P3.02]Digital 3 input selection",
+      "type": "UINT",
+      "bit_size": 16,
+      "access": "rw",
+      "pdo_mapping": "",
+      "default": "0000",
+      "category": "manufacturer"
+    },
+    {
+      "index": "0x2303",
+      "name": "[P3.03]Digital 4 input selection",
+      "type": "UINT",
+      "bit_size": 16,
+      "access": "rw",
+      "pdo_mapping": "",
+      "default": "0000",
+      "category": "manufacturer"
+    },
+    {
+      "index": "0x2304",
+      "name": "[P3.04]Digital 5 input selection",
+      "type": "UINT",
+      "bit_size": 16,
+      "access": "rw",
+      "pdo_mapping": "",
+      "default": "0000",
+      "category": "manufacturer"
+    },
+    {
+      "index": "0x2305",
+      "name": "[P3.05]Digital 6 input selection",
+      "type": "UINT",
+      "bit_size": 16,
+      "access": "rw",
+      "pdo_mapping": "",
+      "default": "0000",
+      "category": "manufacturer"
+    },
+    {
+      "index": "0x2306",
+      "name": "[P3.06]Digital 7 input selection",
+      "type": "UINT",
+      "bit_size": 16,
+      "access": "rw",
+      "pdo_mapping": "",
+      "default": "0000",
+      "category": "manufacturer"
+    },
+    {
+      "index": "0x2307",
+      "name": "[P3.07]Digital 8 input selection",
+      "type": "UINT",
+      "bit_size": 16,
+      "access": "rw",
+      "pdo_mapping": "",
+      "default": "0000",
+      "category": "manufacturer"
+    },
+    {
+      "index": "0x2308",
+      "name": "[P3.08]Digital 9 input selection",
+      "type": "UINT",
+      "bit_size": 16,
+      "access": "rw",
+      "pdo_mapping": "",
+      "default": "0000",
+      "category": "manufacturer"
+    },
+    {
+      "index": "0x2309",
+      "name": "[P3.09]Digital 10 input selection",
+      "type": "UINT",
+      "bit_size": 16,
+      "access": "rw",
+      "pdo_mapping": "",
+      "default": "0000",
+      "category": "manufacturer"
+    },
+    {
+      "index": "0x230A",
+      "name": "[P3.10]Digital 1 output selection",
+      "type": "UINT",
+      "bit_size": 16,
+      "access": "rw",
+      "pdo_mapping": "",
+      "default": "0000",
+      "category": "manufacturer"
+    },
+    {
+      "index": "0x230B",
+      "name": "[P3.11]Digital 2 output selection",
+      "type": "UINT",
+      "bit_size": 16,
+      "access": "rw",
+      "pdo_mapping": "",
+      "default": "0000",
+      "category": "manufacturer"
+    },
+    {
+      "index": "0x230C",
+      "name": "[P3.12]Digital 3 output selection",
+      "type": "UINT",
+      "bit_size": 16,
+      "access": "rw",
+      "pdo_mapping": "",
+      "default": "0000",
+      "category": "manufacturer"
+    },
+    {
+      "index": "0x230D",
+      "name": "[P3.13]Digital 4 output selection",
+      "type": "UINT",
+      "bit_size": 16,
+      "access": "rw",
+      "pdo_mapping": "",
+      "default": "0000",
+      "category": "manufacturer"
+    },
+    {
+      "index": "0x230E",
+      "name": "[P3.14]Digital 5 output selection",
+      "type": "UINT",
+      "bit_size": 16,
+      "access": "rw",
+      "pdo_mapping": "",
+      "default": "0000",
+      "category": "manufacturer"
+    },
+    {
+      "index": "0x230F",
+      "name": "[P3.15]Digital 6 output selection",
+      "type": "UINT",
+      "bit_size": 16,
+      "access": "rw",
+      "pdo_mapping": "",
+      "default": "0000",
+      "category": "manufacturer"
+    },
+    {
+      "index": "0x2310",
+      "name": "[P3.16]Mode of DI cap",
+      "type": "UINT",
+      "bit_size": 16,
+      "access": "rw",
+      "pdo_mapping": "",
+      "default": "0000",
+      "category": "manufacturer"
+    },
+    {
+      "index": "0x2314",
+      "name": "[P3.20]Offset of Analog input 1(0.001)",
+      "type": "DINT",
+      "bit_size": 32,
+      "access": "rw",
+      "pdo_mapping": "",
+      "default": "0000",
+      "category": "manufacturer"
+    },
+    {
+      "index": "0x2315",
+      "name": "[P3.21]Filter time of Analog input 1(0.1)",
+      "type": "INT",
+      "bit_size": 16,
+      "access": "rw",
+      "pdo_mapping": "",
+      "default": "0000",
+      "category": "manufacturer"
+    },
+    {
+      "index": "0x2316",
+      "name": "[P3.22]Protect voltage of Analog input 1(0.001)",
+      "type": "DINT",
+      "bit_size": 32,
+      "access": "rw",
+      "pdo_mapping": "",
+      "default": "0000",
+      "category": "manufacturer"
+    },
+    {
+      "index": "0x2317",
+      "name": "[P3.23]Offset of Analog input 2(0.001)",
+      "type": "DINT",
+      "bit_size": 32,
+      "access": "rw",
+      "pdo_mapping": "",
+      "default": "0000",
+      "category": "manufacturer"
+    },
+    {
+      "index": "0x2318",
+      "name": "[P3.24]Filter time of Analog input 2(0.1)",
+      "type": "INT",
+      "bit_size": 16,
+      "access": "rw",
+      "pdo_mapping": "",
+      "default": "0000",
+      "category": "manufacturer"
+    },
+    {
+      "index": "0x2319",
+      "name": "[P3.25]Protect voltage of Analog input 2(0.001)",
+      "type": "DINT",
+      "bit_size": 32,
+      "access": "rw",
+      "pdo_mapping": "",
+      "default": "0000",
+      "category": "manufacturer"
+    },
+    {
+      "index": "0x231A",
+      "name": "[P3.26]Function selection of Analog input 1",
+      "type": "INT",
+      "bit_size": 16,
+      "access": "rw",
+      "pdo_mapping": "",
+      "default": "0000",
+      "category": "manufacturer"
+    },
+    {
+      "index": "0x231B",
+      "name": "[P3.27]Function selection of Analog input 2",
+      "type": "INT",
+      "bit_size": 16,
+      "access": "rw",
+      "pdo_mapping": "",
+      "default": "0000",
+      "category": "manufacturer"
+    },
+    {
+      "index": "0x231C",
+      "name": "[P3.28]Speed compensation gain from analog input(0.1)",
+      "type": "INT",
+      "bit_size": 16,
+      "access": "rw",
+      "pdo_mapping": "",
+      "default": "0000",
+      "category": "manufacturer"
+    },
+    {
+      "index": "0x231D",
+      "name": "[P3.29]Torque compensation gain from analog input(0.1)",
+      "type": "INT",
+      "bit_size": 16,
+      "access": "rw",
+      "pdo_mapping": "",
+      "default": "0000",
+      "category": "manufacturer"
+    },
+    {
+      "index": "0x231E",
+      "name": "[P3.30]Analog output 1 selection",
+      "type": "INT",
+      "bit_size": 16,
+      "access": "rw",
+      "pdo_mapping": "",
+      "default": "0000",
+      "category": "manufacturer"
+    },
+    {
+      "index": "0x231F",
+      "name": "[P3.31]Gain of Analog output 1",
+      "type": "DINT",
+      "bit_size": 32,
+      "access": "rw",
+      "pdo_mapping": "",
+      "default": "0000",
+      "category": "manufacturer"
+    },
+    {
+      "index": "0x2320",
+      "name": "[P3.32]Analog output 2 selection",
+      "type": "INT",
+      "bit_size": 16,
+      "access": "rw",
+      "pdo_mapping": "",
+      "default": "0000",
+      "category": "manufacturer"
+    },
+    {
+      "index": "0x2321",
+      "name": "[P3.33]Gain of Analog output 2",
+      "type": "DINT",
+      "bit_size": 32,
+      "access": "rw",
+      "pdo_mapping": "",
+      "default": "0000",
+      "category": "manufacturer"
+    },
+    {
+      "index": "0x2322",
+      "name": "[P3.34]Offset of Analog output 1(0.001)",
+      "type": "DINT",
+      "bit_size": 32,
+      "access": "rw",
+      "pdo_mapping": "",
+      "default": "0000",
+      "category": "manufacturer"
+    },
+    {
+      "index": "0x2323",
+      "name": "[P3.35]Offset of Analog output 2(0.001)",
+      "type": "DINT",
+      "bit_size": 32,
+      "access": "rw",
+      "pdo_mapping": "",
+      "default": "0000",
+      "category": "manufacturer"
+    },
+    {
+      "index": "0x2324",
+      "name": "[P3.36]Analog output mode selection",
+      "type": "INT",
+      "bit_size": 16,
+      "access": "rw",
+      "pdo_mapping": "",
+      "default": "0000",
+      "category": "manufacturer"
+    },
+    {
+      "index": "0x2328",
+      "name": "[P3.40]Travel limit switch masking",
+      "type": "INT",
+      "bit_size": 16,
+      "access": "rw",
+      "pdo_mapping": "",
+      "default": "0000",
+      "category": "manufacturer"
+    },
+    {
+      "index": "0x2329",
+      "name": "[P3.41]Emergency stop masking",
+      "type": "INT",
+      "bit_size": 16,
+      "access": "rw",
+      "pdo_mapping": "",
+      "default": "0000",
+      "category": "manufacturer"
+    },
+    {
+      "index": "0x232B",
+      "name": "[P3.43]Sampling period of digital input",
+      "type": "INT",
+      "bit_size": 16,
+      "access": "rw",
+      "pdo_mapping": "",
+      "default": "0000",
+      "category": "manufacturer"
+    },
+    {
+      "index": "0x232C",
+      "name": "[P3.44]Pulse input prohibition invalid enabling",
+      "type": "INT",
+      "bit_size": 16,
+      "access": "rw",
+      "pdo_mapping": "",
+      "default": "0000",
+      "category": "manufacturer"
+    },
+    {
+      "index": "0x232D",
+      "name": "[P3.45]Pulse diff clear mode",
+      "type": "INT",
+      "bit_size": 16,
+      "access": "rw",
+      "pdo_mapping": "",
+      "default": "0000",
+      "category": "manufacturer"
+    },
+    {
+      "index": "0x2332",
+      "name": "[P3.50]Threshold of position reaching",
+      "type": "DINT",
+      "bit_size": 32,
+      "access": "rw",
+      "pdo_mapping": "",
+      "default": "0000",
+      "category": "manufacturer"
+    },
+    {
+      "index": "0x2333",
+      "name": "[P3.51]Output mode of position reaching",
+      "type": "INT",
+      "bit_size": 16,
+      "access": "rw",
+      "pdo_mapping": "",
+      "default": "0000",
+      "category": "manufacturer"
+    },
+    {
+      "index": "0x2334",
+      "name": "[P3.52]Hold time of position reaching",
+      "type": "INT",
+      "bit_size": 16,
+      "access": "rw",
+      "pdo_mapping": "",
+      "default": "0000",
+      "category": "manufacturer"
+    },
+    {
+      "index": "0x2335",
+      "name": "[P3.53]Threshold of speed consistent",
+      "type": "INT",
+      "bit_size": 16,
+      "access": "rw",
+      "pdo_mapping": "",
+      "default": "0000",
+      "category": "manufacturer"
+    },
+    {
+      "index": "0x2336",
+      "name": "[P3.54]Threshold of speed attained",
+      "type": "INT",
+      "bit_size": 16,
+      "access": "rw",
+      "pdo_mapping": "",
+      "default": "0000",
+      "category": "manufacturer"
+    },
+    {
+      "index": "0x2337",
+      "name": "[P3.55]Threshold of zero speed",
+      "type": "INT",
+      "bit_size": 16,
+      "access": "rw",
+      "pdo_mapping": "",
+      "default": "0000",
+      "category": "manufacturer"
+    },
+    {
+      "index": "0x2338",
+      "name": "[P3.56]Locked time of servo after braking",
+      "type": "INT",
+      "bit_size": 16,
+      "access": "rw",
+      "pdo_mapping": "",
+      "default": "0000",
+      "category": "manufacturer"
+    },
+    {
+      "index": "0x2339",
+      "name": "[P3.57]Delay of braking",
+      "type": "INT",
+      "bit_size": 16,
+      "access": "rw",
+      "pdo_mapping": "",
+      "default": "0000",
+      "category": "manufacturer"
+    },
+    {
+      "index": "0x233A",
+      "name": "[P3.58]Threshold speed of off-braking",
+      "type": "INT",
+      "bit_size": 16,
+      "access": "rw",
+      "pdo_mapping": "",
+      "default": "0000",
+      "category": "manufacturer"
+    },
+    {
+      "index": "0x233B",
+      "name": "[P3.59]Threshold of position reaching(0.1)",
+      "type": "INT",
+      "bit_size": 16,
+      "access": "rw",
+      "pdo_mapping": "",
+      "default": "0000",
+      "category": "manufacturer"
+    },
+    {
+      "index": "0x2346",
+      "name": "[P3.70]Analog input 3 selection",
+      "type": "INT",
+      "bit_size": 16,
+      "access": "rw",
+      "pdo_mapping": "",
+      "default": "0000",
+      "category": "manufacturer"
+    },
+    {
+      "index": "0x2347",
+      "name": "[P3.71]Offset of Analog input 3(0.001)",
+      "type": "DINT",
+      "bit_size": 32,
+      "access": "rw",
+      "pdo_mapping": "",
+      "default": "0000",
+      "category": "manufacturer"
+    },
+    {
+      "index": "0x2348",
+      "name": "[P3.72]Dead zone of Analog input 3(0.001)",
+      "type": "INT",
+      "bit_size": 16,
+      "access": "rw",
+      "pdo_mapping": "",
+      "default": "0000",
+      "category": "manufacturer"
+    },
+    {
+      "index": "0x2349",
+      "name": "[P3.73]Gain of Analog input 3",
+      "type": "DINT",
+      "bit_size": 32,
+      "access": "rw",
+      "pdo_mapping": "",
+      "default": "0000",
+      "category": "manufacturer"
+    },
+    {
+      "index": "0x234A",
+      "name": "[P3.74]Polarity of Analog input 3",
+      "type": "INT",
+      "bit_size": 16,
+      "access": "rw",
+      "pdo_mapping": "",
+      "default": "0000",
+      "category": "manufacturer"
+    },
+    {
+      "index": "0x234B",
+      "name": "[P3.75]Protect voltage of Analog input 3(0.001)",
+      "type": "DINT",
+      "bit_size": 32,
+      "access": "rw",
+      "pdo_mapping": "",
+      "default": "0000",
+      "category": "manufacturer"
+    },
+    {
+      "index": "0x234C",
+      "name": "[P3.76]Filter time of Analog input 3(0.1)",
+      "type": "INT",
+      "bit_size": 16,
+      "access": "rw",
+      "pdo_mapping": "",
+      "default": "0000",
+      "category": "manufacturer"
+    },
+    {
+      "index": "0x234D",
+      "name": "[P3.77]Analog input 3 selection",
+      "type": "INT",
+      "bit_size": 16,
+      "access": "rw",
+      "pdo_mapping": "",
+      "default": "0000",
+      "category": "manufacturer"
+    },
+    {
+      "index": "0x235A",
+      "name": "[P3.90]Analog input 3 selection",
+      "type": "INT",
+      "bit_size": 16,
+      "access": "rw",
+      "pdo_mapping": "",
+      "default": "0000",
+      "category": "manufacturer"
+    },
+    {
+      "index": "0x235B",
+      "name": "[P3.91]1st encoder filter",
+      "type": "INT",
+      "bit_size": 16,
+      "access": "rw",
+      "pdo_mapping": "",
+      "default": "0000",
+      "category": "manufacturer"
+    },
+    {
+      "index": "0x235C",
+      "name": "[P3.92]2nd encoder filter",
+      "type": "INT",
+      "bit_size": 16,
+      "access": "rw",
+      "pdo_mapping": "",
+      "default": "0000",
+      "category": "manufacturer"
+    },
+    {
+      "index": "0x2400",
+      "name": "[P4.00]EtherCAT communication address",
+      "type": "INT",
+      "bit_size": 16,
+      "access": "rw",
+      "pdo_mapping": "",
+      "default": "0000",
+      "category": "manufacturer"
+    },
+    {
+      "index": "0x2401",
+      "name": "[P4.01]485 Local communication address",
+      "type": "INT",
+      "bit_size": 16,
+      "access": "rw",
+      "pdo_mapping": "",
+      "default": "0000",
+      "category": "manufacturer"
+    },
+    {
+      "index": "0x2402",
+      "name": "[P4.02]Can baudrate selection",
+      "type": "INT",
+      "bit_size": 16,
+      "access": "rw",
+      "pdo_mapping": "",
+      "default": "0000",
+      "category": "manufacturer"
+    },
+    {
+      "index": "0x2403",
+      "name": "[P4.03]Communication baudrate selection",
+      "type": "INT",
+      "bit_size": 16,
+      "access": "rw",
+      "pdo_mapping": "",
+      "default": "0000",
+      "category": "manufacturer"
+    },
+    {
+      "index": "0x2404",
+      "name": "[P4.04]Communication parity mode",
+      "type": "INT",
+      "bit_size": 16,
+      "access": "rw",
+      "pdo_mapping": "",
+      "default": "0000",
+      "category": "manufacturer"
+    },
+    {
+      "index": "0x2405",
+      "name": "[P4.05]Can Local communication address",
+      "type": "INT",
+      "bit_size": 16,
+      "access": "rw",
+      "pdo_mapping": "",
+      "default": "0000",
+      "category": "manufacturer"
+    },
+    {
+      "index": "0x2406",
+      "name": "[P4.06]485 Local communication address",
+      "type": "INT",
+      "bit_size": 16,
+      "access": "rw",
+      "pdo_mapping": "",
+      "default": "0000",
+      "category": "manufacturer"
+    },
+    {
+      "index": "0x2407",
+      "name": "[P4.07]EtherCAT synchronisation period",
+      "type": "INT",
+      "bit_size": 16,
+      "access": "rw",
+      "pdo_mapping": "",
+      "default": "0000",
+      "category": "manufacturer"
+    },
+    {
+      "index": "0x2408",
+      "name": "[P4.08]EtherCAT synchronisation type",
+      "type": "INT",
+      "bit_size": 16,
+      "access": "rw",
+      "pdo_mapping": "",
+      "default": "0000",
+      "category": "manufacturer"
+    },
+    {
+      "index": "0x2409",
+      "name": "[P4.09]EtherCAT fault detect time",
+      "type": "INT",
+      "bit_size": 16,
+      "access": "rw",
+      "pdo_mapping": "",
+      "default": "0000",
+      "category": "manufacturer"
+    },
+    {
+      "index": "0x240A",
+      "name": "[P4.10]Master Type",
+      "type": "INT",
+      "bit_size": 16,
+      "access": "rw",
+      "pdo_mapping": "",
+      "default": "0000",
+      "category": "manufacturer"
+    },
+    {
+      "index": "0x240B",
+      "name": "[P4.11]Commnucation servo enabling",
+      "type": "INT",
+      "bit_size": 16,
+      "access": "rw",
+      "pdo_mapping": "",
+      "default": "0000",
+      "category": "manufacturer"
+    },
+    {
+      "index": "0x240C",
+      "name": "[P4.12]Bus Position command",
+      "type": "DINT",
+      "bit_size": 32,
+      "access": "rw",
+      "pdo_mapping": "",
+      "default": "0000",
+      "category": "manufacturer"
+    },
+    {
+      "index": "0x240D",
+      "name": "[P4.13]Bus Speed command",
+      "type": "INT",
+      "bit_size": 16,
+      "access": "rw",
+      "pdo_mapping": "",
+      "default": "0000",
+      "category": "manufacturer"
+    },
+    {
+      "index": "0x240E",
+      "name": "[P4.14]Bus Torque command(0.1)",
+      "type": "INT",
+      "bit_size": 16,
+      "access": "rw",
+      "pdo_mapping": "",
+      "default": "0000",
+      "category": "manufacturer"
+    },
+    {
+      "index": "0x240F",
+      "name": "[P4.15]Control mode switch enabling",
+      "type": "INT",
+      "bit_size": 16,
+      "access": "rw",
+      "pdo_mapping": "",
+      "default": "0000",
+      "category": "manufacturer"
+    },
+    {
+      "index": "0x2410",
+      "name": "[P4.16]Gain switch enabling",
+      "type": "INT",
+      "bit_size": 16,
+      "access": "rw",
+      "pdo_mapping": "",
+      "default": "0000",
+      "category": "manufacturer"
+    },
+    {
+      "index": "0x2411",
+      "name": "[P4.17]Numerator of electronic gear selection",
+      "type": "INT",
+      "bit_size": 16,
+      "access": "rw",
+      "pdo_mapping": "",
+      "default": "0000",
+      "category": "manufacturer"
+    },
+    {
+      "index": "0x2412",
+      "name": "[P4.18]Rotational inertia ratio switch command",
+      "type": "INT",
+      "bit_size": 16,
+      "access": "rw",
+      "pdo_mapping": "",
+      "default": "0000",
+      "category": "manufacturer"
+    },
+    {
+      "index": "0x2413",
+      "name": "[P4.19]Zero speed clamping enabling",
+      "type": "INT",
+      "bit_size": 16,
+      "access": "rw",
+      "pdo_mapping": "",
+      "default": "0000",
+      "category": "manufacturer"
+    },
+    {
+      "index": "0x2414",
+      "name": "[P4.20]Positon feedback clearing",
+      "type": "INT",
+      "bit_size": 16,
+      "access": "rw",
+      "pdo_mapping": "",
+      "default": "0000",
+      "category": "manufacturer"
+    },
+    {
+      "index": "0x2415",
+      "name": "[P4.21]Torge limit switch command",
+      "type": "INT",
+      "bit_size": 16,
+      "access": "rw",
+      "pdo_mapping": "",
+      "default": "0000",
+      "category": "manufacturer"
+    },
+    {
+      "index": "0x2416",
+      "name": "[P4.22]Extern error command",
+      "type": "INT",
+      "bit_size": 16,
+      "access": "rw",
+      "pdo_mapping": "",
+      "default": "0000",
+      "category": "manufacturer"
+    },
+    {
+      "index": "0x2417",
+      "name": "[P4.23]Emergency stop command",
+      "type": "INT",
+      "bit_size": 16,
+      "access": "rw",
+      "pdo_mapping": "",
+      "default": "0000",
+      "category": "manufacturer"
+    },
+    {
+      "index": "0x2418",
+      "name": "[P4.24]Quake decrease input command",
+      "type": "INT",
+      "bit_size": 16,
+      "access": "rw",
+      "pdo_mapping": "",
+      "default": "0000",
+      "category": "manufacturer"
+    },
+    {
+      "index": "0x2419",
+      "name": "[P4.25]EtherCAT control unit type",
+      "type": "INT",
+      "bit_size": 16,
+      "access": "rw",
+      "pdo_mapping": "",
+      "default": "0000",
+      "category": "manufacturer"
+    },
+    {
+      "index": "0x241A",
+      "name": "[P4.26]EtherCAT PDO input offset",
+      "type": "INT",
+      "bit_size": 16,
+      "access": "rw",
+      "pdo_mapping": "",
+      "default": "0000",
+      "category": "manufacturer"
+    },
+    {
+      "index": "0x241B",
+      "name": "[P4.27]EtherCAT position interpretation compensate number",
+      "type": "INT",
+      "bit_size": 16,
+      "access": "rw",
+      "pdo_mapping": "",
+      "default": "0000",
+      "category": "manufacturer"
+    },
+    {
+      "index": "0x241C",
+      "name": "[P4.28]EtherCAT Digital output enable",
+      "type": "INT",
+      "bit_size": 16,
+      "access": "rw",
+      "pdo_mapping": "",
+      "default": "0000",
+      "category": "manufacturer"
+    },
+    {
+      "index": "0x241D",
+      "name": "[P4.29]EtherCAT sdo cycle select",
+      "type": "INT",
+      "bit_size": 16,
+      "access": "rw",
+      "pdo_mapping": "",
+      "default": "0000",
+      "category": "manufacturer"
+    },
+    {
+      "index": "0x241E",
+      "name": "[P4.30]Stopping mode selection",
+      "type": "INT",
+      "bit_size": 16,
+      "access": "rw",
+      "pdo_mapping": "",
+      "default": "0000",
+      "category": "manufacturer"
+    },
+    {
+      "index": "0x241F",
+      "name": "[P4.31]Maximum speed limit",
+      "type": "INT",
+      "bit_size": 16,
+      "access": "rw",
+      "pdo_mapping": "",
+      "default": "0000",
+      "category": "manufacturer"
+    },
+    {
+      "index": "0x2420",
+      "name": "[P4.32]Threshold of over speed",
+      "type": "INT",
+      "bit_size": 16,
+      "access": "rw",
+      "pdo_mapping": "",
+      "default": "0000",
+      "category": "manufacturer"
+    },
+    {
+      "index": "0x2421",
+      "name": "[P4.33]Threshold of position error over high",
+      "type": "DINT",
+      "bit_size": 32,
+      "access": "rw",
+      "pdo_mapping": "",
+      "default": "0000",
+      "category": "manufacturer"
+    },
+    {
+      "index": "0x2422",
+      "name": "[P4.34]Brake overload detection enabling selection",
+      "type": "INT",
+      "bit_size": 16,
+      "access": "rw",
+      "pdo_mapping": "",
+      "default": "0000",
+      "category": "manufacturer"
+    },
+    {
+      "index": "0x2423",
+      "name": "[P4.35]lost control detect enable",
+      "type": "INT",
+      "bit_size": 16,
+      "access": "rw",
+      "pdo_mapping": "",
+      "default": "0000",
+      "category": "manufacturer"
+    },
+    {
+      "index": "0x2424",
+      "name": "[P4.36]Protect selection of lack voltage",
+      "type": "INT",
+      "bit_size": 16,
+      "access": "rw",
+      "pdo_mapping": "",
+      "default": "0000",
+      "category": "manufacturer"
+    },
+    {
+      "index": "0x2425",
+      "name": "[P4.37]Detection time of lack voltage",
+      "type": "INT",
+      "bit_size": 16,
+      "access": "rw",
+      "pdo_mapping": "",
+      "default": "0000",
+      "category": "manufacturer"
+    },
+    {
+      "index": "0x2426",
+      "name": "[P4.38]Motor overload ratio setting",
+      "type": "INT",
+      "bit_size": 16,
+      "access": "rw",
+      "pdo_mapping": "",
+      "default": "0000",
+      "category": "manufacturer"
+    },
+    {
+      "index": "0x2427",
+      "name": "[P4.39]Threshold of speed error over high",
+      "type": "INT",
+      "bit_size": 16,
+      "access": "rw",
+      "pdo_mapping": "",
+      "default": "0000",
+      "category": "manufacturer"
+    },
+    {
+      "index": "0x2428",
+      "name": "[P4.40]Positive speed limit",
+      "type": "INT",
+      "bit_size": 16,
+      "access": "rw",
+      "pdo_mapping": "",
+      "default": "0000",
+      "category": "manufacturer"
+    },
+    {
+      "index": "0x2429",
+      "name": "[P4.41]Negative speed limit",
+      "type": "INT",
+      "bit_size": 16,
+      "access": "rw",
+      "pdo_mapping": "",
+      "default": "0000",
+      "category": "manufacturer"
+    },
+    {
+      "index": "0x242A",
+      "name": "[P4.42]Internal high resolution speed(0.1)",
+      "type": "DINT",
+      "bit_size": 32,
+      "access": "rw",
+      "pdo_mapping": "",
+      "default": "0000",
+      "category": "manufacturer"
+    },
+    {
+      "index": "0x242B",
+      "name": "[P4.43]Torque limit shield and choosing of running cycle",
+      "type": "UINT",
+      "bit_size": 16,
+      "access": "rw",
+      "pdo_mapping": "",
+      "default": "0000",
+      "category": "manufacturer"
+    },
+    {
+      "index": "0x242C",
+      "name": "[P4.44]Threshold of Speed Control",
+      "type": "INT",
+      "bit_size": 16,
+      "access": "rw",
+      "pdo_mapping": "",
+      "default": "0000",
+      "category": "manufacturer"
+    },
+    {
+      "index": "0x242D",
+      "name": "[P4.45]protective value of Motor temperature",
+      "type": "INT",
+      "bit_size": 16,
+      "access": "rw",
+      "pdo_mapping": "",
+      "default": "0000",
+      "category": "manufacturer"
+    },
+    {
+      "index": "0x2432",
+      "name": "[P4.50]Offset setting of encoder Z pulse",
+      "type": "DINT",
+      "bit_size": 32,
+      "access": "rw",
+      "pdo_mapping": "",
+      "default": "0000",
+      "category": "manufacturer"
+    },
+    {
+      "index": "0x2433",
+      "name": "[P4.51]Transition time 1 of torque limit switch",
+      "type": "INT",
+      "bit_size": 16,
+      "access": "rw",
+      "pdo_mapping": "",
+      "default": "0000",
+      "category": "manufacturer"
+    },
+    {
+      "index": "0x2434",
+      "name": "[P4.52]Transition time 2 of torque limit switch",
+      "type": "INT",
+      "bit_size": 16,
+      "access": "rw",
+      "pdo_mapping": "",
+      "default": "0000",
+      "category": "manufacturer"
+    },
+    {
+      "index": "0x2435",
+      "name": "[P4.53]Fine tuning of current loop(0.1)",
+      "type": "INT",
+      "bit_size": 16,
+      "access": "rw",
+      "pdo_mapping": "",
+      "default": "0000",
+      "category": "manufacturer"
+    },
+    {
+      "index": "0x2436",
+      "name": "[P4.54]Time setting of initialization",
+      "type": "DINT",
+      "bit_size": 32,
+      "access": "rw",
+      "pdo_mapping": "",
+      "default": "0000",
+      "category": "manufacturer"
+    },
+    {
+      "index": "0x2437",
+      "name": "[P4.55]Encoder communication baud rate selection",
+      "type": "INT",
+      "bit_size": 16,
+      "access": "rw",
+      "pdo_mapping": "",
+      "default": "0000",
+      "category": "manufacturer"
+    },
+    {
+      "index": "0x243A",
+      "name": "[P4.58]width of The Z pulse output",
+      "type": "INT",
+      "bit_size": 16,
+      "access": "rw",
+      "pdo_mapping": "",
+      "default": "0000",
+      "category": "manufacturer"
+    },
+    {
+      "index": "0x243B",
+      "name": "[P4.59]Offset of The Z pulse output",
+      "type": "DINT",
+      "bit_size": 32,
+      "access": "rw",
+      "pdo_mapping": "",
+      "default": "0000",
+      "category": "manufacturer"
+    },
+    {
+      "index": "0x243C",
+      "name": "[P4.60]Numerator of external raster rule",
+      "type": "DINT",
+      "bit_size": 32,
+      "access": "rw",
+      "pdo_mapping": "",
+      "default": "0000",
+      "category": "manufacturer"
+    },
+    {
+      "index": "0x243D",
+      "name": "[P4.61]Denominator of external raster rule",
+      "type": "DINT",
+      "bit_size": 32,
+      "access": "rw",
+      "pdo_mapping": "",
+      "default": "0000",
+      "category": "manufacturer"
+    },
+    {
+      "index": "0x243E",
+      "name": "[P4.62]External raster rule direction reversing",
+      "type": "INT",
+      "bit_size": 16,
+      "access": "rw",
+      "pdo_mapping": "",
+      "default": "0000",
+      "category": "manufacturer"
+    },
+    {
+      "index": "0x2440",
+      "name": "[P4.64]Threshold of mixed error over high",
+      "type": "DINT",
+      "bit_size": 32,
+      "access": "rw",
+      "pdo_mapping": "",
+      "default": "0000",
+      "category": "manufacturer"
+    },
+    {
+      "index": "0x2441",
+      "name": "[P4.65]Mixed error clearing",
+      "type": "INT",
+      "bit_size": 16,
+      "access": "rw",
+      "pdo_mapping": "",
+      "default": "0000",
+      "category": "manufacturer"
+    },
+    {
+      "index": "0x2443",
+      "name": "[P4.67]External raster rule A/B pulse output mode selection",
+      "type": "INT",
+      "bit_size": 16,
+      "access": "rw",
+      "pdo_mapping": "",
+      "default": "0000",
+      "category": "manufacturer"
+    },
+    {
+      "index": "0x2444",
+      "name": "[P4.68]Grating (or 2rd encoder)resolution",
+      "type": "DINT",
+      "bit_size": 32,
+      "access": "rw",
+      "pdo_mapping": "",
+      "default": "0000",
+      "category": "manufacturer"
+    },
+    {
+      "index": "0x2445",
+      "name": "[P4.69]The frequency output source",
+      "type": "INT",
+      "bit_size": 16,
+      "access": "rw",
+      "pdo_mapping": "",
+      "default": "0000",
+      "category": "manufacturer"
+    },
+    {
+      "index": "0x2446",
+      "name": "[P4.70]Z pulse width of encoder",
+      "type": "INT",
+      "bit_size": 16,
+      "access": "rw",
+      "pdo_mapping": "",
+      "default": "0000",
+      "category": "manufacturer"
+    },
+    {
+      "index": "0x244E",
+      "name": "[P4.78]motionnet Local communication address",
+      "type": "INT",
+      "bit_size": 16,
+      "access": "rw",
+      "pdo_mapping": "",
+      "default": "0000",
+      "category": "manufacturer"
+    },
+    {
+      "index": "0x244F",
+      "name": "[P4.79]motionnet Local communication baudrate",
+      "type": "INT",
+      "bit_size": 16,
+      "access": "rw",
+      "pdo_mapping": "",
+      "default": "0000",
+      "category": "manufacturer"
+    },
+    {
+      "index": "0x245A",
+      "name": "[P4.90]Fault recover",
+      "type": "INT",
+      "bit_size": 16,
+      "access": "rw",
+      "pdo_mapping": "",
+      "default": "0000",
+      "category": "manufacturer"
+    },
+    {
+      "index": "0x245B",
+      "name": "[P4.91]Parameter save",
+      "type": "INT",
+      "bit_size": 16,
+      "access": "rw",
+      "pdo_mapping": "",
+      "default": "0000",
+      "category": "manufacturer"
+    },
+    {
+      "index": "0x245C",
+      "name": "[P4.92]Default parameter recall",
+      "type": "INT",
+      "bit_size": 16,
+      "access": "rw",
+      "pdo_mapping": "",
+      "default": "0000",
+      "category": "manufacturer"
+    },
+    {
+      "index": "0x245D",
+      "name": "[P4.93]Fault record reading enabling",
+      "type": "INT",
+      "bit_size": 16,
+      "access": "rw",
+      "pdo_mapping": "",
+      "default": "0000",
+      "category": "manufacturer"
+    },
+    {
+      "index": "0x245E",
+      "name": "[P4.94]Fault record clearing enablinbg",
+      "type": "INT",
+      "bit_size": 16,
+      "access": "rw",
+      "pdo_mapping": "",
+      "default": "0000",
+      "category": "manufacturer"
+    },
+    {
+      "index": "0x245F",
+      "name": "[P4.95]Index of fault record reading",
+      "type": "INT",
+      "bit_size": 16,
+      "access": "rw",
+      "pdo_mapping": "",
+      "default": "0000",
+      "category": "manufacturer"
+    },
+    {
+      "index": "0x2460",
+      "name": "[P4.96]Encoder offset auto-tuning",
+      "type": "INT",
+      "bit_size": 16,
+      "access": "rw",
+      "pdo_mapping": "",
+      "default": "0000",
+      "category": "manufacturer"
+    },
+    {
+      "index": "0x2461",
+      "name": "[P4.97]Absolute encoder EEPROM operation",
+      "type": "INT",
+      "bit_size": 16,
+      "access": "rw",
+      "pdo_mapping": "",
+      "default": "0000",
+      "category": "manufacturer"
+    },
+    {
+      "index": "0x2462",
+      "name": "[P4.98]Absolute encoder EEPROM shield",
+      "type": "INT",
+      "bit_size": 16,
+      "access": "rw",
+      "pdo_mapping": "",
+      "default": "0000",
+      "category": "manufacturer"
+    },
+    {
+      "index": "0x2500",
+      "name": "[P5.00]Jog mode selection",
+      "type": "INT",
+      "bit_size": 16,
+      "access": "rw",
+      "pdo_mapping": "",
+      "default": "0000",
+      "category": "manufacturer"
+    },
+    {
+      "index": "0x2501",
+      "name": "[P5.01]Jog distance setting",
+      "type": "DINT",
+      "bit_size": 32,
+      "access": "rw",
+      "pdo_mapping": "",
+      "default": "0000",
+      "category": "manufacturer"
+    },
+    {
+      "index": "0x2502",
+      "name": "[P5.02]Jog speed setting",
+      "type": "INT",
+      "bit_size": 16,
+      "access": "rw",
+      "pdo_mapping": "",
+      "default": "0000",
+      "category": "manufacturer"
+    },
+    {
+      "index": "0x2503",
+      "name": "[P5.03]Jog acceleration/aeceleration time setting",
+      "type": "INT",
+      "bit_size": 16,
+      "access": "rw",
+      "pdo_mapping": "",
+      "default": "0000",
+      "category": "manufacturer"
+    },
+    {
+      "index": "0x2504",
+      "name": "[P5.04]Jog waiting time setting",
+      "type": "INT",
+      "bit_size": 16,
+      "access": "rw",
+      "pdo_mapping": "",
+      "default": "0000",
+      "category": "manufacturer"
+    },
+    {
+      "index": "0x2505",
+      "name": "[P5.05]Jog run cycles",
+      "type": "INT",
+      "bit_size": 16,
+      "access": "rw",
+      "pdo_mapping": "",
+      "default": "0000",
+      "category": "manufacturer"
+    },
+    {
+      "index": "0x2509",
+      "name": "[P5.09]Homing acceleration time",
+      "type": "DINT",
+      "bit_size": 32,
+      "access": "rw",
+      "pdo_mapping": "",
+      "default": "0000",
+      "category": "manufacturer"
+    },
+    {
+      "index": "0x250A",
+      "name": "[P5.10]Homing mode",
+      "type": "INT",
+      "bit_size": 16,
+      "access": "rw",
+      "pdo_mapping": "",
+      "default": "0000",
+      "category": "manufacturer"
+    },
+    {
+      "index": "0x250B",
+      "name": "[P5.11]Automatic homing after power up",
+      "type": "INT",
+      "bit_size": 16,
+      "access": "rw",
+      "pdo_mapping": "",
+      "default": "0000",
+      "category": "manufacturer"
+    },
+    {
+      "index": "0x250C",
+      "name": "[P5.12]1st speed setting of high speed homing",
+      "type": "INT",
+      "bit_size": 16,
+      "access": "rw",
+      "pdo_mapping": "",
+      "default": "0000",
+      "category": "manufacturer"
+    },
+    {
+      "index": "0x250D",
+      "name": "[P5.13]2nd speed setting of low speed homing",
+      "type": "INT",
+      "bit_size": 16,
+      "access": "rw",
+      "pdo_mapping": "",
+      "default": "0000",
+      "category": "manufacturer"
+    },
+    {
+      "index": "0x250E",
+      "name": "[P5.14]Origin setting of homing",
+      "type": "DINT",
+      "bit_size": 32,
+      "access": "rw",
+      "pdo_mapping": "",
+      "default": "0000",
+      "category": "manufacturer"
+    },
+    {
+      "index": "0x250F",
+      "name": "[P5.15]Homing trigger cmd",
+      "type": "INT",
+      "bit_size": 16,
+      "access": "rw",
+      "pdo_mapping": "",
+      "default": "0000",
+      "category": "manufacturer"
+    },
+    {
+      "index": "0x2510",
+      "name": "[P5.16]Homing relevant action",
+      "type": "INT",
+      "bit_size": 16,
+      "access": "rw",
+      "pdo_mapping": "",
+      "default": "0000",
+      "category": "manufacturer"
+    },
+    {
+      "index": "0x2511",
+      "name": "[P5.17]The speed to target after homing",
+      "type": "INT",
+      "bit_size": 16,
+      "access": "rw",
+      "pdo_mapping": "",
+      "default": "0000",
+      "category": "manufacturer"
+    },
+    {
+      "index": "0x2512",
+      "name": "[P5.18]The AccDec time to target after homing",
+      "type": "INT",
+      "bit_size": 16,
+      "access": "rw",
+      "pdo_mapping": "",
+      "default": "0000",
+      "category": "manufacturer"
+    },
+    {
+      "index": "0x2513",
+      "name": "[P5.19]The target positon after homing",
+      "type": "DINT",
+      "bit_size": 32,
+      "access": "rw",
+      "pdo_mapping": "",
+      "default": "0000",
+      "category": "manufacturer"
+    },
+    {
+      "index": "0x2514",
+      "name": "[P5.20]Trigger position index",
+      "type": "INT",
+      "bit_size": 16,
+      "access": "rw",
+      "pdo_mapping": "",
+      "default": "0000",
+      "category": "manufacturer"
+    },
+    {
+      "index": "0x2515",
+      "name": "[P5.21]Target speed 00",
+      "type": "INT",
+      "bit_size": 16,
+      "access": "rw",
+      "pdo_mapping": "",
+      "default": "0000",
+      "category": "manufacturer"
+    },
+    {
+      "index": "0x2516",
+      "name": "[P5.22]Target speed 01",
+      "type": "INT",
+      "bit_size": 16,
+      "access": "rw",
+      "pdo_mapping": "",
+      "default": "0000",
+      "category": "manufacturer"
+    },
+    {
+      "index": "0x2517",
+      "name": "[P5.23]Target speed 02",
+      "type": "INT",
+      "bit_size": 16,
+      "access": "rw",
+      "pdo_mapping": "",
+      "default": "0000",
+      "category": "manufacturer"
+    },
+    {
+      "index": "0x2518",
+      "name": "[P5.24]Target speed 03",
+      "type": "INT",
+      "bit_size": 16,
+      "access": "rw",
+      "pdo_mapping": "",
+      "default": "0000",
+      "category": "manufacturer"
+    },
+    {
+      "index": "0x2519",
+      "name": "[P5.25]Target speed 04",
+      "type": "INT",
+      "bit_size": 16,
+      "access": "rw",
+      "pdo_mapping": "",
+      "default": "0000",
+      "category": "manufacturer"
+    },
+    {
+      "index": "0x251A",
+      "name": "[P5.26]Target speed 05",
+      "type": "INT",
+      "bit_size": 16,
+      "access": "rw",
+      "pdo_mapping": "",
+      "default": "0000",
+      "category": "manufacturer"
+    },
+    {
+      "index": "0x251B",
+      "name": "[P5.27]Target speed 06",
+      "type": "INT",
+      "bit_size": 16,
+      "access": "rw",
+      "pdo_mapping": "",
+      "default": "0000",
+      "category": "manufacturer"
+    },
+    {
+      "index": "0x251C",
+      "name": "[P5.28]Target speed 07",
+      "type": "INT",
+      "bit_size": 16,
+      "access": "rw",
+      "pdo_mapping": "",
+      "default": "0000",
+      "category": "manufacturer"
+    },
+    {
+      "index": "0x251D",
+      "name": "[P5.29]Target speed 08",
+      "type": "INT",
+      "bit_size": 16,
+      "access": "rw",
+      "pdo_mapping": "",
+      "default": "0000",
+      "category": "manufacturer"
+    },
+    {
+      "index": "0x251E",
+      "name": "[P5.30]Target speed 09",
+      "type": "INT",
+      "bit_size": 16,
+      "access": "rw",
+      "pdo_mapping": "",
+      "default": "0000",
+      "category": "manufacturer"
+    },
+    {
+      "index": "0x251F",
+      "name": "[P5.31]Target speed 10",
+      "type": "INT",
+      "bit_size": 16,
+      "access": "rw",
+      "pdo_mapping": "",
+      "default": "0000",
+      "category": "manufacturer"
+    },
+    {
+      "index": "0x2520",
+      "name": "[P5.32]Target speed 11",
+      "type": "INT",
+      "bit_size": 16,
+      "access": "rw",
+      "pdo_mapping": "",
+      "default": "0000",
+      "category": "manufacturer"
+    },
+    {
+      "index": "0x2521",
+      "name": "[P5.33]Target speed 12",
+      "type": "INT",
+      "bit_size": 16,
+      "access": "rw",
+      "pdo_mapping": "",
+      "default": "0000",
+      "category": "manufacturer"
+    },
+    {
+      "index": "0x2522",
+      "name": "[P5.34]Target speed 13",
+      "type": "INT",
+      "bit_size": 16,
+      "access": "rw",
+      "pdo_mapping": "",
+      "default": "0000",
+      "category": "manufacturer"
+    },
+    {
+      "index": "0x2523",
+      "name": "[P5.35]Target speed 14",
+      "type": "INT",
+      "bit_size": 16,
+      "access": "rw",
+      "pdo_mapping": "",
+      "default": "0000",
+      "category": "manufacturer"
+    },
+    {
+      "index": "0x2524",
+      "name": "[P5.36]Target speed 15",
+      "type": "INT",
+      "bit_size": 16,
+      "access": "rw",
+      "pdo_mapping": "",
+      "default": "0000",
+      "category": "manufacturer"
+    },
+    {
+      "index": "0x2525",
+      "name": "[P5.37]Acceleration or deceleration time 00",
+      "type": "INT",
+      "bit_size": 16,
+      "access": "rw",
+      "pdo_mapping": "",
+      "default": "0000",
+      "category": "manufacturer"
+    },
+    {
+      "index": "0x2526",
+      "name": "[P5.38]Acceleration or deceleration time 01",
+      "type": "INT",
+      "bit_size": 16,
+      "access": "rw",
+      "pdo_mapping": "",
+      "default": "0000",
+      "category": "manufacturer"
+    },
+    {
+      "index": "0x2527",
+      "name": "[P5.39]Acceleration or deceleration time 02",
+      "type": "INT",
+      "bit_size": 16,
+      "access": "rw",
+      "pdo_mapping": "",
+      "default": "0000",
+      "category": "manufacturer"
+    },
+    {
+      "index": "0x2528",
+      "name": "[P5.40]Acceleration or deceleration time 03",
+      "type": "INT",
+      "bit_size": 16,
+      "access": "rw",
+      "pdo_mapping": "",
+      "default": "0000",
+      "category": "manufacturer"
+    },
+    {
+      "index": "0x2529",
+      "name": "[P5.41]Acceleration or deceleration time 04",
+      "type": "INT",
+      "bit_size": 16,
+      "access": "rw",
+      "pdo_mapping": "",
+      "default": "0000",
+      "category": "manufacturer"
+    },
+    {
+      "index": "0x252A",
+      "name": "[P5.42]Acceleration or deceleration time 05",
+      "type": "INT",
+      "bit_size": 16,
+      "access": "rw",
+      "pdo_mapping": "",
+      "default": "0000",
+      "category": "manufacturer"
+    },
+    {
+      "index": "0x252B",
+      "name": "[P5.43]Acceleration or deceleration time 06",
+      "type": "INT",
+      "bit_size": 16,
+      "access": "rw",
+      "pdo_mapping": "",
+      "default": "0000",
+      "category": "manufacturer"
+    },
+    {
+      "index": "0x252C",
+      "name": "[P5.44]Acceleration or deceleration time 07",
+      "type": "INT",
+      "bit_size": 16,
+      "access": "rw",
+      "pdo_mapping": "",
+      "default": "0000",
+      "category": "manufacturer"
+    },
+    {
+      "index": "0x252D",
+      "name": "[P5.45]Acceleration or deceleration time 08",
+      "type": "INT",
+      "bit_size": 16,
+      "access": "rw",
+      "pdo_mapping": "",
+      "default": "0000",
+      "category": "manufacturer"
+    },
+    {
+      "index": "0x252E",
+      "name": "[P5.46]Acceleration or deceleration time 09",
+      "type": "INT",
+      "bit_size": 16,
+      "access": "rw",
+      "pdo_mapping": "",
+      "default": "0000",
+      "category": "manufacturer"
+    },
+    {
+      "index": "0x252F",
+      "name": "[P5.47]Acceleration or deceleration time 10",
+      "type": "INT",
+      "bit_size": 16,
+      "access": "rw",
+      "pdo_mapping": "",
+      "default": "0000",
+      "category": "manufacturer"
+    },
+    {
+      "index": "0x2530",
+      "name": "[P5.48]Acceleration or deceleration time 11",
+      "type": "INT",
+      "bit_size": 16,
+      "access": "rw",
+      "pdo_mapping": "",
+      "default": "0000",
+      "category": "manufacturer"
+    },
+    {
+      "index": "0x2531",
+      "name": "[P5.49]Acceleration or deceleration time 12",
+      "type": "INT",
+      "bit_size": 16,
+      "access": "rw",
+      "pdo_mapping": "",
+      "default": "0000",
+      "category": "manufacturer"
+    },
+    {
+      "index": "0x2532",
+      "name": "[P5.50]Acceleration or deceleration time 13",
+      "type": "INT",
+      "bit_size": 16,
+      "access": "rw",
+      "pdo_mapping": "",
+      "default": "0000",
+      "category": "manufacturer"
+    },
+    {
+      "index": "0x2533",
+      "name": "[P5.51]Acceleration or deceleration time 14",
+      "type": "INT",
+      "bit_size": 16,
+      "access": "rw",
+      "pdo_mapping": "",
+      "default": "0000",
+      "category": "manufacturer"
+    },
+    {
+      "index": "0x2534",
+      "name": "[P5.52]Acceleration or deceleration time 15",
+      "type": "INT",
+      "bit_size": 16,
+      "access": "rw",
+      "pdo_mapping": "",
+      "default": "0000",
+      "category": "manufacturer"
+    },
+    {
+      "index": "0x2535",
+      "name": "[P5.53]Delay time 00",
+      "type": "UINT",
+      "bit_size": 16,
+      "access": "rw",
+      "pdo_mapping": "",
+      "default": "0000",
+      "category": "manufacturer"
+    },
+    {
+      "index": "0x2536",
+      "name": "[P5.54]Delay time 01",
+      "type": "UINT",
+      "bit_size": 16,
+      "access": "rw",
+      "pdo_mapping": "",
+      "default": "0000",
+      "category": "manufacturer"
+    },
+    {
+      "index": "0x2537",
+      "name": "[P5.55]Delay time 02",
+      "type": "UINT",
+      "bit_size": 16,
+      "access": "rw",
+      "pdo_mapping": "",
+      "default": "0000",
+      "category": "manufacturer"
+    },
+    {
+      "index": "0x2538",
+      "name": "[P5.56]Delay time 03",
+      "type": "UINT",
+      "bit_size": 16,
+      "access": "rw",
+      "pdo_mapping": "",
+      "default": "0000",
+      "category": "manufacturer"
+    },
+    {
+      "index": "0x2539",
+      "name": "[P5.57]Delay time 04",
+      "type": "UINT",
+      "bit_size": 16,
+      "access": "rw",
+      "pdo_mapping": "",
+      "default": "0000",
+      "category": "manufacturer"
+    },
+    {
+      "index": "0x253A",
+      "name": "[P5.58]Delay time 05",
+      "type": "UINT",
+      "bit_size": 16,
+      "access": "rw",
+      "pdo_mapping": "",
+      "default": "0000",
+      "category": "manufacturer"
+    },
+    {
+      "index": "0x253B",
+      "name": "[P5.59]Delay time 06",
+      "type": "UINT",
+      "bit_size": 16,
+      "access": "rw",
+      "pdo_mapping": "",
+      "default": "0000",
+      "category": "manufacturer"
+    },
+    {
+      "index": "0x253C",
+      "name": "[P5.60]Delay time 07",
+      "type": "UINT",
+      "bit_size": 16,
+      "access": "rw",
+      "pdo_mapping": "",
+      "default": "0000",
+      "category": "manufacturer"
+    },
+    {
+      "index": "0x253D",
+      "name": "[P5.61]Delay time 08",
+      "type": "UINT",
+      "bit_size": 16,
+      "access": "rw",
+      "pdo_mapping": "",
+      "default": "0000",
+      "category": "manufacturer"
+    },
+    {
+      "index": "0x253E",
+      "name": "[P5.62]Delay time 09",
+      "type": "UINT",
+      "bit_size": 16,
+      "access": "rw",
+      "pdo_mapping": "",
+      "default": "0000",
+      "category": "manufacturer"
+    },
+    {
+      "index": "0x253F",
+      "name": "[P5.63]Delay time 10",
+      "type": "UINT",
+      "bit_size": 16,
+      "access": "rw",
+      "pdo_mapping": "",
+      "default": "0000",
+      "category": "manufacturer"
+    },
+    {
+      "index": "0x2540",
+      "name": "[P5.64]Delay time 11",
+      "type": "UINT",
+      "bit_size": 16,
+      "access": "rw",
+      "pdo_mapping": "",
+      "default": "0000",
+      "category": "manufacturer"
+    },
+    {
+      "index": "0x2541",
+      "name": "[P5.65]Delay time 12",
+      "type": "UINT",
+      "bit_size": 16,
+      "access": "rw",
+      "pdo_mapping": "",
+      "default": "0000",
+      "category": "manufacturer"
+    },
+    {
+      "index": "0x2542",
+      "name": "[P5.66]Delay time 13",
+      "type": "UINT",
+      "bit_size": 16,
+      "access": "rw",
+      "pdo_mapping": "",
+      "default": "0000",
+      "category": "manufacturer"
+    },
+    {
+      "index": "0x2543",
+      "name": "[P5.67]Delay time 14",
+      "type": "UINT",
+      "bit_size": 16,
+      "access": "rw",
+      "pdo_mapping": "",
+      "default": "0000",
+      "category": "manufacturer"
+    },
+    {
+      "index": "0x2544",
+      "name": "[P5.68]Delay time 15",
+      "type": "UINT",
+      "bit_size": 16,
+      "access": "rw",
+      "pdo_mapping": "",
+      "default": "0000",
+      "category": "manufacturer"
+    },
+    {
+      "index": "0x2545",
+      "name": "[P5.69]PtP Buffer enable",
+      "type": "UINT",
+      "bit_size": 16,
+      "access": "rw",
+      "pdo_mapping": "",
+      "default": "0000",
+      "category": "manufacturer"
+    },
+    {
+      "index": "0x2546",
+      "name": "[P5.70]Revolving table resolution",
+      "type": "DINT",
+      "bit_size": 32,
+      "access": "rw",
+      "pdo_mapping": "",
+      "default": "0000",
+      "category": "manufacturer"
+    },
+    {
+      "index": "0x2547",
+      "name": "[P5.71]Revolving table switch",
+      "type": "UINT",
+      "bit_size": 16,
+      "access": "rw",
+      "pdo_mapping": "",
+      "default": "0000",
+      "category": "manufacturer"
+    },
+    {
+      "index": "0x2548",
+      "name": "[P5.72]Super multi circle mode",
+      "type": "UINT",
+      "bit_size": 16,
+      "access": "rw",
+      "pdo_mapping": "",
+      "default": "0000",
+      "category": "manufacturer"
+    },
+    {
+      "index": "0x2549",
+      "name": "[P5.73]DI trigger mode of PtP",
+      "type": "UINT",
+      "bit_size": 16,
+      "access": "rw",
+      "pdo_mapping": "",
+      "default": "0000",
+      "category": "manufacturer"
+    },
+    {
+      "index": "0x254A",
+      "name": "[P5.74]DO output mode of PtP",
+      "type": "UINT",
+      "bit_size": 16,
+      "access": "rw",
+      "pdo_mapping": "",
+      "default": "0000",
+      "category": "manufacturer"
+    },
+    {
+      "index": "0x254B",
+      "name": "[P5.75]PtP interrupt Pause Enable",
+      "type": "UINT",
+      "bit_size": 16,
+      "access": "rw",
+      "pdo_mapping": "",
+      "default": "0000",
+      "category": "manufacturer"
+    },
+    {
+      "index": "0x2600",
+      "name": "[P6.00]The forward JOG speed(Low)",
+      "type": "INT",
+      "bit_size": 16,
+      "access": "rw",
+      "pdo_mapping": "",
+      "default": "0000",
+      "category": "manufacturer"
+    },
+    {
+      "index": "0x2601",
+      "name": "[P6.01]The reverse JOG speed(Low)",
+      "type": "INT",
+      "bit_size": 16,
+      "access": "rw",
+      "pdo_mapping": "",
+      "default": "0000",
+      "category": "manufacturer"
+    },
+    {
+      "index": "0x2602",
+      "name": "[P6.02]Position latch enable",
+      "type": "INT",
+      "bit_size": 16,
+      "access": "rw",
+      "pdo_mapping": "",
+      "default": "0000",
+      "category": "manufacturer"
+    },
+    {
+      "index": "0x2603",
+      "name": "[P6.03]The mode of position latch",
+      "type": "INT",
+      "bit_size": 16,
+      "access": "rw",
+      "pdo_mapping": "",
+      "default": "0000",
+      "category": "manufacturer"
+    },
+    {
+      "index": "0x2604",
+      "name": "[P6.04]The forward JOG speed(High)",
+      "type": "INT",
+      "bit_size": 16,
+      "access": "rw",
+      "pdo_mapping": "",
+      "default": "0000",
+      "category": "manufacturer"
+    },
+    {
+      "index": "0x2605",
+      "name": "[P6.05]The reverse JOG speed(High)",
+      "type": "INT",
+      "bit_size": 16,
+      "access": "rw",
+      "pdo_mapping": "",
+      "default": "0000",
+      "category": "manufacturer"
+    },
+    {
+      "index": "0x2606",
+      "name": "[P6.06]DI JOG enable",
+      "type": "INT",
+      "bit_size": 16,
+      "access": "rw",
+      "pdo_mapping": "",
+      "default": "0000",
+      "category": "manufacturer"
+    },
+    {
+      "index": "0x2614",
+      "name": "[P6.20]Turret enable",
+      "type": "INT",
+      "bit_size": 16,
+      "access": "rw",
+      "pdo_mapping": "",
+      "default": "0000",
+      "category": "manufacturer"
+    },
+    {
+      "index": "0x2615",
+      "name": "[P6.21]Turret number",
+      "type": "INT",
+      "bit_size": 16,
+      "access": "rw",
+      "pdo_mapping": "",
+      "default": "0000",
+      "category": "manufacturer"
+    },
+    {
+      "index": "0x2616",
+      "name": "[P6.22]Pulse counts per revolution for turret",
+      "type": "DINT",
+      "bit_size": 32,
+      "access": "rw",
+      "pdo_mapping": "",
+      "default": "0000",
+      "category": "manufacturer"
+    },
+    {
+      "index": "0x2617",
+      "name": "[P6.23]Offset of turret",
+      "type": "DINT",
+      "bit_size": 32,
+      "access": "rw",
+      "pdo_mapping": "",
+      "default": "0000",
+      "category": "manufacturer"
+    },
+    {
+      "index": "0x3000",
+      "name": "[R0.00]Speed feedback of motor(0.1)",
+      "type": "DINT",
+      "bit_size": 32,
+      "access": "ro",
+      "pdo_mapping": "",
+      "default": "0000",
+      "category": "manufacturer"
+    },
+    {
+      "index": "0x3001",
+      "name": "[R0.01]Speed command of motor(0.1)",
+      "type": "DINT",
+      "bit_size": 32,
+      "access": "ro",
+      "pdo_mapping": "",
+      "default": "0000",
+      "category": "manufacturer"
+    },
+    {
+      "index": "0x3002",
+      "name": "[R0.02]Position feedback accumulation",
+      "type": "DINT",
+      "bit_size": 32,
+      "access": "ro",
+      "pdo_mapping": "",
+      "default": "0000",
+      "category": "manufacturer"
+    },
+    {
+      "index": "0x3003",
+      "name": "[R0.03]Position command accumulation",
+      "type": "DINT",
+      "bit_size": 32,
+      "access": "ro",
+      "pdo_mapping": "",
+      "default": "0000",
+      "category": "manufacturer"
+    },
+    {
+      "index": "0x3004",
+      "name": "[R0.04]Position error",
+      "type": "DINT",
+      "bit_size": 32,
+      "access": "ro",
+      "pdo_mapping": "",
+      "default": "0000",
+      "category": "manufacturer"
+    },
+    {
+      "index": "0x3005",
+      "name": "[R0.05]Mixed control error",
+      "type": "DINT",
+      "bit_size": 32,
+      "access": "ro",
+      "pdo_mapping": "",
+      "default": "0000",
+      "category": "manufacturer"
+    },
+    {
+      "index": "0x3006",
+      "name": "[R0.06]Torque feedback(0.1)",
+      "type": "DINT",
+      "bit_size": 32,
+      "access": "ro",
+      "pdo_mapping": "",
+      "default": "0000",
+      "category": "manufacturer"
+    },
+    {
+      "index": "0x3007",
+      "name": "[R0.07]DC bus voltage(0.1)",
+      "type": "DINT",
+      "bit_size": 32,
+      "access": "ro",
+      "pdo_mapping": "",
+      "default": "0000",
+      "category": "manufacturer"
+    },
+    {
+      "index": "0x3008",
+      "name": "[R0.08]Control cicuit DC voltage(0.1)",
+      "type": "DINT",
+      "bit_size": 32,
+      "access": "ro",
+      "pdo_mapping": "",
+      "default": "0000",
+      "category": "manufacturer"
+    },
+    {
+      "index": "0x3009",
+      "name": "[R0.09]Output voltage(0.1)",
+      "type": "DINT",
+      "bit_size": 32,
+      "access": "ro",
+      "pdo_mapping": "",
+      "default": "0000",
+      "category": "manufacturer"
+    },
+    {
+      "index": "0x300A",
+      "name": "[R0.10]Output current(0.01)",
+      "type": "DINT",
+      "bit_size": 32,
+      "access": "ro",
+      "pdo_mapping": "",
+      "default": "0000",
+      "category": "manufacturer"
+    },
+    {
+      "index": "0x300B",
+      "name": "[R0.11]Driver temperature(0.1)",
+      "type": "DINT",
+      "bit_size": 32,
+      "access": "ro",
+      "pdo_mapping": "",
+      "default": "0000",
+      "category": "manufacturer"
+    },
+    {
+      "index": "0x300C",
+      "name": "[R0.12]Torque limit(0.1)",
+      "type": "DINT",
+      "bit_size": 32,
+      "access": "ro",
+      "pdo_mapping": "",
+      "default": "0000",
+      "category": "manufacturer"
+    },
+    {
+      "index": "0x300D",
+      "name": "[R0.13]Encoder feedback",
+      "type": "DINT",
+      "bit_size": 32,
+      "access": "ro",
+      "pdo_mapping": "",
+      "default": "0000",
+      "category": "manufacturer"
+    },
+    {
+      "index": "0x300E",
+      "name": "[R0.14]Position relative to Z pulse",
+      "type": "DINT",
+      "bit_size": 32,
+      "access": "ro",
+      "pdo_mapping": "",
+      "default": "0000",
+      "category": "manufacturer"
+    },
+    {
+      "index": "0x300F",
+      "name": "[R0.15]Rotational inertia ratio of load to motor",
+      "type": "INT",
+      "bit_size": 16,
+      "access": "ro",
+      "pdo_mapping": "",
+      "default": "0000",
+      "category": "manufacturer"
+    },
+    {
+      "index": "0x3010",
+      "name": "[R0.16]Output power(0.1)",
+      "type": "DINT",
+      "bit_size": 32,
+      "access": "ro",
+      "pdo_mapping": "",
+      "default": "0000",
+      "category": "manufacturer"
+    },
+    {
+      "index": "0x3011",
+      "name": "[R0.17]Overload ratio(0.1)",
+      "type": "DINT",
+      "bit_size": 32,
+      "access": "ro",
+      "pdo_mapping": "",
+      "default": "0000",
+      "category": "manufacturer"
+    },
+    {
+      "index": "0x3012",
+      "name": "[R0.18]Actual numerator of electronic gear",
+      "type": "DINT",
+      "bit_size": 32,
+      "access": "ro",
+      "pdo_mapping": "",
+      "default": "0000",
+      "category": "manufacturer"
+    },
+    {
+      "index": "0x3013",
+      "name": "[R0.19]Actual denorminator of electronic gear",
+      "type": "DINT",
+      "bit_size": 32,
+      "access": "ro",
+      "pdo_mapping": "",
+      "default": "0000",
+      "category": "manufacturer"
+    },
+    {
+      "index": "0x3014",
+      "name": "[R0.20]Pos command speed(0.1)",
+      "type": "DINT",
+      "bit_size": 32,
+      "access": "ro",
+      "pdo_mapping": "",
+      "default": "0000",
+      "category": "manufacturer"
+    },
+    {
+      "index": "0x3015",
+      "name": "[R0.21]Speed feedback(0.1)",
+      "type": "DINT",
+      "bit_size": 32,
+      "access": "ro",
+      "pdo_mapping": "",
+      "default": "0000",
+      "category": "manufacturer"
+    },
+    {
+      "index": "0x3016",
+      "name": "[R0.22]Status of ptp",
+      "type": "INT",
+      "bit_size": 16,
+      "access": "ro",
+      "pdo_mapping": "",
+      "default": "0000",
+      "category": "manufacturer"
+    },
+    {
+      "index": "0x3017",
+      "name": "[R0.23]Encoder absoulution postion feedback",
+      "type": "DINT",
+      "bit_size": 32,
+      "access": "ro",
+      "pdo_mapping": "",
+      "default": "0000",
+      "category": "manufacturer"
+    },
+    {
+      "index": "0x3018",
+      "name": "[R0.24]EEPROM encoder data state",
+      "type": "INT",
+      "bit_size": 16,
+      "access": "ro",
+      "pdo_mapping": "",
+      "default": "0000",
+      "category": "manufacturer"
+    },
+    {
+      "index": "0x3019",
+      "name": "[R0.25]Encoder turns",
+      "type": "INT",
+      "bit_size": 16,
+      "access": "ro",
+      "pdo_mapping": "",
+      "default": "0000",
+      "category": "manufacturer"
+    },
+    {
+      "index": "0x301A",
+      "name": "[R0.26]Support type encoder",
+      "type": "INT",
+      "bit_size": 16,
+      "access": "ro",
+      "pdo_mapping": "",
+      "default": "0000",
+      "category": "manufacturer"
+    },
+    {
+      "index": "0x301B",
+      "name": "[R0.27]EtherCAT clock synchronization correction state",
+      "type": "INT",
+      "bit_size": 16,
+      "access": "ro",
+      "pdo_mapping": "",
+      "default": "0000",
+      "category": "manufacturer"
+    },
+    {
+      "index": "0x301C",
+      "name": "[R0.28]CANopen FSM state",
+      "type": "INT",
+      "bit_size": 16,
+      "access": "ro",
+      "pdo_mapping": "",
+      "default": "0000",
+      "category": "manufacturer"
+    },
+    {
+      "index": "0x301D",
+      "name": "[R0.29]profibus-dp nodeid",
+      "type": "INT",
+      "bit_size": 16,
+      "access": "ro",
+      "pdo_mapping": "",
+      "default": "0000",
+      "category": "manufacturer"
+    },
+    {
+      "index": "0x301E",
+      "name": "[R0.30]System state",
+      "type": "INT",
+      "bit_size": 16,
+      "access": "ro",
+      "pdo_mapping": "",
+      "default": "0000",
+      "category": "manufacturer"
+    },
+    {
+      "index": "0x301F",
+      "name": "[R0.31]IGBT state",
+      "type": "UINT",
+      "bit_size": 16,
+      "access": "ro",
+      "pdo_mapping": "",
+      "default": "0000",
+      "category": "manufacturer"
+    },
+    {
+      "index": "0x3020",
+      "name": "[R0.32]Current run mode",
+      "type": "INT",
+      "bit_size": 16,
+      "access": "ro",
+      "pdo_mapping": "",
+      "default": "0000",
+      "category": "manufacturer"
+    },
+    {
+      "index": "0x3021",
+      "name": "[R0.33]Power on time",
+      "type": "UDINT",
+      "bit_size": 32,
+      "access": "ro",
+      "pdo_mapping": "",
+      "default": "0000",
+      "category": "manufacturer"
+    },
+    {
+      "index": "0x3022",
+      "name": "[R0.34]Run time",
+      "type": "UDINT",
+      "bit_size": 32,
+      "access": "ro",
+      "pdo_mapping": "",
+      "default": "0000",
+      "category": "manufacturer"
+    },
+    {
+      "index": "0x3023",
+      "name": "[R0.35]Software version of DSP(0.01)",
+      "type": "INT",
+      "bit_size": 16,
+      "access": "ro",
+      "pdo_mapping": "",
+      "default": "0000",
+      "category": "manufacturer"
+    },
+    {
+      "index": "0x3024",
+      "name": "[R0.36]Software version of FPGA(0.01)",
+      "type": "INT",
+      "bit_size": 16,
+      "access": "ro",
+      "pdo_mapping": "",
+      "default": "0000",
+      "category": "manufacturer"
+    },
+    {
+      "index": "0x3025",
+      "name": "[R0.37]Software version of Communication Card(0.01)",
+      "type": "INT",
+      "bit_size": 16,
+      "access": "ro",
+      "pdo_mapping": "",
+      "default": "0000",
+      "category": "manufacturer"
+    },
+    {
+      "index": "0x3026",
+      "name": "[R0.38]Driver serial number 1",
+      "type": "DINT",
+      "bit_size": 32,
+      "access": "ro",
+      "pdo_mapping": "",
+      "default": "0000",
+      "category": "manufacturer"
+    },
+    {
+      "index": "0x3027",
+      "name": "[R0.39]Driver serial number 2",
+      "type": "DINT",
+      "bit_size": 32,
+      "access": "ro",
+      "pdo_mapping": "",
+      "default": "0000",
+      "category": "manufacturer"
+    },
+    {
+      "index": "0x3028",
+      "name": "[R0.40]Driver serial number 3",
+      "type": "DINT",
+      "bit_size": 32,
+      "access": "ro",
+      "pdo_mapping": "",
+      "default": "0000",
+      "category": "manufacturer"
+    },
+    {
+      "index": "0x3029",
+      "name": "[R0.41]Driver serial number 4",
+      "type": "DINT",
+      "bit_size": 32,
+      "access": "ro",
+      "pdo_mapping": "",
+      "default": "0000",
+      "category": "manufacturer"
+    },
+    {
+      "index": "0x302A",
+      "name": "[R0.42]Driver serial number 5",
+      "type": "DINT",
+      "bit_size": 32,
+      "access": "ro",
+      "pdo_mapping": "",
+      "default": "0000",
+      "category": "manufacturer"
+    },
+    {
+      "index": "0x302B",
+      "name": "[R0.43]Driver serial number 6",
+      "type": "DINT",
+      "bit_size": 32,
+      "access": "ro",
+      "pdo_mapping": "",
+      "default": "0000",
+      "category": "manufacturer"
+    },
+    {
+      "index": "0x302C",
+      "name": "[R0.44]Absolute position of grating rule (2rd encoder) position feedback",
+      "type": "DINT",
+      "bit_size": 32,
+      "access": "ro",
+      "pdo_mapping": "",
+      "default": "0000",
+      "category": "manufacturer"
+    },
+    {
+      "index": "0x302D",
+      "name": "[R0.45]Second encoder speed feedback(0.1)",
+      "type": "DINT",
+      "bit_size": 32,
+      "access": "ro",
+      "pdo_mapping": "",
+      "default": "0000",
+      "category": "manufacturer"
+    },
+    {
+      "index": "0x302E",
+      "name": "[R0.46]Speed speed observer(0.1)",
+      "type": "DINT",
+      "bit_size": 32,
+      "access": "ro",
+      "pdo_mapping": "",
+      "default": "0000",
+      "category": "manufacturer"
+    },
+    {
+      "index": "0x302F",
+      "name": "[R0.47]Speed observer feedback speed(0.1)",
+      "type": "DINT",
+      "bit_size": 32,
+      "access": "ro",
+      "pdo_mapping": "",
+      "default": "0000",
+      "category": "manufacturer"
+    },
+    {
+      "index": "0x3030",
+      "name": "[R0.48]The disturbance observer disturbance torque(0.1)",
+      "type": "DINT",
+      "bit_size": 32,
+      "access": "ro",
+      "pdo_mapping": "",
+      "default": "0000",
+      "category": "manufacturer"
+    },
+    {
+      "index": "0x3031",
+      "name": "[R0.49]The Full-loop vibration suppressor compensation value(0.1)",
+      "type": "DINT",
+      "bit_size": 32,
+      "access": "ro",
+      "pdo_mapping": "",
+      "default": "0000",
+      "category": "manufacturer"
+    },
+    {
+      "index": "0x3032",
+      "name": "[R0.50]Version of EtherCAT config file(0.01)",
+      "type": "INT",
+      "bit_size": 16,
+      "access": "ro",
+      "pdo_mapping": "",
+      "default": "0000",
+      "category": "manufacturer"
+    },
+    {
+      "index": "0x3033",
+      "name": "[R0.51]Rotational inertia ratio of load to motor",
+      "type": "DINT",
+      "bit_size": 32,
+      "access": "ro",
+      "pdo_mapping": "",
+      "default": "0000",
+      "category": "manufacturer"
+    },
+    {
+      "index": "0x3034",
+      "name": "[R0.52]Grating rule position feedback accumulation",
+      "type": "DINT",
+      "bit_size": 32,
+      "access": "ro",
+      "pdo_mapping": "",
+      "default": "0000",
+      "category": "manufacturer"
+    },
+    {
+      "index": "0x3035",
+      "name": "[R0.53]R053",
+      "type": "DINT",
+      "bit_size": 32,
+      "access": "ro",
+      "pdo_mapping": "",
+      "default": "0000",
+      "category": "manufacturer"
+    },
+    {
+      "index": "0x3036",
+      "name": "[R0.54]Grating rule (2rd encoder) position feedback",
+      "type": "DINT",
+      "bit_size": 32,
+      "access": "ro",
+      "pdo_mapping": "",
+      "default": "0000",
+      "category": "manufacturer"
+    },
+    {
+      "index": "0x3037",
+      "name": "[R0.55]",
+      "type": "DINT",
+      "bit_size": 32,
+      "access": "ro",
+      "pdo_mapping": "",
+      "default": "0000",
+      "category": "manufacturer"
+    },
+    {
+      "index": "0x3038",
+      "name": "[R0.56]",
+      "type": "DINT",
+      "bit_size": 32,
+      "access": "ro",
+      "pdo_mapping": "",
+      "default": "0000",
+      "category": "manufacturer"
+    },
+    {
+      "index": "0x3039",
+      "name": "[R0.57]2rd encoder position feedback accumulation",
+      "type": "DINT",
+      "bit_size": 32,
+      "access": "ro",
+      "pdo_mapping": "",
+      "default": "0000",
+      "category": "manufacturer"
+    },
+    {
+      "index": "0x303A",
+      "name": "[R0.58]Position of disk",
+      "type": "DINT",
+      "bit_size": 32,
+      "access": "ro",
+      "pdo_mapping": "",
+      "default": "0000",
+      "category": "manufacturer"
+    },
+    {
+      "index": "0x303C",
+      "name": "[R0.60]Motor temperature",
+      "type": "DINT",
+      "bit_size": 32,
+      "access": "ro",
+      "pdo_mapping": "",
+      "default": "0000",
+      "category": "manufacturer"
+    },
+    {
+      "index": "0x3063",
+      "name": "[R0.99]Error code",
+      "type": "INT",
+      "bit_size": 16,
+      "access": "ro",
+      "pdo_mapping": "",
+      "default": "0000",
+      "category": "manufacturer"
+    },
+    {
+      "index": "0x3100",
+      "name": "[R1.00]Digital input state",
+      "type": "UINT",
+      "bit_size": 16,
+      "access": "ro",
+      "pdo_mapping": "",
+      "default": "0000",
+      "category": "manufacturer"
+    },
+    {
+      "index": "0x3101",
+      "name": "[R1.01]Digital output state",
+      "type": "UINT",
+      "bit_size": 16,
+      "access": "ro",
+      "pdo_mapping": "",
+      "default": "0000",
+      "category": "manufacturer"
+    },
+    {
+      "index": "0x3102",
+      "name": "[R1.02]AD value of analog input 1(0.001)",
+      "type": "DINT",
+      "bit_size": 32,
+      "access": "ro",
+      "pdo_mapping": "",
+      "default": "0000",
+      "category": "manufacturer"
+    },
+    {
+      "index": "0x3103",
+      "name": "[R1.03]AD value of analog input 2(0.001)",
+      "type": "DINT",
+      "bit_size": 32,
+      "access": "ro",
+      "pdo_mapping": "",
+      "default": "0000",
+      "category": "manufacturer"
+    },
+    {
+      "index": "0x3104",
+      "name": "[R1.04]AD value of analog input 3(0.001)",
+      "type": "DINT",
+      "bit_size": 32,
+      "access": "ro",
+      "pdo_mapping": "",
+      "default": "0000",
+      "category": "manufacturer"
+    },
+    {
+      "index": "0x3105",
+      "name": "[R1.05]Voltage of analog input 1(0.001)",
+      "type": "DINT",
+      "bit_size": 32,
+      "access": "ro",
+      "pdo_mapping": "",
+      "default": "0000",
+      "category": "manufacturer"
+    },
+    {
+      "index": "0x3106",
+      "name": "[R1.06]Voltage of analog input 2(0.001)",
+      "type": "DINT",
+      "bit_size": 32,
+      "access": "ro",
+      "pdo_mapping": "",
+      "default": "0000",
+      "category": "manufacturer"
+    },
+    {
+      "index": "0x3107",
+      "name": "[R1.07]Voltage of analog input 3(0.001)",
+      "type": "DINT",
+      "bit_size": 32,
+      "access": "ro",
+      "pdo_mapping": "",
+      "default": "0000",
+      "category": "manufacturer"
+    },
+    {
+      "index": "0x3108",
+      "name": "[R1.08]Voltage of analog output 1(0.001)",
+      "type": "DINT",
+      "bit_size": 32,
+      "access": "ro",
+      "pdo_mapping": "",
+      "default": "0000",
+      "category": "manufacturer"
+    },
+    {
+      "index": "0x3109",
+      "name": "[R1.09]Voltage of analog output 2(0.001)",
+      "type": "DINT",
+      "bit_size": 32,
+      "access": "ro",
+      "pdo_mapping": "",
+      "default": "0000",
+      "category": "manufacturer"
+    },
+    {
+      "index": "0x310A",
+      "name": "[R1.10]Voltage of analog output 3(0.001)",
+      "type": "DINT",
+      "bit_size": 32,
+      "access": "ro",
+      "pdo_mapping": "",
+      "default": "0000",
+      "category": "manufacturer"
+    },
+    {
+      "index": "0x310B",
+      "name": "[R1.11]Pulse input accumulation",
+      "type": "DINT",
+      "bit_size": 32,
+      "access": "ro",
+      "pdo_mapping": "",
+      "default": "0000",
+      "category": "manufacturer"
+    },
+    {
+      "index": "0x310C",
+      "name": "[R1.12]Pulse input position command",
+      "type": "DINT",
+      "bit_size": 32,
+      "access": "ro",
+      "pdo_mapping": "",
+      "default": "0000",
+      "category": "manufacturer"
+    },
+    {
+      "index": "0x310D",
+      "name": "[R1.13]Pulse input position command(0.1)",
+      "type": "DINT",
+      "bit_size": 32,
+      "access": "ro",
+      "pdo_mapping": "",
+      "default": "0000",
+      "category": "manufacturer"
+    },
+    {
+      "index": "0x310E",
+      "name": "[R1.14]Analog speed compensation(0.1)",
+      "type": "DINT",
+      "bit_size": 32,
+      "access": "ro",
+      "pdo_mapping": "",
+      "default": "0000",
+      "category": "manufacturer"
+    },
+    {
+      "index": "0x310F",
+      "name": "[R1.15]Analog torge compensation(0.1)",
+      "type": "DINT",
+      "bit_size": 32,
+      "access": "ro",
+      "pdo_mapping": "",
+      "default": "0000",
+      "category": "manufacturer"
+    },
+    {
+      "index": "0x3110",
+      "name": "[R1.16]Position of DI cap",
+      "type": "DINT",
+      "bit_size": 32,
+      "access": "ro",
+      "pdo_mapping": "",
+      "default": "0000",
+      "category": "manufacturer"
+    },
+    {
+      "index": "0x3111",
+      "name": "[R1.17]Total Position of DI cap",
+      "type": "DINT",
+      "bit_size": 32,
+      "access": "ro",
+      "pdo_mapping": "",
+      "default": "0000",
+      "category": "manufacturer"
+    },
+    {
+      "index": "0x3112",
+      "name": "[R1.18]Position of DI cap ENC2",
+      "type": "DINT",
+      "bit_size": 32,
+      "access": "ro",
+      "pdo_mapping": "",
+      "default": "0000",
+      "category": "manufacturer"
+    },
+    {
+      "index": "0x3113",
+      "name": "[R1.19]Total Position of DI cap ENC2",
+      "type": "DINT",
+      "bit_size": 32,
+      "access": "ro",
+      "pdo_mapping": "",
+      "default": "0000",
+      "category": "manufacturer"
+    },
+    {
+      "index": "0x3114",
+      "name": "[R1.17]Digital output state1",
+      "type": "UDINT",
+      "bit_size": 32,
+      "access": "ro",
+      "pdo_mapping": "",
+      "default": "0000",
+      "category": "manufacturer"
+    },
+    {
+      "index": "0x4000",
+      "name": "Error code",
+      "type": "UINT",
+      "bit_size": 16,
+      "access": "ro",
+      "pdo_mapping": "",
+      "default": "0000",
+      "category": "manufacturer"
+    },
+    {
+      "index": "0x4001",
+      "name": "Servo Temperature",
+      "type": "INT",
+      "bit_size": 16,
+      "access": "ro",
+      "pdo_mapping": "",
+      "default": "0000",
+      "category": "manufacturer"
+    },
+    {
+      "index": "0x4002",
+      "name": "Parameter save",
+      "type": "INT",
+      "bit_size": 16,
+      "access": "rw",
+      "pdo_mapping": "",
+      "default": "0000",
+      "category": "manufacturer"
+    },
+    {
+      "index": "0x4003",
+      "name": "Parameter restore",
+      "type": "INT",
+      "bit_size": 16,
+      "access": "rw",
+      "pdo_mapping": "",
+      "default": "0000",
+      "category": "manufacturer"
+    },
+    {
+      "index": "0x4004",
+      "name": "software reset",
+      "type": "INT",
+      "bit_size": 16,
+      "access": "rw",
+      "pdo_mapping": "",
+      "default": "0000",
+      "category": "manufacturer"
+    },
+    {
+      "index": "0x400D",
+      "name": "Encoder Feedback",
+      "type": "DINT",
+      "bit_size": 32,
+      "access": "ro",
+      "pdo_mapping": "",
+      "default": "00000000",
+      "category": "manufacturer"
+    },
+    {
+      "index": "0x4019",
+      "name": "multi number of turns",
+      "type": "INT",
+      "bit_size": 16,
+      "access": "ro",
+      "pdo_mapping": "",
+      "default": "0000",
+      "category": "manufacturer"
+    },
+    {
+      "index": "0x4020",
+      "name": "Encoder Feedback Cap",
+      "type": "DINT",
+      "bit_size": 32,
+      "access": "ro",
+      "pdo_mapping": "",
+      "default": "00000000",
+      "category": "manufacturer"
+    },
+    {
+      "index": "0x4021",
+      "name": "multi number of turns Cap",
+      "type": "INT",
+      "bit_size": 16,
+      "access": "ro",
+      "pdo_mapping": "",
+      "default": "0000",
+      "category": "manufacturer"
+    },
+    {
+      "index": "0x4100",
+      "name": "Analog output1",
+      "type": "DINT",
+      "bit_size": 32,
+      "access": "rw",
+      "pdo_mapping": "",
+      "default": "0000",
+      "category": "manufacturer"
+    },
+    {
+      "index": "0x4101",
+      "name": "Analog output2",
+      "type": "DINT",
+      "bit_size": 32,
+      "access": "rw",
+      "pdo_mapping": "",
+      "default": "0000",
+      "category": "manufacturer"
+    },
+    {
+      "index": "0x4300",
+      "name": "driver paramets",
+      "type": "DT4300",
+      "bit_size": 112,
+      "access": "ro",
+      "pdo_mapping": "",
+      "default": null,
+      "category": "manufacturer"
+    },
+    {
+      "index": "0x603F",
+      "name": "Error Code(CIA402)",
+      "type": "UINT",
+      "bit_size": 16,
+      "access": "ro",
+      "pdo_mapping": "",
+      "default": "0000",
+      "category": "cia402"
+    },
+    {
+      "index": "0x6040",
+      "name": "Control word",
+      "type": "UINT",
+      "bit_size": 16,
+      "access": "rw",
+      "pdo_mapping": "R",
+      "default": "0000",
+      "category": "cia402"
+    },
+    {
+      "index": "0x6041",
+      "name": "Status word",
+      "type": "UINT",
+      "bit_size": 16,
+      "access": "ro",
+      "pdo_mapping": "T",
+      "default": "0000",
+      "category": "cia402"
+    },
+    {
+      "index": "0x6042",
+      "name": "vl target velocity",
+      "type": "INT",
+      "bit_size": 16,
+      "access": "rw",
+      "pdo_mapping": "",
+      "default": "0000",
+      "category": "cia402"
+    },
+    {
+      "index": "0x6043",
+      "name": "vl velocity demand",
+      "type": "INT",
+      "bit_size": 16,
+      "access": "ro",
+      "pdo_mapping": "",
+      "default": "0000",
+      "category": "cia402"
+    },
+    {
+      "index": "0x6044",
+      "name": "vl control effort",
+      "type": "INT",
+      "bit_size": 16,
+      "access": "ro",
+      "pdo_mapping": "",
+      "default": "0000",
+      "category": "cia402"
+    },
+    {
+      "index": "0x6046",
+      "name": "vl velocity min max amount",
+      "type": "DT6046",
+      "bit_size": 80,
+      "access": "rw",
+      "pdo_mapping": "",
+      "default": null,
+      "category": "cia402"
+    },
+    {
+      "index": "0x6047",
+      "name": "vl velocity min max",
+      "type": "DT6047",
+      "bit_size": 144,
+      "access": "rw",
+      "pdo_mapping": "",
+      "default": null,
+      "category": "cia402"
+    },
+    {
+      "index": "0x605D",
+      "name": "Halt option code",
+      "type": "INT",
+      "bit_size": 16,
+      "access": "rw",
+      "pdo_mapping": "",
+      "default": "0000",
+      "category": "cia402"
+    },
+    {
+      "index": "0x6060",
+      "name": "Operation Mode",
+      "type": "SINT",
+      "bit_size": 8,
+      "access": "rw",
+      "pdo_mapping": "R",
+      "default": "00",
+      "category": "cia402"
+    },
+    {
+      "index": "0x6061",
+      "name": "Operation Mode Display",
+      "type": "SINT",
+      "bit_size": 8,
+      "access": "ro",
+      "pdo_mapping": "T",
+      "default": "00",
+      "category": "cia402"
+    },
+    {
+      "index": "0x6063",
+      "name": "Position actual value*",
+      "type": "DINT",
+      "bit_size": 32,
+      "access": "ro",
+      "pdo_mapping": "",
+      "default": "00000000",
+      "category": "cia402"
+    },
+    {
+      "index": "0x6064",
+      "name": "Position actual value",
+      "type": "DINT",
+      "bit_size": 32,
+      "access": "ro",
+      "pdo_mapping": "T",
+      "default": "00000000",
+      "category": "cia402"
+    },
+    {
+      "index": "0x6065",
+      "name": "Following error window",
+      "type": "UDINT",
+      "bit_size": 32,
+      "access": "rw",
+      "pdo_mapping": "",
+      "default": "00000000",
+      "category": "cia402"
+    },
+    {
+      "index": "0x6066",
+      "name": "Following error time out",
+      "type": "UINT",
+      "bit_size": 16,
+      "access": "rw",
+      "pdo_mapping": "",
+      "default": "0000",
+      "category": "cia402"
+    },
+    {
+      "index": "0x606C",
+      "name": "Actual Velocity",
+      "type": "DINT",
+      "bit_size": 32,
+      "access": "ro",
+      "pdo_mapping": "T",
+      "default": "00000000",
+      "category": "cia402"
+    },
+    {
+      "index": "0x6071",
+      "name": "Target torque",
+      "type": "INT",
+      "bit_size": 16,
+      "access": "rw",
+      "pdo_mapping": "R",
+      "default": "0000",
+      "category": "cia402"
+    },
+    {
+      "index": "0x6072",
+      "name": "Max torque",
+      "type": "UINT",
+      "bit_size": 16,
+      "access": "rw",
+      "pdo_mapping": "",
+      "default": "0000",
+      "category": "cia402"
+    },
+    {
+      "index": "0x6073",
+      "name": "Max current",
+      "type": "UINT",
+      "bit_size": 16,
+      "access": "ro",
+      "pdo_mapping": "",
+      "default": "0000",
+      "category": "cia402"
+    },
+    {
+      "index": "0x6075",
+      "name": "Motor rate current",
+      "type": "UDINT",
+      "bit_size": 32,
+      "access": "ro",
+      "pdo_mapping": "",
+      "default": "00000000",
+      "category": "cia402"
+    },
+    {
+      "index": "0x6076",
+      "name": "Motor rate torque",
+      "type": "UDINT",
+      "bit_size": 32,
+      "access": "ro",
+      "pdo_mapping": "",
+      "default": "00000000",
+      "category": "cia402"
+    },
+    {
+      "index": "0x6077",
+      "name": "Torque actual value",
+      "type": "INT",
+      "bit_size": 16,
+      "access": "ro",
+      "pdo_mapping": "T",
+      "default": "0000",
+      "category": "cia402"
+    },
+    {
+      "index": "0x6078",
+      "name": "Current Actual Value",
+      "type": "INT",
+      "bit_size": 16,
+      "access": "ro",
+      "pdo_mapping": "T",
+      "default": null,
+      "category": "cia402"
+    },
+    {
+      "index": "0x6079",
+      "name": "DC link circuit voltage",
+      "type": "UDINT",
+      "bit_size": 32,
+      "access": "ro",
+      "pdo_mapping": "",
+      "default": "00000000",
+      "category": "cia402"
+    },
+    {
+      "index": "0x607A",
+      "name": "Target Position",
+      "type": "DINT",
+      "bit_size": 32,
+      "access": "rw",
+      "pdo_mapping": "R",
+      "default": "00000000",
+      "category": "cia402"
+    },
+    {
+      "index": "0x607B",
+      "name": "Position range limit",
+      "type": "DT607B",
+      "bit_size": 80,
+      "access": "rw",
+      "pdo_mapping": "",
+      "default": null,
+      "category": "cia402"
+    },
+    {
+      "index": "0x607C",
+      "name": "Home offset",
+      "type": "DINT",
+      "bit_size": 32,
+      "access": "rw",
+      "pdo_mapping": "",
+      "default": "00000000",
+      "category": "cia402"
+    },
+    {
+      "index": "0x607D",
+      "name": "soft Position range limit",
+      "type": "DT607D",
+      "bit_size": 80,
+      "access": "rw",
+      "pdo_mapping": "",
+      "default": null,
+      "category": "cia402"
+    },
+    {
+      "index": "0x607F",
+      "name": "Max profile velocity",
+      "type": "UDINT",
+      "bit_size": 32,
+      "access": "rw",
+      "pdo_mapping": "R",
+      "default": null,
+      "category": "cia402"
+    },
+    {
+      "index": "0x6080",
+      "name": "Max motor speed",
+      "type": "UDINT",
+      "bit_size": 32,
+      "access": "rw",
+      "pdo_mapping": "",
+      "default": null,
+      "category": "cia402"
+    },
+    {
+      "index": "0x6081",
+      "name": "Profile velocity",
+      "type": "UDINT",
+      "bit_size": 32,
+      "access": "rw",
+      "pdo_mapping": "",
+      "default": "00000000",
+      "category": "cia402"
+    },
+    {
+      "index": "0x6083",
+      "name": "Profile acceleration",
+      "type": "UDINT",
+      "bit_size": 32,
+      "access": "rw",
+      "pdo_mapping": "",
+      "default": "00000000",
+      "category": "cia402"
+    },
+    {
+      "index": "0x6084",
+      "name": "Profile deceleration",
+      "type": "UDINT",
+      "bit_size": 32,
+      "access": "rw",
+      "pdo_mapping": "",
+      "default": "00000000",
+      "category": "cia402"
+    },
+    {
+      "index": "0x6091",
+      "name": "Gear ratio",
+      "type": "DT6091",
+      "bit_size": 80,
+      "access": "rw",
+      "pdo_mapping": "",
+      "default": null,
+      "category": "cia402"
+    },
+    {
+      "index": "0x6093",
+      "name": "Position factor",
+      "type": "DT6093",
+      "bit_size": 80,
+      "access": "rw",
+      "pdo_mapping": "",
+      "default": null,
+      "category": "cia402"
+    },
+    {
+      "index": "0x6098",
+      "name": "Homing method",
+      "type": "SINT",
+      "bit_size": 8,
+      "access": "rw",
+      "pdo_mapping": "",
+      "default": "00",
+      "category": "cia402"
+    },
+    {
+      "index": "0x6099",
+      "name": "Homing speeds",
+      "type": "DT6099",
+      "bit_size": 80,
+      "access": "rw",
+      "pdo_mapping": "",
+      "default": null,
+      "category": "cia402"
+    },
+    {
+      "index": "0x609A",
+      "name": "Homing acceleration",
+      "type": "UDINT",
+      "bit_size": 32,
+      "access": "rw",
+      "pdo_mapping": "",
+      "default": null,
+      "category": "cia402"
+    },
+    {
+      "index": "0x60B2",
+      "name": "Torque offset",
+      "type": "INT",
+      "bit_size": 16,
+      "access": "rw",
+      "pdo_mapping": "",
+      "default": "0000",
+      "category": "cia402"
+    },
+    {
+      "index": "0x60B8",
+      "name": "Touch probe control",
+      "type": "UINT",
+      "bit_size": 16,
+      "access": "rw",
+      "pdo_mapping": "R",
+      "default": "0000",
+      "category": "cia402"
+    },
+    {
+      "index": "0x60B9",
+      "name": "Touch probe status",
+      "type": "UINT",
+      "bit_size": 16,
+      "access": "ro",
+      "pdo_mapping": "T",
+      "default": "0000",
+      "category": "cia402"
+    },
+    {
+      "index": "0x60BA",
+      "name": "Touch probe positive value",
+      "type": "DINT",
+      "bit_size": 32,
+      "access": "ro",
+      "pdo_mapping": "T",
+      "default": "00000000",
+      "category": "cia402"
+    },
+    {
+      "index": "0x60BB",
+      "name": "Touch probe negative value",
+      "type": "DINT",
+      "bit_size": 32,
+      "access": "ro",
+      "pdo_mapping": "",
+      "default": "00000000",
+      "category": "cia402"
+    },
+    {
+      "index": "0x60E0",
+      "name": "Positive torque limit",
+      "type": "UINT",
+      "bit_size": 16,
+      "access": "rw",
+      "pdo_mapping": "R",
+      "default": null,
+      "category": "cia402"
+    },
+    {
+      "index": "0x60E1",
+      "name": "Negtive torque limit",
+      "type": "UINT",
+      "bit_size": 16,
+      "access": "rw",
+      "pdo_mapping": "R",
+      "default": null,
+      "category": "cia402"
+    },
+    {
+      "index": "0x60F4",
+      "name": "Following error actual value",
+      "type": "DINT",
+      "bit_size": 32,
+      "access": "ro",
+      "pdo_mapping": "",
+      "default": "00000000",
+      "category": "cia402"
+    },
+    {
+      "index": "0x60FD",
+      "name": "Digital inputs",
+      "type": "UDINT",
+      "bit_size": 32,
+      "access": "ro",
+      "pdo_mapping": "T",
+      "default": "00000000",
+      "category": "cia402"
+    },
+    {
+      "index": "0x60FE",
+      "name": "Digital outputs",
+      "type": "UDINT",
+      "bit_size": 32,
+      "access": "rw",
+      "pdo_mapping": "T",
+      "default": "00000000",
+      "category": "cia402"
+    },
+    {
+      "index": "0x60FF",
+      "name": "Target Velocity",
+      "type": "DINT",
+      "bit_size": 32,
+      "access": "rw",
+      "pdo_mapping": "R",
+      "default": "00000000",
+      "category": "cia402"
+    },
+    {
+      "index": "0x6502",
+      "name": "Supported drive modes",
+      "type": "UDINT",
+      "bit_size": 32,
+      "access": "ro",
+      "pdo_mapping": "",
+      "default": "00000000",
+      "category": "cia402"
+    },
+    {
+      "index": "0xF000",
+      "name": "Modular device profile",
+      "type": "DTF000",
+      "bit_size": 48,
+      "access": "ro",
+      "pdo_mapping": "",
+      "default": null,
+      "category": "unknown"
+    },
+    {
+      "index": "0xF010",
+      "name": "Module list",
+      "type": "DTF010",
+      "bit_size": 64,
+      "access": "ro",
+      "pdo_mapping": "",
+      "default": null,
+      "category": "unknown"
+    }
+  ]
+}

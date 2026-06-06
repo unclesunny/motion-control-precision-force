@@ -1,0 +1,1255 @@
+{
+  "vendor": {
+    "id": "17185",
+    "name": "Leadshine Technology Co.,Ltd."
+  },
+  "device": {
+    "type": "DM3E-556",
+    "product_code": "#x8100",
+    "name": "DM3E-556(COE)"
+  },
+  "source_file": "DM3E_V1.74.xml",
+  "count": 124,
+  "objects": [
+    {
+      "index": "0x1000",
+      "name": "Device Type",
+      "type": "UDINT",
+      "bit_size": 32,
+      "access": "ro",
+      "pdo_mapping": "",
+      "default": null,
+      "category": "communication"
+    },
+    {
+      "index": "0x1001",
+      "name": "Error Register",
+      "type": "USINT",
+      "bit_size": 8,
+      "access": "ro",
+      "pdo_mapping": "",
+      "default": null,
+      "category": "communication"
+    },
+    {
+      "index": "0x1008",
+      "name": "Device Name",
+      "type": "STRING(7)",
+      "bit_size": 56,
+      "access": "ro",
+      "pdo_mapping": "",
+      "default": null,
+      "category": "communication"
+    },
+    {
+      "index": "0x1009",
+      "name": "Hardware Version",
+      "type": "STRING(5)",
+      "bit_size": 40,
+      "access": "ro",
+      "pdo_mapping": "",
+      "default": null,
+      "category": "communication"
+    },
+    {
+      "index": "0x100A",
+      "name": "Software Version",
+      "type": "STRING(5)",
+      "bit_size": 40,
+      "access": "ro",
+      "pdo_mapping": "",
+      "default": null,
+      "category": "communication"
+    },
+    {
+      "index": "0x1010",
+      "name": "Store Parameters",
+      "type": "DT1010",
+      "bit_size": 136,
+      "access": "rw",
+      "pdo_mapping": "",
+      "default": null,
+      "category": "communication"
+    },
+    {
+      "index": "0x1011",
+      "name": "Restore Parameters",
+      "type": "DT1011",
+      "bit_size": 136,
+      "access": "rw",
+      "pdo_mapping": "",
+      "default": null,
+      "category": "communication"
+    },
+    {
+      "index": "0x1018",
+      "name": "Identity Object",
+      "type": "DT1018",
+      "bit_size": 136,
+      "access": "rw",
+      "pdo_mapping": "",
+      "default": null,
+      "category": "communication"
+    },
+    {
+      "index": "0x1600",
+      "name": "RXPDO 1 Mapping Parameter",
+      "type": "DT1600",
+      "bit_size": 264,
+      "access": "rw",
+      "pdo_mapping": "",
+      "default": null,
+      "category": "communication"
+    },
+    {
+      "index": "0x1601",
+      "name": "RXPDO 2 Mapping Parameter",
+      "type": "DT1601",
+      "bit_size": 264,
+      "access": "rw",
+      "pdo_mapping": "",
+      "default": null,
+      "category": "communication"
+    },
+    {
+      "index": "0x1602",
+      "name": "RXPDO 3 Mapping Parameter",
+      "type": "DT1602",
+      "bit_size": 264,
+      "access": "rw",
+      "pdo_mapping": "",
+      "default": null,
+      "category": "communication"
+    },
+    {
+      "index": "0x1603",
+      "name": "RXPDO 4 Mapping Parameter",
+      "type": "DT1603",
+      "bit_size": 264,
+      "access": "rw",
+      "pdo_mapping": "",
+      "default": null,
+      "category": "communication"
+    },
+    {
+      "index": "0x1A00",
+      "name": "TXPDO 1 Mapping Parameter",
+      "type": "DT1A00",
+      "bit_size": 264,
+      "access": "rw",
+      "pdo_mapping": "",
+      "default": null,
+      "category": "communication"
+    },
+    {
+      "index": "0x1A01",
+      "name": "TXPDO 2 Mapping Parameter",
+      "type": "DT1A01",
+      "bit_size": 264,
+      "access": "rw",
+      "pdo_mapping": "",
+      "default": null,
+      "category": "communication"
+    },
+    {
+      "index": "0x1C00",
+      "name": "SM Communication Type",
+      "type": "DT1C00",
+      "bit_size": 40,
+      "access": "ro",
+      "pdo_mapping": "",
+      "default": null,
+      "category": "communication"
+    },
+    {
+      "index": "0x1C12",
+      "name": "SM2(Outputs) PDO Assignment",
+      "type": "DT1C12",
+      "bit_size": 112,
+      "access": "rw",
+      "pdo_mapping": "",
+      "default": null,
+      "category": "communication"
+    },
+    {
+      "index": "0x1C13",
+      "name": "SM3(Inputs) PDO Assignment",
+      "type": "DT1C13",
+      "bit_size": 112,
+      "access": "rw",
+      "pdo_mapping": "",
+      "default": null,
+      "category": "communication"
+    },
+    {
+      "index": "0x2000",
+      "name": "Peak Current",
+      "type": "UINT",
+      "bit_size": 16,
+      "access": "rw",
+      "pdo_mapping": "",
+      "default": null,
+      "category": "manufacturer"
+    },
+    {
+      "index": "0x2001",
+      "name": "Motor Resolution",
+      "type": "UINT",
+      "bit_size": 16,
+      "access": "rw",
+      "pdo_mapping": "",
+      "default": null,
+      "category": "manufacturer"
+    },
+    {
+      "index": "0x2002",
+      "name": "Standby Time",
+      "type": "UINT",
+      "bit_size": 16,
+      "access": "rw",
+      "pdo_mapping": "",
+      "default": null,
+      "category": "manufacturer"
+    },
+    {
+      "index": "0x2003",
+      "name": "Standby Current Percentage",
+      "type": "UINT",
+      "bit_size": 16,
+      "access": "rw",
+      "pdo_mapping": "",
+      "default": null,
+      "category": "manufacturer"
+    },
+    {
+      "index": "0x2005",
+      "name": "Outputs Function",
+      "type": "DT2005",
+      "bit_size": 48,
+      "access": "rw",
+      "pdo_mapping": "",
+      "default": null,
+      "category": "manufacturer"
+    },
+    {
+      "index": "0x2006",
+      "name": "Enable Valid Level",
+      "type": "UINT",
+      "bit_size": 16,
+      "access": "rw",
+      "pdo_mapping": "",
+      "default": null,
+      "category": "manufacturer"
+    },
+    {
+      "index": "0x2007",
+      "name": "Disable Mode",
+      "type": "UINT",
+      "bit_size": 16,
+      "access": "rw",
+      "pdo_mapping": "",
+      "default": null,
+      "category": "manufacturer"
+    },
+    {
+      "index": "0x2008",
+      "name": "Outputs Polarity",
+      "type": "UINT",
+      "bit_size": 16,
+      "access": "rw",
+      "pdo_mapping": "",
+      "default": null,
+      "category": "manufacturer"
+    },
+    {
+      "index": "0x2009",
+      "name": "Filter Enable",
+      "type": "UINT",
+      "bit_size": 16,
+      "access": "rw",
+      "pdo_mapping": "",
+      "default": null,
+      "category": "manufacturer"
+    },
+    {
+      "index": "0x2010",
+      "name": "Filter Time",
+      "type": "DT2010",
+      "bit_size": 48,
+      "access": "rw",
+      "pdo_mapping": "",
+      "default": null,
+      "category": "manufacturer"
+    },
+    {
+      "index": "0x2012",
+      "name": "Soft Start Time",
+      "type": "UINT",
+      "bit_size": 16,
+      "access": "rw",
+      "pdo_mapping": "",
+      "default": null,
+      "category": "manufacturer"
+    },
+    {
+      "index": "0x2013",
+      "name": "Autotune Enable",
+      "type": "UINT",
+      "bit_size": 16,
+      "access": "rw",
+      "pdo_mapping": "",
+      "default": null,
+      "category": "manufacturer"
+    },
+    {
+      "index": "0x2015",
+      "name": "Current Loop Kp",
+      "type": "UINT",
+      "bit_size": 16,
+      "access": "rw",
+      "pdo_mapping": "",
+      "default": null,
+      "category": "manufacturer"
+    },
+    {
+      "index": "0x2016",
+      "name": "Current Loop Ki",
+      "type": "UINT",
+      "bit_size": 16,
+      "access": "rw",
+      "pdo_mapping": "",
+      "default": null,
+      "category": "manufacturer"
+    },
+    {
+      "index": "0x2017",
+      "name": "Current Loop Kc",
+      "type": "UINT",
+      "bit_size": 16,
+      "access": "rw",
+      "pdo_mapping": "",
+      "default": null,
+      "category": "manufacturer"
+    },
+    {
+      "index": "0x2020",
+      "name": "Motor Resistance",
+      "type": "UINT",
+      "bit_size": 16,
+      "access": "rw",
+      "pdo_mapping": "",
+      "default": null,
+      "category": "manufacturer"
+    },
+    {
+      "index": "0x2021",
+      "name": "Motor Inductance",
+      "type": "UINT",
+      "bit_size": 16,
+      "access": "rw",
+      "pdo_mapping": "",
+      "default": null,
+      "category": "manufacturer"
+    },
+    {
+      "index": "0x2028",
+      "name": "Anti-disturbance Time",
+      "type": "UINT",
+      "bit_size": 16,
+      "access": "rw",
+      "pdo_mapping": "",
+      "default": null,
+      "category": "manufacturer"
+    },
+    {
+      "index": "0x2039",
+      "name": "Sum of Pluse Input_H",
+      "type": "UINT",
+      "bit_size": 16,
+      "access": "rw",
+      "pdo_mapping": "",
+      "default": null,
+      "category": "manufacturer"
+    },
+    {
+      "index": "0x2040",
+      "name": "Sum of Pluse Input_L",
+      "type": "UINT",
+      "bit_size": 16,
+      "access": "ro",
+      "pdo_mapping": "",
+      "default": null,
+      "category": "manufacturer"
+    },
+    {
+      "index": "0x2041",
+      "name": "Sum of Pluse Feedback_H",
+      "type": "UINT",
+      "bit_size": 16,
+      "access": "rw",
+      "pdo_mapping": "",
+      "default": null,
+      "category": "manufacturer"
+    },
+    {
+      "index": "0x2042",
+      "name": "Sum of Pluse Feedback_L",
+      "type": "UINT",
+      "bit_size": 16,
+      "access": "ro",
+      "pdo_mapping": "",
+      "default": null,
+      "category": "manufacturer"
+    },
+    {
+      "index": "0x2043",
+      "name": "Speed Reference",
+      "type": "UINT",
+      "bit_size": 16,
+      "access": "ro",
+      "pdo_mapping": "",
+      "default": null,
+      "category": "manufacturer"
+    },
+    {
+      "index": "0x2044",
+      "name": "Speed Feedback",
+      "type": "UINT",
+      "bit_size": 16,
+      "access": "ro",
+      "pdo_mapping": "",
+      "default": null,
+      "category": "manufacturer"
+    },
+    {
+      "index": "0x2046",
+      "name": "Advance Angle",
+      "type": "UINT",
+      "bit_size": 16,
+      "access": "rw",
+      "pdo_mapping": "",
+      "default": null,
+      "category": "manufacturer"
+    },
+    {
+      "index": "0x2047",
+      "name": "Actual Set Current",
+      "type": "UINT",
+      "bit_size": 16,
+      "access": "rw",
+      "pdo_mapping": "",
+      "default": null,
+      "category": "manufacturer"
+    },
+    {
+      "index": "0x2048",
+      "name": "Bus Voltage",
+      "type": "UINT",
+      "bit_size": 16,
+      "access": "ro",
+      "pdo_mapping": "",
+      "default": null,
+      "category": "manufacturer"
+    },
+    {
+      "index": "0x2051",
+      "name": "Polarity",
+      "type": "UINT",
+      "bit_size": 16,
+      "access": "rw",
+      "pdo_mapping": "",
+      "default": null,
+      "category": "manufacturer"
+    },
+    {
+      "index": "0x2053",
+      "name": "Output Mode of Target Reached",
+      "type": "UINT",
+      "bit_size": 16,
+      "access": "rw",
+      "pdo_mapping": "",
+      "default": null,
+      "category": "manufacturer"
+    },
+    {
+      "index": "0x2054",
+      "name": "Anti-vibration Coefficient",
+      "type": "UINT",
+      "bit_size": 16,
+      "access": "rw",
+      "pdo_mapping": "",
+      "default": null,
+      "category": "manufacturer"
+    },
+    {
+      "index": "0x2056",
+      "name": "Fault Detect Configure",
+      "type": "UINT",
+      "bit_size": 16,
+      "access": "rw",
+      "pdo_mapping": "",
+      "default": null,
+      "category": "manufacturer"
+    },
+    {
+      "index": "0x2057",
+      "name": "Clear Current Fault",
+      "type": "UINT",
+      "bit_size": 16,
+      "access": "rw",
+      "pdo_mapping": "",
+      "default": null,
+      "category": "manufacturer"
+    },
+    {
+      "index": "0x2058",
+      "name": "Soft Start Enable",
+      "type": "UINT",
+      "bit_size": 16,
+      "access": "rw",
+      "pdo_mapping": "",
+      "default": null,
+      "category": "manufacturer"
+    },
+    {
+      "index": "0x2060",
+      "name": "Amplitude of First Anti-vibration",
+      "type": "UINT",
+      "bit_size": 16,
+      "access": "rw",
+      "pdo_mapping": "",
+      "default": null,
+      "category": "manufacturer"
+    },
+    {
+      "index": "0x2061",
+      "name": "Phase A of First Anti-vibration",
+      "type": "UINT",
+      "bit_size": 16,
+      "access": "rw",
+      "pdo_mapping": "",
+      "default": null,
+      "category": "manufacturer"
+    },
+    {
+      "index": "0x2062",
+      "name": "Phase B of First Anti-vibration",
+      "type": "UINT",
+      "bit_size": 16,
+      "access": "rw",
+      "pdo_mapping": "",
+      "default": null,
+      "category": "manufacturer"
+    },
+    {
+      "index": "0x2063",
+      "name": "Amplitude of Second Anti-vibration",
+      "type": "UINT",
+      "bit_size": 16,
+      "access": "rw",
+      "pdo_mapping": "",
+      "default": null,
+      "category": "manufacturer"
+    },
+    {
+      "index": "0x2064",
+      "name": "Phase A of Second Anti-vibration",
+      "type": "UINT",
+      "bit_size": 16,
+      "access": "rw",
+      "pdo_mapping": "",
+      "default": null,
+      "category": "manufacturer"
+    },
+    {
+      "index": "0x2065",
+      "name": "Phase B of Second Anti-vibration",
+      "type": "UINT",
+      "bit_size": 16,
+      "access": "rw",
+      "pdo_mapping": "",
+      "default": null,
+      "category": "manufacturer"
+    },
+    {
+      "index": "0x2066",
+      "name": "Amplitude of Third Anti-vibration",
+      "type": "UINT",
+      "bit_size": 16,
+      "access": "rw",
+      "pdo_mapping": "",
+      "default": null,
+      "category": "manufacturer"
+    },
+    {
+      "index": "0x2067",
+      "name": "Phase A of Third Anti-vibration",
+      "type": "UINT",
+      "bit_size": 16,
+      "access": "rw",
+      "pdo_mapping": "",
+      "default": null,
+      "category": "manufacturer"
+    },
+    {
+      "index": "0x2068",
+      "name": "Phase B of Third Anti-vibration",
+      "type": "UINT",
+      "bit_size": 16,
+      "access": "rw",
+      "pdo_mapping": "",
+      "default": null,
+      "category": "manufacturer"
+    },
+    {
+      "index": "0x2069",
+      "name": "Amplitude of Fourth Anti-vibration",
+      "type": "UINT",
+      "bit_size": 16,
+      "access": "rw",
+      "pdo_mapping": "",
+      "default": null,
+      "category": "manufacturer"
+    },
+    {
+      "index": "0x2070",
+      "name": "Phase A of Fourth Anti-vibration",
+      "type": "UINT",
+      "bit_size": 16,
+      "access": "rw",
+      "pdo_mapping": "",
+      "default": null,
+      "category": "manufacturer"
+    },
+    {
+      "index": "0x2071",
+      "name": "Phase B of Fourth Anti-vibration",
+      "type": "UINT",
+      "bit_size": 16,
+      "access": "rw",
+      "pdo_mapping": "",
+      "default": null,
+      "category": "manufacturer"
+    },
+    {
+      "index": "0x2072",
+      "name": "Phase of Z Shaft Anti-vibration",
+      "type": "UINT",
+      "bit_size": 16,
+      "access": "rw",
+      "pdo_mapping": "",
+      "default": null,
+      "category": "manufacturer"
+    },
+    {
+      "index": "0x2073",
+      "name": "Motor Return After Power On",
+      "type": "UINT",
+      "bit_size": 16,
+      "access": "rw",
+      "pdo_mapping": "",
+      "default": null,
+      "category": "manufacturer"
+    },
+    {
+      "index": "0x2074",
+      "name": "Torque Feedforward",
+      "type": "UINT",
+      "bit_size": 16,
+      "access": "rw",
+      "pdo_mapping": "",
+      "default": null,
+      "category": "manufacturer"
+    },
+    {
+      "index": "0x2075",
+      "name": "Gravity Compensation",
+      "type": "UINT",
+      "bit_size": 16,
+      "access": "rw",
+      "pdo_mapping": "",
+      "default": null,
+      "category": "manufacturer"
+    },
+    {
+      "index": "0x2076",
+      "name": "Pulse of Target Reached",
+      "type": "UINT",
+      "bit_size": 16,
+      "access": "rw",
+      "pdo_mapping": "",
+      "default": null,
+      "category": "manufacturer"
+    },
+    {
+      "index": "0x2093",
+      "name": "Clear Fault Record",
+      "type": "UINT",
+      "bit_size": 16,
+      "access": "rw",
+      "pdo_mapping": "",
+      "default": null,
+      "category": "manufacturer"
+    },
+    {
+      "index": "0x2150",
+      "name": "Slave Alias",
+      "type": "UINT",
+      "bit_size": 16,
+      "access": "rw",
+      "pdo_mapping": "",
+      "default": null,
+      "category": "manufacturer"
+    },
+    {
+      "index": "0x2151",
+      "name": "Slave Alias Source",
+      "type": "UINT",
+      "bit_size": 16,
+      "access": "rw",
+      "pdo_mapping": "",
+      "default": null,
+      "category": "manufacturer"
+    },
+    {
+      "index": "0x2152",
+      "name": "Inputs Function",
+      "type": "DT2152",
+      "bit_size": 96,
+      "access": "rw",
+      "pdo_mapping": "",
+      "default": null,
+      "category": "manufacturer"
+    },
+    {
+      "index": "0x2153",
+      "name": "Inputs Filter Time",
+      "type": "DT2153",
+      "bit_size": 96,
+      "access": "rw",
+      "pdo_mapping": "",
+      "default": null,
+      "category": "manufacturer"
+    },
+    {
+      "index": "0x2154",
+      "name": "Inputs Polarity",
+      "type": "UINT",
+      "bit_size": 16,
+      "access": "rw",
+      "pdo_mapping": "",
+      "default": null,
+      "category": "manufacturer"
+    },
+    {
+      "index": "0x2155",
+      "name": "Physical Inputs Level",
+      "type": "UINT",
+      "bit_size": 16,
+      "access": "rw",
+      "pdo_mapping": "",
+      "default": null,
+      "category": "manufacturer"
+    },
+    {
+      "index": "0x3FFE",
+      "name": "Fault Record",
+      "type": "DT3FFE",
+      "bit_size": 176,
+      "access": "ro",
+      "pdo_mapping": "",
+      "default": null,
+      "category": "manufacturer"
+    },
+    {
+      "index": "0x4000",
+      "name": "Motor Type",
+      "type": "UINT",
+      "bit_size": 16,
+      "access": "rw",
+      "pdo_mapping": "",
+      "default": null,
+      "category": "manufacturer"
+    },
+    {
+      "index": "0x4001",
+      "name": "Stall Detect Enable",
+      "type": "UINT",
+      "bit_size": 16,
+      "access": "rw",
+      "pdo_mapping": "",
+      "default": null,
+      "category": "manufacturer"
+    },
+    {
+      "index": "0x4002",
+      "name": "Stall Process Configure",
+      "type": "UINT",
+      "bit_size": 16,
+      "access": "rw",
+      "pdo_mapping": "",
+      "default": null,
+      "category": "manufacturer"
+    },
+    {
+      "index": "0x4500",
+      "name": "Current Error ID",
+      "type": "UINT",
+      "bit_size": 16,
+      "access": "ro",
+      "pdo_mapping": "",
+      "default": null,
+      "category": "manufacturer"
+    },
+    {
+      "index": "0x5000",
+      "name": "Internal States",
+      "type": "DT5000",
+      "bit_size": 96,
+      "access": "ro",
+      "pdo_mapping": "",
+      "default": null,
+      "category": "manufacturer"
+    },
+    {
+      "index": "0x5002",
+      "name": "ESC Register Interface",
+      "type": "DT5002",
+      "bit_size": 48,
+      "access": "ro",
+      "pdo_mapping": "",
+      "default": null,
+      "category": "manufacturer"
+    },
+    {
+      "index": "0x5004",
+      "name": "Sync Interface Parameters",
+      "type": "DT5004",
+      "bit_size": 272,
+      "access": "ro",
+      "pdo_mapping": "",
+      "default": null,
+      "category": "manufacturer"
+    },
+    {
+      "index": "0x5005",
+      "name": "DC Compensate Base Value",
+      "type": "UINT",
+      "bit_size": 16,
+      "access": "rw",
+      "pdo_mapping": "",
+      "default": null,
+      "category": "manufacturer"
+    },
+    {
+      "index": "0x5006",
+      "name": "Sync Error Detect Setting",
+      "type": "UINT",
+      "bit_size": 16,
+      "access": "rw",
+      "pdo_mapping": "",
+      "default": null,
+      "category": "manufacturer"
+    },
+    {
+      "index": "0x5010",
+      "name": "Valid Outputs/Inputs Watch Dog Time",
+      "type": "UINT",
+      "bit_size": 16,
+      "access": "rw",
+      "pdo_mapping": "",
+      "default": null,
+      "category": "manufacturer"
+    },
+    {
+      "index": "0x5011",
+      "name": "Internal Actual Position",
+      "type": "DINT",
+      "bit_size": 32,
+      "access": "ro",
+      "pdo_mapping": "",
+      "default": null,
+      "category": "manufacturer"
+    },
+    {
+      "index": "0x5012",
+      "name": "Home Interface",
+      "type": "DT5012",
+      "bit_size": 112,
+      "access": "ro",
+      "pdo_mapping": "",
+      "default": null,
+      "category": "manufacturer"
+    },
+    {
+      "index": "0x5013",
+      "name": "Motor Not Work Code",
+      "type": "UINT",
+      "bit_size": 16,
+      "access": "ro",
+      "pdo_mapping": "",
+      "default": null,
+      "category": "manufacturer"
+    },
+    {
+      "index": "0x603F",
+      "name": "Last Error Code",
+      "type": "UINT",
+      "bit_size": 16,
+      "access": "ro",
+      "pdo_mapping": "T",
+      "default": null,
+      "category": "cia402"
+    },
+    {
+      "index": "0x6040",
+      "name": "Control Word",
+      "type": "UINT",
+      "bit_size": 16,
+      "access": "rw",
+      "pdo_mapping": "R",
+      "default": null,
+      "category": "cia402"
+    },
+    {
+      "index": "0x6041",
+      "name": "Status Word",
+      "type": "UINT",
+      "bit_size": 16,
+      "access": "ro",
+      "pdo_mapping": "T",
+      "default": null,
+      "category": "cia402"
+    },
+    {
+      "index": "0x605A",
+      "name": "Quick Stop Option Code",
+      "type": "INT",
+      "bit_size": 16,
+      "access": "rw",
+      "pdo_mapping": "",
+      "default": null,
+      "category": "cia402"
+    },
+    {
+      "index": "0x6060",
+      "name": "Modes of Operation",
+      "type": "USINT",
+      "bit_size": 8,
+      "access": "rw",
+      "pdo_mapping": "R",
+      "default": null,
+      "category": "cia402"
+    },
+    {
+      "index": "0x6061",
+      "name": "Modes of Operation Display",
+      "type": "USINT",
+      "bit_size": 8,
+      "access": "ro",
+      "pdo_mapping": "T",
+      "default": null,
+      "category": "cia402"
+    },
+    {
+      "index": "0x6062",
+      "name": "Commanded Position",
+      "type": "DINT",
+      "bit_size": 32,
+      "access": "ro",
+      "pdo_mapping": "",
+      "default": null,
+      "category": "cia402"
+    },
+    {
+      "index": "0x6064",
+      "name": "Actual Position",
+      "type": "DINT",
+      "bit_size": 32,
+      "access": "ro",
+      "pdo_mapping": "T",
+      "default": null,
+      "category": "cia402"
+    },
+    {
+      "index": "0x606B",
+      "name": "Commanded Velocity",
+      "type": "DINT",
+      "bit_size": 32,
+      "access": "ro",
+      "pdo_mapping": "",
+      "default": null,
+      "category": "cia402"
+    },
+    {
+      "index": "0x606C",
+      "name": "Actual Velocity",
+      "type": "DINT",
+      "bit_size": 32,
+      "access": "ro",
+      "pdo_mapping": "",
+      "default": null,
+      "category": "cia402"
+    },
+    {
+      "index": "0x607A",
+      "name": "Profile Target Position",
+      "type": "DINT",
+      "bit_size": 32,
+      "access": "rw",
+      "pdo_mapping": "R",
+      "default": null,
+      "category": "cia402"
+    },
+    {
+      "index": "0x607C",
+      "name": "Homing Offset",
+      "type": "DINT",
+      "bit_size": 32,
+      "access": "rw",
+      "pdo_mapping": "R",
+      "default": null,
+      "category": "cia402"
+    },
+    {
+      "index": "0x6081",
+      "name": "Profile Velocity",
+      "type": "UDINT",
+      "bit_size": 32,
+      "access": "rw",
+      "pdo_mapping": "R",
+      "default": null,
+      "category": "cia402"
+    },
+    {
+      "index": "0x6082",
+      "name": "End Velocity",
+      "type": "UDINT",
+      "bit_size": 32,
+      "access": "rw",
+      "pdo_mapping": "",
+      "default": null,
+      "category": "cia402"
+    },
+    {
+      "index": "0x6083",
+      "name": "Profile Acceleration",
+      "type": "UDINT",
+      "bit_size": 32,
+      "access": "rw",
+      "pdo_mapping": "R",
+      "default": null,
+      "category": "cia402"
+    },
+    {
+      "index": "0x6084",
+      "name": "Profile Deceleration",
+      "type": "UDINT",
+      "bit_size": 32,
+      "access": "rw",
+      "pdo_mapping": "R",
+      "default": null,
+      "category": "cia402"
+    },
+    {
+      "index": "0x6085",
+      "name": "Quick Stop Deceleration",
+      "type": "UDINT",
+      "bit_size": 32,
+      "access": "rw",
+      "pdo_mapping": "",
+      "default": null,
+      "category": "cia402"
+    },
+    {
+      "index": "0x6098",
+      "name": "Homing Method",
+      "type": "SINT",
+      "bit_size": 8,
+      "access": "rw",
+      "pdo_mapping": "R",
+      "default": null,
+      "category": "cia402"
+    },
+    {
+      "index": "0x6099",
+      "name": "Homing Velocity",
+      "type": "DT6099",
+      "bit_size": 80,
+      "access": "rw",
+      "pdo_mapping": "R",
+      "default": null,
+      "category": "cia402"
+    },
+    {
+      "index": "0x609A",
+      "name": "Homing Acceleration",
+      "type": "UDINT",
+      "bit_size": 32,
+      "access": "rw",
+      "pdo_mapping": "R",
+      "default": null,
+      "category": "cia402"
+    },
+    {
+      "index": "0x60B0",
+      "name": "Position Offset",
+      "type": "DINT",
+      "bit_size": 32,
+      "access": "rw",
+      "pdo_mapping": "",
+      "default": null,
+      "category": "cia402"
+    },
+    {
+      "index": "0x60B8",
+      "name": "Touch Probe Function",
+      "type": "UINT",
+      "bit_size": 16,
+      "access": "rw",
+      "pdo_mapping": "R",
+      "default": null,
+      "category": "cia402"
+    },
+    {
+      "index": "0x60B9",
+      "name": "Touch Probe Status",
+      "type": "UINT",
+      "bit_size": 16,
+      "access": "ro",
+      "pdo_mapping": "T",
+      "default": null,
+      "category": "cia402"
+    },
+    {
+      "index": "0x60BA",
+      "name": "Touch Probe 1 Positive Value",
+      "type": "DINT",
+      "bit_size": 32,
+      "access": "ro",
+      "pdo_mapping": "T",
+      "default": null,
+      "category": "cia402"
+    },
+    {
+      "index": "0x60BB",
+      "name": "Touch Probe 1 Negative Value",
+      "type": "DINT",
+      "bit_size": 32,
+      "access": "ro",
+      "pdo_mapping": "",
+      "default": null,
+      "category": "cia402"
+    },
+    {
+      "index": "0x60BC",
+      "name": "Touch Probe 2 Positive Value",
+      "type": "DINT",
+      "bit_size": 32,
+      "access": "ro",
+      "pdo_mapping": "",
+      "default": null,
+      "category": "cia402"
+    },
+    {
+      "index": "0x60BD",
+      "name": "Touch Probe 2 Negative Value",
+      "type": "DINT",
+      "bit_size": 32,
+      "access": "ro",
+      "pdo_mapping": "",
+      "default": null,
+      "category": "cia402"
+    },
+    {
+      "index": "0x60C2",
+      "name": "InterPolation Time Period",
+      "type": "DT60C2",
+      "bit_size": 32,
+      "access": "ro",
+      "pdo_mapping": "",
+      "default": null,
+      "category": "cia402"
+    },
+    {
+      "index": "0x60D5",
+      "name": "Touch Probe 1 Positive Counter",
+      "type": "UINT",
+      "bit_size": 16,
+      "access": "ro",
+      "pdo_mapping": "",
+      "default": null,
+      "category": "cia402"
+    },
+    {
+      "index": "0x60D6",
+      "name": "Touch Probe 1 Negative Counter",
+      "type": "UINT",
+      "bit_size": 16,
+      "access": "ro",
+      "pdo_mapping": "",
+      "default": null,
+      "category": "cia402"
+    },
+    {
+      "index": "0x60D7",
+      "name": "Touch Probe 2 Positive Counter",
+      "type": "UINT",
+      "bit_size": 16,
+      "access": "ro",
+      "pdo_mapping": "",
+      "default": null,
+      "category": "cia402"
+    },
+    {
+      "index": "0x60D8",
+      "name": "Touch Probe 2 Negative Counter",
+      "type": "UINT",
+      "bit_size": 16,
+      "access": "ro",
+      "pdo_mapping": "",
+      "default": null,
+      "category": "cia402"
+    },
+    {
+      "index": "0x60FD",
+      "name": "Digital Inputs",
+      "type": "UDINT",
+      "bit_size": 32,
+      "access": "ro",
+      "pdo_mapping": "T",
+      "default": null,
+      "category": "cia402"
+    },
+    {
+      "index": "0x60FE",
+      "name": "Digital Outputs",
+      "type": "DT60FE",
+      "bit_size": 72,
+      "access": "rw",
+      "pdo_mapping": "",
+      "default": null,
+      "category": "cia402"
+    },
+    {
+      "index": "0x60FF",
+      "name": "Target Velocity",
+      "type": "DINT",
+      "bit_size": 32,
+      "access": "rw",
+      "pdo_mapping": "R",
+      "default": null,
+      "category": "cia402"
+    },
+    {
+      "index": "0x6502",
+      "name": "Supported Drive Modes",
+      "type": "UDINT",
+      "bit_size": 32,
+      "access": "ro",
+      "pdo_mapping": "",
+      "default": null,
+      "category": "cia402"
+    }
+  ]
+}

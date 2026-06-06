@@ -1,0 +1,2397 @@
+{
+  "vendor": {
+    "id": "#x0000009A",
+    "name": "Elmo Motion Control"
+  },
+  "count": 136,
+  "mappings": [
+    {
+      "index": "0x1600",
+      "name": "Outputs",
+      "direction": "Rx",
+      "sm": 2,
+      "entries": [
+        {
+          "index": "0x607A",
+          "name": "Target Position",
+          "type": "DINT",
+          "bit_size": 32
+        },
+        {
+          "index": "0x60FE",
+          "name": "Digital Outputs",
+          "type": "DINT",
+          "bit_size": 32
+        },
+        {
+          "index": "0x6040",
+          "name": "Control word",
+          "type": "UINT",
+          "bit_size": 16
+        }
+      ]
+    },
+    {
+      "index": "0x1A00",
+      "name": "Inputs",
+      "direction": "Tx",
+      "sm": 3,
+      "entries": [
+        {
+          "index": "0x6064",
+          "name": "Position actual value",
+          "type": "DINT",
+          "bit_size": 32
+        },
+        {
+          "index": "0x60FD",
+          "name": "Digital Inputs",
+          "type": "DINT",
+          "bit_size": 32
+        },
+        {
+          "index": "0x6041",
+          "name": "Status word",
+          "type": "UINT",
+          "bit_size": 16
+        }
+      ]
+    },
+    {
+      "index": "0x1600",
+      "name": "Outputs",
+      "direction": "Rx",
+      "sm": 2,
+      "entries": [
+        {
+          "index": "0x607A",
+          "name": "Target Position",
+          "type": "DINT",
+          "bit_size": 32
+        },
+        {
+          "index": "0x60FE",
+          "name": "Digital Outputs",
+          "type": "DINT",
+          "bit_size": 32
+        },
+        {
+          "index": "0x6040",
+          "name": "Control word",
+          "type": "UINT",
+          "bit_size": 16
+        }
+      ]
+    },
+    {
+      "index": "0x1A00",
+      "name": "Inputs",
+      "direction": "Tx",
+      "sm": 3,
+      "entries": [
+        {
+          "index": "0x6064",
+          "name": "Position actual value",
+          "type": "DINT",
+          "bit_size": 32
+        },
+        {
+          "index": "0x60FD",
+          "name": "Digital Inputs",
+          "type": "DINT",
+          "bit_size": 32
+        },
+        {
+          "index": "0x6041",
+          "name": "Status word",
+          "type": "UINT",
+          "bit_size": 16
+        }
+      ]
+    },
+    {
+      "index": "0x1600",
+      "name": "Outputs",
+      "direction": "Rx",
+      "sm": 2,
+      "entries": [
+        {
+          "index": "0x607A",
+          "name": "Target Position",
+          "type": "DINT",
+          "bit_size": 32
+        },
+        {
+          "index": "0x60FE",
+          "name": "Digital Outputs",
+          "type": "UDINT",
+          "bit_size": 32
+        },
+        {
+          "index": "0x6040",
+          "name": "Control word",
+          "type": "UINT",
+          "bit_size": 16
+        }
+      ]
+    },
+    {
+      "index": "0x1601",
+      "name": "Outputs",
+      "direction": "Rx",
+      "sm": 0,
+      "entries": [
+        {
+          "index": "0x60FF",
+          "name": "Target Velocity",
+          "type": "DINT",
+          "bit_size": 32
+        },
+        {
+          "index": "0x6040",
+          "name": "Control word",
+          "type": "UINT",
+          "bit_size": 16
+        }
+      ]
+    },
+    {
+      "index": "0x1602",
+      "name": "Outputs",
+      "direction": "Rx",
+      "sm": 0,
+      "entries": [
+        {
+          "index": "0x6071",
+          "name": "Target Torque",
+          "type": "INT",
+          "bit_size": 16
+        },
+        {
+          "index": "0x6040",
+          "name": "Control word",
+          "type": "UINT",
+          "bit_size": 16
+        }
+      ]
+    },
+    {
+      "index": "0x1603",
+      "name": "Outputs",
+      "direction": "Rx",
+      "sm": 0,
+      "entries": [
+        {
+          "index": "0x607A",
+          "name": "Target Position",
+          "type": "DINT",
+          "bit_size": 32
+        },
+        {
+          "index": "0x60FE",
+          "name": "Digital Outputs",
+          "type": "UDINT",
+          "bit_size": 32
+        },
+        {
+          "index": "0x60B1",
+          "name": "Velocity Offset",
+          "type": "DINT",
+          "bit_size": 32
+        },
+        {
+          "index": "0x6040",
+          "name": "Control word",
+          "type": "UINT",
+          "bit_size": 16
+        }
+      ]
+    },
+    {
+      "index": "0x1604",
+      "name": "Outputs",
+      "direction": "Rx",
+      "sm": 0,
+      "entries": [
+        {
+          "index": "0x607A",
+          "name": "Target Position",
+          "type": "DINT",
+          "bit_size": 32
+        },
+        {
+          "index": "0x60FF",
+          "name": "Target Velocity",
+          "type": "DINT",
+          "bit_size": 32
+        },
+        {
+          "index": "0x6072",
+          "name": "Max. Torque",
+          "type": "UINT",
+          "bit_size": 16
+        },
+        {
+          "index": "0x6040",
+          "name": "Control word",
+          "type": "UINT",
+          "bit_size": 16
+        }
+      ]
+    },
+    {
+      "index": "0x1605",
+      "name": "Outputs",
+      "direction": "Rx",
+      "sm": 0,
+      "entries": [
+        {
+          "index": "0x607A",
+          "name": "Target Position",
+          "type": "DINT",
+          "bit_size": 32
+        },
+        {
+          "index": "0x60FF",
+          "name": "Target Velocity",
+          "type": "DINT",
+          "bit_size": 32
+        },
+        {
+          "index": "0x6071",
+          "name": "Target Torque",
+          "type": "INT",
+          "bit_size": 16
+        },
+        {
+          "index": "0x6072",
+          "name": "Max. Torque",
+          "type": "UINT",
+          "bit_size": 16
+        },
+        {
+          "index": "0x6040",
+          "name": "Control word",
+          "type": "UINT",
+          "bit_size": 16
+        },
+        {
+          "index": "0x6060",
+          "name": "Mode of operation",
+          "type": "SINT",
+          "bit_size": 8
+        },
+        {
+          "index": "0x0000",
+          "name": "",
+          "type": "",
+          "bit_size": 8
+        }
+      ]
+    },
+    {
+      "index": "0x1606",
+      "name": "Outputs",
+      "direction": "Rx",
+      "sm": 0,
+      "entries": [
+        {
+          "index": "0x607A",
+          "name": "Target Position",
+          "type": "DINT",
+          "bit_size": 32
+        },
+        {
+          "index": "0x60FE",
+          "name": "Digital Outputs",
+          "type": "UDINT",
+          "bit_size": 32
+        },
+        {
+          "index": "0x60FF",
+          "name": "Target Velocity",
+          "type": "DINT",
+          "bit_size": 32
+        },
+        {
+          "index": "0x60B1",
+          "name": "Velocity Offset",
+          "type": "DINT",
+          "bit_size": 32
+        },
+        {
+          "index": "0x60B2",
+          "name": "Torque Offset",
+          "type": "INT",
+          "bit_size": 16
+        },
+        {
+          "index": "0x6040",
+          "name": "Control word",
+          "type": "UINT",
+          "bit_size": 16
+        }
+      ]
+    },
+    {
+      "index": "0x1607",
+      "name": "Outputs",
+      "direction": "Rx",
+      "sm": 0,
+      "entries": []
+    },
+    {
+      "index": "0x1608",
+      "name": "Outputs",
+      "direction": "Rx",
+      "sm": 0,
+      "entries": []
+    },
+    {
+      "index": "0x160A",
+      "name": "Outputs",
+      "direction": "Rx",
+      "sm": 0,
+      "entries": [
+        {
+          "index": "0x6040",
+          "name": "Control word",
+          "type": "UINT",
+          "bit_size": 16
+        }
+      ]
+    },
+    {
+      "index": "0x160B",
+      "name": "Outputs",
+      "direction": "Rx",
+      "sm": 0,
+      "entries": [
+        {
+          "index": "0x6060",
+          "name": "Mode of operation",
+          "type": "SINT",
+          "bit_size": 8
+        },
+        {
+          "index": "0x0000",
+          "name": "",
+          "type": "",
+          "bit_size": 8
+        }
+      ]
+    },
+    {
+      "index": "0x160C",
+      "name": "Outputs",
+      "direction": "Rx",
+      "sm": 0,
+      "entries": [
+        {
+          "index": "0x6071",
+          "name": "Target Torque",
+          "type": "INT",
+          "bit_size": 16
+        }
+      ]
+    },
+    {
+      "index": "0x160D",
+      "name": "Outputs",
+      "direction": "Rx",
+      "sm": 0,
+      "entries": [
+        {
+          "index": "0x6072",
+          "name": "Max. Torque",
+          "type": "UINT",
+          "bit_size": 16
+        }
+      ]
+    },
+    {
+      "index": "0x160E",
+      "name": "Outputs",
+      "direction": "Rx",
+      "sm": 0,
+      "entries": [
+        {
+          "index": "0x6073",
+          "name": "Max. Current",
+          "type": "UINT",
+          "bit_size": 16
+        }
+      ]
+    },
+    {
+      "index": "0x160F",
+      "name": "Outputs",
+      "direction": "Rx",
+      "sm": 0,
+      "entries": [
+        {
+          "index": "0x607A",
+          "name": "Target Position",
+          "type": "DINT",
+          "bit_size": 32
+        }
+      ]
+    },
+    {
+      "index": "0x1611",
+      "name": "Outputs",
+      "direction": "Rx",
+      "sm": 0,
+      "entries": [
+        {
+          "index": "0x6081",
+          "name": "Profile Velocity",
+          "type": "UDINT",
+          "bit_size": 32
+        }
+      ]
+    },
+    {
+      "index": "0x1612",
+      "name": "Outputs",
+      "direction": "Rx",
+      "sm": 0,
+      "entries": [
+        {
+          "index": "0x6082",
+          "name": "End velocity",
+          "type": "UDINT",
+          "bit_size": 32
+        }
+      ]
+    },
+    {
+      "index": "0x1613",
+      "name": "Outputs",
+      "direction": "Rx",
+      "sm": 0,
+      "entries": [
+        {
+          "index": "0x6083",
+          "name": "Profile Acceleration",
+          "type": "UDINT",
+          "bit_size": 32
+        }
+      ]
+    },
+    {
+      "index": "0x1614",
+      "name": "Outputs",
+      "direction": "Rx",
+      "sm": 0,
+      "entries": [
+        {
+          "index": "0x6084",
+          "name": "Profile Deceleration",
+          "type": "UDINT",
+          "bit_size": 32
+        }
+      ]
+    },
+    {
+      "index": "0x1615",
+      "name": "Outputs",
+      "direction": "Rx",
+      "sm": 0,
+      "entries": [
+        {
+          "index": "0x6087",
+          "name": "Torque Slope",
+          "type": "UDINT",
+          "bit_size": 32
+        }
+      ]
+    },
+    {
+      "index": "0x1616",
+      "name": "Outputs",
+      "direction": "Rx",
+      "sm": 0,
+      "entries": [
+        {
+          "index": "0x60B0",
+          "name": "Position Offset",
+          "type": "DINT",
+          "bit_size": 32
+        }
+      ]
+    },
+    {
+      "index": "0x1617",
+      "name": "Outputs",
+      "direction": "Rx",
+      "sm": 0,
+      "entries": [
+        {
+          "index": "0x60B1",
+          "name": "Velocity Offset",
+          "type": "DINT",
+          "bit_size": 32
+        }
+      ]
+    },
+    {
+      "index": "0x1618",
+      "name": "Outputs",
+      "direction": "Rx",
+      "sm": 0,
+      "entries": [
+        {
+          "index": "0x60B2",
+          "name": "Torque Offset",
+          "type": "INT",
+          "bit_size": 16
+        }
+      ]
+    },
+    {
+      "index": "0x1619",
+      "name": "Outputs",
+      "direction": "Rx",
+      "sm": 0,
+      "entries": [
+        {
+          "index": "0x60B8",
+          "name": "Touch Probe Function",
+          "type": "UINT",
+          "bit_size": 16
+        }
+      ]
+    },
+    {
+      "index": "0x161A",
+      "name": "Outputs",
+      "direction": "Rx",
+      "sm": 0,
+      "entries": [
+        {
+          "index": "0x2E00",
+          "name": "Gain scheduling manual index",
+          "type": "UINT",
+          "bit_size": 16
+        }
+      ]
+    },
+    {
+      "index": "0x161C",
+      "name": "Outputs",
+      "direction": "Rx",
+      "sm": 0,
+      "entries": [
+        {
+          "index": "0x60FF",
+          "name": "Target Velocity",
+          "type": "DINT",
+          "bit_size": 32
+        }
+      ]
+    },
+    {
+      "index": "0x161D",
+      "name": "Outputs",
+      "direction": "Rx",
+      "sm": 0,
+      "entries": [
+        {
+          "index": "0x60FE",
+          "name": "Digital Outputs",
+          "type": "UDINT",
+          "bit_size": 32
+        }
+      ]
+    },
+    {
+      "index": "0x161E",
+      "name": "Outputs",
+      "direction": "Rx",
+      "sm": 0,
+      "entries": [
+        {
+          "index": "0x607E",
+          "name": "Polarity",
+          "type": "USINT",
+          "bit_size": 8
+        },
+        {
+          "index": "0x0000",
+          "name": "",
+          "type": "",
+          "bit_size": 8
+        }
+      ]
+    },
+    {
+      "index": "0x161F",
+      "name": "Outputs",
+      "direction": "Rx",
+      "sm": 0,
+      "entries": [
+        {
+          "index": "0x6085",
+          "name": "Quick stop deceleration",
+          "type": "UDINT",
+          "bit_size": 32
+        }
+      ]
+    },
+    {
+      "index": "0x1620",
+      "name": "Outputs",
+      "direction": "Rx",
+      "sm": 0,
+      "entries": [
+        {
+          "index": "0x22A1",
+          "name": "Extended Outputs ",
+          "type": "UDINT",
+          "bit_size": 32
+        }
+      ]
+    },
+    {
+      "index": "0x1621",
+      "name": "Outputs",
+      "direction": "Rx",
+      "sm": 0,
+      "entries": [
+        {
+          "index": "0x2005",
+          "name": "Fast Reference",
+          "type": "DINT",
+          "bit_size": 32
+        }
+      ]
+    },
+    {
+      "index": "0x1A00",
+      "name": "Inputs",
+      "direction": "Tx",
+      "sm": 3,
+      "entries": [
+        {
+          "index": "0x6064",
+          "name": "Position actual value",
+          "type": "DINT",
+          "bit_size": 32
+        },
+        {
+          "index": "0x60FD",
+          "name": "Digital Inputs",
+          "type": "DINT",
+          "bit_size": 32
+        },
+        {
+          "index": "0x6041",
+          "name": "Status word",
+          "type": "UINT",
+          "bit_size": 16
+        }
+      ]
+    },
+    {
+      "index": "0x1A01",
+      "name": "Inputs",
+      "direction": "Tx",
+      "sm": 0,
+      "entries": [
+        {
+          "index": "0x6064",
+          "name": "Position actual value",
+          "type": "DINT",
+          "bit_size": 32
+        },
+        {
+          "index": "0x606B",
+          "name": "Velocity demand value",
+          "type": "DINT",
+          "bit_size": 32
+        },
+        {
+          "index": "0x6074",
+          "name": "Torque demand value",
+          "type": "INT",
+          "bit_size": 16
+        },
+        {
+          "index": "0x6041",
+          "name": "Status word",
+          "type": "UINT",
+          "bit_size": 16
+        }
+      ]
+    },
+    {
+      "index": "0x1A02",
+      "name": "Inputs",
+      "direction": "Tx",
+      "sm": 0,
+      "entries": [
+        {
+          "index": "0x6064",
+          "name": "Position actual value",
+          "type": "DINT",
+          "bit_size": 32
+        },
+        {
+          "index": "0x6077",
+          "name": "Torque actual value",
+          "type": "INT",
+          "bit_size": 16
+        },
+        {
+          "index": "0x6041",
+          "name": "Status word",
+          "type": "UINT",
+          "bit_size": 16
+        },
+        {
+          "index": "0x6061",
+          "name": "Mode of operation display",
+          "type": "SINT",
+          "bit_size": 8
+        },
+        {
+          "index": "0x0000",
+          "name": "",
+          "type": "",
+          "bit_size": 8
+        }
+      ]
+    },
+    {
+      "index": "0x1A03",
+      "name": "Inputs",
+      "direction": "Tx",
+      "sm": 0,
+      "entries": [
+        {
+          "index": "0x6064",
+          "name": "Position actual value",
+          "type": "DINT",
+          "bit_size": 32
+        },
+        {
+          "index": "0x60FD",
+          "name": "Digital Inputs",
+          "type": "DINT",
+          "bit_size": 32
+        },
+        {
+          "index": "0x606C",
+          "name": "Velocity actual value",
+          "type": "DINT",
+          "bit_size": 32
+        },
+        {
+          "index": "0x6041",
+          "name": "Status word",
+          "type": "UINT",
+          "bit_size": 16
+        }
+      ]
+    },
+    {
+      "index": "0x1A04",
+      "name": "Inputs",
+      "direction": "Tx",
+      "sm": 0,
+      "entries": [
+        {
+          "index": "0x6064",
+          "name": "Position actual value",
+          "type": "DINT",
+          "bit_size": 32
+        },
+        {
+          "index": "0x60F4",
+          "name": "Position Following error actual value",
+          "type": "DINT",
+          "bit_size": 32
+        },
+        {
+          "index": "0x6077",
+          "name": "Torque actual value",
+          "type": "INT",
+          "bit_size": 16
+        },
+        {
+          "index": "0x6041",
+          "name": "Status word",
+          "type": "UINT",
+          "bit_size": 16
+        },
+        {
+          "index": "0x6061",
+          "name": "Mode of operation display",
+          "type": "SINT",
+          "bit_size": 8
+        },
+        {
+          "index": "0x0000",
+          "name": "",
+          "type": "",
+          "bit_size": 8
+        }
+      ]
+    },
+    {
+      "index": "0x1A07",
+      "name": "Inputs",
+      "direction": "Tx",
+      "sm": 0,
+      "entries": []
+    },
+    {
+      "index": "0x1A08",
+      "name": "Inputs",
+      "direction": "Tx",
+      "sm": 0,
+      "entries": []
+    },
+    {
+      "index": "0x1A0A",
+      "name": "Inputs",
+      "direction": "Tx",
+      "sm": 0,
+      "entries": [
+        {
+          "index": "0x6041",
+          "name": "Status word",
+          "type": "UINT",
+          "bit_size": 16
+        }
+      ]
+    },
+    {
+      "index": "0x1A0B",
+      "name": "Inputs",
+      "direction": "Tx",
+      "sm": 0,
+      "entries": [
+        {
+          "index": "0x6061",
+          "name": "Mode of operation display",
+          "type": "SINT",
+          "bit_size": 8
+        },
+        {
+          "index": "0x0000",
+          "name": "",
+          "type": "",
+          "bit_size": 8
+        }
+      ]
+    },
+    {
+      "index": "0x1A0C",
+      "name": "Inputs",
+      "direction": "Tx",
+      "sm": 0,
+      "entries": [
+        {
+          "index": "0x6062",
+          "name": "Position Demand [UU]",
+          "type": "DINT",
+          "bit_size": 32
+        }
+      ]
+    },
+    {
+      "index": "0x1A0D",
+      "name": "Inputs",
+      "direction": "Tx",
+      "sm": 0,
+      "entries": [
+        {
+          "index": "0x6063",
+          "name": "Actual position [counts]",
+          "type": "DINT",
+          "bit_size": 32
+        }
+      ]
+    },
+    {
+      "index": "0x1A0E",
+      "name": "Inputs",
+      "direction": "Tx",
+      "sm": 0,
+      "entries": [
+        {
+          "index": "0x6064",
+          "name": "Position actual value",
+          "type": "DINT",
+          "bit_size": 32
+        }
+      ]
+    },
+    {
+      "index": "0x1A0F",
+      "name": "Inputs",
+      "direction": "Tx",
+      "sm": 0,
+      "entries": [
+        {
+          "index": "0x6069",
+          "name": "Velocity sensor actual value [counts/sec]",
+          "type": "DINT",
+          "bit_size": 32
+        }
+      ]
+    },
+    {
+      "index": "0x1A10",
+      "name": "Inputs",
+      "direction": "Tx",
+      "sm": 0,
+      "entries": [
+        {
+          "index": "0x606B",
+          "name": "Velocity demand [cnt/sec]",
+          "type": "DINT",
+          "bit_size": 32
+        }
+      ]
+    },
+    {
+      "index": "0x1A11",
+      "name": "Inputs",
+      "direction": "Tx",
+      "sm": 0,
+      "entries": [
+        {
+          "index": "0x606C",
+          "name": "Velocity actual value",
+          "type": "DINT",
+          "bit_size": 32
+        }
+      ]
+    },
+    {
+      "index": "0x1A12",
+      "name": "Inputs",
+      "direction": "Tx",
+      "sm": 0,
+      "entries": [
+        {
+          "index": "0x6074",
+          "name": "Torque demand value",
+          "type": "INT",
+          "bit_size": 16
+        }
+      ]
+    },
+    {
+      "index": "0x1A13",
+      "name": "Inputs",
+      "direction": "Tx",
+      "sm": 0,
+      "entries": [
+        {
+          "index": "0x6077",
+          "name": "Torque actual value",
+          "type": "INT",
+          "bit_size": 16
+        }
+      ]
+    },
+    {
+      "index": "0x1A14",
+      "name": "Inputs",
+      "direction": "Tx",
+      "sm": 0,
+      "entries": [
+        {
+          "index": "0x60B9",
+          "name": "Touch Probe status",
+          "type": "UINT",
+          "bit_size": 16
+        }
+      ]
+    },
+    {
+      "index": "0x1A15",
+      "name": "Inputs",
+      "direction": "Tx",
+      "sm": 0,
+      "entries": [
+        {
+          "index": "0x60BA",
+          "name": "Touch Probe Pos1 Positive",
+          "type": "DINT",
+          "bit_size": 32
+        }
+      ]
+    },
+    {
+      "index": "0x1A16",
+      "name": "Inputs",
+      "direction": "Tx",
+      "sm": 0,
+      "entries": [
+        {
+          "index": "0x60BB",
+          "name": "Touch Probe Pos1 Negative",
+          "type": "DINT",
+          "bit_size": 32
+        }
+      ]
+    },
+    {
+      "index": "0x1A17",
+      "name": "Inputs",
+      "direction": "Tx",
+      "sm": 0,
+      "entries": [
+        {
+          "index": "0x60BC",
+          "name": "Touch probe pos2 pos value",
+          "type": "DINT",
+          "bit_size": 32
+        }
+      ]
+    },
+    {
+      "index": "0x1A18",
+      "name": "Inputs",
+      "direction": "Tx",
+      "sm": 0,
+      "entries": [
+        {
+          "index": "0x6079",
+          "name": "DC link circuit voltage",
+          "type": "UDINT",
+          "bit_size": 32
+        }
+      ]
+    },
+    {
+      "index": "0x1A19",
+      "name": "Inputs",
+      "direction": "Tx",
+      "sm": 0,
+      "entries": [
+        {
+          "index": "0x60F4",
+          "name": "Position Following error",
+          "type": "DINT",
+          "bit_size": 32
+        }
+      ]
+    },
+    {
+      "index": "0x1A1A",
+      "name": "Inputs",
+      "direction": "Tx",
+      "sm": 0,
+      "entries": [
+        {
+          "index": "0x60FA",
+          "name": "Control Effort [cnt/sec]",
+          "type": "DINT",
+          "bit_size": 32
+        }
+      ]
+    },
+    {
+      "index": "0x1A1B",
+      "name": "Inputs",
+      "direction": "Tx",
+      "sm": 0,
+      "entries": [
+        {
+          "index": "0x60FC",
+          "name": "Position Demand Value [cnt]",
+          "type": "DINT",
+          "bit_size": 32
+        }
+      ]
+    },
+    {
+      "index": "0x1A1C",
+      "name": "Inputs",
+      "direction": "Tx",
+      "sm": 0,
+      "entries": [
+        {
+          "index": "0x60FD",
+          "name": "Digital Inputs",
+          "type": "DINT",
+          "bit_size": 32
+        }
+      ]
+    },
+    {
+      "index": "0x1A1D",
+      "name": "Inputs",
+      "direction": "Tx",
+      "sm": 0,
+      "entries": [
+        {
+          "index": "0x2205",
+          "name": "Analog Input 1",
+          "type": "INT",
+          "bit_size": 16
+        }
+      ]
+    },
+    {
+      "index": "0x1A1E",
+      "name": "Inputs",
+      "direction": "Tx",
+      "sm": 0,
+      "entries": [
+        {
+          "index": "0x20A0",
+          "name": "Auxiliary position actual value",
+          "type": "DINT",
+          "bit_size": 32
+        }
+      ]
+    },
+    {
+      "index": "0x1A1F",
+      "name": "Inputs",
+      "direction": "Tx",
+      "sm": 0,
+      "entries": [
+        {
+          "index": "0x6078",
+          "name": "Current actual value",
+          "type": "INT",
+          "bit_size": 16
+        }
+      ]
+    },
+    {
+      "index": "0x1A20",
+      "name": "Inputs",
+      "direction": "Tx",
+      "sm": 0,
+      "entries": [
+        {
+          "index": "0x60BD",
+          "name": "Touch probe pos2 neg value",
+          "type": "DINT",
+          "bit_size": 32
+        }
+      ]
+    },
+    {
+      "index": "0x1A21",
+      "name": "Inputs",
+      "direction": "Tx",
+      "sm": 0,
+      "entries": [
+        {
+          "index": "0x2085",
+          "name": "Extra Status Reg",
+          "type": "INT",
+          "bit_size": 16
+        }
+      ]
+    },
+    {
+      "index": "0x1A22",
+      "name": "Inputs",
+      "direction": "Tx",
+      "sm": 0,
+      "entries": [
+        {
+          "index": "0x1002",
+          "name": "Elmo Status Reg",
+          "type": "UDINT",
+          "bit_size": 32
+        }
+      ]
+    },
+    {
+      "index": "0x1A23",
+      "name": "Inputs",
+      "direction": "Tx",
+      "sm": 0,
+      "entries": [
+        {
+          "index": "0x2202",
+          "name": "Extended Inputs Value",
+          "type": "UDINT",
+          "bit_size": 32
+        }
+      ]
+    },
+    {
+      "index": "0x1A24",
+      "name": "Inputs",
+      "direction": "Tx",
+      "sm": 0,
+      "entries": [
+        {
+          "index": "0x2203",
+          "name": "App Object",
+          "type": "UDINT",
+          "bit_size": 32
+        }
+      ]
+    },
+    {
+      "index": "0x1A26",
+      "name": "Inputs",
+      "direction": "Tx",
+      "sm": 0,
+      "entries": [
+        {
+          "index": "0x603F",
+          "name": "Error Code",
+          "type": "UINT",
+          "bit_size": 16
+        }
+      ]
+    },
+    {
+      "index": "0x1600",
+      "name": "Outputs",
+      "direction": "Rx",
+      "sm": 2,
+      "entries": [
+        {
+          "index": "0x607A",
+          "name": "Target Position",
+          "type": "DINT",
+          "bit_size": 32
+        },
+        {
+          "index": "0x60FE",
+          "name": "Digital Outputs",
+          "type": "UDINT",
+          "bit_size": 32
+        },
+        {
+          "index": "0x6040",
+          "name": "Control word",
+          "type": "UINT",
+          "bit_size": 16
+        }
+      ]
+    },
+    {
+      "index": "0x1601",
+      "name": "Outputs",
+      "direction": "Rx",
+      "sm": 0,
+      "entries": [
+        {
+          "index": "0x60FF",
+          "name": "Target Velocity",
+          "type": "DINT",
+          "bit_size": 32
+        },
+        {
+          "index": "0x6040",
+          "name": "Control word",
+          "type": "UINT",
+          "bit_size": 16
+        }
+      ]
+    },
+    {
+      "index": "0x1602",
+      "name": "Outputs",
+      "direction": "Rx",
+      "sm": 0,
+      "entries": [
+        {
+          "index": "0x6071",
+          "name": "Target Torque",
+          "type": "INT",
+          "bit_size": 16
+        },
+        {
+          "index": "0x6040",
+          "name": "Control word",
+          "type": "UINT",
+          "bit_size": 16
+        }
+      ]
+    },
+    {
+      "index": "0x1603",
+      "name": "Outputs",
+      "direction": "Rx",
+      "sm": 0,
+      "entries": [
+        {
+          "index": "0x607A",
+          "name": "Target Position",
+          "type": "DINT",
+          "bit_size": 32
+        },
+        {
+          "index": "0x60FE",
+          "name": "Digital Outputs",
+          "type": "UDINT",
+          "bit_size": 32
+        },
+        {
+          "index": "0x60B1",
+          "name": "Velocity Offset",
+          "type": "DINT",
+          "bit_size": 32
+        },
+        {
+          "index": "0x6040",
+          "name": "Control word",
+          "type": "UINT",
+          "bit_size": 16
+        }
+      ]
+    },
+    {
+      "index": "0x1604",
+      "name": "Outputs",
+      "direction": "Rx",
+      "sm": 0,
+      "entries": [
+        {
+          "index": "0x607A",
+          "name": "Target Position",
+          "type": "DINT",
+          "bit_size": 32
+        },
+        {
+          "index": "0x60FF",
+          "name": "Target Velocity",
+          "type": "DINT",
+          "bit_size": 32
+        },
+        {
+          "index": "0x6072",
+          "name": "Max. Torque",
+          "type": "UINT",
+          "bit_size": 16
+        },
+        {
+          "index": "0x6040",
+          "name": "Control word",
+          "type": "UINT",
+          "bit_size": 16
+        }
+      ]
+    },
+    {
+      "index": "0x1605",
+      "name": "Outputs",
+      "direction": "Rx",
+      "sm": 0,
+      "entries": [
+        {
+          "index": "0x607A",
+          "name": "Target Position",
+          "type": "DINT",
+          "bit_size": 32
+        },
+        {
+          "index": "0x60FF",
+          "name": "Target Velocity",
+          "type": "DINT",
+          "bit_size": 32
+        },
+        {
+          "index": "0x6071",
+          "name": "Target Torque",
+          "type": "INT",
+          "bit_size": 16
+        },
+        {
+          "index": "0x6072",
+          "name": "Max. Torque",
+          "type": "UINT",
+          "bit_size": 16
+        },
+        {
+          "index": "0x6040",
+          "name": "Control word",
+          "type": "UINT",
+          "bit_size": 16
+        },
+        {
+          "index": "0x6060",
+          "name": "Mode of operation",
+          "type": "SINT",
+          "bit_size": 8
+        },
+        {
+          "index": "0x0000",
+          "name": "",
+          "type": "",
+          "bit_size": 8
+        }
+      ]
+    },
+    {
+      "index": "0x1606",
+      "name": "Outputs",
+      "direction": "Rx",
+      "sm": 0,
+      "entries": [
+        {
+          "index": "0x607A",
+          "name": "Target Position",
+          "type": "DINT",
+          "bit_size": 32
+        },
+        {
+          "index": "0x60FE",
+          "name": "Digital Outputs",
+          "type": "UDINT",
+          "bit_size": 32
+        },
+        {
+          "index": "0x60FF",
+          "name": "Target Velocity",
+          "type": "DINT",
+          "bit_size": 32
+        },
+        {
+          "index": "0x60B1",
+          "name": "Velocity Offset",
+          "type": "DINT",
+          "bit_size": 32
+        },
+        {
+          "index": "0x60B2",
+          "name": "Torque Offset",
+          "type": "INT",
+          "bit_size": 16
+        },
+        {
+          "index": "0x6040",
+          "name": "Control word",
+          "type": "UINT",
+          "bit_size": 16
+        }
+      ]
+    },
+    {
+      "index": "0x1607",
+      "name": "Outputs",
+      "direction": "Rx",
+      "sm": 0,
+      "entries": []
+    },
+    {
+      "index": "0x1608",
+      "name": "Outputs",
+      "direction": "Rx",
+      "sm": 0,
+      "entries": []
+    },
+    {
+      "index": "0x160A",
+      "name": "Outputs",
+      "direction": "Rx",
+      "sm": 0,
+      "entries": [
+        {
+          "index": "0x6040",
+          "name": "Control word",
+          "type": "UINT",
+          "bit_size": 16
+        }
+      ]
+    },
+    {
+      "index": "0x160B",
+      "name": "Outputs",
+      "direction": "Rx",
+      "sm": 0,
+      "entries": [
+        {
+          "index": "0x6060",
+          "name": "Mode of operation",
+          "type": "SINT",
+          "bit_size": 8
+        },
+        {
+          "index": "0x0000",
+          "name": "",
+          "type": "",
+          "bit_size": 8
+        }
+      ]
+    },
+    {
+      "index": "0x160C",
+      "name": "Outputs",
+      "direction": "Rx",
+      "sm": 0,
+      "entries": [
+        {
+          "index": "0x6071",
+          "name": "Target Torque",
+          "type": "INT",
+          "bit_size": 16
+        }
+      ]
+    },
+    {
+      "index": "0x160D",
+      "name": "Outputs",
+      "direction": "Rx",
+      "sm": 0,
+      "entries": [
+        {
+          "index": "0x6072",
+          "name": "Max. Torque",
+          "type": "UINT",
+          "bit_size": 16
+        }
+      ]
+    },
+    {
+      "index": "0x160E",
+      "name": "Outputs",
+      "direction": "Rx",
+      "sm": 0,
+      "entries": [
+        {
+          "index": "0x6073",
+          "name": "Max. Current",
+          "type": "UINT",
+          "bit_size": 16
+        }
+      ]
+    },
+    {
+      "index": "0x160F",
+      "name": "Outputs",
+      "direction": "Rx",
+      "sm": 0,
+      "entries": [
+        {
+          "index": "0x607A",
+          "name": "Target Position",
+          "type": "DINT",
+          "bit_size": 32
+        }
+      ]
+    },
+    {
+      "index": "0x1611",
+      "name": "Outputs",
+      "direction": "Rx",
+      "sm": 0,
+      "entries": [
+        {
+          "index": "0x6081",
+          "name": "Profile Velocity",
+          "type": "UDINT",
+          "bit_size": 32
+        }
+      ]
+    },
+    {
+      "index": "0x1612",
+      "name": "Outputs",
+      "direction": "Rx",
+      "sm": 0,
+      "entries": [
+        {
+          "index": "0x6082",
+          "name": "End velocity",
+          "type": "UDINT",
+          "bit_size": 32
+        }
+      ]
+    },
+    {
+      "index": "0x1613",
+      "name": "Outputs",
+      "direction": "Rx",
+      "sm": 0,
+      "entries": [
+        {
+          "index": "0x6083",
+          "name": "Profile Acceleration",
+          "type": "UDINT",
+          "bit_size": 32
+        }
+      ]
+    },
+    {
+      "index": "0x1614",
+      "name": "Outputs",
+      "direction": "Rx",
+      "sm": 0,
+      "entries": [
+        {
+          "index": "0x6084",
+          "name": "Profile Deceleration",
+          "type": "UDINT",
+          "bit_size": 32
+        }
+      ]
+    },
+    {
+      "index": "0x1615",
+      "name": "Outputs",
+      "direction": "Rx",
+      "sm": 0,
+      "entries": [
+        {
+          "index": "0x6087",
+          "name": "Torque Slope",
+          "type": "UDINT",
+          "bit_size": 32
+        }
+      ]
+    },
+    {
+      "index": "0x1616",
+      "name": "Outputs",
+      "direction": "Rx",
+      "sm": 0,
+      "entries": [
+        {
+          "index": "0x60B0",
+          "name": "Position Offset",
+          "type": "DINT",
+          "bit_size": 32
+        }
+      ]
+    },
+    {
+      "index": "0x1617",
+      "name": "Outputs",
+      "direction": "Rx",
+      "sm": 0,
+      "entries": [
+        {
+          "index": "0x60B1",
+          "name": "Velocity Offset",
+          "type": "DINT",
+          "bit_size": 32
+        }
+      ]
+    },
+    {
+      "index": "0x1618",
+      "name": "Outputs",
+      "direction": "Rx",
+      "sm": 0,
+      "entries": [
+        {
+          "index": "0x60B2",
+          "name": "Torque Offset",
+          "type": "INT",
+          "bit_size": 16
+        }
+      ]
+    },
+    {
+      "index": "0x1619",
+      "name": "Outputs",
+      "direction": "Rx",
+      "sm": 0,
+      "entries": [
+        {
+          "index": "0x60B8",
+          "name": "Touch Probe Function",
+          "type": "UINT",
+          "bit_size": 16
+        }
+      ]
+    },
+    {
+      "index": "0x161A",
+      "name": "Outputs",
+      "direction": "Rx",
+      "sm": 0,
+      "entries": [
+        {
+          "index": "0x2E00",
+          "name": "Gain scheduling manual index",
+          "type": "UINT",
+          "bit_size": 16
+        }
+      ]
+    },
+    {
+      "index": "0x161C",
+      "name": "Outputs",
+      "direction": "Rx",
+      "sm": 0,
+      "entries": [
+        {
+          "index": "0x60FF",
+          "name": "Target Velocity",
+          "type": "DINT",
+          "bit_size": 32
+        }
+      ]
+    },
+    {
+      "index": "0x161D",
+      "name": "Outputs",
+      "direction": "Rx",
+      "sm": 0,
+      "entries": [
+        {
+          "index": "0x60FE",
+          "name": "Digital Outputs",
+          "type": "UDINT",
+          "bit_size": 32
+        }
+      ]
+    },
+    {
+      "index": "0x161E",
+      "name": "Outputs",
+      "direction": "Rx",
+      "sm": 0,
+      "entries": [
+        {
+          "index": "0x607E",
+          "name": "Polarity",
+          "type": "USINT",
+          "bit_size": 8
+        },
+        {
+          "index": "0x0000",
+          "name": "",
+          "type": "",
+          "bit_size": 8
+        }
+      ]
+    },
+    {
+      "index": "0x161F",
+      "name": "Outputs",
+      "direction": "Rx",
+      "sm": 0,
+      "entries": [
+        {
+          "index": "0x6085",
+          "name": "Quick stop deceleration",
+          "type": "UDINT",
+          "bit_size": 32
+        }
+      ]
+    },
+    {
+      "index": "0x1620",
+      "name": "Outputs",
+      "direction": "Rx",
+      "sm": 0,
+      "entries": [
+        {
+          "index": "0x22A1",
+          "name": "Extended Outputs ",
+          "type": "UDINT",
+          "bit_size": 32
+        }
+      ]
+    },
+    {
+      "index": "0x1621",
+      "name": "Outputs",
+      "direction": "Rx",
+      "sm": 0,
+      "entries": [
+        {
+          "index": "0x2005",
+          "name": "Fast Reference",
+          "type": "DINT",
+          "bit_size": 32
+        }
+      ]
+    },
+    {
+      "index": "0x1A00",
+      "name": "Inputs",
+      "direction": "Tx",
+      "sm": 3,
+      "entries": [
+        {
+          "index": "0x6064",
+          "name": "Position actual value",
+          "type": "DINT",
+          "bit_size": 32
+        },
+        {
+          "index": "0x60FD",
+          "name": "Digital Inputs",
+          "type": "DINT",
+          "bit_size": 32
+        },
+        {
+          "index": "0x6041",
+          "name": "Status word",
+          "type": "UINT",
+          "bit_size": 16
+        }
+      ]
+    },
+    {
+      "index": "0x1A01",
+      "name": "Inputs",
+      "direction": "Tx",
+      "sm": 0,
+      "entries": [
+        {
+          "index": "0x6064",
+          "name": "Position actual value",
+          "type": "DINT",
+          "bit_size": 32
+        },
+        {
+          "index": "0x606B",
+          "name": "Velocity demand value",
+          "type": "DINT",
+          "bit_size": 32
+        },
+        {
+          "index": "0x6074",
+          "name": "Torque demand value",
+          "type": "INT",
+          "bit_size": 16
+        },
+        {
+          "index": "0x6041",
+          "name": "Status word",
+          "type": "UINT",
+          "bit_size": 16
+        }
+      ]
+    },
+    {
+      "index": "0x1A02",
+      "name": "Inputs",
+      "direction": "Tx",
+      "sm": 0,
+      "entries": [
+        {
+          "index": "0x6064",
+          "name": "Position actual value",
+          "type": "DINT",
+          "bit_size": 32
+        },
+        {
+          "index": "0x6077",
+          "name": "Torque actual value",
+          "type": "INT",
+          "bit_size": 16
+        },
+        {
+          "index": "0x6041",
+          "name": "Status word",
+          "type": "UINT",
+          "bit_size": 16
+        },
+        {
+          "index": "0x6061",
+          "name": "Mode of operation display",
+          "type": "SINT",
+          "bit_size": 8
+        },
+        {
+          "index": "0x0000",
+          "name": "",
+          "type": "",
+          "bit_size": 8
+        }
+      ]
+    },
+    {
+      "index": "0x1A03",
+      "name": "Inputs",
+      "direction": "Tx",
+      "sm": 0,
+      "entries": [
+        {
+          "index": "0x6064",
+          "name": "Position actual value",
+          "type": "DINT",
+          "bit_size": 32
+        },
+        {
+          "index": "0x60FD",
+          "name": "Digital Inputs",
+          "type": "DINT",
+          "bit_size": 32
+        },
+        {
+          "index": "0x606C",
+          "name": "Velocity actual value",
+          "type": "DINT",
+          "bit_size": 32
+        },
+        {
+          "index": "0x6041",
+          "name": "Status word",
+          "type": "UINT",
+          "bit_size": 16
+        }
+      ]
+    },
+    {
+      "index": "0x1A04",
+      "name": "Inputs",
+      "direction": "Tx",
+      "sm": 0,
+      "entries": [
+        {
+          "index": "0x6064",
+          "name": "Position actual value",
+          "type": "DINT",
+          "bit_size": 32
+        },
+        {
+          "index": "0x60F4",
+          "name": "Position Following error actual value",
+          "type": "DINT",
+          "bit_size": 32
+        },
+        {
+          "index": "0x6077",
+          "name": "Torque actual value",
+          "type": "INT",
+          "bit_size": 16
+        },
+        {
+          "index": "0x6041",
+          "name": "Status word",
+          "type": "UINT",
+          "bit_size": 16
+        },
+        {
+          "index": "0x6061",
+          "name": "Mode of operation display",
+          "type": "SINT",
+          "bit_size": 8
+        },
+        {
+          "index": "0x0000",
+          "name": "",
+          "type": "",
+          "bit_size": 8
+        }
+      ]
+    },
+    {
+      "index": "0x1A07",
+      "name": "Inputs",
+      "direction": "Tx",
+      "sm": 0,
+      "entries": []
+    },
+    {
+      "index": "0x1A08",
+      "name": "Inputs",
+      "direction": "Tx",
+      "sm": 0,
+      "entries": []
+    },
+    {
+      "index": "0x1A0A",
+      "name": "Inputs",
+      "direction": "Tx",
+      "sm": 0,
+      "entries": [
+        {
+          "index": "0x6041",
+          "name": "Status word",
+          "type": "UINT",
+          "bit_size": 16
+        }
+      ]
+    },
+    {
+      "index": "0x1A0B",
+      "name": "Inputs",
+      "direction": "Tx",
+      "sm": 0,
+      "entries": [
+        {
+          "index": "0x6061",
+          "name": "Mode of operation display",
+          "type": "SINT",
+          "bit_size": 8
+        },
+        {
+          "index": "0x0000",
+          "name": "",
+          "type": "",
+          "bit_size": 8
+        }
+      ]
+    },
+    {
+      "index": "0x1A0C",
+      "name": "Inputs",
+      "direction": "Tx",
+      "sm": 0,
+      "entries": [
+        {
+          "index": "0x6062",
+          "name": "Position Demand [UU]",
+          "type": "DINT",
+          "bit_size": 32
+        }
+      ]
+    },
+    {
+      "index": "0x1A0D",
+      "name": "Inputs",
+      "direction": "Tx",
+      "sm": 0,
+      "entries": [
+        {
+          "index": "0x6063",
+          "name": "Actual position [counts]",
+          "type": "DINT",
+          "bit_size": 32
+        }
+      ]
+    },
+    {
+      "index": "0x1A0E",
+      "name": "Inputs",
+      "direction": "Tx",
+      "sm": 0,
+      "entries": [
+        {
+          "index": "0x6064",
+          "name": "Position actual value",
+          "type": "DINT",
+          "bit_size": 32
+        }
+      ]
+    },
+    {
+      "index": "0x1A0F",
+      "name": "Inputs",
+      "direction": "Tx",
+      "sm": 0,
+      "entries": [
+        {
+          "index": "0x6069",
+          "name": "Velocity sensor actual value [counts/sec]",
+          "type": "DINT",
+          "bit_size": 32
+        }
+      ]
+    },
+    {
+      "index": "0x1A10",
+      "name": "Inputs",
+      "direction": "Tx",
+      "sm": 0,
+      "entries": [
+        {
+          "index": "0x606B",
+          "name": "Velocity demand [cnt/sec]",
+          "type": "DINT",
+          "bit_size": 32
+        }
+      ]
+    },
+    {
+      "index": "0x1A11",
+      "name": "Inputs",
+      "direction": "Tx",
+      "sm": 0,
+      "entries": [
+        {
+          "index": "0x606C",
+          "name": "Velocity actual value",
+          "type": "DINT",
+          "bit_size": 32
+        }
+      ]
+    },
+    {
+      "index": "0x1A12",
+      "name": "Inputs",
+      "direction": "Tx",
+      "sm": 0,
+      "entries": [
+        {
+          "index": "0x6074",
+          "name": "Torque demand value",
+          "type": "INT",
+          "bit_size": 16
+        }
+      ]
+    },
+    {
+      "index": "0x1A13",
+      "name": "Inputs",
+      "direction": "Tx",
+      "sm": 0,
+      "entries": [
+        {
+          "index": "0x6077",
+          "name": "Torque actual value",
+          "type": "INT",
+          "bit_size": 16
+        }
+      ]
+    },
+    {
+      "index": "0x1A14",
+      "name": "Inputs",
+      "direction": "Tx",
+      "sm": 0,
+      "entries": [
+        {
+          "index": "0x60B9",
+          "name": "Touch Probe status",
+          "type": "UINT",
+          "bit_size": 16
+        }
+      ]
+    },
+    {
+      "index": "0x1A15",
+      "name": "Inputs",
+      "direction": "Tx",
+      "sm": 0,
+      "entries": [
+        {
+          "index": "0x60BA",
+          "name": "Touch Probe Pos1 Positive",
+          "type": "DINT",
+          "bit_size": 32
+        }
+      ]
+    },
+    {
+      "index": "0x1A16",
+      "name": "Inputs",
+      "direction": "Tx",
+      "sm": 0,
+      "entries": [
+        {
+          "index": "0x60BB",
+          "name": "Touch Probe Pos1 Negative",
+          "type": "DINT",
+          "bit_size": 32
+        }
+      ]
+    },
+    {
+      "index": "0x1A17",
+      "name": "Inputs",
+      "direction": "Tx",
+      "sm": 0,
+      "entries": [
+        {
+          "index": "0x60BC",
+          "name": "Touch probe pos2 pos value",
+          "type": "DINT",
+          "bit_size": 32
+        }
+      ]
+    },
+    {
+      "index": "0x1A18",
+      "name": "Inputs",
+      "direction": "Tx",
+      "sm": 0,
+      "entries": [
+        {
+          "index": "0x6079",
+          "name": "DC link circuit voltage",
+          "type": "UDINT",
+          "bit_size": 32
+        }
+      ]
+    },
+    {
+      "index": "0x1A19",
+      "name": "Inputs",
+      "direction": "Tx",
+      "sm": 0,
+      "entries": [
+        {
+          "index": "0x60F4",
+          "name": "Position Following error",
+          "type": "DINT",
+          "bit_size": 32
+        }
+      ]
+    },
+    {
+      "index": "0x1A1A",
+      "name": "Inputs",
+      "direction": "Tx",
+      "sm": 0,
+      "entries": [
+        {
+          "index": "0x60FA",
+          "name": "Control Effort [cnt/sec]",
+          "type": "DINT",
+          "bit_size": 32
+        }
+      ]
+    },
+    {
+      "index": "0x1A1B",
+      "name": "Inputs",
+      "direction": "Tx",
+      "sm": 0,
+      "entries": [
+        {
+          "index": "0x60FC",
+          "name": "Position Demand Value [cnt]",
+          "type": "DINT",
+          "bit_size": 32
+        }
+      ]
+    },
+    {
+      "index": "0x1A1C",
+      "name": "Inputs",
+      "direction": "Tx",
+      "sm": 0,
+      "entries": [
+        {
+          "index": "0x60FD",
+          "name": "Digital Inputs",
+          "type": "DINT",
+          "bit_size": 32
+        }
+      ]
+    },
+    {
+      "index": "0x1A1D",
+      "name": "Inputs",
+      "direction": "Tx",
+      "sm": 0,
+      "entries": [
+        {
+          "index": "0x2205",
+          "name": "Analog Input 1",
+          "type": "INT",
+          "bit_size": 16
+        }
+      ]
+    },
+    {
+      "index": "0x1A1E",
+      "name": "Inputs",
+      "direction": "Tx",
+      "sm": 0,
+      "entries": [
+        {
+          "index": "0x20A0",
+          "name": "Auxiliary position actual value",
+          "type": "DINT",
+          "bit_size": 32
+        }
+      ]
+    },
+    {
+      "index": "0x1A1F",
+      "name": "Inputs",
+      "direction": "Tx",
+      "sm": 0,
+      "entries": [
+        {
+          "index": "0x6078",
+          "name": "Current actual value",
+          "type": "INT",
+          "bit_size": 16
+        }
+      ]
+    },
+    {
+      "index": "0x1A20",
+      "name": "Inputs",
+      "direction": "Tx",
+      "sm": 0,
+      "entries": [
+        {
+          "index": "0x60BD",
+          "name": "Touch probe pos2 neg value",
+          "type": "DINT",
+          "bit_size": 32
+        }
+      ]
+    },
+    {
+      "index": "0x1A21",
+      "name": "Inputs",
+      "direction": "Tx",
+      "sm": 0,
+      "entries": [
+        {
+          "index": "0x2085",
+          "name": "Extra Status Reg",
+          "type": "INT",
+          "bit_size": 16
+        }
+      ]
+    },
+    {
+      "index": "0x1A22",
+      "name": "Inputs",
+      "direction": "Tx",
+      "sm": 0,
+      "entries": [
+        {
+          "index": "0x1002",
+          "name": "Elmo Status Reg",
+          "type": "UDINT",
+          "bit_size": 32
+        }
+      ]
+    },
+    {
+      "index": "0x1A23",
+      "name": "Inputs",
+      "direction": "Tx",
+      "sm": 0,
+      "entries": [
+        {
+          "index": "0x2202",
+          "name": "Extended Inputs Value",
+          "type": "UDINT",
+          "bit_size": 32
+        }
+      ]
+    },
+    {
+      "index": "0x1A24",
+      "name": "Inputs",
+      "direction": "Tx",
+      "sm": 0,
+      "entries": [
+        {
+          "index": "0x2203",
+          "name": "App Object",
+          "type": "UDINT",
+          "bit_size": 32
+        }
+      ]
+    },
+    {
+      "index": "0x1A26",
+      "name": "Inputs",
+      "direction": "Tx",
+      "sm": 0,
+      "entries": [
+        {
+          "index": "0x603F",
+          "name": "Error Code",
+          "type": "UINT",
+          "bit_size": 16
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,67 @@
+{
+  "brand": "delta-a3",
+  "vendor": "",
+  "device": "",
+  "channels": [
+    {
+      "id": "CH1",
+      "label": "Position",
+      "unit": "pulses",
+      "available": false,
+      "sources": []
+    },
+    {
+      "id": "CH2",
+      "label": "Velocity",
+      "unit": "rpm",
+      "available": false,
+      "sources": []
+    },
+    {
+      "id": "CH3",
+      "label": "Current",
+      "unit": "%",
+      "available": false,
+      "sources": []
+    },
+    {
+      "id": "CH4",
+      "label": "Torque",
+      "unit": "%",
+      "available": false,
+      "sources": []
+    },
+    {
+      "id": "CH5",
+      "label": "Following Error",
+      "unit": "pulses",
+      "available": false,
+      "sources": []
+    },
+    {
+      "id": "CH6",
+      "label": "Digital IO",
+      "unit": "bitfield",
+      "available": false,
+      "sources": []
+    },
+    {
+      "id": "CH7",
+      "label": "Status / Custom",
+      "unit": "hex",
+      "available": false,
+      "sources": []
+    },
+    {
+      "id": "CH8",
+      "label": "Op Mode / Profile",
+      "unit": "code",
+      "available": false,
+      "sources": []
+    }
+  ],
+  "available_channels": 0,
+  "trigger_sources": [],
+  "sample_rate_max_hz": 10000,
+  "dc_cycle_us": 1000
+}

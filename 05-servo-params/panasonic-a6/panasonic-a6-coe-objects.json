@@ -1,0 +1,195 @@
+{
+  "vendor": {
+    "id": "#x0000066F",
+    "name": "Panasonic Corporation, Automotive & Industrial Systems Company"
+  },
+  "device": {
+    "type": "MADLT01BM",
+    "product_code": "#x61580000",
+    "name": "MADLT01BM"
+  },
+  "source_file": "Panasonic_MINAS-A6BM_V1_3.xml",
+  "count": 18,
+  "objects": [
+    {
+      "index": "0x603F",
+      "name": "Error code",
+      "type": "UINT",
+      "bit_size": 16,
+      "access": "ro",
+      "pdo_mapping": "T",
+      "default": null,
+      "category": "cia402"
+    },
+    {
+      "index": "0x6040",
+      "name": "Controlword",
+      "type": "UINT",
+      "bit_size": 16,
+      "access": "rw",
+      "pdo_mapping": "R",
+      "default": null,
+      "category": "cia402"
+    },
+    {
+      "index": "0x6041",
+      "name": "Statusword",
+      "type": "UINT",
+      "bit_size": 16,
+      "access": "ro",
+      "pdo_mapping": "T",
+      "default": null,
+      "category": "cia402"
+    },
+    {
+      "index": "0x6060",
+      "name": "Modes of operation",
+      "type": "SINT",
+      "bit_size": 8,
+      "access": "rw",
+      "pdo_mapping": "R",
+      "default": null,
+      "category": "cia402"
+    },
+    {
+      "index": "0x6061",
+      "name": "Modes of operation display",
+      "type": "SINT",
+      "bit_size": 8,
+      "access": "ro",
+      "pdo_mapping": "T",
+      "default": null,
+      "category": "cia402"
+    },
+    {
+      "index": "0x6064",
+      "name": "Position actual value",
+      "type": "DINT",
+      "bit_size": 32,
+      "access": "ro",
+      "pdo_mapping": "T",
+      "default": null,
+      "category": "cia402"
+    },
+    {
+      "index": "0x606C",
+      "name": "Velocity actual value",
+      "type": "DINT",
+      "bit_size": 32,
+      "access": "ro",
+      "pdo_mapping": "T",
+      "default": null,
+      "category": "cia402"
+    },
+    {
+      "index": "0x6071",
+      "name": "Target torque",
+      "type": "INT",
+      "bit_size": 16,
+      "access": "rw",
+      "pdo_mapping": "R",
+      "default": null,
+      "category": "cia402"
+    },
+    {
+      "index": "0x6072",
+      "name": "Max torque",
+      "type": "UINT",
+      "bit_size": 16,
+      "access": "rw",
+      "pdo_mapping": "R",
+      "default": null,
+      "category": "cia402"
+    },
+    {
+      "index": "0x6077",
+      "name": "Torque actual value",
+      "type": "INT",
+      "bit_size": 16,
+      "access": "ro",
+      "pdo_mapping": "T",
+      "default": null,
+      "category": "cia402"
+    },
+    {
+      "index": "0x607A",
+      "name": "Target position",
+      "type": "DINT",
+      "bit_size": 32,
+      "access": "rw",
+      "pdo_mapping": "R",
+      "default": null,
+      "category": "cia402"
+    },
+    {
+      "index": "0x6080",
+      "name": "Max motor speed",
+      "type": "UDINT",
+      "bit_size": 32,
+      "access": "rw",
+      "pdo_mapping": "R",
+      "default": null,
+      "category": "cia402"
+    },
+    {
+      "index": "0x60B8",
+      "name": "Touch probe function",
+      "type": "UINT",
+      "bit_size": 16,
+      "access": "rw",
+      "pdo_mapping": "R",
+      "default": null,
+      "category": "cia402"
+    },
+    {
+      "index": "0x60B9",
+      "name": "Touch probe status",
+      "type": "UINT",
+      "bit_size": 16,
+      "access": "ro",
+      "pdo_mapping": "T",
+      "default": null,
+      "category": "cia402"
+    },
+    {
+      "index": "0x60BA",
+      "name": "Touch probe pos1 pos value",
+      "type": "DINT",
+      "bit_size": 32,
+      "access": "ro",
+      "pdo_mapping": "T",
+      "default": null,
+      "category": "cia402"
+    },
+    {
+      "index": "0x60F4",
+      "name": "Following error actual value",
+      "type": "DINT",
+      "bit_size": 32,
+      "access": "ro",
+      "pdo_mapping": "T",
+      "default": null,
+      "category": "cia402"
+    },
+    {
+      "index": "0x60FD",
+      "name": "Digital inputs",
+      "type": "UDINT",
+      "bit_size": 32,
+      "access": "ro",
+      "pdo_mapping": "T",
+      "default": null,
+      "category": "cia402"
+    },
+    {
+      "index": "0x60FF",
+      "name": "Target velocity",
+      "type": "DINT",
+      "bit_size": 32,
+      "access": "rw",
+      "pdo_mapping": "R",
+      "default": null,
+      "category": "cia402"
+    }
+  ]
+}

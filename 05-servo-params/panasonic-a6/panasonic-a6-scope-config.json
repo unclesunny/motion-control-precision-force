@@ -1,0 +1,175 @@
+{
+  "brand": "panasonic-a6",
+  "vendor": "Panasonic Corporation, Automotive & Industrial Systems Company",
+  "device": "MADLT01BM",
+  "channels": [
+    {
+      "id": "CH1",
+      "label": "Position",
+      "unit": "pulses",
+      "available": true,
+      "sources": [
+        {
+          "index": "0x6064",
+          "name": "Position actual value",
+          "type": "DINT",
+          "bit_size": 32,
+          "pdo_dir": "T",
+          "role": "primary"
+        }
+      ]
+    },
+    {
+      "id": "CH2",
+      "label": "Velocity",
+      "unit": "rpm",
+      "available": true,
+      "sources": [
+        {
+          "index": "0x606C",
+          "name": "Velocity actual value",
+          "type": "DINT",
+          "bit_size": 32,
+          "pdo_dir": "T",
+          "role": "primary"
+        }
+      ]
+    },
+    {
+      "id": "CH3",
+      "label": "Current",
+      "unit": "%",
+      "available": false,
+      "sources": []
+    },
+    {
+      "id": "CH4",
+      "label": "Torque",
+      "unit": "%",
+      "available": true,
+      "sources": [
+        {
+          "index": "0x6077",
+          "name": "Torque actual value",
+          "type": "INT",
+          "bit_size": 16,
+          "pdo_dir": "T",
+          "role": "primary"
+        }
+      ]
+    },
+    {
+      "id": "CH5",
+      "label": "Following Error",
+      "unit": "pulses",
+      "available": true,
+      "sources": [
+        {
+          "index": "0x60F4",
+          "name": "Following error actual value",
+          "type": "DINT",
+          "bit_size": 32,
+          "pdo_dir": "T",
+          "role": "primary"
+        }
+      ]
+    },
+    {
+      "id": "CH6",
+      "label": "Digital IO",
+      "unit": "bitfield",
+      "available": true,
+      "sources": [
+        {
+          "index": "0x60FD",
+          "name": "Digital inputs",
+          "type": "UDINT",
+          "bit_size": 32,
+          "pdo_dir": "T",
+          "role": "primary"
+        }
+      ]
+    },
+    {
+      "id": "CH7",
+      "label": "Status / Custom",
+      "unit": "hex",
+      "available": true,
+      "sources": [
+        {
+          "index": "0x6041",
+          "name": "Statusword",
+          "type": "UINT",
+          "bit_size": 16,
+          "pdo_dir": "T",
+          "role": "primary"
+        },
+        {
+          "index": "0x603F",
+          "name": "Error code",
+          "type": "UINT",
+          "bit_size": 16,
+          "pdo_dir": "T",
+          "role": "fallback"
+        }
+      ]
+    },
+    {
+      "id": "CH8",
+      "label": "Op Mode / Profile",
+      "unit": "code",
+      "available": true,
+      "sources": [
+        {
+          "index": "0x6061",
+          "name": "Modes of operation display",
+          "type": "SINT",
+          "bit_size": 8,
+          "pdo_dir": "T",
+          "role": "primary"
+        },
+        {
+          "index": "0x6060",
+          "name": "Modes of operation",
+          "type": "SINT",
+          "bit_size": 8,
+          "pdo_dir": "R",
+          "role": "reference"
+        },
+        {
+          "index": "0x60FF",
+          "name": "Target velocity",
+          "type": "DINT",
+          "bit_size": 32,
+          "pdo_dir": "R",
+          "role": "profile"
+        }
+      ]
+    }
+  ],
+  "available_channels": 7,
+  "trigger_sources": [
+    {
+      "index": "0x603F",
+      "name": "Error code",
+      "access": "ro"
+    },
+    {
+      "index": "0x6041",
+      "name": "Statusword",
+      "access": "ro"
+    },
+    {
+      "index": "0x60F4",
+      "name": "Following error actual value",
+      "access": "ro"
+    },
+    {
+      "index": "0x60FD",
+      "name": "Digital inputs",
+      "access": "ro"
+    }
+  ],
+  "sample_rate_max_hz": 10000,
+  "dc_cycle_us": 1000
+}

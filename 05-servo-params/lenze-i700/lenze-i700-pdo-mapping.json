@@ -1,0 +1,8481 @@
+{
+  "vendor": {
+    "id": "#x003B",
+    "name": "Lenze"
+  },
+  "count": 258,
+  "mappings": [
+    {
+      "index": "0x1600",
+      "name": "Axis A: csp",
+      "direction": "Rx",
+      "sm": 2,
+      "entries": [
+        {
+          "index": "0x6040",
+          "name": "Controlword",
+          "type": "UINT",
+          "bit_size": 16
+        },
+        {
+          "index": "0x2830",
+          "name": "Lenze control word",
+          "type": "UINT",
+          "bit_size": 16
+        },
+        {
+          "index": "0x6060",
+          "name": "Modes of operation",
+          "type": "SINT",
+          "bit_size": 8
+        },
+        {
+          "index": "0x60B2",
+          "name": "Torque offset",
+          "type": "INT",
+          "bit_size": 16
+        },
+        {
+          "index": "0x607A",
+          "name": "Position demand value",
+          "type": "DINT",
+          "bit_size": 32
+        },
+        {
+          "index": "0x60B1",
+          "name": "Velocity offset",
+          "type": "DINT",
+          "bit_size": 32
+        },
+        {
+          "index": "0x2902",
+          "name": "Speed controller: Load value",
+          "type": "INT",
+          "bit_size": 16
+        }
+      ]
+    },
+    {
+      "index": "0x1601",
+      "name": "Axis A: cst",
+      "direction": "Rx",
+      "sm": 0,
+      "entries": [
+        {
+          "index": "0x6040",
+          "name": "Controlword",
+          "type": "UINT",
+          "bit_size": 16
+        },
+        {
+          "index": "0x2830",
+          "name": "Lenze control word",
+          "type": "UINT",
+          "bit_size": 16
+        },
+        {
+          "index": "0x6060",
+          "name": "Modes of operation",
+          "type": "SINT",
+          "bit_size": 8
+        },
+        {
+          "index": "0x60B2",
+          "name": "Torque offset",
+          "type": "INT",
+          "bit_size": 16
+        },
+        {
+          "index": "0x6071",
+          "name": "Target torque",
+          "type": "INT",
+          "bit_size": 16
+        },
+        {
+          "index": "0x2946",
+          "name": "Speed limitation: Upper speed limit",
+          "type": "DINT",
+          "bit_size": 32
+        },
+        {
+          "index": "0x2946",
+          "name": "Speed limitation: Lower speed limit",
+          "type": "DINT",
+          "bit_size": 32
+        }
+      ]
+    },
+    {
+      "index": "0x1602",
+      "name": "Axis A: csv",
+      "direction": "Rx",
+      "sm": 0,
+      "entries": [
+        {
+          "index": "0x6040",
+          "name": "Controlword",
+          "type": "UINT",
+          "bit_size": 16
+        },
+        {
+          "index": "0x2830",
+          "name": "Lenze control word",
+          "type": "UINT",
+          "bit_size": 16
+        },
+        {
+          "index": "0x6060",
+          "name": "Modes of operation",
+          "type": "SINT",
+          "bit_size": 8
+        },
+        {
+          "index": "0x60B2",
+          "name": "Torque offset",
+          "type": "INT",
+          "bit_size": 16
+        },
+        {
+          "index": "0x60FF",
+          "name": "vl target velocity",
+          "type": "DINT",
+          "bit_size": 32
+        }
+      ]
+    },
+    {
+      "index": "0x1603",
+      "name": "Axis A: vl",
+      "direction": "Rx",
+      "sm": 0,
+      "entries": [
+        {
+          "index": "0x6040",
+          "name": "Controlword",
+          "type": "UINT",
+          "bit_size": 16
+        },
+        {
+          "index": "0x2830",
+          "name": "Lenze control word",
+          "type": "UINT",
+          "bit_size": 16
+        },
+        {
+          "index": "0x6060",
+          "name": "Modes of operation",
+          "type": "SINT",
+          "bit_size": 8
+        },
+        {
+          "index": "0x6042",
+          "name": "vl target velocity",
+          "type": "INT",
+          "bit_size": 16
+        }
+      ]
+    },
+    {
+      "index": "0x1604",
+      "name": "Axis A: TP",
+      "direction": "Rx",
+      "sm": 2,
+      "entries": [
+        {
+          "index": "0x60B8",
+          "name": "Touch probe function",
+          "type": "UINT",
+          "bit_size": 16
+        }
+      ]
+    },
+    {
+      "index": "0x1605",
+      "name": "Axis A: Free configuration",
+      "direction": "Rx",
+      "sm": 0,
+      "entries": []
+    },
+    {
+      "index": "0x1606",
+      "name": "Axis A: Torque limits",
+      "direction": "Rx",
+      "sm": 0,
+      "entries": [
+        {
+          "index": "0x60E0",
+          "name": "Positive torque limit value",
+          "type": "UINT",
+          "bit_size": 16
+        },
+        {
+          "index": "0x60E1",
+          "name": "Negative torque limit value",
+          "type": "UINT",
+          "bit_size": 16
+        }
+      ]
+    },
+    {
+      "index": "0x1A00",
+      "name": "Axis A: csp",
+      "direction": "Tx",
+      "sm": 3,
+      "entries": [
+        {
+          "index": "0x6041",
+          "name": "Statusword",
+          "type": "UINT",
+          "bit_size": 16
+        },
+        {
+          "index": "0x2831",
+          "name": "Lenze status word",
+          "type": "UINT",
+          "bit_size": 16
+        },
+        {
+          "index": "0x6061",
+          "name": "Modes of operation display",
+          "type": "SINT",
+          "bit_size": 8
+        },
+        {
+          "index": "0x603F",
+          "name": "Error code",
+          "type": "UINT",
+          "bit_size": 16
+        },
+        {
+          "index": "0x606C",
+          "name": "vl velocity actual value",
+          "type": "DINT",
+          "bit_size": 32
+        },
+        {
+          "index": "0x6077",
+          "name": "Torque actual value",
+          "type": "INT",
+          "bit_size": 16
+        },
+        {
+          "index": "0x6064",
+          "name": "Position actual value",
+          "type": "DINT",
+          "bit_size": 32
+        },
+        {
+          "index": "0x60F4",
+          "name": "Following error actual value",
+          "type": "DINT",
+          "bit_size": 32
+        }
+      ]
+    },
+    {
+      "index": "0x1A01",
+      "name": "Axis A: cst",
+      "direction": "Tx",
+      "sm": 0,
+      "entries": [
+        {
+          "index": "0x6041",
+          "name": "Statusword",
+          "type": "UINT",
+          "bit_size": 16
+        },
+        {
+          "index": "0x2831",
+          "name": "Lenze status word",
+          "type": "UINT",
+          "bit_size": 16
+        },
+        {
+          "index": "0x6061",
+          "name": "Modes of operation display",
+          "type": "SINT",
+          "bit_size": 8
+        },
+        {
+          "index": "0x603F",
+          "name": "Error code",
+          "type": "UINT",
+          "bit_size": 16
+        },
+        {
+          "index": "0x606C",
+          "name": "vl velocity actual value",
+          "type": "DINT",
+          "bit_size": 32
+        },
+        {
+          "index": "0x6077",
+          "name": "Torque actual value",
+          "type": "INT",
+          "bit_size": 16
+        }
+      ]
+    },
+    {
+      "index": "0x1A02",
+      "name": "Axis A: csv",
+      "direction": "Tx",
+      "sm": 0,
+      "entries": [
+        {
+          "index": "0x6041",
+          "name": "Statusword",
+          "type": "UINT",
+          "bit_size": 16
+        },
+        {
+          "index": "0x2831",
+          "name": "Lenze status word",
+          "type": "UINT",
+          "bit_size": 16
+        },
+        {
+          "index": "0x6061",
+          "name": "Modes of operation display",
+          "type": "SINT",
+          "bit_size": 8
+        },
+        {
+          "index": "0x603F",
+          "name": "Error code",
+          "type": "UINT",
+          "bit_size": 16
+        },
+        {
+          "index": "0x606C",
+          "name": "vl velocity actual value",
+          "type": "DINT",
+          "bit_size": 32
+        },
+        {
+          "index": "0x6077",
+          "name": "Torque actual value",
+          "type": "INT",
+          "bit_size": 16
+        },
+        {
+          "index": "0x6064",
+          "name": "Position actual value",
+          "type": "DINT",
+          "bit_size": 32
+        }
+      ]
+    },
+    {
+      "index": "0x1A03",
+      "name": "Axis A: vl",
+      "direction": "Tx",
+      "sm": 0,
+      "entries": [
+        {
+          "index": "0x6041",
+          "name": "Statusword",
+          "type": "UINT",
+          "bit_size": 16
+        },
+        {
+          "index": "0x2831",
+          "name": "Lenze status word",
+          "type": "UINT",
+          "bit_size": 16
+        },
+        {
+          "index": "0x6061",
+          "name": "Modes of operation display",
+          "type": "SINT",
+          "bit_size": 8
+        },
+        {
+          "index": "0x603F",
+          "name": "Error code",
+          "type": "UINT",
+          "bit_size": 16
+        },
+        {
+          "index": "0x6044",
+          "name": "vl velocity actual value",
+          "type": "INT",
+          "bit_size": 16
+        }
+      ]
+    },
+    {
+      "index": "0x1A04",
+      "name": "Axis A: TP",
+      "direction": "Tx",
+      "sm": 3,
+      "entries": [
+        {
+          "index": "0x60B9",
+          "name": "Touch probe status",
+          "type": "UINT",
+          "bit_size": 16
+        },
+        {
+          "index": "0x60BA",
+          "name": "Touch probe pos1 pos value",
+          "type": "DINT",
+          "bit_size": 32
+        },
+        {
+          "index": "0x60BB",
+          "name": "Touch probe pos1 neg value",
+          "type": "DINT",
+          "bit_size": 32
+        },
+        {
+          "index": "0x60BC",
+          "name": "Touch probe pos2 pos value",
+          "type": "DINT",
+          "bit_size": 32
+        },
+        {
+          "index": "0x60BD",
+          "name": "Touch probe pos2 neg value",
+          "type": "DINT",
+          "bit_size": 32
+        }
+      ]
+    },
+    {
+      "index": "0x1A05",
+      "name": "Axis A: Free configuration",
+      "direction": "Tx",
+      "sm": 0,
+      "entries": []
+    },
+    {
+      "index": "0x1600",
+      "name": "Axis A: csp",
+      "direction": "Rx",
+      "sm": 2,
+      "entries": [
+        {
+          "index": "0x6040",
+          "name": "Controlword",
+          "type": "UINT",
+          "bit_size": 16
+        },
+        {
+          "index": "0x2830",
+          "name": "Lenze control word",
+          "type": "UINT",
+          "bit_size": 16
+        },
+        {
+          "index": "0x6060",
+          "name": "Modes of operation",
+          "type": "SINT",
+          "bit_size": 8
+        },
+        {
+          "index": "0x60B2",
+          "name": "Torque offset",
+          "type": "INT",
+          "bit_size": 16
+        },
+        {
+          "index": "0x607A",
+          "name": "Position demand value",
+          "type": "DINT",
+          "bit_size": 32
+        },
+        {
+          "index": "0x60B1",
+          "name": "Velocity offset",
+          "type": "DINT",
+          "bit_size": 32
+        },
+        {
+          "index": "0x2902",
+          "name": "Speed controller: Load value",
+          "type": "INT",
+          "bit_size": 16
+        }
+      ]
+    },
+    {
+      "index": "0x1601",
+      "name": "Axis A: cst",
+      "direction": "Rx",
+      "sm": 0,
+      "entries": [
+        {
+          "index": "0x6040",
+          "name": "Controlword",
+          "type": "UINT",
+          "bit_size": 16
+        },
+        {
+          "index": "0x2830",
+          "name": "Lenze control word",
+          "type": "UINT",
+          "bit_size": 16
+        },
+        {
+          "index": "0x6060",
+          "name": "Modes of operation",
+          "type": "SINT",
+          "bit_size": 8
+        },
+        {
+          "index": "0x60B2",
+          "name": "Torque offset",
+          "type": "INT",
+          "bit_size": 16
+        },
+        {
+          "index": "0x6071",
+          "name": "Target torque",
+          "type": "INT",
+          "bit_size": 16
+        },
+        {
+          "index": "0x2946",
+          "name": "Speed limitation: Upper speed limit",
+          "type": "DINT",
+          "bit_size": 32
+        },
+        {
+          "index": "0x2946",
+          "name": "Speed limitation: Lower speed limit",
+          "type": "DINT",
+          "bit_size": 32
+        }
+      ]
+    },
+    {
+      "index": "0x1602",
+      "name": "Axis A: csv",
+      "direction": "Rx",
+      "sm": 0,
+      "entries": [
+        {
+          "index": "0x6040",
+          "name": "Controlword",
+          "type": "UINT",
+          "bit_size": 16
+        },
+        {
+          "index": "0x2830",
+          "name": "Lenze control word",
+          "type": "UINT",
+          "bit_size": 16
+        },
+        {
+          "index": "0x6060",
+          "name": "Modes of operation",
+          "type": "SINT",
+          "bit_size": 8
+        },
+        {
+          "index": "0x60B2",
+          "name": "Torque offset",
+          "type": "INT",
+          "bit_size": 16
+        },
+        {
+          "index": "0x60FF",
+          "name": "vl target velocity",
+          "type": "DINT",
+          "bit_size": 32
+        }
+      ]
+    },
+    {
+      "index": "0x1603",
+      "name": "Axis A: vl",
+      "direction": "Rx",
+      "sm": 0,
+      "entries": [
+        {
+          "index": "0x6040",
+          "name": "Controlword",
+          "type": "UINT",
+          "bit_size": 16
+        },
+        {
+          "index": "0x2830",
+          "name": "Lenze control word",
+          "type": "UINT",
+          "bit_size": 16
+        },
+        {
+          "index": "0x6060",
+          "name": "Modes of operation",
+          "type": "SINT",
+          "bit_size": 8
+        },
+        {
+          "index": "0x6042",
+          "name": "vl target velocity",
+          "type": "INT",
+          "bit_size": 16
+        }
+      ]
+    },
+    {
+      "index": "0x1604",
+      "name": "Axis A: TP",
+      "direction": "Rx",
+      "sm": 2,
+      "entries": [
+        {
+          "index": "0x60B8",
+          "name": "Touch probe function",
+          "type": "UINT",
+          "bit_size": 16
+        }
+      ]
+    },
+    {
+      "index": "0x1605",
+      "name": "Axis A: Free configuration",
+      "direction": "Rx",
+      "sm": 0,
+      "entries": []
+    },
+    {
+      "index": "0x1606",
+      "name": "Axis A: Torque limits",
+      "direction": "Rx",
+      "sm": 0,
+      "entries": [
+        {
+          "index": "0x60E0",
+          "name": "Positive torque limit value",
+          "type": "UINT",
+          "bit_size": 16
+        },
+        {
+          "index": "0x60E1",
+          "name": "Negative torque limit value",
+          "type": "UINT",
+          "bit_size": 16
+        }
+      ]
+    },
+    {
+      "index": "0x1610",
+      "name": "Axis B: csp",
+      "direction": "Rx",
+      "sm": 2,
+      "entries": [
+        {
+          "index": "0x6840",
+          "name": "Controlword",
+          "type": "UINT",
+          "bit_size": 16
+        },
+        {
+          "index": "0x3030",
+          "name": "Lenze control word",
+          "type": "UINT",
+          "bit_size": 16
+        },
+        {
+          "index": "0x6860",
+          "name": "Modes of operation",
+          "type": "SINT",
+          "bit_size": 8
+        },
+        {
+          "index": "0x68B2",
+          "name": "Torque offset",
+          "type": "INT",
+          "bit_size": 16
+        },
+        {
+          "index": "0x687A",
+          "name": "Position demand value",
+          "type": "DINT",
+          "bit_size": 32
+        },
+        {
+          "index": "0x68B1",
+          "name": "Velocity offset",
+          "type": "DINT",
+          "bit_size": 32
+        },
+        {
+          "index": "0x3102",
+          "name": "Speed controller: Load value",
+          "type": "INT",
+          "bit_size": 16
+        }
+      ]
+    },
+    {
+      "index": "0x1611",
+      "name": "Axis B: cst",
+      "direction": "Rx",
+      "sm": 0,
+      "entries": [
+        {
+          "index": "0x6840",
+          "name": "Controlword",
+          "type": "UINT",
+          "bit_size": 16
+        },
+        {
+          "index": "0x3030",
+          "name": "Lenze control word",
+          "type": "UINT",
+          "bit_size": 16
+        },
+        {
+          "index": "0x6860",
+          "name": "Modes of operation",
+          "type": "SINT",
+          "bit_size": 8
+        },
+        {
+          "index": "0x68B2",
+          "name": "Torque offset",
+          "type": "INT",
+          "bit_size": 16
+        },
+        {
+          "index": "0x6871",
+          "name": "Target torque",
+          "type": "INT",
+          "bit_size": 16
+        },
+        {
+          "index": "0x3146",
+          "name": "Speed limitation: Upper speed limit",
+          "type": "DINT",
+          "bit_size": 32
+        },
+        {
+          "index": "0x3146",
+          "name": "Speed limitation: Lower speed limit",
+          "type": "DINT",
+          "bit_size": 32
+        }
+      ]
+    },
+    {
+      "index": "0x1612",
+      "name": "Axis B: csv",
+      "direction": "Rx",
+      "sm": 0,
+      "entries": [
+        {
+          "index": "0x6840",
+          "name": "Controlword",
+          "type": "UINT",
+          "bit_size": 16
+        },
+        {
+          "index": "0x3030",
+          "name": "Lenze control word",
+          "type": "UINT",
+          "bit_size": 16
+        },
+        {
+          "index": "0x6860",
+          "name": "Modes of operation",
+          "type": "SINT",
+          "bit_size": 8
+        },
+        {
+          "index": "0x68B2",
+          "name": "Torque offset",
+          "type": "INT",
+          "bit_size": 16
+        },
+        {
+          "index": "0x68FF",
+          "name": "vl target velocity",
+          "type": "DINT",
+          "bit_size": 32
+        }
+      ]
+    },
+    {
+      "index": "0x1613",
+      "name": "Axis B: vl",
+      "direction": "Rx",
+      "sm": 0,
+      "entries": [
+        {
+          "index": "0x6840",
+          "name": "Controlword",
+          "type": "UINT",
+          "bit_size": 16
+        },
+        {
+          "index": "0x3030",
+          "name": "Lenze control word",
+          "type": "UINT",
+          "bit_size": 16
+        },
+        {
+          "index": "0x6860",
+          "name": "Modes of operation",
+          "type": "SINT",
+          "bit_size": 8
+        },
+        {
+          "index": "0x6842",
+          "name": "vl target velocity",
+          "type": "INT",
+          "bit_size": 16
+        }
+      ]
+    },
+    {
+      "index": "0x1614",
+      "name": "Axis B: TP",
+      "direction": "Rx",
+      "sm": 2,
+      "entries": [
+        {
+          "index": "0x68B8",
+          "name": "Touch probe function",
+          "type": "UINT",
+          "bit_size": 16
+        }
+      ]
+    },
+    {
+      "index": "0x1615",
+      "name": "Axis B: Frei konfiguriert",
+      "direction": "Rx",
+      "sm": 0,
+      "entries": []
+    },
+    {
+      "index": "0x1616",
+      "name": "Axis B: Torque limits",
+      "direction": "Rx",
+      "sm": 0,
+      "entries": [
+        {
+          "index": "0x68E0",
+          "name": "Positive torque limit value",
+          "type": "UINT",
+          "bit_size": 16
+        },
+        {
+          "index": "0x68E1",
+          "name": "Negative torque limit value",
+          "type": "UINT",
+          "bit_size": 16
+        }
+      ]
+    },
+    {
+      "index": "0x1A00",
+      "name": "Axis A: csp",
+      "direction": "Tx",
+      "sm": 3,
+      "entries": [
+        {
+          "index": "0x6041",
+          "name": "Statusword",
+          "type": "UINT",
+          "bit_size": 16
+        },
+        {
+          "index": "0x2831",
+          "name": "Lenze status word",
+          "type": "UINT",
+          "bit_size": 16
+        },
+        {
+          "index": "0x6061",
+          "name": "Modes of operation display",
+          "type": "SINT",
+          "bit_size": 8
+        },
+        {
+          "index": "0x603F",
+          "name": "Error code",
+          "type": "UINT",
+          "bit_size": 16
+        },
+        {
+          "index": "0x606C",
+          "name": "vl velocity actual value",
+          "type": "DINT",
+          "bit_size": 32
+        },
+        {
+          "index": "0x6077",
+          "name": "Torque actual value",
+          "type": "INT",
+          "bit_size": 16
+        },
+        {
+          "index": "0x6064",
+          "name": "Position actual value",
+          "type": "DINT",
+          "bit_size": 32
+        },
+        {
+          "index": "0x60F4",
+          "name": "Following error actual value",
+          "type": "DINT",
+          "bit_size": 32
+        }
+      ]
+    },
+    {
+      "index": "0x1A01",
+      "name": "Axis A: cst",
+      "direction": "Tx",
+      "sm": 0,
+      "entries": [
+        {
+          "index": "0x6041",
+          "name": "Statusword",
+          "type": "UINT",
+          "bit_size": 16
+        },
+        {
+          "index": "0x2831",
+          "name": "Lenze status word",
+          "type": "UINT",
+          "bit_size": 16
+        },
+        {
+          "index": "0x6061",
+          "name": "Modes of operation display",
+          "type": "SINT",
+          "bit_size": 8
+        },
+        {
+          "index": "0x603F",
+          "name": "Error code",
+          "type": "UINT",
+          "bit_size": 16
+        },
+        {
+          "index": "0x606C",
+          "name": "vl velocity actual value",
+          "type": "DINT",
+          "bit_size": 32
+        },
+        {
+          "index": "0x6077",
+          "name": "Torque actual value",
+          "type": "INT",
+          "bit_size": 16
+        }
+      ]
+    },
+    {
+      "index": "0x1A02",
+      "name": "Axis A: csv",
+      "direction": "Tx",
+      "sm": 0,
+      "entries": [
+        {
+          "index": "0x6041",
+          "name": "Statusword",
+          "type": "UINT",
+          "bit_size": 16
+        },
+        {
+          "index": "0x2831",
+          "name": "Lenze status word",
+          "type": "UINT",
+          "bit_size": 16
+        },
+        {
+          "index": "0x6061",
+          "name": "Modes of operation display",
+          "type": "SINT",
+          "bit_size": 8
+        },
+        {
+          "index": "0x603F",
+          "name": "Error code",
+          "type": "UINT",
+          "bit_size": 16
+        },
+        {
+          "index": "0x606C",
+          "name": "vl velocity actual value",
+          "type": "DINT",
+          "bit_size": 32
+        },
+        {
+          "index": "0x6077",
+          "name": "Torque actual value",
+          "type": "INT",
+          "bit_size": 16
+        },
+        {
+          "index": "0x6064",
+          "name": "Position actual value",
+          "type": "DINT",
+          "bit_size": 32
+        }
+      ]
+    },
+    {
+      "index": "0x1A03",
+      "name": "Axis A: vl",
+      "direction": "Tx",
+      "sm": 0,
+      "entries": [
+        {
+          "index": "0x6041",
+          "name": "Statusword",
+          "type": "UINT",
+          "bit_size": 16
+        },
+        {
+          "index": "0x2831",
+          "name": "Lenze status word",
+          "type": "UINT",
+          "bit_size": 16
+        },
+        {
+          "index": "0x6061",
+          "name": "Modes of operation display",
+          "type": "SINT",
+          "bit_size": 8
+        },
+        {
+          "index": "0x603F",
+          "name": "Error code",
+          "type": "UINT",
+          "bit_size": 16
+        },
+        {
+          "index": "0x6044",
+          "name": "vl velocity actual value",
+          "type": "INT",
+          "bit_size": 16
+        }
+      ]
+    },
+    {
+      "index": "0x1A04",
+      "name": "Axis A: TP",
+      "direction": "Tx",
+      "sm": 3,
+      "entries": [
+        {
+          "index": "0x60B9",
+          "name": "Touch probe status",
+          "type": "UINT",
+          "bit_size": 16
+        },
+        {
+          "index": "0x60BA",
+          "name": "Touch probe pos1 pos value",
+          "type": "DINT",
+          "bit_size": 32
+        },
+        {
+          "index": "0x60BB",
+          "name": "Touch probe pos1 neg value",
+          "type": "DINT",
+          "bit_size": 32
+        },
+        {
+          "index": "0x60BC",
+          "name": "Touch probe pos2 pos value",
+          "type": "DINT",
+          "bit_size": 32
+        },
+        {
+          "index": "0x60BD",
+          "name": "Touch probe pos2 neg value",
+          "type": "DINT",
+          "bit_size": 32
+        }
+      ]
+    },
+    {
+      "index": "0x1A05",
+      "name": "Axis A: Free configuration",
+      "direction": "Tx",
+      "sm": 0,
+      "entries": []
+    },
+    {
+      "index": "0x1A10",
+      "name": "Axis B: csp",
+      "direction": "Tx",
+      "sm": 3,
+      "entries": [
+        {
+          "index": "0x6841",
+          "name": "Statusword",
+          "type": "UINT",
+          "bit_size": 16
+        },
+        {
+          "index": "0x3031",
+          "name": "Lenze status word",
+          "type": "UINT",
+          "bit_size": 16
+        },
+        {
+          "index": "0x6861",
+          "name": "Modes of operation display",
+          "type": "SINT",
+          "bit_size": 8
+        },
+        {
+          "index": "0x683F",
+          "name": "Error code",
+          "type": "UINT",
+          "bit_size": 16
+        },
+        {
+          "index": "0x686C",
+          "name": "vl velocity actual value",
+          "type": "DINT",
+          "bit_size": 32
+        },
+        {
+          "index": "0x6877",
+          "name": "Torque actual value",
+          "type": "INT",
+          "bit_size": 16
+        },
+        {
+          "index": "0x6864",
+          "name": "Position actual value",
+          "type": "DINT",
+          "bit_size": 32
+        },
+        {
+          "index": "0x68F4",
+          "name": "Following error actual value",
+          "type": "DINT",
+          "bit_size": 32
+        }
+      ]
+    },
+    {
+      "index": "0x1A11",
+      "name": "Axis B: cst",
+      "direction": "Tx",
+      "sm": 0,
+      "entries": [
+        {
+          "index": "0x6841",
+          "name": "Statusword",
+          "type": "UINT",
+          "bit_size": 16
+        },
+        {
+          "index": "0x3031",
+          "name": "Lenze status word",
+          "type": "UINT",
+          "bit_size": 16
+        },
+        {
+          "index": "0x6861",
+          "name": "Modes of operation display",
+          "type": "SINT",
+          "bit_size": 8
+        },
+        {
+          "index": "0x683F",
+          "name": "Error code",
+          "type": "UINT",
+          "bit_size": 16
+        },
+        {
+          "index": "0x686C",
+          "name": "vl velocity actual value",
+          "type": "DINT",
+          "bit_size": 32
+        },
+        {
+          "index": "0x6877",
+          "name": "Torque actual value",
+          "type": "INT",
+          "bit_size": 16
+        }
+      ]
+    },
+    {
+      "index": "0x1A12",
+      "name": "Axis B: csv",
+      "direction": "Tx",
+      "sm": 0,
+      "entries": [
+        {
+          "index": "0x6841",
+          "name": "Statusword",
+          "type": "UINT",
+          "bit_size": 16
+        },
+        {
+          "index": "0x3031",
+          "name": "Lenze status word",
+          "type": "UINT",
+          "bit_size": 16
+        },
+        {
+          "index": "0x6861",
+          "name": "Modes of operation display",
+          "type": "SINT",
+          "bit_size": 8
+        },
+        {
+          "index": "0x683F",
+          "name": "Error code",
+          "type": "UINT",
+          "bit_size": 16
+        },
+        {
+          "index": "0x686C",
+          "name": "vl velocity actual value",
+          "type": "DINT",
+          "bit_size": 32
+        },
+        {
+          "index": "0x6877",
+          "name": "Torque actual value",
+          "type": "INT",
+          "bit_size": 16
+        },
+        {
+          "index": "0x6864",
+          "name": "Position actual value",
+          "type": "DINT",
+          "bit_size": 32
+        }
+      ]
+    },
+    {
+      "index": "0x1A13",
+      "name": "Axis B: vl",
+      "direction": "Tx",
+      "sm": 0,
+      "entries": [
+        {
+          "index": "0x6841",
+          "name": "Statusword",
+          "type": "UINT",
+          "bit_size": 16
+        },
+        {
+          "index": "0x3031",
+          "name": "Lenze status word",
+          "type": "UINT",
+          "bit_size": 16
+        },
+        {
+          "index": "0x6861",
+          "name": "Modes of operation display",
+          "type": "SINT",
+          "bit_size": 8
+        },
+        {
+          "index": "0x683F",
+          "name": "Error code",
+          "type": "UINT",
+          "bit_size": 16
+        },
+        {
+          "index": "0x6844",
+          "name": "vl velocity actual value",
+          "type": "INT",
+          "bit_size": 16
+        }
+      ]
+    },
+    {
+      "index": "0x1A14",
+      "name": "Axis B: TP",
+      "direction": "Tx",
+      "sm": 3,
+      "entries": [
+        {
+          "index": "0x68B9",
+          "name": "Touch probe status",
+          "type": "UINT",
+          "bit_size": 16
+        },
+        {
+          "index": "0x68BA",
+          "name": "Touch probe pos1 pos value",
+          "type": "DINT",
+          "bit_size": 32
+        },
+        {
+          "index": "0x68BB",
+          "name": "Touch probe pos1 neg value",
+          "type": "DINT",
+          "bit_size": 32
+        },
+        {
+          "index": "0x68BC",
+          "name": "Touch probe pos2 pos value",
+          "type": "DINT",
+          "bit_size": 32
+        },
+        {
+          "index": "0x68BD",
+          "name": "Touch probe pos2 neg value",
+          "type": "DINT",
+          "bit_size": 32
+        }
+      ]
+    },
+    {
+      "index": "0x1A15",
+      "name": "Axis B: Frei konfiguriert",
+      "direction": "Tx",
+      "sm": 0,
+      "entries": []
+    },
+    {
+      "index": "0x1600",
+      "name": "Axis A: csp",
+      "direction": "Rx",
+      "sm": 2,
+      "entries": [
+        {
+          "index": "0x6040",
+          "name": "Controlword",
+          "type": "UINT",
+          "bit_size": 16
+        },
+        {
+          "index": "0x2830",
+          "name": "Lenze control word",
+          "type": "UINT",
+          "bit_size": 16
+        },
+        {
+          "index": "0x6060",
+          "name": "Modes of operation",
+          "type": "SINT",
+          "bit_size": 8
+        },
+        {
+          "index": "0x60B2",
+          "name": "Torque offset",
+          "type": "INT",
+          "bit_size": 16
+        },
+        {
+          "index": "0x607A",
+          "name": "Target position",
+          "type": "DINT",
+          "bit_size": 32
+        },
+        {
+          "index": "0x60B1",
+          "name": "Velocity offset",
+          "type": "DINT",
+          "bit_size": 32
+        },
+        {
+          "index": "0x2902",
+          "name": "Speed controller: Load value",
+          "type": "INT",
+          "bit_size": 16
+        }
+      ]
+    },
+    {
+      "index": "0x1601",
+      "name": "Axis A: cst",
+      "direction": "Rx",
+      "sm": 0,
+      "entries": [
+        {
+          "index": "0x6040",
+          "name": "Controlword",
+          "type": "UINT",
+          "bit_size": 16
+        },
+        {
+          "index": "0x2830",
+          "name": "Lenze control word",
+          "type": "UINT",
+          "bit_size": 16
+        },
+        {
+          "index": "0x6060",
+          "name": "Modes of operation",
+          "type": "SINT",
+          "bit_size": 8
+        },
+        {
+          "index": "0x60B2",
+          "name": "Torque offset",
+          "type": "INT",
+          "bit_size": 16
+        },
+        {
+          "index": "0x6071",
+          "name": "Target torque",
+          "type": "INT",
+          "bit_size": 16
+        },
+        {
+          "index": "0x2946",
+          "name": "Speed limitation: Upper speed limit",
+          "type": "DINT",
+          "bit_size": 32
+        },
+        {
+          "index": "0x2946",
+          "name": "Speed limitation: Lower speed limit",
+          "type": "DINT",
+          "bit_size": 32
+        }
+      ]
+    },
+    {
+      "index": "0x1602",
+      "name": "Axis A: csv",
+      "direction": "Rx",
+      "sm": 0,
+      "entries": [
+        {
+          "index": "0x6040",
+          "name": "Controlword",
+          "type": "UINT",
+          "bit_size": 16
+        },
+        {
+          "index": "0x2830",
+          "name": "Lenze control word",
+          "type": "UINT",
+          "bit_size": 16
+        },
+        {
+          "index": "0x6060",
+          "name": "Modes of operation",
+          "type": "SINT",
+          "bit_size": 8
+        },
+        {
+          "index": "0x60B2",
+          "name": "Torque offset",
+          "type": "INT",
+          "bit_size": 16
+        },
+        {
+          "index": "0x60FF",
+          "name": "Target velocity",
+          "type": "DINT",
+          "bit_size": 32
+        }
+      ]
+    },
+    {
+      "index": "0x1603",
+      "name": "Axis A: vl",
+      "direction": "Rx",
+      "sm": 0,
+      "entries": [
+        {
+          "index": "0x6040",
+          "name": "Controlword",
+          "type": "UINT",
+          "bit_size": 16
+        },
+        {
+          "index": "0x2830",
+          "name": "Lenze control word",
+          "type": "UINT",
+          "bit_size": 16
+        },
+        {
+          "index": "0x6060",
+          "name": "Modes of operation",
+          "type": "SINT",
+          "bit_size": 8
+        },
+        {
+          "index": "0x6042",
+          "name": "vl target velocity",
+          "type": "INT",
+          "bit_size": 16
+        }
+      ]
+    },
+    {
+      "index": "0x1604",
+      "name": "Axis A: TP",
+      "direction": "Rx",
+      "sm": 2,
+      "entries": [
+        {
+          "index": "0x60B8",
+          "name": "Touch probe function",
+          "type": "UINT",
+          "bit_size": 16
+        }
+      ]
+    },
+    {
+      "index": "0x1605",
+      "name": "Axis A: Free configuration",
+      "direction": "Rx",
+      "sm": 0,
+      "entries": []
+    },
+    {
+      "index": "0x1606",
+      "name": "Axis A: Torque limits",
+      "direction": "Rx",
+      "sm": 0,
+      "entries": [
+        {
+          "index": "0x60E0",
+          "name": "Positive torque limit value",
+          "type": "UINT",
+          "bit_size": 16
+        },
+        {
+          "index": "0x60E1",
+          "name": "Negative torque limit value",
+          "type": "UINT",
+          "bit_size": 16
+        }
+      ]
+    },
+    {
+      "index": "0x1A00",
+      "name": "Axis A: csp",
+      "direction": "Tx",
+      "sm": 3,
+      "entries": [
+        {
+          "index": "0x6041",
+          "name": "Statusword",
+          "type": "UINT",
+          "bit_size": 16
+        },
+        {
+          "index": "0x2831",
+          "name": "Lenze status word",
+          "type": "UINT",
+          "bit_size": 16
+        },
+        {
+          "index": "0x6061",
+          "name": "Modes of operation display",
+          "type": "SINT",
+          "bit_size": 8
+        },
+        {
+          "index": "0x603F",
+          "name": "Error code",
+          "type": "UINT",
+          "bit_size": 16
+        },
+        {
+          "index": "0x606C",
+          "name": "Velocity actual value",
+          "type": "DINT",
+          "bit_size": 32
+        },
+        {
+          "index": "0x6077",
+          "name": "Torque actual value",
+          "type": "INT",
+          "bit_size": 16
+        },
+        {
+          "index": "0x6064",
+          "name": "Position actual value",
+          "type": "DINT",
+          "bit_size": 32
+        },
+        {
+          "index": "0x60F4",
+          "name": "Following error actual value",
+          "type": "DINT",
+          "bit_size": 32
+        }
+      ]
+    },
+    {
+      "index": "0x1A01",
+      "name": "Axis A: cst",
+      "direction": "Tx",
+      "sm": 0,
+      "entries": [
+        {
+          "index": "0x6041",
+          "name": "Statusword",
+          "type": "UINT",
+          "bit_size": 16
+        },
+        {
+          "index": "0x2831",
+          "name": "Lenze status word",
+          "type": "UINT",
+          "bit_size": 16
+        },
+        {
+          "index": "0x6061",
+          "name": "Modes of operation display",
+          "type": "SINT",
+          "bit_size": 8
+        },
+        {
+          "index": "0x603F",
+          "name": "Error code",
+          "type": "UINT",
+          "bit_size": 16
+        },
+        {
+          "index": "0x606C",
+          "name": "Velocity actual value",
+          "type": "DINT",
+          "bit_size": 32
+        },
+        {
+          "index": "0x6077",
+          "name": "Torque actual value",
+          "type": "INT",
+          "bit_size": 16
+        }
+      ]
+    },
+    {
+      "index": "0x1A02",
+      "name": "Axis A: csv",
+      "direction": "Tx",
+      "sm": 0,
+      "entries": [
+        {
+          "index": "0x6041",
+          "name": "Statusword",
+          "type": "UINT",
+          "bit_size": 16
+        },
+        {
+          "index": "0x2831",
+          "name": "Lenze status word",
+          "type": "UINT",
+          "bit_size": 16
+        },
+        {
+          "index": "0x6061",
+          "name": "Modes of operation display",
+          "type": "SINT",
+          "bit_size": 8
+        },
+        {
+          "index": "0x603F",
+          "name": "Error code",
+          "type": "UINT",
+          "bit_size": 16
+        },
+        {
+          "index": "0x606C",
+          "name": "Velocity actual value",
+          "type": "DINT",
+          "bit_size": 32
+        },
+        {
+          "index": "0x6077",
+          "name": "Torque actual value",
+          "type": "INT",
+          "bit_size": 16
+        },
+        {
+          "index": "0x6064",
+          "name": "Position actual value",
+          "type": "DINT",
+          "bit_size": 32
+        }
+      ]
+    },
+    {
+      "index": "0x1A03",
+      "name": "Axis A: vl",
+      "direction": "Tx",
+      "sm": 0,
+      "entries": [
+        {
+          "index": "0x6041",
+          "name": "Statusword",
+          "type": "UINT",
+          "bit_size": 16
+        },
+        {
+          "index": "0x2831",
+          "name": "Lenze status word",
+          "type": "UINT",
+          "bit_size": 16
+        },
+        {
+          "index": "0x6061",
+          "name": "Modes of operation display",
+          "type": "SINT",
+          "bit_size": 8
+        },
+        {
+          "index": "0x603F",
+          "name": "Error code",
+          "type": "UINT",
+          "bit_size": 16
+        },
+        {
+          "index": "0x6044",
+          "name": "vl velocity actual value",
+          "type": "INT",
+          "bit_size": 16
+        }
+      ]
+    },
+    {
+      "index": "0x1A04",
+      "name": "Axis A: TP",
+      "direction": "Tx",
+      "sm": 3,
+      "entries": [
+        {
+          "index": "0x60B9",
+          "name": "Touch probe status",
+          "type": "UINT",
+          "bit_size": 16
+        },
+        {
+          "index": "0x60BA",
+          "name": "Touch probe pos1 pos value",
+          "type": "DINT",
+          "bit_size": 32
+        },
+        {
+          "index": "0x60BB",
+          "name": "Touch probe pos1 neg value",
+          "type": "DINT",
+          "bit_size": 32
+        },
+        {
+          "index": "0x60BC",
+          "name": "Touch probe pos2 pos value",
+          "type": "DINT",
+          "bit_size": 32
+        },
+        {
+          "index": "0x60BD",
+          "name": "Touch probe pos2 neg value",
+          "type": "DINT",
+          "bit_size": 32
+        }
+      ]
+    },
+    {
+      "index": "0x1A05",
+      "name": "Axis A: Free configuration",
+      "direction": "Tx",
+      "sm": 0,
+      "entries": []
+    },
+    {
+      "index": "0x1600",
+      "name": "Axis A: csp",
+      "direction": "Rx",
+      "sm": 2,
+      "entries": [
+        {
+          "index": "0x6040",
+          "name": "Controlword",
+          "type": "UINT",
+          "bit_size": 16
+        },
+        {
+          "index": "0x2830",
+          "name": "Lenze control word",
+          "type": "UINT",
+          "bit_size": 16
+        },
+        {
+          "index": "0x6060",
+          "name": "Modes of operation",
+          "type": "SINT",
+          "bit_size": 8
+        },
+        {
+          "index": "0x60B2",
+          "name": "Torque offset",
+          "type": "INT",
+          "bit_size": 16
+        },
+        {
+          "index": "0x607A",
+          "name": "Target position",
+          "type": "DINT",
+          "bit_size": 32
+        },
+        {
+          "index": "0x60B1",
+          "name": "Velocity offset",
+          "type": "DINT",
+          "bit_size": 32
+        },
+        {
+          "index": "0x2902",
+          "name": "Speed controller: Load value",
+          "type": "INT",
+          "bit_size": 16
+        }
+      ]
+    },
+    {
+      "index": "0x1601",
+      "name": "Axis A: cst",
+      "direction": "Rx",
+      "sm": 0,
+      "entries": [
+        {
+          "index": "0x6040",
+          "name": "Controlword",
+          "type": "UINT",
+          "bit_size": 16
+        },
+        {
+          "index": "0x2830",
+          "name": "Lenze control word",
+          "type": "UINT",
+          "bit_size": 16
+        },
+        {
+          "index": "0x6060",
+          "name": "Modes of operation",
+          "type": "SINT",
+          "bit_size": 8
+        },
+        {
+          "index": "0x60B2",
+          "name": "Torque offset",
+          "type": "INT",
+          "bit_size": 16
+        },
+        {
+          "index": "0x6071",
+          "name": "Target torque",
+          "type": "INT",
+          "bit_size": 16
+        },
+        {
+          "index": "0x2946",
+          "name": "Speed limitation: Upper speed limit",
+          "type": "DINT",
+          "bit_size": 32
+        },
+        {
+          "index": "0x2946",
+          "name": "Speed limitation: Lower speed limit",
+          "type": "DINT",
+          "bit_size": 32
+        }
+      ]
+    },
+    {
+      "index": "0x1602",
+      "name": "Axis A: csv",
+      "direction": "Rx",
+      "sm": 0,
+      "entries": [
+        {
+          "index": "0x6040",
+          "name": "Controlword",
+          "type": "UINT",
+          "bit_size": 16
+        },
+        {
+          "index": "0x2830",
+          "name": "Lenze control word",
+          "type": "UINT",
+          "bit_size": 16
+        },
+        {
+          "index": "0x6060",
+          "name": "Modes of operation",
+          "type": "SINT",
+          "bit_size": 8
+        },
+        {
+          "index": "0x60B2",
+          "name": "Torque offset",
+          "type": "INT",
+          "bit_size": 16
+        },
+        {
+          "index": "0x60FF",
+          "name": "Target velocity",
+          "type": "DINT",
+          "bit_size": 32
+        }
+      ]
+    },
+    {
+      "index": "0x1603",
+      "name": "Axis A: vl",
+      "direction": "Rx",
+      "sm": 0,
+      "entries": [
+        {
+          "index": "0x6040",
+          "name": "Controlword",
+          "type": "UINT",
+          "bit_size": 16
+        },
+        {
+          "index": "0x2830",
+          "name": "Lenze control word",
+          "type": "UINT",
+          "bit_size": 16
+        },
+        {
+          "index": "0x6060",
+          "name": "Modes of operation",
+          "type": "SINT",
+          "bit_size": 8
+        },
+        {
+          "index": "0x6042",
+          "name": "vl target velocity",
+          "type": "INT",
+          "bit_size": 16
+        }
+      ]
+    },
+    {
+      "index": "0x1604",
+      "name": "Axis A: TP",
+      "direction": "Rx",
+      "sm": 2,
+      "entries": [
+        {
+          "index": "0x60B8",
+          "name": "Touch probe function",
+          "type": "UINT",
+          "bit_size": 16
+        }
+      ]
+    },
+    {
+      "index": "0x1605",
+      "name": "Axis A: Free configuration",
+      "direction": "Rx",
+      "sm": 0,
+      "entries": []
+    },
+    {
+      "index": "0x1606",
+      "name": "Axis A: Torque limits",
+      "direction": "Rx",
+      "sm": 0,
+      "entries": [
+        {
+          "index": "0x60E0",
+          "name": "Positive torque limit value",
+          "type": "UINT",
+          "bit_size": 16
+        },
+        {
+          "index": "0x60E1",
+          "name": "Negative torque limit value",
+          "type": "UINT",
+          "bit_size": 16
+        }
+      ]
+    },
+    {
+      "index": "0x1610",
+      "name": "Axis B: csp",
+      "direction": "Rx",
+      "sm": 2,
+      "entries": [
+        {
+          "index": "0x6840",
+          "name": "Controlword",
+          "type": "UINT",
+          "bit_size": 16
+        },
+        {
+          "index": "0x3030",
+          "name": "Lenze control word",
+          "type": "UINT",
+          "bit_size": 16
+        },
+        {
+          "index": "0x6860",
+          "name": "Modes of operation",
+          "type": "SINT",
+          "bit_size": 8
+        },
+        {
+          "index": "0x68B2",
+          "name": "Torque offset",
+          "type": "INT",
+          "bit_size": 16
+        },
+        {
+          "index": "0x687A",
+          "name": "Target position",
+          "type": "DINT",
+          "bit_size": 32
+        },
+        {
+          "index": "0x68B1",
+          "name": "Velocity offset",
+          "type": "DINT",
+          "bit_size": 32
+        },
+        {
+          "index": "0x3102",
+          "name": "Speed controller: Load value",
+          "type": "INT",
+          "bit_size": 16
+        }
+      ]
+    },
+    {
+      "index": "0x1611",
+      "name": "Axis B: cst",
+      "direction": "Rx",
+      "sm": 0,
+      "entries": [
+        {
+          "index": "0x6840",
+          "name": "Controlword",
+          "type": "UINT",
+          "bit_size": 16
+        },
+        {
+          "index": "0x3030",
+          "name": "Lenze control word",
+          "type": "UINT",
+          "bit_size": 16
+        },
+        {
+          "index": "0x6860",
+          "name": "Modes of operation",
+          "type": "SINT",
+          "bit_size": 8
+        },
+        {
+          "index": "0x68B2",
+          "name": "Torque offset",
+          "type": "INT",
+          "bit_size": 16
+        },
+        {
+          "index": "0x6871",
+          "name": "Target torque",
+          "type": "INT",
+          "bit_size": 16
+        },
+        {
+          "index": "0x3146",
+          "name": "Speed limitation: Upper speed limit",
+          "type": "DINT",
+          "bit_size": 32
+        },
+        {
+          "index": "0x3146",
+          "name": "Speed limitation: Lower speed limit",
+          "type": "DINT",
+          "bit_size": 32
+        }
+      ]
+    },
+    {
+      "index": "0x1612",
+      "name": "Axis B: csv",
+      "direction": "Rx",
+      "sm": 0,
+      "entries": [
+        {
+          "index": "0x6840",
+          "name": "Controlword",
+          "type": "UINT",
+          "bit_size": 16
+        },
+        {
+          "index": "0x3030",
+          "name": "Lenze control word",
+          "type": "UINT",
+          "bit_size": 16
+        },
+        {
+          "index": "0x6860",
+          "name": "Modes of operation",
+          "type": "SINT",
+          "bit_size": 8
+        },
+        {
+          "index": "0x68B2",
+          "name": "Torque offset",
+          "type": "INT",
+          "bit_size": 16
+        },
+        {
+          "index": "0x68FF",
+          "name": "Target velocity",
+          "type": "DINT",
+          "bit_size": 32
+        }
+      ]
+    },
+    {
+      "index": "0x1613",
+      "name": "Axis B: vl",
+      "direction": "Rx",
+      "sm": 0,
+      "entries": [
+        {
+          "index": "0x6840",
+          "name": "Controlword",
+          "type": "UINT",
+          "bit_size": 16
+        },
+        {
+          "index": "0x3030",
+          "name": "Lenze control word",
+          "type": "UINT",
+          "bit_size": 16
+        },
+        {
+          "index": "0x6860",
+          "name": "Modes of operation",
+          "type": "SINT",
+          "bit_size": 8
+        },
+        {
+          "index": "0x6842",
+          "name": "vl target velocity",
+          "type": "INT",
+          "bit_size": 16
+        }
+      ]
+    },
+    {
+      "index": "0x1614",
+      "name": "Axis B: TP",
+      "direction": "Rx",
+      "sm": 2,
+      "entries": [
+        {
+          "index": "0x68B8",
+          "name": "Touch probe function",
+          "type": "UINT",
+          "bit_size": 16
+        }
+      ]
+    },
+    {
+      "index": "0x1615",
+      "name": "Axis B: Free configuration",
+      "direction": "Rx",
+      "sm": 0,
+      "entries": []
+    },
+    {
+      "index": "0x1616",
+      "name": "Axis B: Torque limits",
+      "direction": "Rx",
+      "sm": 0,
+      "entries": [
+        {
+          "index": "0x68E0",
+          "name": "Positive torque limit value",
+          "type": "UINT",
+          "bit_size": 16
+        },
+        {
+          "index": "0x68E1",
+          "name": "Negative torque limit value",
+          "type": "UINT",
+          "bit_size": 16
+        }
+      ]
+    },
+    {
+      "index": "0x1A00",
+      "name": "Axis A: csp",
+      "direction": "Tx",
+      "sm": 3,
+      "entries": [
+        {
+          "index": "0x6041",
+          "name": "Statusword",
+          "type": "UINT",
+          "bit_size": 16
+        },
+        {
+          "index": "0x2831",
+          "name": "Lenze status word",
+          "type": "UINT",
+          "bit_size": 16
+        },
+        {
+          "index": "0x6061",
+          "name": "Modes of operation display",
+          "type": "SINT",
+          "bit_size": 8
+        },
+        {
+          "index": "0x603F",
+          "name": "Error code",
+          "type": "UINT",
+          "bit_size": 16
+        },
+        {
+          "index": "0x606C",
+          "name": "Velocity actual value",
+          "type": "DINT",
+          "bit_size": 32
+        },
+        {
+          "index": "0x6077",
+          "name": "Torque actual value",
+          "type": "INT",
+          "bit_size": 16
+        },
+        {
+          "index": "0x6064",
+          "name": "Position actual value",
+          "type": "DINT",
+          "bit_size": 32
+        },
+        {
+          "index": "0x60F4",
+          "name": "Following error actual value",
+          "type": "DINT",
+          "bit_size": 32
+        }
+      ]
+    },
+    {
+      "index": "0x1A01",
+      "name": "Axis A: cst",
+      "direction": "Tx",
+      "sm": 0,
+      "entries": [
+        {
+          "index": "0x6041",
+          "name": "Statusword",
+          "type": "UINT",
+          "bit_size": 16
+        },
+        {
+          "index": "0x2831",
+          "name": "Lenze status word",
+          "type": "UINT",
+          "bit_size": 16
+        },
+        {
+          "index": "0x6061",
+          "name": "Modes of operation display",
+          "type": "SINT",
+          "bit_size": 8
+        },
+        {
+          "index": "0x603F",
+          "name": "Error code",
+          "type": "UINT",
+          "bit_size": 16
+        },
+        {
+          "index": "0x606C",
+          "name": "Velocity actual value",
+          "type": "DINT",
+          "bit_size": 32
+        },
+        {
+          "index": "0x6077",
+          "name": "Torque actual value",
+          "type": "INT",
+          "bit_size": 16
+        }
+      ]
+    },
+    {
+      "index": "0x1A02",
+      "name": "Axis A: csv",
+      "direction": "Tx",
+      "sm": 0,
+      "entries": [
+        {
+          "index": "0x6041",
+          "name": "Statusword",
+          "type": "UINT",
+          "bit_size": 16
+        },
+        {
+          "index": "0x2831",
+          "name": "Lenze status word",
+          "type": "UINT",
+          "bit_size": 16
+        },
+        {
+          "index": "0x6061",
+          "name": "Modes of operation display",
+          "type": "SINT",
+          "bit_size": 8
+        },
+        {
+          "index": "0x603F",
+          "name": "Error code",
+          "type": "UINT",
+          "bit_size": 16
+        },
+        {
+          "index": "0x606C",
+          "name": "Velocity actual value",
+          "type": "DINT",
+          "bit_size": 32
+        },
+        {
+          "index": "0x6077",
+          "name": "Torque actual value",
+          "type": "INT",
+          "bit_size": 16
+        },
+        {
+          "index": "0x6064",
+          "name": "Position actual value",
+          "type": "DINT",
+          "bit_size": 32
+        }
+      ]
+    },
+    {
+      "index": "0x1A03",
+      "name": "Axis A: vl",
+      "direction": "Tx",
+      "sm": 0,
+      "entries": [
+        {
+          "index": "0x6041",
+          "name": "Statusword",
+          "type": "UINT",
+          "bit_size": 16
+        },
+        {
+          "index": "0x2831",
+          "name": "Lenze status word",
+          "type": "UINT",
+          "bit_size": 16
+        },
+        {
+          "index": "0x6061",
+          "name": "Modes of operation display",
+          "type": "SINT",
+          "bit_size": 8
+        },
+        {
+          "index": "0x603F",
+          "name": "Error code",
+          "type": "UINT",
+          "bit_size": 16
+        },
+        {
+          "index": "0x6044",
+          "name": "vl velocity actual value",
+          "type": "INT",
+          "bit_size": 16
+        }
+      ]
+    },
+    {
+      "index": "0x1A04",
+      "name": "Axis A: TP",
+      "direction": "Tx",
+      "sm": 3,
+      "entries": [
+        {
+          "index": "0x60B9",
+          "name": "Touch probe status",
+          "type": "UINT",
+          "bit_size": 16
+        },
+        {
+          "index": "0x60BA",
+          "name": "Touch probe pos1 pos value",
+          "type": "DINT",
+          "bit_size": 32
+        },
+        {
+          "index": "0x60BB",
+          "name": "Touch probe pos1 neg value",
+          "type": "DINT",
+          "bit_size": 32
+        },
+        {
+          "index": "0x60BC",
+          "name": "Touch probe pos2 pos value",
+          "type": "DINT",
+          "bit_size": 32
+        },
+        {
+          "index": "0x60BD",
+          "name": "Touch probe pos2 neg value",
+          "type": "DINT",
+          "bit_size": 32
+        }
+      ]
+    },
+    {
+      "index": "0x1A05",
+      "name": "Axis A: Free configuration",
+      "direction": "Tx",
+      "sm": 0,
+      "entries": []
+    },
+    {
+      "index": "0x1A10",
+      "name": "Axis B: csp",
+      "direction": "Tx",
+      "sm": 3,
+      "entries": [
+        {
+          "index": "0x6841",
+          "name": "Statusword",
+          "type": "UINT",
+          "bit_size": 16
+        },
+        {
+          "index": "0x3031",
+          "name": "Lenze status word",
+          "type": "UINT",
+          "bit_size": 16
+        },
+        {
+          "index": "0x6861",
+          "name": "Modes of operation display",
+          "type": "SINT",
+          "bit_size": 8
+        },
+        {
+          "index": "0x683F",
+          "name": "Error code",
+          "type": "UINT",
+          "bit_size": 16
+        },
+        {
+          "index": "0x686C",
+          "name": "Velocity actual value",
+          "type": "DINT",
+          "bit_size": 32
+        },
+        {
+          "index": "0x6877",
+          "name": "Torque actual value",
+          "type": "INT",
+          "bit_size": 16
+        },
+        {
+          "index": "0x6864",
+          "name": "Position actual value",
+          "type": "DINT",
+          "bit_size": 32
+        },
+        {
+          "index": "0x68F4",
+          "name": "Following error actual value",
+          "type": "DINT",
+          "bit_size": 32
+        }
+      ]
+    },
+    {
+      "index": "0x1A11",
+      "name": "Axis B: cst",
+      "direction": "Tx",
+      "sm": 0,
+      "entries": [
+        {
+          "index": "0x6841",
+          "name": "Statusword",
+          "type": "UINT",
+          "bit_size": 16
+        },
+        {
+          "index": "0x3031",
+          "name": "Lenze status word",
+          "type": "UINT",
+          "bit_size": 16
+        },
+        {
+          "index": "0x6861",
+          "name": "Modes of operation display",
+          "type": "SINT",
+          "bit_size": 8
+        },
+        {
+          "index": "0x683F",
+          "name": "Error code",
+          "type": "UINT",
+          "bit_size": 16
+        },
+        {
+          "index": "0x686C",
+          "name": "Velocity actual value",
+          "type": "DINT",
+          "bit_size": 32
+        },
+        {
+          "index": "0x6877",
+          "name": "Torque actual value",
+          "type": "INT",
+          "bit_size": 16
+        }
+      ]
+    },
+    {
+      "index": "0x1A12",
+      "name": "Axis B: csv",
+      "direction": "Tx",
+      "sm": 0,
+      "entries": [
+        {
+          "index": "0x6841",
+          "name": "Statusword",
+          "type": "UINT",
+          "bit_size": 16
+        },
+        {
+          "index": "0x3031",
+          "name": "Lenze status word",
+          "type": "UINT",
+          "bit_size": 16
+        },
+        {
+          "index": "0x6861",
+          "name": "Modes of operation display",
+          "type": "SINT",
+          "bit_size": 8
+        },
+        {
+          "index": "0x683F",
+          "name": "Error code",
+          "type": "UINT",
+          "bit_size": 16
+        },
+        {
+          "index": "0x686C",
+          "name": "Velocity actual value",
+          "type": "DINT",
+          "bit_size": 32
+        },
+        {
+          "index": "0x6877",
+          "name": "Torque actual value",
+          "type": "INT",
+          "bit_size": 16
+        },
+        {
+          "index": "0x6864",
+          "name": "Position actual value",
+          "type": "DINT",
+          "bit_size": 32
+        }
+      ]
+    },
+    {
+      "index": "0x1A13",
+      "name": "Axis B: vl",
+      "direction": "Tx",
+      "sm": 0,
+      "entries": [
+        {
+          "index": "0x6841",
+          "name": "Statusword",
+          "type": "UINT",
+          "bit_size": 16
+        },
+        {
+          "index": "0x3031",
+          "name": "Lenze status word",
+          "type": "UINT",
+          "bit_size": 16
+        },
+        {
+          "index": "0x6861",
+          "name": "Modes of operation display",
+          "type": "SINT",
+          "bit_size": 8
+        },
+        {
+          "index": "0x683F",
+          "name": "Error code",
+          "type": "UINT",
+          "bit_size": 16
+        },
+        {
+          "index": "0x6844",
+          "name": "vl velocity actual value",
+          "type": "INT",
+          "bit_size": 16
+        }
+      ]
+    },
+    {
+      "index": "0x1A14",
+      "name": "Axis B: TP",
+      "direction": "Tx",
+      "sm": 3,
+      "entries": [
+        {
+          "index": "0x68B9",
+          "name": "Touch probe status",
+          "type": "UINT",
+          "bit_size": 16
+        },
+        {
+          "index": "0x68BA",
+          "name": "Touch probe pos1 pos value",
+          "type": "DINT",
+          "bit_size": 32
+        },
+        {
+          "index": "0x68BB",
+          "name": "Touch probe pos1 neg value",
+          "type": "DINT",
+          "bit_size": 32
+        },
+        {
+          "index": "0x68BC",
+          "name": "Touch probe pos2 pos value",
+          "type": "DINT",
+          "bit_size": 32
+        },
+        {
+          "index": "0x68BD",
+          "name": "Touch probe pos2 neg value",
+          "type": "DINT",
+          "bit_size": 32
+        }
+      ]
+    },
+    {
+      "index": "0x1A15",
+      "name": "Axis B: Free configuration",
+      "direction": "Tx",
+      "sm": 0,
+      "entries": []
+    },
+    {
+      "index": "0x1600",
+      "name": "Axis A: csp",
+      "direction": "Rx",
+      "sm": 2,
+      "entries": [
+        {
+          "index": "0x6040",
+          "name": "Controlword",
+          "type": "UINT",
+          "bit_size": 16
+        },
+        {
+          "index": "0x2830",
+          "name": "Lenze control word",
+          "type": "UINT",
+          "bit_size": 16
+        },
+        {
+          "index": "0x6060",
+          "name": "Modes of operation",
+          "type": "SINT",
+          "bit_size": 8
+        },
+        {
+          "index": "0x60B2",
+          "name": "Torque offset",
+          "type": "INT",
+          "bit_size": 16
+        },
+        {
+          "index": "0x607A",
+          "name": "Target position",
+          "type": "DINT",
+          "bit_size": 32
+        },
+        {
+          "index": "0x60B1",
+          "name": "Velocity offset",
+          "type": "DINT",
+          "bit_size": 32
+        },
+        {
+          "index": "0x2902",
+          "name": "Speed controller: Load value",
+          "type": "INT",
+          "bit_size": 16
+        }
+      ]
+    },
+    {
+      "index": "0x1601",
+      "name": "Axis A: cst",
+      "direction": "Rx",
+      "sm": 0,
+      "entries": [
+        {
+          "index": "0x6040",
+          "name": "Controlword",
+          "type": "UINT",
+          "bit_size": 16
+        },
+        {
+          "index": "0x2830",
+          "name": "Lenze control word",
+          "type": "UINT",
+          "bit_size": 16
+        },
+        {
+          "index": "0x6060",
+          "name": "Modes of operation",
+          "type": "SINT",
+          "bit_size": 8
+        },
+        {
+          "index": "0x60B2",
+          "name": "Torque offset",
+          "type": "INT",
+          "bit_size": 16
+        },
+        {
+          "index": "0x6071",
+          "name": "Target torque",
+          "type": "INT",
+          "bit_size": 16
+        },
+        {
+          "index": "0x2946",
+          "name": "Speed limitation: Upper speed limit",
+          "type": "DINT",
+          "bit_size": 32
+        },
+        {
+          "index": "0x2946",
+          "name": "Speed limitation: Lower speed limit",
+          "type": "DINT",
+          "bit_size": 32
+        }
+      ]
+    },
+    {
+      "index": "0x1602",
+      "name": "Axis A: csv",
+      "direction": "Rx",
+      "sm": 0,
+      "entries": [
+        {
+          "index": "0x6040",
+          "name": "Controlword",
+          "type": "UINT",
+          "bit_size": 16
+        },
+        {
+          "index": "0x2830",
+          "name": "Lenze control word",
+          "type": "UINT",
+          "bit_size": 16
+        },
+        {
+          "index": "0x6060",
+          "name": "Modes of operation",
+          "type": "SINT",
+          "bit_size": 8
+        },
+        {
+          "index": "0x60B2",
+          "name": "Torque offset",
+          "type": "INT",
+          "bit_size": 16
+        },
+        {
+          "index": "0x60FF",
+          "name": "Target velocity",
+          "type": "DINT",
+          "bit_size": 32
+        }
+      ]
+    },
+    {
+      "index": "0x1603",
+      "name": "Axis A: vl",
+      "direction": "Rx",
+      "sm": 0,
+      "entries": [
+        {
+          "index": "0x6040",
+          "name": "Controlword",
+          "type": "UINT",
+          "bit_size": 16
+        },
+        {
+          "index": "0x2830",
+          "name": "Lenze control word",
+          "type": "UINT",
+          "bit_size": 16
+        },
+        {
+          "index": "0x6060",
+          "name": "Modes of operation",
+          "type": "SINT",
+          "bit_size": 8
+        },
+        {
+          "index": "0x6042",
+          "name": "vl target velocity",
+          "type": "INT",
+          "bit_size": 16
+        }
+      ]
+    },
+    {
+      "index": "0x1604",
+      "name": "Axis A: TP",
+      "direction": "Rx",
+      "sm": 2,
+      "entries": [
+        {
+          "index": "0x60B8",
+          "name": "Touch probe function",
+          "type": "UINT",
+          "bit_size": 16
+        }
+      ]
+    },
+    {
+      "index": "0x1605",
+      "name": "Axis A: Free configuration",
+      "direction": "Rx",
+      "sm": 0,
+      "entries": []
+    },
+    {
+      "index": "0x1606",
+      "name": "Axis A: Torque limits",
+      "direction": "Rx",
+      "sm": 2,
+      "entries": [
+        {
+          "index": "0x60E0",
+          "name": "Positive torque limit value",
+          "type": "UINT",
+          "bit_size": 16
+        },
+        {
+          "index": "0x60E1",
+          "name": "Negative torque limit value",
+          "type": "UINT",
+          "bit_size": 16
+        }
+      ]
+    },
+    {
+      "index": "0x1607",
+      "name": "Axis A: Speed limits",
+      "direction": "Rx",
+      "sm": 2,
+      "entries": [
+        {
+          "index": "0x2946",
+          "name": "Speed limitation: Upper speed limit",
+          "type": "DINT",
+          "bit_size": 32
+        },
+        {
+          "index": "0x2946",
+          "name": "Speed limitation: Lower speed limit",
+          "type": "DINT",
+          "bit_size": 32
+        }
+      ]
+    },
+    {
+      "index": "0x1A00",
+      "name": "Axis A: csp",
+      "direction": "Tx",
+      "sm": 3,
+      "entries": [
+        {
+          "index": "0x6041",
+          "name": "Statusword",
+          "type": "UINT",
+          "bit_size": 16
+        },
+        {
+          "index": "0x2831",
+          "name": "Lenze status word",
+          "type": "UINT",
+          "bit_size": 16
+        },
+        {
+          "index": "0x6061",
+          "name": "Modes of operation display",
+          "type": "SINT",
+          "bit_size": 8
+        },
+        {
+          "index": "0x603F",
+          "name": "Error code",
+          "type": "UINT",
+          "bit_size": 16
+        },
+        {
+          "index": "0x606C",
+          "name": "Velocity actual value",
+          "type": "DINT",
+          "bit_size": 32
+        },
+        {
+          "index": "0x6077",
+          "name": "Torque actual value",
+          "type": "INT",
+          "bit_size": 16
+        },
+        {
+          "index": "0x6064",
+          "name": "Position actual value",
+          "type": "DINT",
+          "bit_size": 32
+        },
+        {
+          "index": "0x60F4",
+          "name": "Following error actual value",
+          "type": "DINT",
+          "bit_size": 32
+        }
+      ]
+    },
+    {
+      "index": "0x1A01",
+      "name": "Axis A: cst",
+      "direction": "Tx",
+      "sm": 0,
+      "entries": [
+        {
+          "index": "0x6041",
+          "name": "Statusword",
+          "type": "UINT",
+          "bit_size": 16
+        },
+        {
+          "index": "0x2831",
+          "name": "Lenze status word",
+          "type": "UINT",
+          "bit_size": 16
+        },
+        {
+          "index": "0x6061",
+          "name": "Modes of operation display",
+          "type": "SINT",
+          "bit_size": 8
+        },
+        {
+          "index": "0x603F",
+          "name": "Error code",
+          "type": "UINT",
+          "bit_size": 16
+        },
+        {
+          "index": "0x606C",
+          "name": "Velocity actual value",
+          "type": "DINT",
+          "bit_size": 32
+        },
+        {
+          "index": "0x6077",
+          "name": "Torque actual value",
+          "type": "INT",
+          "bit_size": 16
+        }
+      ]
+    },
+    {
+      "index": "0x1A02",
+      "name": "Axis A: csv",
+      "direction": "Tx",
+      "sm": 0,
+      "entries": [
+        {
+          "index": "0x6041",
+          "name": "Statusword",
+          "type": "UINT",
+          "bit_size": 16
+        },
+        {
+          "index": "0x2831",
+          "name": "Lenze status word",
+          "type": "UINT",
+          "bit_size": 16
+        },
+        {
+          "index": "0x6061",
+          "name": "Modes of operation display",
+          "type": "SINT",
+          "bit_size": 8
+        },
+        {
+          "index": "0x603F",
+          "name": "Error code",
+          "type": "UINT",
+          "bit_size": 16
+        },
+        {
+          "index": "0x606C",
+          "name": "Velocity actual value",
+          "type": "DINT",
+          "bit_size": 32
+        },
+        {
+          "index": "0x6077",
+          "name": "Torque actual value",
+          "type": "INT",
+          "bit_size": 16
+        },
+        {
+          "index": "0x6064",
+          "name": "Position actual value",
+          "type": "DINT",
+          "bit_size": 32
+        }
+      ]
+    },
+    {
+      "index": "0x1A03",
+      "name": "Axis A: vl",
+      "direction": "Tx",
+      "sm": 0,
+      "entries": [
+        {
+          "index": "0x6041",
+          "name": "Statusword",
+          "type": "UINT",
+          "bit_size": 16
+        },
+        {
+          "index": "0x2831",
+          "name": "Lenze status word",
+          "type": "UINT",
+          "bit_size": 16
+        },
+        {
+          "index": "0x6061",
+          "name": "Modes of operation display",
+          "type": "SINT",
+          "bit_size": 8
+        },
+        {
+          "index": "0x603F",
+          "name": "Error code",
+          "type": "UINT",
+          "bit_size": 16
+        },
+        {
+          "index": "0x6044",
+          "name": "vl velocity actual value",
+          "type": "INT",
+          "bit_size": 16
+        }
+      ]
+    },
+    {
+      "index": "0x1A04",
+      "name": "Axis A: TP",
+      "direction": "Tx",
+      "sm": 3,
+      "entries": [
+        {
+          "index": "0x60B9",
+          "name": "Touch probe status",
+          "type": "UINT",
+          "bit_size": 16
+        },
+        {
+          "index": "0x60BA",
+          "name": "Touch probe pos1 pos value",
+          "type": "DINT",
+          "bit_size": 32
+        },
+        {
+          "index": "0x60BB",
+          "name": "Touch probe pos1 neg value",
+          "type": "DINT",
+          "bit_size": 32
+        },
+        {
+          "index": "0x60BC",
+          "name": "Touch probe pos2 pos value",
+          "type": "DINT",
+          "bit_size": 32
+        },
+        {
+          "index": "0x60BD",
+          "name": "Touch probe pos2 neg value",
+          "type": "DINT",
+          "bit_size": 32
+        }
+      ]
+    },
+    {
+      "index": "0x1A05",
+      "name": "Axis A: Free configuration",
+      "direction": "Tx",
+      "sm": 0,
+      "entries": []
+    },
+    {
+      "index": "0x1A06",
+      "name": "Axis A: Additional status information",
+      "direction": "Tx",
+      "sm": 3,
+      "entries": [
+        {
+          "index": "0x2833",
+          "name": "Lenze status word 2",
+          "type": "UINT",
+          "bit_size": 16
+        },
+        {
+          "index": "0x60FD",
+          "name": "Digital inputs",
+          "type": "UDINT",
+          "bit_size": 32
+        }
+      ]
+    },
+    {
+      "index": "0x1600",
+      "name": "Axis A: csp",
+      "direction": "Rx",
+      "sm": 2,
+      "entries": [
+        {
+          "index": "0x6040",
+          "name": "Controlword",
+          "type": "UINT",
+          "bit_size": 16
+        },
+        {
+          "index": "0x2830",
+          "name": "Lenze control word",
+          "type": "UINT",
+          "bit_size": 16
+        },
+        {
+          "index": "0x6060",
+          "name": "Modes of operation",
+          "type": "SINT",
+          "bit_size": 8
+        },
+        {
+          "index": "0x60B2",
+          "name": "Torque offset",
+          "type": "INT",
+          "bit_size": 16
+        },
+        {
+          "index": "0x607A",
+          "name": "Target position",
+          "type": "DINT",
+          "bit_size": 32
+        },
+        {
+          "index": "0x60B1",
+          "name": "Velocity offset",
+          "type": "DINT",
+          "bit_size": 32
+        },
+        {
+          "index": "0x2902",
+          "name": "Speed controller: Load value",
+          "type": "INT",
+          "bit_size": 16
+        }
+      ]
+    },
+    {
+      "index": "0x1601",
+      "name": "Axis A: cst",
+      "direction": "Rx",
+      "sm": 0,
+      "entries": [
+        {
+          "index": "0x6040",
+          "name": "Controlword",
+          "type": "UINT",
+          "bit_size": 16
+        },
+        {
+          "index": "0x2830",
+          "name": "Lenze control word",
+          "type": "UINT",
+          "bit_size": 16
+        },
+        {
+          "index": "0x6060",
+          "name": "Modes of operation",
+          "type": "SINT",
+          "bit_size": 8
+        },
+        {
+          "index": "0x60B2",
+          "name": "Torque offset",
+          "type": "INT",
+          "bit_size": 16
+        },
+        {
+          "index": "0x6071",
+          "name": "Target torque",
+          "type": "INT",
+          "bit_size": 16
+        },
+        {
+          "index": "0x2946",
+          "name": "Speed limitation: Upper speed limit",
+          "type": "DINT",
+          "bit_size": 32
+        },
+        {
+          "index": "0x2946",
+          "name": "Speed limitation: Lower speed limit",
+          "type": "DINT",
+          "bit_size": 32
+        }
+      ]
+    },
+    {
+      "index": "0x1602",
+      "name": "Axis A: csv",
+      "direction": "Rx",
+      "sm": 0,
+      "entries": [
+        {
+          "index": "0x6040",
+          "name": "Controlword",
+          "type": "UINT",
+          "bit_size": 16
+        },
+        {
+          "index": "0x2830",
+          "name": "Lenze control word",
+          "type": "UINT",
+          "bit_size": 16
+        },
+        {
+          "index": "0x6060",
+          "name": "Modes of operation",
+          "type": "SINT",
+          "bit_size": 8
+        },
+        {
+          "index": "0x60B2",
+          "name": "Torque offset",
+          "type": "INT",
+          "bit_size": 16
+        },
+        {
+          "index": "0x60FF",
+          "name": "Target velocity",
+          "type": "DINT",
+          "bit_size": 32
+        }
+      ]
+    },
+    {
+      "index": "0x1603",
+      "name": "Axis A: vl",
+      "direction": "Rx",
+      "sm": 0,
+      "entries": [
+        {
+          "index": "0x6040",
+          "name": "Controlword",
+          "type": "UINT",
+          "bit_size": 16
+        },
+        {
+          "index": "0x2830",
+          "name": "Lenze control word",
+          "type": "UINT",
+          "bit_size": 16
+        },
+        {
+          "index": "0x6060",
+          "name": "Modes of operation",
+          "type": "SINT",
+          "bit_size": 8
+        },
+        {
+          "index": "0x6042",
+          "name": "vl target velocity",
+          "type": "INT",
+          "bit_size": 16
+        }
+      ]
+    },
+    {
+      "index": "0x1604",
+      "name": "Axis A: TP",
+      "direction": "Rx",
+      "sm": 2,
+      "entries": [
+        {
+          "index": "0x60B8",
+          "name": "Touch probe function",
+          "type": "UINT",
+          "bit_size": 16
+        }
+      ]
+    },
+    {
+      "index": "0x1605",
+      "name": "Axis A: Free configuration",
+      "direction": "Rx",
+      "sm": 0,
+      "entries": []
+    },
+    {
+      "index": "0x1606",
+      "name": "Axis A: Torque limits",
+      "direction": "Rx",
+      "sm": 2,
+      "entries": [
+        {
+          "index": "0x60E0",
+          "name": "Positive torque limit value",
+          "type": "UINT",
+          "bit_size": 16
+        },
+        {
+          "index": "0x60E1",
+          "name": "Negative torque limit value",
+          "type": "UINT",
+          "bit_size": 16
+        }
+      ]
+    },
+    {
+      "index": "0x1607",
+      "name": "Axis A: Speed limits",
+      "direction": "Rx",
+      "sm": 2,
+      "entries": [
+        {
+          "index": "0x2946",
+          "name": "Speed limitation: Upper speed limit",
+          "type": "DINT",
+          "bit_size": 32
+        },
+        {
+          "index": "0x2946",
+          "name": "Speed limitation: Lower speed limit",
+          "type": "DINT",
+          "bit_size": 32
+        }
+      ]
+    },
+    {
+      "index": "0x1610",
+      "name": "Axis B: csp",
+      "direction": "Rx",
+      "sm": 2,
+      "entries": [
+        {
+          "index": "0x6840",
+          "name": "Controlword",
+          "type": "UINT",
+          "bit_size": 16
+        },
+        {
+          "index": "0x3030",
+          "name": "Lenze control word",
+          "type": "UINT",
+          "bit_size": 16
+        },
+        {
+          "index": "0x6860",
+          "name": "Modes of operation",
+          "type": "SINT",
+          "bit_size": 8
+        },
+        {
+          "index": "0x68B2",
+          "name": "Torque offset",
+          "type": "INT",
+          "bit_size": 16
+        },
+        {
+          "index": "0x687A",
+          "name": "Target position",
+          "type": "DINT",
+          "bit_size": 32
+        },
+        {
+          "index": "0x68B1",
+          "name": "Velocity offset",
+          "type": "DINT",
+          "bit_size": 32
+        },
+        {
+          "index": "0x3102",
+          "name": "Speed controller: Load value",
+          "type": "INT",
+          "bit_size": 16
+        }
+      ]
+    },
+    {
+      "index": "0x1611",
+      "name": "Axis B: cst",
+      "direction": "Rx",
+      "sm": 0,
+      "entries": [
+        {
+          "index": "0x6840",
+          "name": "Controlword",
+          "type": "UINT",
+          "bit_size": 16
+        },
+        {
+          "index": "0x3030",
+          "name": "Lenze control word",
+          "type": "UINT",
+          "bit_size": 16
+        },
+        {
+          "index": "0x6860",
+          "name": "Modes of operation",
+          "type": "SINT",
+          "bit_size": 8
+        },
+        {
+          "index": "0x68B2",
+          "name": "Torque offset",
+          "type": "INT",
+          "bit_size": 16
+        },
+        {
+          "index": "0x6871",
+          "name": "Target torque",
+          "type": "INT",
+          "bit_size": 16
+        },
+        {
+          "index": "0x3146",
+          "name": "Speed limitation: Upper speed limit",
+          "type": "DINT",
+          "bit_size": 32
+        },
+        {
+          "index": "0x3146",
+          "name": "Speed limitation: Lower speed limit",
+          "type": "DINT",
+          "bit_size": 32
+        }
+      ]
+    },
+    {
+      "index": "0x1612",
+      "name": "Axis B: csv",
+      "direction": "Rx",
+      "sm": 0,
+      "entries": [
+        {
+          "index": "0x6840",
+          "name": "Controlword",
+          "type": "UINT",
+          "bit_size": 16
+        },
+        {
+          "index": "0x3030",
+          "name": "Lenze control word",
+          "type": "UINT",
+          "bit_size": 16
+        },
+        {
+          "index": "0x6860",
+          "name": "Modes of operation",
+          "type": "SINT",
+          "bit_size": 8
+        },
+        {
+          "index": "0x68B2",
+          "name": "Torque offset",
+          "type": "INT",
+          "bit_size": 16
+        },
+        {
+          "index": "0x68FF",
+          "name": "Target velocity",
+          "type": "DINT",
+          "bit_size": 32
+        }
+      ]
+    },
+    {
+      "index": "0x1613",
+      "name": "Axis B: vl",
+      "direction": "Rx",
+      "sm": 0,
+      "entries": [
+        {
+          "index": "0x6840",
+          "name": "Controlword",
+          "type": "UINT",
+          "bit_size": 16
+        },
+        {
+          "index": "0x3030",
+          "name": "Lenze control word",
+          "type": "UINT",
+          "bit_size": 16
+        },
+        {
+          "index": "0x6860",
+          "name": "Modes of operation",
+          "type": "SINT",
+          "bit_size": 8
+        },
+        {
+          "index": "0x6842",
+          "name": "vl target velocity",
+          "type": "INT",
+          "bit_size": 16
+        }
+      ]
+    },
+    {
+      "index": "0x1614",
+      "name": "Axis B: TP",
+      "direction": "Rx",
+      "sm": 2,
+      "entries": [
+        {
+          "index": "0x68B8",
+          "name": "Touch probe function",
+          "type": "UINT",
+          "bit_size": 16
+        }
+      ]
+    },
+    {
+      "index": "0x1615",
+      "name": "Axis B: Free configuration",
+      "direction": "Rx",
+      "sm": 0,
+      "entries": []
+    },
+    {
+      "index": "0x1616",
+      "name": "Axis B: Torque limits",
+      "direction": "Rx",
+      "sm": 2,
+      "entries": [
+        {
+          "index": "0x68E0",
+          "name": "Positive torque limit value",
+          "type": "UINT",
+          "bit_size": 16
+        },
+        {
+          "index": "0x68E1",
+          "name": "Negative torque limit value",
+          "type": "UINT",
+          "bit_size": 16
+        }
+      ]
+    },
+    {
+      "index": "0x1617",
+      "name": "Axis B: Speed limits",
+      "direction": "Rx",
+      "sm": 2,
+      "entries": [
+        {
+          "index": "0x3146",
+          "name": "Speed limitation: Upper speed limit",
+          "type": "DINT",
+          "bit_size": 32
+        },
+        {
+          "index": "0x3146",
+          "name": "Speed limitation: Lower speed limit",
+          "type": "DINT",
+          "bit_size": 32
+        }
+      ]
+    },
+    {
+      "index": "0x1A00",
+      "name": "Axis A: csp",
+      "direction": "Tx",
+      "sm": 3,
+      "entries": [
+        {
+          "index": "0x6041",
+          "name": "Statusword",
+          "type": "UINT",
+          "bit_size": 16
+        },
+        {
+          "index": "0x2831",
+          "name": "Lenze status word",
+          "type": "UINT",
+          "bit_size": 16
+        },
+        {
+          "index": "0x6061",
+          "name": "Modes of operation display",
+          "type": "SINT",
+          "bit_size": 8
+        },
+        {
+          "index": "0x603F",
+          "name": "Error code",
+          "type": "UINT",
+          "bit_size": 16
+        },
+        {
+          "index": "0x606C",
+          "name": "Velocity actual value",
+          "type": "DINT",
+          "bit_size": 32
+        },
+        {
+          "index": "0x6077",
+          "name": "Torque actual value",
+          "type": "INT",
+          "bit_size": 16
+        },
+        {
+          "index": "0x6064",
+          "name": "Position actual value",
+          "type": "DINT",
+          "bit_size": 32
+        },
+        {
+          "index": "0x60F4",
+          "name": "Following error actual value",
+          "type": "DINT",
+          "bit_size": 32
+        }
+      ]
+    },
+    {
+      "index": "0x1A01",
+      "name": "Axis A: cst",
+      "direction": "Tx",
+      "sm": 0,
+      "entries": [
+        {
+          "index": "0x6041",
+          "name": "Statusword",
+          "type": "UINT",
+          "bit_size": 16
+        },
+        {
+          "index": "0x2831",
+          "name": "Lenze status word",
+          "type": "UINT",
+          "bit_size": 16
+        },
+        {
+          "index": "0x6061",
+          "name": "Modes of operation display",
+          "type": "SINT",
+          "bit_size": 8
+        },
+        {
+          "index": "0x603F",
+          "name": "Error code",
+          "type": "UINT",
+          "bit_size": 16
+        },
+        {
+          "index": "0x606C",
+          "name": "Velocity actual value",
+          "type": "DINT",
+          "bit_size": 32
+        },
+        {
+          "index": "0x6077",
+          "name": "Torque actual value",
+          "type": "INT",
+          "bit_size": 16
+        }
+      ]
+    },
+    {
+      "index": "0x1A02",
+      "name": "Axis A: csv",
+      "direction": "Tx",
+      "sm": 0,
+      "entries": [
+        {
+          "index": "0x6041",
+          "name": "Statusword",
+          "type": "UINT",
+          "bit_size": 16
+        },
+        {
+          "index": "0x2831",
+          "name": "Lenze status word",
+          "type": "UINT",
+          "bit_size": 16
+        },
+        {
+          "index": "0x6061",
+          "name": "Modes of operation display",
+          "type": "SINT",
+          "bit_size": 8
+        },
+        {
+          "index": "0x603F",
+          "name": "Error code",
+          "type": "UINT",
+          "bit_size": 16
+        },
+        {
+          "index": "0x606C",
+          "name": "Velocity actual value",
+          "type": "DINT",
+          "bit_size": 32
+        },
+        {
+          "index": "0x6077",
+          "name": "Torque actual value",
+          "type": "INT",
+          "bit_size": 16
+        },
+        {
+          "index": "0x6064",
+          "name": "Position actual value",
+          "type": "DINT",
+          "bit_size": 32
+        }
+      ]
+    },
+    {
+      "index": "0x1A03",
+      "name": "Axis A: vl",
+      "direction": "Tx",
+      "sm": 0,
+      "entries": [
+        {
+          "index": "0x6041",
+          "name": "Statusword",
+          "type": "UINT",
+          "bit_size": 16
+        },
+        {
+          "index": "0x2831",
+          "name": "Lenze status word",
+          "type": "UINT",
+          "bit_size": 16
+        },
+        {
+          "index": "0x6061",
+          "name": "Modes of operation display",
+          "type": "SINT",
+          "bit_size": 8
+        },
+        {
+          "index": "0x603F",
+          "name": "Error code",
+          "type": "UINT",
+          "bit_size": 16
+        },
+        {
+          "index": "0x6044",
+          "name": "vl velocity actual value",
+          "type": "INT",
+          "bit_size": 16
+        }
+      ]
+    },
+    {
+      "index": "0x1A04",
+      "name": "Axis A: TP",
+      "direction": "Tx",
+      "sm": 3,
+      "entries": [
+        {
+          "index": "0x60B9",
+          "name": "Touch probe status",
+          "type": "UINT",
+          "bit_size": 16
+        },
+        {
+          "index": "0x60BA",
+          "name": "Touch probe pos1 pos value",
+          "type": "DINT",
+          "bit_size": 32
+        },
+        {
+          "index": "0x60BB",
+          "name": "Touch probe pos1 neg value",
+          "type": "DINT",
+          "bit_size": 32
+        },
+        {
+          "index": "0x60BC",
+          "name": "Touch probe pos2 pos value",
+          "type": "DINT",
+          "bit_size": 32
+        },
+        {
+          "index": "0x60BD",
+          "name": "Touch probe pos2 neg value",
+          "type": "DINT",
+          "bit_size": 32
+        }
+      ]
+    },
+    {
+      "index": "0x1A05",
+      "name": "Axis A: Free configuration",
+      "direction": "Tx",
+      "sm": 0,
+      "entries": []
+    },
+    {
+      "index": "0x1A06",
+      "name": "Axis A: Additional status information",
+      "direction": "Tx",
+      "sm": 3,
+      "entries": [
+        {
+          "index": "0x2833",
+          "name": "Lenze status word 2",
+          "type": "UINT",
+          "bit_size": 16
+        },
+        {
+          "index": "0x60FD",
+          "name": "Digital inputs",
+          "type": "UDINT",
+          "bit_size": 32
+        }
+      ]
+    },
+    {
+      "index": "0x1A10",
+      "name": "Axis B: csp",
+      "direction": "Tx",
+      "sm": 3,
+      "entries": [
+        {
+          "index": "0x6841",
+          "name": "Statusword",
+          "type": "UINT",
+          "bit_size": 16
+        },
+        {
+          "index": "0x3031",
+          "name": "Lenze status word",
+          "type": "UINT",
+          "bit_size": 16
+        },
+        {
+          "index": "0x6861",
+          "name": "Modes of operation display",
+          "type": "SINT",
+          "bit_size": 8
+        },
+        {
+          "index": "0x683F",
+          "name": "Error code",
+          "type": "UINT",
+          "bit_size": 16
+        },
+        {
+          "index": "0x686C",
+          "name": "Velocity actual value",
+          "type": "DINT",
+          "bit_size": 32
+        },
+        {
+          "index": "0x6877",
+          "name": "Torque actual value",
+          "type": "INT",
+          "bit_size": 16
+        },
+        {
+          "index": "0x6864",
+          "name": "Position actual value",
+          "type": "DINT",
+          "bit_size": 32
+        },
+        {
+          "index": "0x68F4",
+          "name": "Following error actual value",
+          "type": "DINT",
+          "bit_size": 32
+        }
+      ]
+    },
+    {
+      "index": "0x1A11",
+      "name": "Axis B: cst",
+      "direction": "Tx",
+      "sm": 0,
+      "entries": [
+        {
+          "index": "0x6841",
+          "name": "Statusword",
+          "type": "UINT",
+          "bit_size": 16
+        },
+        {
+          "index": "0x3031",
+          "name": "Lenze status word",
+          "type": "UINT",
+          "bit_size": 16
+        },
+        {
+          "index": "0x6861",
+          "name": "Modes of operation display",
+          "type": "SINT",
+          "bit_size": 8
+        },
+        {
+          "index": "0x683F",
+          "name": "Error code",
+          "type": "UINT",
+          "bit_size": 16
+        },
+        {
+          "index": "0x686C",
+          "name": "Velocity actual value",
+          "type": "DINT",
+          "bit_size": 32
+        },
+        {
+          "index": "0x6877",
+          "name": "Torque actual value",
+          "type": "INT",
+          "bit_size": 16
+        }
+      ]
+    },
+    {
+      "index": "0x1A12",
+      "name": "Axis B: csv",
+      "direction": "Tx",
+      "sm": 0,
+      "entries": [
+        {
+          "index": "0x6841",
+          "name": "Statusword",
+          "type": "UINT",
+          "bit_size": 16
+        },
+        {
+          "index": "0x3031",
+          "name": "Lenze status word",
+          "type": "UINT",
+          "bit_size": 16
+        },
+        {
+          "index": "0x6861",
+          "name": "Modes of operation display",
+          "type": "SINT",
+          "bit_size": 8
+        },
+        {
+          "index": "0x683F",
+          "name": "Error code",
+          "type": "UINT",
+          "bit_size": 16
+        },
+        {
+          "index": "0x686C",
+          "name": "Velocity actual value",
+          "type": "DINT",
+          "bit_size": 32
+        },
+        {
+          "index": "0x6877",
+          "name": "Torque actual value",
+          "type": "INT",
+          "bit_size": 16
+        },
+        {
+          "index": "0x6864",
+          "name": "Position actual value",
+          "type": "DINT",
+          "bit_size": 32
+        }
+      ]
+    },
+    {
+      "index": "0x1A13",
+      "name": "Axis B: vl",
+      "direction": "Tx",
+      "sm": 0,
+      "entries": [
+        {
+          "index": "0x6841",
+          "name": "Statusword",
+          "type": "UINT",
+          "bit_size": 16
+        },
+        {
+          "index": "0x3031",
+          "name": "Lenze status word",
+          "type": "UINT",
+          "bit_size": 16
+        },
+        {
+          "index": "0x6861",
+          "name": "Modes of operation display",
+          "type": "SINT",
+          "bit_size": 8
+        },
+        {
+          "index": "0x683F",
+          "name": "Error code",
+          "type": "UINT",
+          "bit_size": 16
+        },
+        {
+          "index": "0x6844",
+          "name": "vl velocity actual value",
+          "type": "INT",
+          "bit_size": 16
+        }
+      ]
+    },
+    {
+      "index": "0x1A14",
+      "name": "Axis B: TP",
+      "direction": "Tx",
+      "sm": 3,
+      "entries": [
+        {
+          "index": "0x68B9",
+          "name": "Touch probe status",
+          "type": "UINT",
+          "bit_size": 16
+        },
+        {
+          "index": "0x68BA",
+          "name": "Touch probe pos1 pos value",
+          "type": "DINT",
+          "bit_size": 32
+        },
+        {
+          "index": "0x68BB",
+          "name": "Touch probe pos1 neg value",
+          "type": "DINT",
+          "bit_size": 32
+        },
+        {
+          "index": "0x68BC",
+          "name": "Touch probe pos2 pos value",
+          "type": "DINT",
+          "bit_size": 32
+        },
+        {
+          "index": "0x68BD",
+          "name": "Touch probe pos2 neg value",
+          "type": "DINT",
+          "bit_size": 32
+        }
+      ]
+    },
+    {
+      "index": "0x1A15",
+      "name": "Axis B: Free configuration",
+      "direction": "Tx",
+      "sm": 0,
+      "entries": []
+    },
+    {
+      "index": "0x1A16",
+      "name": "Axis B: Additional status information",
+      "direction": "Tx",
+      "sm": 3,
+      "entries": [
+        {
+          "index": "0x3033",
+          "name": "Lenze status word 2",
+          "type": "UINT",
+          "bit_size": 16
+        },
+        {
+          "index": "0x68FD",
+          "name": "Digital inputs",
+          "type": "UDINT",
+          "bit_size": 32
+        }
+      ]
+    },
+    {
+      "index": "0x1600",
+      "name": "Axis A: csp",
+      "direction": "Rx",
+      "sm": 2,
+      "entries": [
+        {
+          "index": "0x6040",
+          "name": "Controlword",
+          "type": "UINT",
+          "bit_size": 16
+        },
+        {
+          "index": "0x2830",
+          "name": "Lenze control word",
+          "type": "UINT",
+          "bit_size": 16
+        },
+        {
+          "index": "0x6060",
+          "name": "Modes of operation",
+          "type": "SINT",
+          "bit_size": 8
+        },
+        {
+          "index": "0x60B2",
+          "name": "Torque offset",
+          "type": "INT",
+          "bit_size": 16
+        },
+        {
+          "index": "0x607A",
+          "name": "Target position",
+          "type": "DINT",
+          "bit_size": 32
+        },
+        {
+          "index": "0x60B1",
+          "name": "Velocity offset",
+          "type": "DINT",
+          "bit_size": 32
+        },
+        {
+          "index": "0x2902",
+          "name": "Speed controller: Load value",
+          "type": "INT",
+          "bit_size": 16
+        }
+      ]
+    },
+    {
+      "index": "0x1601",
+      "name": "Axis A: cst",
+      "direction": "Rx",
+      "sm": 0,
+      "entries": [
+        {
+          "index": "0x6040",
+          "name": "Controlword",
+          "type": "UINT",
+          "bit_size": 16
+        },
+        {
+          "index": "0x2830",
+          "name": "Lenze control word",
+          "type": "UINT",
+          "bit_size": 16
+        },
+        {
+          "index": "0x6060",
+          "name": "Modes of operation",
+          "type": "SINT",
+          "bit_size": 8
+        },
+        {
+          "index": "0x60B2",
+          "name": "Torque offset",
+          "type": "INT",
+          "bit_size": 16
+        },
+        {
+          "index": "0x6071",
+          "name": "Target torque",
+          "type": "INT",
+          "bit_size": 16
+        },
+        {
+          "index": "0x2946",
+          "name": "Speed limitation: Upper speed limit",
+          "type": "DINT",
+          "bit_size": 32
+        },
+        {
+          "index": "0x2946",
+          "name": "Speed limitation: Lower speed limit",
+          "type": "DINT",
+          "bit_size": 32
+        }
+      ]
+    },
+    {
+      "index": "0x1602",
+      "name": "Axis A: csv",
+      "direction": "Rx",
+      "sm": 0,
+      "entries": [
+        {
+          "index": "0x6040",
+          "name": "Controlword",
+          "type": "UINT",
+          "bit_size": 16
+        },
+        {
+          "index": "0x2830",
+          "name": "Lenze control word",
+          "type": "UINT",
+          "bit_size": 16
+        },
+        {
+          "index": "0x6060",
+          "name": "Modes of operation",
+          "type": "SINT",
+          "bit_size": 8
+        },
+        {
+          "index": "0x60B2",
+          "name": "Torque offset",
+          "type": "INT",
+          "bit_size": 16
+        },
+        {
+          "index": "0x60FF",
+          "name": "Target velocity",
+          "type": "DINT",
+          "bit_size": 32
+        }
+      ]
+    },
+    {
+      "index": "0x1603",
+      "name": "Axis A: vl",
+      "direction": "Rx",
+      "sm": 0,
+      "entries": [
+        {
+          "index": "0x6040",
+          "name": "Controlword",
+          "type": "UINT",
+          "bit_size": 16
+        },
+        {
+          "index": "0x2830",
+          "name": "Lenze control word",
+          "type": "UINT",
+          "bit_size": 16
+        },
+        {
+          "index": "0x6060",
+          "name": "Modes of operation",
+          "type": "SINT",
+          "bit_size": 8
+        },
+        {
+          "index": "0x6042",
+          "name": "vl target velocity",
+          "type": "INT",
+          "bit_size": 16
+        }
+      ]
+    },
+    {
+      "index": "0x1604",
+      "name": "Axis A: TP",
+      "direction": "Rx",
+      "sm": 2,
+      "entries": [
+        {
+          "index": "0x60B8",
+          "name": "Touch probe function",
+          "type": "UINT",
+          "bit_size": 16
+        }
+      ]
+    },
+    {
+      "index": "0x1605",
+      "name": "Axis A: Free configuration",
+      "direction": "Rx",
+      "sm": 0,
+      "entries": []
+    },
+    {
+      "index": "0x1606",
+      "name": "Axis A: Torque limits",
+      "direction": "Rx",
+      "sm": 2,
+      "entries": [
+        {
+          "index": "0x60E0",
+          "name": "Positive torque limit value",
+          "type": "UINT",
+          "bit_size": 16
+        },
+        {
+          "index": "0x60E1",
+          "name": "Negative torque limit value",
+          "type": "UINT",
+          "bit_size": 16
+        }
+      ]
+    },
+    {
+      "index": "0x1607",
+      "name": "Axis A: Speed limits",
+      "direction": "Rx",
+      "sm": 2,
+      "entries": [
+        {
+          "index": "0x2946",
+          "name": "Speed limitation: Upper speed limit",
+          "type": "DINT",
+          "bit_size": 32
+        },
+        {
+          "index": "0x2946",
+          "name": "Speed limitation: Lower speed limit",
+          "type": "DINT",
+          "bit_size": 32
+        }
+      ]
+    },
+    {
+      "index": "0x1A00",
+      "name": "Axis A: csp",
+      "direction": "Tx",
+      "sm": 3,
+      "entries": [
+        {
+          "index": "0x6041",
+          "name": "Statusword",
+          "type": "UINT",
+          "bit_size": 16
+        },
+        {
+          "index": "0x2831",
+          "name": "Lenze status word",
+          "type": "UINT",
+          "bit_size": 16
+        },
+        {
+          "index": "0x6061",
+          "name": "Modes of operation display",
+          "type": "SINT",
+          "bit_size": 8
+        },
+        {
+          "index": "0x603F",
+          "name": "Error code",
+          "type": "UINT",
+          "bit_size": 16
+        },
+        {
+          "index": "0x606C",
+          "name": "Velocity actual value",
+          "type": "DINT",
+          "bit_size": 32
+        },
+        {
+          "index": "0x6077",
+          "name": "Torque actual value",
+          "type": "INT",
+          "bit_size": 16
+        },
+        {
+          "index": "0x6064",
+          "name": "Position actual value",
+          "type": "DINT",
+          "bit_size": 32
+        },
+        {
+          "index": "0x60F4",
+          "name": "Following error actual value",
+          "type": "DINT",
+          "bit_size": 32
+        }
+      ]
+    },
+    {
+      "index": "0x1A01",
+      "name": "Axis A: cst",
+      "direction": "Tx",
+      "sm": 0,
+      "entries": [
+        {
+          "index": "0x6041",
+          "name": "Statusword",
+          "type": "UINT",
+          "bit_size": 16
+        },
+        {
+          "index": "0x2831",
+          "name": "Lenze status word",
+          "type": "UINT",
+          "bit_size": 16
+        },
+        {
+          "index": "0x6061",
+          "name": "Modes of operation display",
+          "type": "SINT",
+          "bit_size": 8
+        },
+        {
+          "index": "0x603F",
+          "name": "Error code",
+          "type": "UINT",
+          "bit_size": 16
+        },
+        {
+          "index": "0x606C",
+          "name": "Velocity actual value",
+          "type": "DINT",
+          "bit_size": 32
+        },
+        {
+          "index": "0x6077",
+          "name": "Torque actual value",
+          "type": "INT",
+          "bit_size": 16
+        }
+      ]
+    },
+    {
+      "index": "0x1A02",
+      "name": "Axis A: csv",
+      "direction": "Tx",
+      "sm": 0,
+      "entries": [
+        {
+          "index": "0x6041",
+          "name": "Statusword",
+          "type": "UINT",
+          "bit_size": 16
+        },
+        {
+          "index": "0x2831",
+          "name": "Lenze status word",
+          "type": "UINT",
+          "bit_size": 16
+        },
+        {
+          "index": "0x6061",
+          "name": "Modes of operation display",
+          "type": "SINT",
+          "bit_size": 8
+        },
+        {
+          "index": "0x603F",
+          "name": "Error code",
+          "type": "UINT",
+          "bit_size": 16
+        },
+        {
+          "index": "0x606C",
+          "name": "Velocity actual value",
+          "type": "DINT",
+          "bit_size": 32
+        },
+        {
+          "index": "0x6077",
+          "name": "Torque actual value",
+          "type": "INT",
+          "bit_size": 16
+        },
+        {
+          "index": "0x6064",
+          "name": "Position actual value",
+          "type": "DINT",
+          "bit_size": 32
+        }
+      ]
+    },
+    {
+      "index": "0x1A03",
+      "name": "Axis A: vl",
+      "direction": "Tx",
+      "sm": 0,
+      "entries": [
+        {
+          "index": "0x6041",
+          "name": "Statusword",
+          "type": "UINT",
+          "bit_size": 16
+        },
+        {
+          "index": "0x2831",
+          "name": "Lenze status word",
+          "type": "UINT",
+          "bit_size": 16
+        },
+        {
+          "index": "0x6061",
+          "name": "Modes of operation display",
+          "type": "SINT",
+          "bit_size": 8
+        },
+        {
+          "index": "0x603F",
+          "name": "Error code",
+          "type": "UINT",
+          "bit_size": 16
+        },
+        {
+          "index": "0x6044",
+          "name": "vl velocity actual value",
+          "type": "INT",
+          "bit_size": 16
+        }
+      ]
+    },
+    {
+      "index": "0x1A04",
+      "name": "Axis A: TP",
+      "direction": "Tx",
+      "sm": 3,
+      "entries": [
+        {
+          "index": "0x60B9",
+          "name": "Touch probe status",
+          "type": "UINT",
+          "bit_size": 16
+        },
+        {
+          "index": "0x60BA",
+          "name": "Touch probe pos1 pos value",
+          "type": "DINT",
+          "bit_size": 32
+        },
+        {
+          "index": "0x60BB",
+          "name": "Touch probe pos1 neg value",
+          "type": "DINT",
+          "bit_size": 32
+        },
+        {
+          "index": "0x60BC",
+          "name": "Touch probe pos2 pos value",
+          "type": "DINT",
+          "bit_size": 32
+        },
+        {
+          "index": "0x60BD",
+          "name": "Touch probe pos2 neg value",
+          "type": "DINT",
+          "bit_size": 32
+        }
+      ]
+    },
+    {
+      "index": "0x1A05",
+      "name": "Axis A: Free configuration",
+      "direction": "Tx",
+      "sm": 0,
+      "entries": []
+    },
+    {
+      "index": "0x1A06",
+      "name": "Axis A: Additional status information",
+      "direction": "Tx",
+      "sm": 3,
+      "entries": [
+        {
+          "index": "0x2833",
+          "name": "Lenze status word 2",
+          "type": "UINT",
+          "bit_size": 16
+        },
+        {
+          "index": "0x60FD",
+          "name": "Digital inputs",
+          "type": "UDINT",
+          "bit_size": 32
+        }
+      ]
+    },
+    {
+      "index": "0x1600",
+      "name": "Axis A: csp",
+      "direction": "Rx",
+      "sm": 2,
+      "entries": [
+        {
+          "index": "0x6040",
+          "name": "Controlword",
+          "type": "UINT",
+          "bit_size": 16
+        },
+        {
+          "index": "0x2830",
+          "name": "Lenze control word",
+          "type": "UINT",
+          "bit_size": 16
+        },
+        {
+          "index": "0x6060",
+          "name": "Modes of operation",
+          "type": "SINT",
+          "bit_size": 8
+        },
+        {
+          "index": "0x60B2",
+          "name": "Torque offset",
+          "type": "INT",
+          "bit_size": 16
+        },
+        {
+          "index": "0x607A",
+          "name": "Target position",
+          "type": "DINT",
+          "bit_size": 32
+        },
+        {
+          "index": "0x60B1",
+          "name": "Velocity offset",
+          "type": "DINT",
+          "bit_size": 32
+        },
+        {
+          "index": "0x2902",
+          "name": "Speed controller: Load value",
+          "type": "INT",
+          "bit_size": 16
+        }
+      ]
+    },
+    {
+      "index": "0x1601",
+      "name": "Axis A: cst",
+      "direction": "Rx",
+      "sm": 0,
+      "entries": [
+        {
+          "index": "0x6040",
+          "name": "Controlword",
+          "type": "UINT",
+          "bit_size": 16
+        },
+        {
+          "index": "0x2830",
+          "name": "Lenze control word",
+          "type": "UINT",
+          "bit_size": 16
+        },
+        {
+          "index": "0x6060",
+          "name": "Modes of operation",
+          "type": "SINT",
+          "bit_size": 8
+        },
+        {
+          "index": "0x60B2",
+          "name": "Torque offset",
+          "type": "INT",
+          "bit_size": 16
+        },
+        {
+          "index": "0x6071",
+          "name": "Target torque",
+          "type": "INT",
+          "bit_size": 16
+        },
+        {
+          "index": "0x2946",
+          "name": "Speed limitation: Upper speed limit",
+          "type": "DINT",
+          "bit_size": 32
+        },
+        {
+          "index": "0x2946",
+          "name": "Speed limitation: Lower speed limit",
+          "type": "DINT",
+          "bit_size": 32
+        }
+      ]
+    },
+    {
+      "index": "0x1602",
+      "name": "Axis A: csv",
+      "direction": "Rx",
+      "sm": 0,
+      "entries": [
+        {
+          "index": "0x6040",
+          "name": "Controlword",
+          "type": "UINT",
+          "bit_size": 16
+        },
+        {
+          "index": "0x2830",
+          "name": "Lenze control word",
+          "type": "UINT",
+          "bit_size": 16
+        },
+        {
+          "index": "0x6060",
+          "name": "Modes of operation",
+          "type": "SINT",
+          "bit_size": 8
+        },
+        {
+          "index": "0x60B2",
+          "name": "Torque offset",
+          "type": "INT",
+          "bit_size": 16
+        },
+        {
+          "index": "0x60FF",
+          "name": "Target velocity",
+          "type": "DINT",
+          "bit_size": 32
+        }
+      ]
+    },
+    {
+      "index": "0x1603",
+      "name": "Axis A: vl",
+      "direction": "Rx",
+      "sm": 0,
+      "entries": [
+        {
+          "index": "0x6040",
+          "name": "Controlword",
+          "type": "UINT",
+          "bit_size": 16
+        },
+        {
+          "index": "0x2830",
+          "name": "Lenze control word",
+          "type": "UINT",
+          "bit_size": 16
+        },
+        {
+          "index": "0x6060",
+          "name": "Modes of operation",
+          "type": "SINT",
+          "bit_size": 8
+        },
+        {
+          "index": "0x6042",
+          "name": "vl target velocity",
+          "type": "INT",
+          "bit_size": 16
+        }
+      ]
+    },
+    {
+      "index": "0x1604",
+      "name": "Axis A: TP",
+      "direction": "Rx",
+      "sm": 2,
+      "entries": [
+        {
+          "index": "0x60B8",
+          "name": "Touch probe function",
+          "type": "UINT",
+          "bit_size": 16
+        }
+      ]
+    },
+    {
+      "index": "0x1605",
+      "name": "Axis A: Free configuration",
+      "direction": "Rx",
+      "sm": 0,
+      "entries": []
+    },
+    {
+      "index": "0x1606",
+      "name": "Axis A: Torque limits",
+      "direction": "Rx",
+      "sm": 2,
+      "entries": [
+        {
+          "index": "0x60E0",
+          "name": "Positive torque limit value",
+          "type": "UINT",
+          "bit_size": 16
+        },
+        {
+          "index": "0x60E1",
+          "name": "Negative torque limit value",
+          "type": "UINT",
+          "bit_size": 16
+        }
+      ]
+    },
+    {
+      "index": "0x1607",
+      "name": "Axis A: Speed limits",
+      "direction": "Rx",
+      "sm": 2,
+      "entries": [
+        {
+          "index": "0x2946",
+          "name": "Speed limitation: Upper speed limit",
+          "type": "DINT",
+          "bit_size": 32
+        },
+        {
+          "index": "0x2946",
+          "name": "Speed limitation: Lower speed limit",
+          "type": "DINT",
+          "bit_size": 32
+        }
+      ]
+    },
+    {
+      "index": "0x1610",
+      "name": "Axis B: csp",
+      "direction": "Rx",
+      "sm": 2,
+      "entries": [
+        {
+          "index": "0x6840",
+          "name": "Controlword",
+          "type": "UINT",
+          "bit_size": 16
+        },
+        {
+          "index": "0x3030",
+          "name": "Lenze control word",
+          "type": "UINT",
+          "bit_size": 16
+        },
+        {
+          "index": "0x6860",
+          "name": "Modes of operation",
+          "type": "SINT",
+          "bit_size": 8
+        },
+        {
+          "index": "0x68B2",
+          "name": "Torque offset",
+          "type": "INT",
+          "bit_size": 16
+        },
+        {
+          "index": "0x687A",
+          "name": "Target position",
+          "type": "DINT",
+          "bit_size": 32
+        },
+        {
+          "index": "0x68B1",
+          "name": "Velocity offset",
+          "type": "DINT",
+          "bit_size": 32
+        },
+        {
+          "index": "0x3102",
+          "name": "Speed controller: Load value",
+          "type": "INT",
+          "bit_size": 16
+        }
+      ]
+    },
+    {
+      "index": "0x1611",
+      "name": "Axis B: cst",
+      "direction": "Rx",
+      "sm": 0,
+      "entries": [
+        {
+          "index": "0x6840",
+          "name": "Controlword",
+          "type": "UINT",
+          "bit_size": 16
+        },
+        {
+          "index": "0x3030",
+          "name": "Lenze control word",
+          "type": "UINT",
+          "bit_size": 16
+        },
+        {
+          "index": "0x6860",
+          "name": "Modes of operation",
+          "type": "SINT",
+          "bit_size": 8
+        },
+        {
+          "index": "0x68B2",
+          "name": "Torque offset",
+          "type": "INT",
+          "bit_size": 16
+        },
+        {
+          "index": "0x6871",
+          "name": "Target torque",
+          "type": "INT",
+          "bit_size": 16
+        },
+        {
+          "index": "0x3146",
+          "name": "Speed limitation: Upper speed limit",
+          "type": "DINT",
+          "bit_size": 32
+        },
+        {
+          "index": "0x3146",
+          "name": "Speed limitation: Lower speed limit",
+          "type": "DINT",
+          "bit_size": 32
+        }
+      ]
+    },
+    {
+      "index": "0x1612",
+      "name": "Axis B: csv",
+      "direction": "Rx",
+      "sm": 0,
+      "entries": [
+        {
+          "index": "0x6840",
+          "name": "Controlword",
+          "type": "UINT",
+          "bit_size": 16
+        },
+        {
+          "index": "0x3030",
+          "name": "Lenze control word",
+          "type": "UINT",
+          "bit_size": 16
+        },
+        {
+          "index": "0x6860",
+          "name": "Modes of operation",
+          "type": "SINT",
+          "bit_size": 8
+        },
+        {
+          "index": "0x68B2",
+          "name": "Torque offset",
+          "type": "INT",
+          "bit_size": 16
+        },
+        {
+          "index": "0x68FF",
+          "name": "Target velocity",
+          "type": "DINT",
+          "bit_size": 32
+        }
+      ]
+    },
+    {
+      "index": "0x1613",
+      "name": "Axis B: vl",
+      "direction": "Rx",
+      "sm": 0,
+      "entries": [
+        {
+          "index": "0x6840",
+          "name": "Controlword",
+          "type": "UINT",
+          "bit_size": 16
+        },
+        {
+          "index": "0x3030",
+          "name": "Lenze control word",
+          "type": "UINT",
+          "bit_size": 16
+        },
+        {
+          "index": "0x6860",
+          "name": "Modes of operation",
+          "type": "SINT",
+          "bit_size": 8
+        },
+        {
+          "index": "0x6842",
+          "name": "vl target velocity",
+          "type": "INT",
+          "bit_size": 16
+        }
+      ]
+    },
+    {
+      "index": "0x1614",
+      "name": "Axis B: TP",
+      "direction": "Rx",
+      "sm": 2,
+      "entries": [
+        {
+          "index": "0x68B8",
+          "name": "Touch probe function",
+          "type": "UINT",
+          "bit_size": 16
+        }
+      ]
+    },
+    {
+      "index": "0x1615",
+      "name": "Axis B: Free configuration",
+      "direction": "Rx",
+      "sm": 0,
+      "entries": []
+    },
+    {
+      "index": "0x1616",
+      "name": "Axis B: Torque limits",
+      "direction": "Rx",
+      "sm": 2,
+      "entries": [
+        {
+          "index": "0x68E0",
+          "name": "Positive torque limit value",
+          "type": "UINT",
+          "bit_size": 16
+        },
+        {
+          "index": "0x68E1",
+          "name": "Negative torque limit value",
+          "type": "UINT",
+          "bit_size": 16
+        }
+      ]
+    },
+    {
+      "index": "0x1617",
+      "name": "Axis B: Speed limits",
+      "direction": "Rx",
+      "sm": 2,
+      "entries": [
+        {
+          "index": "0x3146",
+          "name": "Speed limitation: Upper speed limit",
+          "type": "DINT",
+          "bit_size": 32
+        },
+        {
+          "index": "0x3146",
+          "name": "Speed limitation: Lower speed limit",
+          "type": "DINT",
+          "bit_size": 32
+        }
+      ]
+    },
+    {
+      "index": "0x1A00",
+      "name": "Axis A: csp",
+      "direction": "Tx",
+      "sm": 3,
+      "entries": [
+        {
+          "index": "0x6041",
+          "name": "Statusword",
+          "type": "UINT",
+          "bit_size": 16
+        },
+        {
+          "index": "0x2831",
+          "name": "Lenze status word",
+          "type": "UINT",
+          "bit_size": 16
+        },
+        {
+          "index": "0x6061",
+          "name": "Modes of operation display",
+          "type": "SINT",
+          "bit_size": 8
+        },
+        {
+          "index": "0x603F",
+          "name": "Error code",
+          "type": "UINT",
+          "bit_size": 16
+        },
+        {
+          "index": "0x606C",
+          "name": "Velocity actual value",
+          "type": "DINT",
+          "bit_size": 32
+        },
+        {
+          "index": "0x6077",
+          "name": "Torque actual value",
+          "type": "INT",
+          "bit_size": 16
+        },
+        {
+          "index": "0x6064",
+          "name": "Position actual value",
+          "type": "DINT",
+          "bit_size": 32
+        },
+        {
+          "index": "0x60F4",
+          "name": "Following error actual value",
+          "type": "DINT",
+          "bit_size": 32
+        }
+      ]
+    },
+    {
+      "index": "0x1A01",
+      "name": "Axis A: cst",
+      "direction": "Tx",
+      "sm": 0,
+      "entries": [
+        {
+          "index": "0x6041",
+          "name": "Statusword",
+          "type": "UINT",
+          "bit_size": 16
+        },
+        {
+          "index": "0x2831",
+          "name": "Lenze status word",
+          "type": "UINT",
+          "bit_size": 16
+        },
+        {
+          "index": "0x6061",
+          "name": "Modes of operation display",
+          "type": "SINT",
+          "bit_size": 8
+        },
+        {
+          "index": "0x603F",
+          "name": "Error code",
+          "type": "UINT",
+          "bit_size": 16
+        },
+        {
+          "index": "0x606C",
+          "name": "Velocity actual value",
+          "type": "DINT",
+          "bit_size": 32
+        },
+        {
+          "index": "0x6077",
+          "name": "Torque actual value",
+          "type": "INT",
+          "bit_size": 16
+        }
+      ]
+    },
+    {
+      "index": "0x1A02",
+      "name": "Axis A: csv",
+      "direction": "Tx",
+      "sm": 0,
+      "entries": [
+        {
+          "index": "0x6041",
+          "name": "Statusword",
+          "type": "UINT",
+          "bit_size": 16
+        },
+        {
+          "index": "0x2831",
+          "name": "Lenze status word",
+          "type": "UINT",
+          "bit_size": 16
+        },
+        {
+          "index": "0x6061",
+          "name": "Modes of operation display",
+          "type": "SINT",
+          "bit_size": 8
+        },
+        {
+          "index": "0x603F",
+          "name": "Error code",
+          "type": "UINT",
+          "bit_size": 16
+        },
+        {
+          "index": "0x606C",
+          "name": "Velocity actual value",
+          "type": "DINT",
+          "bit_size": 32
+        },
+        {
+          "index": "0x6077",
+          "name": "Torque actual value",
+          "type": "INT",
+          "bit_size": 16
+        },
+        {
+          "index": "0x6064",
+          "name": "Position actual value",
+          "type": "DINT",
+          "bit_size": 32
+        }
+      ]
+    },
+    {
+      "index": "0x1A03",
+      "name": "Axis A: vl",
+      "direction": "Tx",
+      "sm": 0,
+      "entries": [
+        {
+          "index": "0x6041",
+          "name": "Statusword",
+          "type": "UINT",
+          "bit_size": 16
+        },
+        {
+          "index": "0x2831",
+          "name": "Lenze status word",
+          "type": "UINT",
+          "bit_size": 16
+        },
+        {
+          "index": "0x6061",
+          "name": "Modes of operation display",
+          "type": "SINT",
+          "bit_size": 8
+        },
+        {
+          "index": "0x603F",
+          "name": "Error code",
+          "type": "UINT",
+          "bit_size": 16
+        },
+        {
+          "index": "0x6044",
+          "name": "vl velocity actual value",
+          "type": "INT",
+          "bit_size": 16
+        }
+      ]
+    },
+    {
+      "index": "0x1A04",
+      "name": "Axis A: TP",
+      "direction": "Tx",
+      "sm": 3,
+      "entries": [
+        {
+          "index": "0x60B9",
+          "name": "Touch probe status",
+          "type": "UINT",
+          "bit_size": 16
+        },
+        {
+          "index": "0x60BA",
+          "name": "Touch probe pos1 pos value",
+          "type": "DINT",
+          "bit_size": 32
+        },
+        {
+          "index": "0x60BB",
+          "name": "Touch probe pos1 neg value",
+          "type": "DINT",
+          "bit_size": 32
+        },
+        {
+          "index": "0x60BC",
+          "name": "Touch probe pos2 pos value",
+          "type": "DINT",
+          "bit_size": 32
+        },
+        {
+          "index": "0x60BD",
+          "name": "Touch probe pos2 neg value",
+          "type": "DINT",
+          "bit_size": 32
+        }
+      ]
+    },
+    {
+      "index": "0x1A05",
+      "name": "Axis A: Free configuration",
+      "direction": "Tx",
+      "sm": 0,
+      "entries": []
+    },
+    {
+      "index": "0x1A06",
+      "name": "Axis A: Additional status information",
+      "direction": "Tx",
+      "sm": 3,
+      "entries": [
+        {
+          "index": "0x2833",
+          "name": "Lenze status word 2",
+          "type": "UINT",
+          "bit_size": 16
+        },
+        {
+          "index": "0x60FD",
+          "name": "Digital inputs",
+          "type": "UDINT",
+          "bit_size": 32
+        }
+      ]
+    },
+    {
+      "index": "0x1A10",
+      "name": "Axis B: csp",
+      "direction": "Tx",
+      "sm": 3,
+      "entries": [
+        {
+          "index": "0x6841",
+          "name": "Statusword",
+          "type": "UINT",
+          "bit_size": 16
+        },
+        {
+          "index": "0x3031",
+          "name": "Lenze status word",
+          "type": "UINT",
+          "bit_size": 16
+        },
+        {
+          "index": "0x6861",
+          "name": "Modes of operation display",
+          "type": "SINT",
+          "bit_size": 8
+        },
+        {
+          "index": "0x683F",
+          "name": "Error code",
+          "type": "UINT",
+          "bit_size": 16
+        },
+        {
+          "index": "0x686C",
+          "name": "Velocity actual value",
+          "type": "DINT",
+          "bit_size": 32
+        },
+        {
+          "index": "0x6877",
+          "name": "Torque actual value",
+          "type": "INT",
+          "bit_size": 16
+        },
+        {
+          "index": "0x6864",
+          "name": "Position actual value",
+          "type": "DINT",
+          "bit_size": 32
+        },
+        {
+          "index": "0x68F4",
+          "name": "Following error actual value",
+          "type": "DINT",
+          "bit_size": 32
+        }
+      ]
+    },
+    {
+      "index": "0x1A11",
+      "name": "Axis B: cst",
+      "direction": "Tx",
+      "sm": 0,
+      "entries": [
+        {
+          "index": "0x6841",
+          "name": "Statusword",
+          "type": "UINT",
+          "bit_size": 16
+        },
+        {
+          "index": "0x3031",
+          "name": "Lenze status word",
+          "type": "UINT",
+          "bit_size": 16
+        },
+        {
+          "index": "0x6861",
+          "name": "Modes of operation display",
+          "type": "SINT",
+          "bit_size": 8
+        },
+        {
+          "index": "0x683F",
+          "name": "Error code",
+          "type": "UINT",
+          "bit_size": 16
+        },
+        {
+          "index": "0x686C",
+          "name": "Velocity actual value",
+          "type": "DINT",
+          "bit_size": 32
+        },
+        {
+          "index": "0x6877",
+          "name": "Torque actual value",
+          "type": "INT",
+          "bit_size": 16
+        }
+      ]
+    },
+    {
+      "index": "0x1A12",
+      "name": "Axis B: csv",
+      "direction": "Tx",
+      "sm": 0,
+      "entries": [
+        {
+          "index": "0x6841",
+          "name": "Statusword",
+          "type": "UINT",
+          "bit_size": 16
+        },
+        {
+          "index": "0x3031",
+          "name": "Lenze status word",
+          "type": "UINT",
+          "bit_size": 16
+        },
+        {
+          "index": "0x6861",
+          "name": "Modes of operation display",
+          "type": "SINT",
+          "bit_size": 8
+        },
+        {
+          "index": "0x683F",
+          "name": "Error code",
+          "type": "UINT",
+          "bit_size": 16
+        },
+        {
+          "index": "0x686C",
+          "name": "Velocity actual value",
+          "type": "DINT",
+          "bit_size": 32
+        },
+        {
+          "index": "0x6877",
+          "name": "Torque actual value",
+          "type": "INT",
+          "bit_size": 16
+        },
+        {
+          "index": "0x6864",
+          "name": "Position actual value",
+          "type": "DINT",
+          "bit_size": 32
+        }
+      ]
+    },
+    {
+      "index": "0x1A13",
+      "name": "Axis B: vl",
+      "direction": "Tx",
+      "sm": 0,
+      "entries": [
+        {
+          "index": "0x6841",
+          "name": "Statusword",
+          "type": "UINT",
+          "bit_size": 16
+        },
+        {
+          "index": "0x3031",
+          "name": "Lenze status word",
+          "type": "UINT",
+          "bit_size": 16
+        },
+        {
+          "index": "0x6861",
+          "name": "Modes of operation display",
+          "type": "SINT",
+          "bit_size": 8
+        },
+        {
+          "index": "0x683F",
+          "name": "Error code",
+          "type": "UINT",
+          "bit_size": 16
+        },
+        {
+          "index": "0x6844",
+          "name": "vl velocity actual value",
+          "type": "INT",
+          "bit_size": 16
+        }
+      ]
+    },
+    {
+      "index": "0x1A14",
+      "name": "Axis B: TP",
+      "direction": "Tx",
+      "sm": 3,
+      "entries": [
+        {
+          "index": "0x68B9",
+          "name": "Touch probe status",
+          "type": "UINT",
+          "bit_size": 16
+        },
+        {
+          "index": "0x68BA",
+          "name": "Touch probe pos1 pos value",
+          "type": "DINT",
+          "bit_size": 32
+        },
+        {
+          "index": "0x68BB",
+          "name": "Touch probe pos1 neg value",
+          "type": "DINT",
+          "bit_size": 32
+        },
+        {
+          "index": "0x68BC",
+          "name": "Touch probe pos2 pos value",
+          "type": "DINT",
+          "bit_size": 32
+        },
+        {
+          "index": "0x68BD",
+          "name": "Touch probe pos2 neg value",
+          "type": "DINT",
+          "bit_size": 32
+        }
+      ]
+    },
+    {
+      "index": "0x1A15",
+      "name": "Axis B: Free configuration",
+      "direction": "Tx",
+      "sm": 0,
+      "entries": []
+    },
+    {
+      "index": "0x1A16",
+      "name": "Axis B: Additional status information",
+      "direction": "Tx",
+      "sm": 3,
+      "entries": [
+        {
+          "index": "0x3033",
+          "name": "Lenze status word 2",
+          "type": "UINT",
+          "bit_size": 16
+        },
+        {
+          "index": "0x68FD",
+          "name": "Digital inputs",
+          "type": "UDINT",
+          "bit_size": 32
+        }
+      ]
+    },
+    {
+      "index": "0x1600",
+      "name": "Axis A: csp",
+      "direction": "Rx",
+      "sm": 2,
+      "entries": [
+        {
+          "index": "0x6040",
+          "name": "Controlword",
+          "type": "UINT",
+          "bit_size": 16
+        },
+        {
+          "index": "0x2830",
+          "name": "Lenze control word",
+          "type": "UINT",
+          "bit_size": 16
+        },
+        {
+          "index": "0x6060",
+          "name": "Modes of operation",
+          "type": "SINT",
+          "bit_size": 8
+        },
+        {
+          "index": "0x60B2",
+          "name": "Torque offset",
+          "type": "INT",
+          "bit_size": 16
+        },
+        {
+          "index": "0x607A",
+          "name": "Target position",
+          "type": "DINT",
+          "bit_size": 32
+        },
+        {
+          "index": "0x60B1",
+          "name": "Velocity offset",
+          "type": "DINT",
+          "bit_size": 32
+        },
+        {
+          "index": "0x2902",
+          "name": "Speed controller: Load value",
+          "type": "INT",
+          "bit_size": 16
+        }
+      ]
+    },
+    {
+      "index": "0x1601",
+      "name": "Axis A: cst",
+      "direction": "Rx",
+      "sm": 0,
+      "entries": [
+        {
+          "index": "0x6040",
+          "name": "Controlword",
+          "type": "UINT",
+          "bit_size": 16
+        },
+        {
+          "index": "0x2830",
+          "name": "Lenze control word",
+          "type": "UINT",
+          "bit_size": 16
+        },
+        {
+          "index": "0x6060",
+          "name": "Modes of operation",
+          "type": "SINT",
+          "bit_size": 8
+        },
+        {
+          "index": "0x60B2",
+          "name": "Torque offset",
+          "type": "INT",
+          "bit_size": 16
+        },
+        {
+          "index": "0x6071",
+          "name": "Target torque",
+          "type": "INT",
+          "bit_size": 16
+        },
+        {
+          "index": "0x2946",
+          "name": "Speed limitation: Upper speed limit",
+          "type": "DINT",
+          "bit_size": 32
+        },
+        {
+          "index": "0x2946",
+          "name": "Speed limitation: Lower speed limit",
+          "type": "DINT",
+          "bit_size": 32
+        }
+      ]
+    },
+    {
+      "index": "0x1602",
+      "name": "Axis A: csv",
+      "direction": "Rx",
+      "sm": 0,
+      "entries": [
+        {
+          "index": "0x6040",
+          "name": "Controlword",
+          "type": "UINT",
+          "bit_size": 16
+        },
+        {
+          "index": "0x2830",
+          "name": "Lenze control word",
+          "type": "UINT",
+          "bit_size": 16
+        },
+        {
+          "index": "0x6060",
+          "name": "Modes of operation",
+          "type": "SINT",
+          "bit_size": 8
+        },
+        {
+          "index": "0x60B2",
+          "name": "Torque offset",
+          "type": "INT",
+          "bit_size": 16
+        },
+        {
+          "index": "0x60FF",
+          "name": "Target velocity",
+          "type": "DINT",
+          "bit_size": 32
+        }
+      ]
+    },
+    {
+      "index": "0x1603",
+      "name": "Axis A: vl",
+      "direction": "Rx",
+      "sm": 0,
+      "entries": [
+        {
+          "index": "0x6040",
+          "name": "Controlword",
+          "type": "UINT",
+          "bit_size": 16
+        },
+        {
+          "index": "0x2830",
+          "name": "Lenze control word",
+          "type": "UINT",
+          "bit_size": 16
+        },
+        {
+          "index": "0x6060",
+          "name": "Modes of operation",
+          "type": "SINT",
+          "bit_size": 8
+        },
+        {
+          "index": "0x6042",
+          "name": "vl target velocity",
+          "type": "INT",
+          "bit_size": 16
+        }
+      ]
+    },
+    {
+      "index": "0x1604",
+      "name": "Axis A: TP",
+      "direction": "Rx",
+      "sm": 2,
+      "entries": [
+        {
+          "index": "0x60B8",
+          "name": "Touch probe function",
+          "type": "UINT",
+          "bit_size": 16
+        }
+      ]
+    },
+    {
+      "index": "0x1605",
+      "name": "Axis A: Free configuration",
+      "direction": "Rx",
+      "sm": 0,
+      "entries": []
+    },
+    {
+      "index": "0x1606",
+      "name": "Axis A: Torque limits",
+      "direction": "Rx",
+      "sm": 2,
+      "entries": [
+        {
+          "index": "0x60E0",
+          "name": "Positive torque limit value",
+          "type": "UINT",
+          "bit_size": 16
+        },
+        {
+          "index": "0x60E1",
+          "name": "Negative torque limit value",
+          "type": "UINT",
+          "bit_size": 16
+        }
+      ]
+    },
+    {
+      "index": "0x1607",
+      "name": "Axis A: Speed limits",
+      "direction": "Rx",
+      "sm": 2,
+      "entries": [
+        {
+          "index": "0x2946",
+          "name": "Speed limitation: Upper speed limit",
+          "type": "DINT",
+          "bit_size": 32
+        },
+        {
+          "index": "0x2946",
+          "name": "Speed limitation: Lower speed limit",
+          "type": "DINT",
+          "bit_size": 32
+        }
+      ]
+    },
+    {
+      "index": "0x1A00",
+      "name": "Axis A: csp",
+      "direction": "Tx",
+      "sm": 3,
+      "entries": [
+        {
+          "index": "0x6041",
+          "name": "Statusword",
+          "type": "UINT",
+          "bit_size": 16
+        },
+        {
+          "index": "0x2831",
+          "name": "Lenze status word",
+          "type": "UINT",
+          "bit_size": 16
+        },
+        {
+          "index": "0x6061",
+          "name": "Modes of operation display",
+          "type": "SINT",
+          "bit_size": 8
+        },
+        {
+          "index": "0x603F",
+          "name": "Error code",
+          "type": "UINT",
+          "bit_size": 16
+        },
+        {
+          "index": "0x606C",
+          "name": "Velocity actual value",
+          "type": "DINT",
+          "bit_size": 32
+        },
+        {
+          "index": "0x6077",
+          "name": "Torque actual value",
+          "type": "INT",
+          "bit_size": 16
+        },
+        {
+          "index": "0x6064",
+          "name": "Position actual value",
+          "type": "DINT",
+          "bit_size": 32
+        },
+        {
+          "index": "0x60F4",
+          "name": "Following error actual value",
+          "type": "DINT",
+          "bit_size": 32
+        }
+      ]
+    },
+    {
+      "index": "0x1A01",
+      "name": "Axis A: cst",
+      "direction": "Tx",
+      "sm": 0,
+      "entries": [
+        {
+          "index": "0x6041",
+          "name": "Statusword",
+          "type": "UINT",
+          "bit_size": 16
+        },
+        {
+          "index": "0x2831",
+          "name": "Lenze status word",
+          "type": "UINT",
+          "bit_size": 16
+        },
+        {
+          "index": "0x6061",
+          "name": "Modes of operation display",
+          "type": "SINT",
+          "bit_size": 8
+        },
+        {
+          "index": "0x603F",
+          "name": "Error code",
+          "type": "UINT",
+          "bit_size": 16
+        },
+        {
+          "index": "0x606C",
+          "name": "Velocity actual value",
+          "type": "DINT",
+          "bit_size": 32
+        },
+        {
+          "index": "0x6077",
+          "name": "Torque actual value",
+          "type": "INT",
+          "bit_size": 16
+        }
+      ]
+    },
+    {
+      "index": "0x1A02",
+      "name": "Axis A: csv",
+      "direction": "Tx",
+      "sm": 0,
+      "entries": [
+        {
+          "index": "0x6041",
+          "name": "Statusword",
+          "type": "UINT",
+          "bit_size": 16
+        },
+        {
+          "index": "0x2831",
+          "name": "Lenze status word",
+          "type": "UINT",
+          "bit_size": 16
+        },
+        {
+          "index": "0x6061",
+          "name": "Modes of operation display",
+          "type": "SINT",
+          "bit_size": 8
+        },
+        {
+          "index": "0x603F",
+          "name": "Error code",
+          "type": "UINT",
+          "bit_size": 16
+        },
+        {
+          "index": "0x606C",
+          "name": "Velocity actual value",
+          "type": "DINT",
+          "bit_size": 32
+        },
+        {
+          "index": "0x6077",
+          "name": "Torque actual value",
+          "type": "INT",
+          "bit_size": 16
+        },
+        {
+          "index": "0x6064",
+          "name": "Position actual value",
+          "type": "DINT",
+          "bit_size": 32
+        }
+      ]
+    },
+    {
+      "index": "0x1A03",
+      "name": "Axis A: vl",
+      "direction": "Tx",
+      "sm": 0,
+      "entries": [
+        {
+          "index": "0x6041",
+          "name": "Statusword",
+          "type": "UINT",
+          "bit_size": 16
+        },
+        {
+          "index": "0x2831",
+          "name": "Lenze status word",
+          "type": "UINT",
+          "bit_size": 16
+        },
+        {
+          "index": "0x6061",
+          "name": "Modes of operation display",
+          "type": "SINT",
+          "bit_size": 8
+        },
+        {
+          "index": "0x603F",
+          "name": "Error code",
+          "type": "UINT",
+          "bit_size": 16
+        },
+        {
+          "index": "0x6044",
+          "name": "vl velocity actual value",
+          "type": "INT",
+          "bit_size": 16
+        }
+      ]
+    },
+    {
+      "index": "0x1A04",
+      "name": "Axis A: TP",
+      "direction": "Tx",
+      "sm": 3,
+      "entries": [
+        {
+          "index": "0x60B9",
+          "name": "Touch probe status",
+          "type": "UINT",
+          "bit_size": 16
+        },
+        {
+          "index": "0x60BA",
+          "name": "Touch probe pos1 pos value",
+          "type": "DINT",
+          "bit_size": 32
+        },
+        {
+          "index": "0x60BB",
+          "name": "Touch probe pos1 neg value",
+          "type": "DINT",
+          "bit_size": 32
+        },
+        {
+          "index": "0x60BC",
+          "name": "Touch probe pos2 pos value",
+          "type": "DINT",
+          "bit_size": 32
+        },
+        {
+          "index": "0x60BD",
+          "name": "Touch probe pos2 neg value",
+          "type": "DINT",
+          "bit_size": 32
+        }
+      ]
+    },
+    {
+      "index": "0x1A05",
+      "name": "Axis A: Free configuration",
+      "direction": "Tx",
+      "sm": 0,
+      "entries": []
+    },
+    {
+      "index": "0x1A06",
+      "name": "Axis A: Additional status information",
+      "direction": "Tx",
+      "sm": 3,
+      "entries": [
+        {
+          "index": "0x2833",
+          "name": "Lenze status word 2",
+          "type": "UINT",
+          "bit_size": 16
+        },
+        {
+          "index": "0x60FD",
+          "name": "Digital inputs",
+          "type": "UDINT",
+          "bit_size": 32
+        }
+      ]
+    },
+    {
+      "index": "0x1600",
+      "name": "Axis A: csp",
+      "direction": "Rx",
+      "sm": 2,
+      "entries": [
+        {
+          "index": "0x6040",
+          "name": "Controlword",
+          "type": "UINT",
+          "bit_size": 16
+        },
+        {
+          "index": "0x2830",
+          "name": "Lenze control word",
+          "type": "UINT",
+          "bit_size": 16
+        },
+        {
+          "index": "0x6060",
+          "name": "Modes of operation",
+          "type": "SINT",
+          "bit_size": 8
+        },
+        {
+          "index": "0x60B2",
+          "name": "Torque offset",
+          "type": "INT",
+          "bit_size": 16
+        },
+        {
+          "index": "0x607A",
+          "name": "Target position",
+          "type": "DINT",
+          "bit_size": 32
+        },
+        {
+          "index": "0x60B1",
+          "name": "Velocity offset",
+          "type": "DINT",
+          "bit_size": 32
+        },
+        {
+          "index": "0x2902",
+          "name": "Speed controller: Load value",
+          "type": "INT",
+          "bit_size": 16
+        }
+      ]
+    },
+    {
+      "index": "0x1601",
+      "name": "Axis A: cst",
+      "direction": "Rx",
+      "sm": 0,
+      "entries": [
+        {
+          "index": "0x6040",
+          "name": "Controlword",
+          "type": "UINT",
+          "bit_size": 16
+        },
+        {
+          "index": "0x2830",
+          "name": "Lenze control word",
+          "type": "UINT",
+          "bit_size": 16
+        },
+        {
+          "index": "0x6060",
+          "name": "Modes of operation",
+          "type": "SINT",
+          "bit_size": 8
+        },
+        {
+          "index": "0x60B2",
+          "name": "Torque offset",
+          "type": "INT",
+          "bit_size": 16
+        },
+        {
+          "index": "0x6071",
+          "name": "Target torque",
+          "type": "INT",
+          "bit_size": 16
+        },
+        {
+          "index": "0x2946",
+          "name": "Speed limitation: Upper speed limit",
+          "type": "DINT",
+          "bit_size": 32
+        },
+        {
+          "index": "0x2946",
+          "name": "Speed limitation: Lower speed limit",
+          "type": "DINT",
+          "bit_size": 32
+        }
+      ]
+    },
+    {
+      "index": "0x1602",
+      "name": "Axis A: csv",
+      "direction": "Rx",
+      "sm": 0,
+      "entries": [
+        {
+          "index": "0x6040",
+          "name": "Controlword",
+          "type": "UINT",
+          "bit_size": 16
+        },
+        {
+          "index": "0x2830",
+          "name": "Lenze control word",
+          "type": "UINT",
+          "bit_size": 16
+        },
+        {
+          "index": "0x6060",
+          "name": "Modes of operation",
+          "type": "SINT",
+          "bit_size": 8
+        },
+        {
+          "index": "0x60B2",
+          "name": "Torque offset",
+          "type": "INT",
+          "bit_size": 16
+        },
+        {
+          "index": "0x60FF",
+          "name": "Target velocity",
+          "type": "DINT",
+          "bit_size": 32
+        }
+      ]
+    },
+    {
+      "index": "0x1603",
+      "name": "Axis A: vl",
+      "direction": "Rx",
+      "sm": 0,
+      "entries": [
+        {
+          "index": "0x6040",
+          "name": "Controlword",
+          "type": "UINT",
+          "bit_size": 16
+        },
+        {
+          "index": "0x2830",
+          "name": "Lenze control word",
+          "type": "UINT",
+          "bit_size": 16
+        },
+        {
+          "index": "0x6060",
+          "name": "Modes of operation",
+          "type": "SINT",
+          "bit_size": 8
+        },
+        {
+          "index": "0x6042",
+          "name": "vl target velocity",
+          "type": "INT",
+          "bit_size": 16
+        }
+      ]
+    },
+    {
+      "index": "0x1604",
+      "name": "Axis A: TP",
+      "direction": "Rx",
+      "sm": 2,
+      "entries": [
+        {
+          "index": "0x60B8",
+          "name": "Touch probe function",
+          "type": "UINT",
+          "bit_size": 16
+        }
+      ]
+    },
+    {
+      "index": "0x1605",
+      "name": "Axis A: Free configuration",
+      "direction": "Rx",
+      "sm": 0,
+      "entries": []
+    },
+    {
+      "index": "0x1606",
+      "name": "Axis A: Torque limits",
+      "direction": "Rx",
+      "sm": 2,
+      "entries": [
+        {
+          "index": "0x60E0",
+          "name": "Positive torque limit value",
+          "type": "UINT",
+          "bit_size": 16
+        },
+        {
+          "index": "0x60E1",
+          "name": "Negative torque limit value",
+          "type": "UINT",
+          "bit_size": 16
+        }
+      ]
+    },
+    {
+      "index": "0x1607",
+      "name": "Axis A: Speed limits",
+      "direction": "Rx",
+      "sm": 2,
+      "entries": [
+        {
+          "index": "0x2946",
+          "name": "Speed limitation: Upper speed limit",
+          "type": "DINT",
+          "bit_size": 32
+        },
+        {
+          "index": "0x2946",
+          "name": "Speed limitation: Lower speed limit",
+          "type": "DINT",
+          "bit_size": 32
+        }
+      ]
+    },
+    {
+      "index": "0x1610",
+      "name": "Axis B: csp",
+      "direction": "Rx",
+      "sm": 2,
+      "entries": [
+        {
+          "index": "0x6840",
+          "name": "Controlword",
+          "type": "UINT",
+          "bit_size": 16
+        },
+        {
+          "index": "0x3030",
+          "name": "Lenze control word",
+          "type": "UINT",
+          "bit_size": 16
+        },
+        {
+          "index": "0x6860",
+          "name": "Modes of operation",
+          "type": "SINT",
+          "bit_size": 8
+        },
+        {
+          "index": "0x68B2",
+          "name": "Torque offset",
+          "type": "INT",
+          "bit_size": 16
+        },
+        {
+          "index": "0x687A",
+          "name": "Target position",
+          "type": "DINT",
+          "bit_size": 32
+        },
+        {
+          "index": "0x68B1",
+          "name": "Velocity offset",
+          "type": "DINT",
+          "bit_size": 32
+        },
+        {
+          "index": "0x3102",
+          "name": "Speed controller: Load value",
+          "type": "INT",
+          "bit_size": 16
+        }
+      ]
+    },
+    {
+      "index": "0x1611",
+      "name": "Axis B: cst",
+      "direction": "Rx",
+      "sm": 0,
+      "entries": [
+        {
+          "index": "0x6840",
+          "name": "Controlword",
+          "type": "UINT",
+          "bit_size": 16
+        },
+        {
+          "index": "0x3030",
+          "name": "Lenze control word",
+          "type": "UINT",
+          "bit_size": 16
+        },
+        {
+          "index": "0x6860",
+          "name": "Modes of operation",
+          "type": "SINT",
+          "bit_size": 8
+        },
+        {
+          "index": "0x68B2",
+          "name": "Torque offset",
+          "type": "INT",
+          "bit_size": 16
+        },
+        {
+          "index": "0x6871",
+          "name": "Target torque",
+          "type": "INT",
+          "bit_size": 16
+        },
+        {
+          "index": "0x3146",
+          "name": "Speed limitation: Upper speed limit",
+          "type": "DINT",
+          "bit_size": 32
+        },
+        {
+          "index": "0x3146",
+          "name": "Speed limitation: Lower speed limit",
+          "type": "DINT",
+          "bit_size": 32
+        }
+      ]
+    },
+    {
+      "index": "0x1612",
+      "name": "Axis B: csv",
+      "direction": "Rx",
+      "sm": 0,
+      "entries": [
+        {
+          "index": "0x6840",
+          "name": "Controlword",
+          "type": "UINT",
+          "bit_size": 16
+        },
+        {
+          "index": "0x3030",
+          "name": "Lenze control word",
+          "type": "UINT",
+          "bit_size": 16
+        },
+        {
+          "index": "0x6860",
+          "name": "Modes of operation",
+          "type": "SINT",
+          "bit_size": 8
+        },
+        {
+          "index": "0x68B2",
+          "name": "Torque offset",
+          "type": "INT",
+          "bit_size": 16
+        },
+        {
+          "index": "0x68FF",
+          "name": "Target velocity",
+          "type": "DINT",
+          "bit_size": 32
+        }
+      ]
+    },
+    {
+      "index": "0x1613",
+      "name": "Axis B: vl",
+      "direction": "Rx",
+      "sm": 0,
+      "entries": [
+        {
+          "index": "0x6840",
+          "name": "Controlword",
+          "type": "UINT",
+          "bit_size": 16
+        },
+        {
+          "index": "0x3030",
+          "name": "Lenze control word",
+          "type": "UINT",
+          "bit_size": 16
+        },
+        {
+          "index": "0x6860",
+          "name": "Modes of operation",
+          "type": "SINT",
+          "bit_size": 8
+        },
+        {
+          "index": "0x6842",
+          "name": "vl target velocity",
+          "type": "INT",
+          "bit_size": 16
+        }
+      ]
+    },
+    {
+      "index": "0x1614",
+      "name": "Axis B: TP",
+      "direction": "Rx",
+      "sm": 2,
+      "entries": [
+        {
+          "index": "0x68B8",
+          "name": "Touch probe function",
+          "type": "UINT",
+          "bit_size": 16
+        }
+      ]
+    },
+    {
+      "index": "0x1615",
+      "name": "Axis B: Free configuration",
+      "direction": "Rx",
+      "sm": 0,
+      "entries": []
+    },
+    {
+      "index": "0x1616",
+      "name": "Axis B: Torque limits",
+      "direction": "Rx",
+      "sm": 2,
+      "entries": [
+        {
+          "index": "0x68E0",
+          "name": "Positive torque limit value",
+          "type": "UINT",
+          "bit_size": 16
+        },
+        {
+          "index": "0x68E1",
+          "name": "Negative torque limit value",
+          "type": "UINT",
+          "bit_size": 16
+        }
+      ]
+    },
+    {
+      "index": "0x1617",
+      "name": "Axis B: Speed limits",
+      "direction": "Rx",
+      "sm": 2,
+      "entries": [
+        {
+          "index": "0x3146",
+          "name": "Speed limitation: Upper speed limit",
+          "type": "DINT",
+          "bit_size": 32
+        },
+        {
+          "index": "0x3146",
+          "name": "Speed limitation: Lower speed limit",
+          "type": "DINT",
+          "bit_size": 32
+        }
+      ]
+    },
+    {
+      "index": "0x1A00",
+      "name": "Axis A: csp",
+      "direction": "Tx",
+      "sm": 3,
+      "entries": [
+        {
+          "index": "0x6041",
+          "name": "Statusword",
+          "type": "UINT",
+          "bit_size": 16
+        },
+        {
+          "index": "0x2831",
+          "name": "Lenze status word",
+          "type": "UINT",
+          "bit_size": 16
+        },
+        {
+          "index": "0x6061",
+          "name": "Modes of operation display",
+          "type": "SINT",
+          "bit_size": 8
+        },
+        {
+          "index": "0x603F",
+          "name": "Error code",
+          "type": "UINT",
+          "bit_size": 16
+        },
+        {
+          "index": "0x606C",
+          "name": "Velocity actual value",
+          "type": "DINT",
+          "bit_size": 32
+        },
+        {
+          "index": "0x6077",
+          "name": "Torque actual value",
+          "type": "INT",
+          "bit_size": 16
+        },
+        {
+          "index": "0x6064",
+          "name": "Position actual value",
+          "type": "DINT",
+          "bit_size": 32
+        },
+        {
+          "index": "0x60F4",
+          "name": "Following error actual value",
+          "type": "DINT",
+          "bit_size": 32
+        }
+      ]
+    },
+    {
+      "index": "0x1A01",
+      "name": "Axis A: cst",
+      "direction": "Tx",
+      "sm": 0,
+      "entries": [
+        {
+          "index": "0x6041",
+          "name": "Statusword",
+          "type": "UINT",
+          "bit_size": 16
+        },
+        {
+          "index": "0x2831",
+          "name": "Lenze status word",
+          "type": "UINT",
+          "bit_size": 16
+        },
+        {
+          "index": "0x6061",
+          "name": "Modes of operation display",
+          "type": "SINT",
+          "bit_size": 8
+        },
+        {
+          "index": "0x603F",
+          "name": "Error code",
+          "type": "UINT",
+          "bit_size": 16
+        },
+        {
+          "index": "0x606C",
+          "name": "Velocity actual value",
+          "type": "DINT",
+          "bit_size": 32
+        },
+        {
+          "index": "0x6077",
+          "name": "Torque actual value",
+          "type": "INT",
+          "bit_size": 16
+        }
+      ]
+    },
+    {
+      "index": "0x1A02",
+      "name": "Axis A: csv",
+      "direction": "Tx",
+      "sm": 0,
+      "entries": [
+        {
+          "index": "0x6041",
+          "name": "Statusword",
+          "type": "UINT",
+          "bit_size": 16
+        },
+        {
+          "index": "0x2831",
+          "name": "Lenze status word",
+          "type": "UINT",
+          "bit_size": 16
+        },
+        {
+          "index": "0x6061",
+          "name": "Modes of operation display",
+          "type": "SINT",
+          "bit_size": 8
+        },
+        {
+          "index": "0x603F",
+          "name": "Error code",
+          "type": "UINT",
+          "bit_size": 16
+        },
+        {
+          "index": "0x606C",
+          "name": "Velocity actual value",
+          "type": "DINT",
+          "bit_size": 32
+        },
+        {
+          "index": "0x6077",
+          "name": "Torque actual value",
+          "type": "INT",
+          "bit_size": 16
+        },
+        {
+          "index": "0x6064",
+          "name": "Position actual value",
+          "type": "DINT",
+          "bit_size": 32
+        }
+      ]
+    },
+    {
+      "index": "0x1A03",
+      "name": "Axis A: vl",
+      "direction": "Tx",
+      "sm": 0,
+      "entries": [
+        {
+          "index": "0x6041",
+          "name": "Statusword",
+          "type": "UINT",
+          "bit_size": 16
+        },
+        {
+          "index": "0x2831",
+          "name": "Lenze status word",
+          "type": "UINT",
+          "bit_size": 16
+        },
+        {
+          "index": "0x6061",
+          "name": "Modes of operation display",
+          "type": "SINT",
+          "bit_size": 8
+        },
+        {
+          "index": "0x603F",
+          "name": "Error code",
+          "type": "UINT",
+          "bit_size": 16
+        },
+        {
+          "index": "0x6044",
+          "name": "vl velocity actual value",
+          "type": "INT",
+          "bit_size": 16
+        }
+      ]
+    },
+    {
+      "index": "0x1A04",
+      "name": "Axis A: TP",
+      "direction": "Tx",
+      "sm": 3,
+      "entries": [
+        {
+          "index": "0x60B9",
+          "name": "Touch probe status",
+          "type": "UINT",
+          "bit_size": 16
+        },
+        {
+          "index": "0x60BA",
+          "name": "Touch probe pos1 pos value",
+          "type": "DINT",
+          "bit_size": 32
+        },
+        {
+          "index": "0x60BB",
+          "name": "Touch probe pos1 neg value",
+          "type": "DINT",
+          "bit_size": 32
+        },
+        {
+          "index": "0x60BC",
+          "name": "Touch probe pos2 pos value",
+          "type": "DINT",
+          "bit_size": 32
+        },
+        {
+          "index": "0x60BD",
+          "name": "Touch probe pos2 neg value",
+          "type": "DINT",
+          "bit_size": 32
+        }
+      ]
+    },
+    {
+      "index": "0x1A05",
+      "name": "Axis A: Free configuration",
+      "direction": "Tx",
+      "sm": 0,
+      "entries": []
+    },
+    {
+      "index": "0x1A06",
+      "name": "Axis A: Additional status information",
+      "direction": "Tx",
+      "sm": 3,
+      "entries": [
+        {
+          "index": "0x2833",
+          "name": "Lenze status word 2",
+          "type": "UINT",
+          "bit_size": 16
+        },
+        {
+          "index": "0x60FD",
+          "name": "Digital inputs",
+          "type": "UDINT",
+          "bit_size": 32
+        }
+      ]
+    },
+    {
+      "index": "0x1A10",
+      "name": "Axis B: csp",
+      "direction": "Tx",
+      "sm": 3,
+      "entries": [
+        {
+          "index": "0x6841",
+          "name": "Statusword",
+          "type": "UINT",
+          "bit_size": 16
+        },
+        {
+          "index": "0x3031",
+          "name": "Lenze status word",
+          "type": "UINT",
+          "bit_size": 16
+        },
+        {
+          "index": "0x6861",
+          "name": "Modes of operation display",
+          "type": "SINT",
+          "bit_size": 8
+        },
+        {
+          "index": "0x683F",
+          "name": "Error code",
+          "type": "UINT",
+          "bit_size": 16
+        },
+        {
+          "index": "0x686C",
+          "name": "Velocity actual value",
+          "type": "DINT",
+          "bit_size": 32
+        },
+        {
+          "index": "0x6877",
+          "name": "Torque actual value",
+          "type": "INT",
+          "bit_size": 16
+        },
+        {
+          "index": "0x6864",
+          "name": "Position actual value",
+          "type": "DINT",
+          "bit_size": 32
+        },
+        {
+          "index": "0x68F4",
+          "name": "Following error actual value",
+          "type": "DINT",
+          "bit_size": 32
+        }
+      ]
+    },
+    {
+      "index": "0x1A11",
+      "name": "Axis B: cst",
+      "direction": "Tx",
+      "sm": 0,
+      "entries": [
+        {
+          "index": "0x6841",
+          "name": "Statusword",
+          "type": "UINT",
+          "bit_size": 16
+        },
+        {
+          "index": "0x3031",
+          "name": "Lenze status word",
+          "type": "UINT",
+          "bit_size": 16
+        },
+        {
+          "index": "0x6861",
+          "name": "Modes of operation display",
+          "type": "SINT",
+          "bit_size": 8
+        },
+        {
+          "index": "0x683F",
+          "name": "Error code",
+          "type": "UINT",
+          "bit_size": 16
+        },
+        {
+          "index": "0x686C",
+          "name": "Velocity actual value",
+          "type": "DINT",
+          "bit_size": 32
+        },
+        {
+          "index": "0x6877",
+          "name": "Torque actual value",
+          "type": "INT",
+          "bit_size": 16
+        }
+      ]
+    },
+    {
+      "index": "0x1A12",
+      "name": "Axis B: csv",
+      "direction": "Tx",
+      "sm": 0,
+      "entries": [
+        {
+          "index": "0x6841",
+          "name": "Statusword",
+          "type": "UINT",
+          "bit_size": 16
+        },
+        {
+          "index": "0x3031",
+          "name": "Lenze status word",
+          "type": "UINT",
+          "bit_size": 16
+        },
+        {
+          "index": "0x6861",
+          "name": "Modes of operation display",
+          "type": "SINT",
+          "bit_size": 8
+        },
+        {
+          "index": "0x683F",
+          "name": "Error code",
+          "type": "UINT",
+          "bit_size": 16
+        },
+        {
+          "index": "0x686C",
+          "name": "Velocity actual value",
+          "type": "DINT",
+          "bit_size": 32
+        },
+        {
+          "index": "0x6877",
+          "name": "Torque actual value",
+          "type": "INT",
+          "bit_size": 16
+        },
+        {
+          "index": "0x6864",
+          "name": "Position actual value",
+          "type": "DINT",
+          "bit_size": 32
+        }
+      ]
+    },
+    {
+      "index": "0x1A13",
+      "name": "Axis B: vl",
+      "direction": "Tx",
+      "sm": 0,
+      "entries": [
+        {
+          "index": "0x6841",
+          "name": "Statusword",
+          "type": "UINT",
+          "bit_size": 16
+        },
+        {
+          "index": "0x3031",
+          "name": "Lenze status word",
+          "type": "UINT",
+          "bit_size": 16
+        },
+        {
+          "index": "0x6861",
+          "name": "Modes of operation display",
+          "type": "SINT",
+          "bit_size": 8
+        },
+        {
+          "index": "0x683F",
+          "name": "Error code",
+          "type": "UINT",
+          "bit_size": 16
+        },
+        {
+          "index": "0x6844",
+          "name": "vl velocity actual value",
+          "type": "INT",
+          "bit_size": 16
+        }
+      ]
+    },
+    {
+      "index": "0x1A14",
+      "name": "Axis B: TP",
+      "direction": "Tx",
+      "sm": 3,
+      "entries": [
+        {
+          "index": "0x68B9",
+          "name": "Touch probe status",
+          "type": "UINT",
+          "bit_size": 16
+        },
+        {
+          "index": "0x68BA",
+          "name": "Touch probe pos1 pos value",
+          "type": "DINT",
+          "bit_size": 32
+        },
+        {
+          "index": "0x68BB",
+          "name": "Touch probe pos1 neg value",
+          "type": "DINT",
+          "bit_size": 32
+        },
+        {
+          "index": "0x68BC",
+          "name": "Touch probe pos2 pos value",
+          "type": "DINT",
+          "bit_size": 32
+        },
+        {
+          "index": "0x68BD",
+          "name": "Touch probe pos2 neg value",
+          "type": "DINT",
+          "bit_size": 32
+        }
+      ]
+    },
+    {
+      "index": "0x1A15",
+      "name": "Axis B: Free configuration",
+      "direction": "Tx",
+      "sm": 0,
+      "entries": []
+    },
+    {
+      "index": "0x1A16",
+      "name": "Axis B: Additional status information",
+      "direction": "Tx",
+      "sm": 3,
+      "entries": [
+        {
+          "index": "0x3033",
+          "name": "Lenze status word 2",
+          "type": "UINT",
+          "bit_size": 16
+        },
+        {
+          "index": "0x68FD",
+          "name": "Digital inputs",
+          "type": "UDINT",
+          "bit_size": 32
+        }
+      ]
+    },
+    {
+      "index": "0x1600",
+      "name": "Axis A: csp",
+      "direction": "Rx",
+      "sm": 2,
+      "entries": [
+        {
+          "index": "0x6040",
+          "name": "Controlword",
+          "type": "UINT",
+          "bit_size": 16
+        },
+        {
+          "index": "0x2830",
+          "name": "Lenze control word",
+          "type": "UINT",
+          "bit_size": 16
+        },
+        {
+          "index": "0x6060",
+          "name": "Modes of operation",
+          "type": "SINT",
+          "bit_size": 8
+        },
+        {
+          "index": "0x60B2",
+          "name": "Torque offset",
+          "type": "INT",
+          "bit_size": 16
+        },
+        {
+          "index": "0x607A",
+          "name": "Target position",
+          "type": "DINT",
+          "bit_size": 32
+        },
+        {
+          "index": "0x60B1",
+          "name": "Velocity offset",
+          "type": "DINT",
+          "bit_size": 32
+        },
+        {
+          "index": "0x2902",
+          "name": "Speed controller: Load value",
+          "type": "INT",
+          "bit_size": 16
+        }
+      ]
+    },
+    {
+      "index": "0x1601",
+      "name": "Axis A: cst",
+      "direction": "Rx",
+      "sm": 0,
+      "entries": [
+        {
+          "index": "0x6040",
+          "name": "Controlword",
+          "type": "UINT",
+          "bit_size": 16
+        },
+        {
+          "index": "0x2830",
+          "name": "Lenze control word",
+          "type": "UINT",
+          "bit_size": 16
+        },
+        {
+          "index": "0x6060",
+          "name": "Modes of operation",
+          "type": "SINT",
+          "bit_size": 8
+        },
+        {
+          "index": "0x60B2",
+          "name": "Torque offset",
+          "type": "INT",
+          "bit_size": 16
+        },
+        {
+          "index": "0x6071",
+          "name": "Target torque",
+          "type": "INT",
+          "bit_size": 16
+        },
+        {
+          "index": "0x2946",
+          "name": "Speed limitation: Upper speed limit",
+          "type": "DINT",
+          "bit_size": 32
+        },
+        {
+          "index": "0x2946",
+          "name": "Speed limitation: Lower speed limit",
+          "type": "DINT",
+          "bit_size": 32
+        }
+      ]
+    },
+    {
+      "index": "0x1602",
+      "name": "Axis A: csv",
+      "direction": "Rx",
+      "sm": 0,
+      "entries": [
+        {
+          "index": "0x6040",
+          "name": "Controlword",
+          "type": "UINT",
+          "bit_size": 16
+        },
+        {
+          "index": "0x2830",
+          "name": "Lenze control word",
+          "type": "UINT",
+          "bit_size": 16
+        },
+        {
+          "index": "0x6060",
+          "name": "Modes of operation",
+          "type": "SINT",
+          "bit_size": 8
+        },
+        {
+          "index": "0x60B2",
+          "name": "Torque offset",
+          "type": "INT",
+          "bit_size": 16
+        },
+        {
+          "index": "0x60FF",
+          "name": "Target velocity",
+          "type": "DINT",
+          "bit_size": 32
+        }
+      ]
+    },
+    {
+      "index": "0x1603",
+      "name": "Axis A: vl",
+      "direction": "Rx",
+      "sm": 0,
+      "entries": [
+        {
+          "index": "0x6040",
+          "name": "Controlword",
+          "type": "UINT",
+          "bit_size": 16
+        },
+        {
+          "index": "0x2830",
+          "name": "Lenze control word",
+          "type": "UINT",
+          "bit_size": 16
+        },
+        {
+          "index": "0x6060",
+          "name": "Modes of operation",
+          "type": "SINT",
+          "bit_size": 8
+        },
+        {
+          "index": "0x6042",
+          "name": "vl target velocity",
+          "type": "INT",
+          "bit_size": 16
+        }
+      ]
+    },
+    {
+      "index": "0x1604",
+      "name": "Axis A: TP",
+      "direction": "Rx",
+      "sm": 2,
+      "entries": [
+        {
+          "index": "0x60B8",
+          "name": "Touch probe function",
+          "type": "UINT",
+          "bit_size": 16
+        }
+      ]
+    },
+    {
+      "index": "0x1605",
+      "name": "Axis A: Free configuration",
+      "direction": "Rx",
+      "sm": 0,
+      "entries": []
+    },
+    {
+      "index": "0x1606",
+      "name": "Axis A: Torque limits",
+      "direction": "Rx",
+      "sm": 2,
+      "entries": [
+        {
+          "index": "0x60E0",
+          "name": "Positive torque limit value",
+          "type": "UINT",
+          "bit_size": 16
+        },
+        {
+          "index": "0x60E1",
+          "name": "Negative torque limit value",
+          "type": "UINT",
+          "bit_size": 16
+        }
+      ]
+    },
+    {
+      "index": "0x1607",
+      "name": "Axis A: Speed limits",
+      "direction": "Rx",
+      "sm": 2,
+      "entries": [
+        {
+          "index": "0x2946",
+          "name": "Speed limitation: Upper speed limit",
+          "type": "DINT",
+          "bit_size": 32
+        },
+        {
+          "index": "0x2946",
+          "name": "Speed limitation: Lower speed limit",
+          "type": "DINT",
+          "bit_size": 32
+        }
+      ]
+    },
+    {
+      "index": "0x1A00",
+      "name": "Axis A: csp",
+      "direction": "Tx",
+      "sm": 3,
+      "entries": [
+        {
+          "index": "0x6041",
+          "name": "Statusword",
+          "type": "UINT",
+          "bit_size": 16
+        },
+        {
+          "index": "0x2831",
+          "name": "Lenze status word",
+          "type": "UINT",
+          "bit_size": 16
+        },
+        {
+          "index": "0x6061",
+          "name": "Modes of operation display",
+          "type": "SINT",
+          "bit_size": 8
+        },
+        {
+          "index": "0x603F",
+          "name": "Error code",
+          "type": "UINT",
+          "bit_size": 16
+        },
+        {
+          "index": "0x606C",
+          "name": "Velocity actual value",
+          "type": "DINT",
+          "bit_size": 32
+        },
+        {
+          "index": "0x6077",
+          "name": "Torque actual value",
+          "type": "INT",
+          "bit_size": 16
+        },
+        {
+          "index": "0x6064",
+          "name": "Position actual value",
+          "type": "DINT",
+          "bit_size": 32
+        },
+        {
+          "index": "0x60F4",
+          "name": "Following error actual value",
+          "type": "DINT",
+          "bit_size": 32
+        }
+      ]
+    },
+    {
+      "index": "0x1A01",
+      "name": "Axis A: cst",
+      "direction": "Tx",
+      "sm": 0,
+      "entries": [
+        {
+          "index": "0x6041",
+          "name": "Statusword",
+          "type": "UINT",
+          "bit_size": 16
+        },
+        {
+          "index": "0x2831",
+          "name": "Lenze status word",
+          "type": "UINT",
+          "bit_size": 16
+        },
+        {
+          "index": "0x6061",
+          "name": "Modes of operation display",
+          "type": "SINT",
+          "bit_size": 8
+        },
+        {
+          "index": "0x603F",
+          "name": "Error code",
+          "type": "UINT",
+          "bit_size": 16
+        },
+        {
+          "index": "0x606C",
+          "name": "Velocity actual value",
+          "type": "DINT",
+          "bit_size": 32
+        },
+        {
+          "index": "0x6077",
+          "name": "Torque actual value",
+          "type": "INT",
+          "bit_size": 16
+        }
+      ]
+    },
+    {
+      "index": "0x1A02",
+      "name": "Axis A: csv",
+      "direction": "Tx",
+      "sm": 0,
+      "entries": [
+        {
+          "index": "0x6041",
+          "name": "Statusword",
+          "type": "UINT",
+          "bit_size": 16
+        },
+        {
+          "index": "0x2831",
+          "name": "Lenze status word",
+          "type": "UINT",
+          "bit_size": 16
+        },
+        {
+          "index": "0x6061",
+          "name": "Modes of operation display",
+          "type": "SINT",
+          "bit_size": 8
+        },
+        {
+          "index": "0x603F",
+          "name": "Error code",
+          "type": "UINT",
+          "bit_size": 16
+        },
+        {
+          "index": "0x606C",
+          "name": "Velocity actual value",
+          "type": "DINT",
+          "bit_size": 32
+        },
+        {
+          "index": "0x6077",
+          "name": "Torque actual value",
+          "type": "INT",
+          "bit_size": 16
+        },
+        {
+          "index": "0x6064",
+          "name": "Position actual value",
+          "type": "DINT",
+          "bit_size": 32
+        }
+      ]
+    },
+    {
+      "index": "0x1A03",
+      "name": "Axis A: vl",
+      "direction": "Tx",
+      "sm": 0,
+      "entries": [
+        {
+          "index": "0x6041",
+          "name": "Statusword",
+          "type": "UINT",
+          "bit_size": 16
+        },
+        {
+          "index": "0x2831",
+          "name": "Lenze status word",
+          "type": "UINT",
+          "bit_size": 16
+        },
+        {
+          "index": "0x6061",
+          "name": "Modes of operation display",
+          "type": "SINT",
+          "bit_size": 8
+        },
+        {
+          "index": "0x603F",
+          "name": "Error code",
+          "type": "UINT",
+          "bit_size": 16
+        },
+        {
+          "index": "0x6044",
+          "name": "vl velocity actual value",
+          "type": "INT",
+          "bit_size": 16
+        }
+      ]
+    },
+    {
+      "index": "0x1A04",
+      "name": "Axis A: TP",
+      "direction": "Tx",
+      "sm": 3,
+      "entries": [
+        {
+          "index": "0x60B9",
+          "name": "Touch probe status",
+          "type": "UINT",
+          "bit_size": 16
+        },
+        {
+          "index": "0x60BA",
+          "name": "Touch probe pos1 pos value",
+          "type": "DINT",
+          "bit_size": 32
+        },
+        {
+          "index": "0x60BB",
+          "name": "Touch probe pos1 neg value",
+          "type": "DINT",
+          "bit_size": 32
+        },
+        {
+          "index": "0x60BC",
+          "name": "Touch probe pos2 pos value",
+          "type": "DINT",
+          "bit_size": 32
+        },
+        {
+          "index": "0x60BD",
+          "name": "Touch probe pos2 neg value",
+          "type": "DINT",
+          "bit_size": 32
+        }
+      ]
+    },
+    {
+      "index": "0x1A05",
+      "name": "Axis A: Free configuration",
+      "direction": "Tx",
+      "sm": 0,
+      "entries": []
+    },
+    {
+      "index": "0x1A06",
+      "name": "Axis A: Additional status information",
+      "direction": "Tx",
+      "sm": 3,
+      "entries": [
+        {
+          "index": "0x2833",
+          "name": "Lenze statusword 2",
+          "type": "UINT",
+          "bit_size": 16
+        },
+        {
+          "index": "0x60FD",
+          "name": "Digital inputs",
+          "type": "UDINT",
+          "bit_size": 32
+        }
+      ]
+    },
+    {
+      "index": "0x1600",
+      "name": "Axis A: csp",
+      "direction": "Rx",
+      "sm": 2,
+      "entries": [
+        {
+          "index": "0x6040",
+          "name": "Controlword",
+          "type": "UINT",
+          "bit_size": 16
+        },
+        {
+          "index": "0x2830",
+          "name": "Lenze control word",
+          "type": "UINT",
+          "bit_size": 16
+        },
+        {
+          "index": "0x6060",
+          "name": "Modes of operation",
+          "type": "SINT",
+          "bit_size": 8
+        },
+        {
+          "index": "0x60B2",
+          "name": "Torque offset",
+          "type": "INT",
+          "bit_size": 16
+        },
+        {
+          "index": "0x607A",
+          "name": "Target position",
+          "type": "DINT",
+          "bit_size": 32
+        },
+        {
+          "index": "0x60B1",
+          "name": "Velocity offset",
+          "type": "DINT",
+          "bit_size": 32
+        },
+        {
+          "index": "0x2902",
+          "name": "Speed controller: Load value",
+          "type": "INT",
+          "bit_size": 16
+        }
+      ]
+    },
+    {
+      "index": "0x1601",
+      "name": "Axis A: cst",
+      "direction": "Rx",
+      "sm": 0,
+      "entries": [
+        {
+          "index": "0x6040",
+          "name": "Controlword",
+          "type": "UINT",
+          "bit_size": 16
+        },
+        {
+          "index": "0x2830",
+          "name": "Lenze control word",
+          "type": "UINT",
+          "bit_size": 16
+        },
+        {
+          "index": "0x6060",
+          "name": "Modes of operation",
+          "type": "SINT",
+          "bit_size": 8
+        },
+        {
+          "index": "0x60B2",
+          "name": "Torque offset",
+          "type": "INT",
+          "bit_size": 16
+        },
+        {
+          "index": "0x6071",
+          "name": "Target torque",
+          "type": "INT",
+          "bit_size": 16
+        },
+        {
+          "index": "0x2946",
+          "name": "Speed limitation: Upper speed limit",
+          "type": "DINT",
+          "bit_size": 32
+        },
+        {
+          "index": "0x2946",
+          "name": "Speed limitation: Lower speed limit",
+          "type": "DINT",
+          "bit_size": 32
+        }
+      ]
+    },
+    {
+      "index": "0x1602",
+      "name": "Axis A: csv",
+      "direction": "Rx",
+      "sm": 0,
+      "entries": [
+        {
+          "index": "0x6040",
+          "name": "Controlword",
+          "type": "UINT",
+          "bit_size": 16
+        },
+        {
+          "index": "0x2830",
+          "name": "Lenze control word",
+          "type": "UINT",
+          "bit_size": 16
+        },
+        {
+          "index": "0x6060",
+          "name": "Modes of operation",
+          "type": "SINT",
+          "bit_size": 8
+        },
+        {
+          "index": "0x60B2",
+          "name": "Torque offset",
+          "type": "INT",
+          "bit_size": 16
+        },
+        {
+          "index": "0x60FF",
+          "name": "Target velocity",
+          "type": "DINT",
+          "bit_size": 32
+        }
+      ]
+    },
+    {
+      "index": "0x1603",
+      "name": "Axis A: vl",
+      "direction": "Rx",
+      "sm": 0,
+      "entries": [
+        {
+          "index": "0x6040",
+          "name": "Controlword",
+          "type": "UINT",
+          "bit_size": 16
+        },
+        {
+          "index": "0x2830",
+          "name": "Lenze control word",
+          "type": "UINT",
+          "bit_size": 16
+        },
+        {
+          "index": "0x6060",
+          "name": "Modes of operation",
+          "type": "SINT",
+          "bit_size": 8
+        },
+        {
+          "index": "0x6042",
+          "name": "vl target velocity",
+          "type": "INT",
+          "bit_size": 16
+        }
+      ]
+    },
+    {
+      "index": "0x1604",
+      "name": "Axis A: TP",
+      "direction": "Rx",
+      "sm": 2,
+      "entries": [
+        {
+          "index": "0x60B8",
+          "name": "Touch probe function",
+          "type": "UINT",
+          "bit_size": 16
+        }
+      ]
+    },
+    {
+      "index": "0x1605",
+      "name": "Axis A: Free configuration",
+      "direction": "Rx",
+      "sm": 0,
+      "entries": []
+    },
+    {
+      "index": "0x1606",
+      "name": "Axis A: Torque limits",
+      "direction": "Rx",
+      "sm": 2,
+      "entries": [
+        {
+          "index": "0x60E0",
+          "name": "Positive torque limit value",
+          "type": "UINT",
+          "bit_size": 16
+        },
+        {
+          "index": "0x60E1",
+          "name": "Negative torque limit value",
+          "type": "UINT",
+          "bit_size": 16
+        }
+      ]
+    },
+    {
+      "index": "0x1607",
+      "name": "Axis A: Speed limits",
+      "direction": "Rx",
+      "sm": 2,
+      "entries": [
+        {
+          "index": "0x2946",
+          "name": "Speed limitation: Upper speed limit",
+          "type": "DINT",
+          "bit_size": 32
+        },
+        {
+          "index": "0x2946",
+          "name": "Speed limitation: Lower speed limit",
+          "type": "DINT",
+          "bit_size": 32
+        }
+      ]
+    },
+    {
+      "index": "0x1610",
+      "name": "Axis B: csp",
+      "direction": "Rx",
+      "sm": 2,
+      "entries": [
+        {
+          "index": "0x6840",
+          "name": "Controlword",
+          "type": "UINT",
+          "bit_size": 16
+        },
+        {
+          "index": "0x3030",
+          "name": "Lenze control word",
+          "type": "UINT",
+          "bit_size": 16
+        },
+        {
+          "index": "0x6860",
+          "name": "Modes of operation",
+          "type": "SINT",
+          "bit_size": 8
+        },
+        {
+          "index": "0x68B2",
+          "name": "Torque offset",
+          "type": "INT",
+          "bit_size": 16
+        },
+        {
+          "index": "0x687A",
+          "name": "Target position",
+          "type": "DINT",
+          "bit_size": 32
+        },
+        {
+          "index": "0x68B1",
+          "name": "Velocity offset",
+          "type": "DINT",
+          "bit_size": 32
+        },
+        {
+          "index": "0x3102",
+          "name": "Speed controller: Load value",
+          "type": "INT",
+          "bit_size": 16
+        }
+      ]
+    },
+    {
+      "index": "0x1611",
+      "name": "Axis B: cst",
+      "direction": "Rx",
+      "sm": 0,
+      "entries": [
+        {
+          "index": "0x6840",
+          "name": "Controlword",
+          "type": "UINT",
+          "bit_size": 16
+        },
+        {
+          "index": "0x3030",
+          "name": "Lenze control word",
+          "type": "UINT",
+          "bit_size": 16
+        },
+        {
+          "index": "0x6860",
+          "name": "Modes of operation",
+          "type": "SINT",
+          "bit_size": 8
+        },
+        {
+          "index": "0x68B2",
+          "name": "Torque offset",
+          "type": "INT",
+          "bit_size": 16
+        },
+        {
+          "index": "0x6871",
+          "name": "Target torque",
+          "type": "INT",
+          "bit_size": 16
+        },
+        {
+          "index": "0x3146",
+          "name": "Speed limitation: Upper speed limit",
+          "type": "DINT",
+          "bit_size": 32
+        },
+        {
+          "index": "0x3146",
+          "name": "Speed limitation: Lower speed limit",
+          "type": "DINT",
+          "bit_size": 32
+        }
+      ]
+    },
+    {
+      "index": "0x1612",
+      "name": "Axis B: csv",
+      "direction": "Rx",
+      "sm": 0,
+      "entries": [
+        {
+          "index": "0x6840",
+          "name": "Controlword",
+          "type": "UINT",
+          "bit_size": 16
+        },
+        {
+          "index": "0x3030",
+          "name": "Lenze control word",
+          "type": "UINT",
+          "bit_size": 16
+        },
+        {
+          "index": "0x6860",
+          "name": "Modes of operation",
+          "type": "SINT",
+          "bit_size": 8
+        },
+        {
+          "index": "0x68B2",
+          "name": "Torque offset",
+          "type": "INT",
+          "bit_size": 16
+        },
+        {
+          "index": "0x68FF",
+          "name": "Target velocity",
+          "type": "DINT",
+          "bit_size": 32
+        }
+      ]
+    },
+    {
+      "index": "0x1613",
+      "name": "Axis B: vl",
+      "direction": "Rx",
+      "sm": 0,
+      "entries": [
+        {
+          "index": "0x6840",
+          "name": "Controlword",
+          "type": "UINT",
+          "bit_size": 16
+        },
+        {
+          "index": "0x3030",
+          "name": "Lenze control word",
+          "type": "UINT",
+          "bit_size": 16
+        },
+        {
+          "index": "0x6860",
+          "name": "Modes of operation",
+          "type": "SINT",
+          "bit_size": 8
+        },
+        {
+          "index": "0x6842",
+          "name": "vl target velocity",
+          "type": "INT",
+          "bit_size": 16
+        }
+      ]
+    },
+    {
+      "index": "0x1614",
+      "name": "Axis B: TP",
+      "direction": "Rx",
+      "sm": 2,
+      "entries": [
+        {
+          "index": "0x68B8",
+          "name": "Touch probe function",
+          "type": "UINT",
+          "bit_size": 16
+        }
+      ]
+    },
+    {
+      "index": "0x1615",
+      "name": "Axis B: Free configuration",
+      "direction": "Rx",
+      "sm": 0,
+      "entries": []
+    },
+    {
+      "index": "0x1616",
+      "name": "Axis B: Torque limits",
+      "direction": "Rx",
+      "sm": 2,
+      "entries": [
+        {
+          "index": "0x68E0",
+          "name": "Positive torque limit value",
+          "type": "UINT",
+          "bit_size": 16
+        },
+        {
+          "index": "0x68E1",
+          "name": "Negative torque limit value",
+          "type": "UINT",
+          "bit_size": 16
+        }
+      ]
+    },
+    {
+      "index": "0x1617",
+      "name": "Axis B: Speed limits",
+      "direction": "Rx",
+      "sm": 2,
+      "entries": [
+        {
+          "index": "0x3146",
+          "name": "Speed limitation: Upper speed limit",
+          "type": "DINT",
+          "bit_size": 32
+        },
+        {
+          "index": "0x3146",
+          "name": "Speed limitation: Lower speed limit",
+          "type": "DINT",
+          "bit_size": 32
+        }
+      ]
+    },
+    {
+      "index": "0x1A00",
+      "name": "Axis A: csp",
+      "direction": "Tx",
+      "sm": 3,
+      "entries": [
+        {
+          "index": "0x6041",
+          "name": "Statusword",
+          "type": "UINT",
+          "bit_size": 16
+        },
+        {
+          "index": "0x2831",
+          "name": "Lenze status word",
+          "type": "UINT",
+          "bit_size": 16
+        },
+        {
+          "index": "0x6061",
+          "name": "Modes of operation display",
+          "type": "SINT",
+          "bit_size": 8
+        },
+        {
+          "index": "0x603F",
+          "name": "Error code",
+          "type": "UINT",
+          "bit_size": 16
+        },
+        {
+          "index": "0x606C",
+          "name": "Velocity actual value",
+          "type": "DINT",
+          "bit_size": 32
+        },
+        {
+          "index": "0x6077",
+          "name": "Torque actual value",
+          "type": "INT",
+          "bit_size": 16
+        },
+        {
+          "index": "0x6064",
+          "name": "Position actual value",
+          "type": "DINT",
+          "bit_size": 32
+        },
+        {
+          "index": "0x60F4",
+          "name": "Following error actual value",
+          "type": "DINT",
+          "bit_size": 32
+        }
+      ]
+    },
+    {
+      "index": "0x1A01",
+      "name": "Axis A: cst",
+      "direction": "Tx",
+      "sm": 0,
+      "entries": [
+        {
+          "index": "0x6041",
+          "name": "Statusword",
+          "type": "UINT",
+          "bit_size": 16
+        },
+        {
+          "index": "0x2831",
+          "name": "Lenze status word",
+          "type": "UINT",
+          "bit_size": 16
+        },
+        {
+          "index": "0x6061",
+          "name": "Modes of operation display",
+          "type": "SINT",
+          "bit_size": 8
+        },
+        {
+          "index": "0x603F",
+          "name": "Error code",
+          "type": "UINT",
+          "bit_size": 16
+        },
+        {
+          "index": "0x606C",
+          "name": "Velocity actual value",
+          "type": "DINT",
+          "bit_size": 32
+        },
+        {
+          "index": "0x6077",
+          "name": "Torque actual value",
+          "type": "INT",
+          "bit_size": 16
+        }
+      ]
+    },
+    {
+      "index": "0x1A02",
+      "name": "Axis A: csv",
+      "direction": "Tx",
+      "sm": 0,
+      "entries": [
+        {
+          "index": "0x6041",
+          "name": "Statusword",
+          "type": "UINT",
+          "bit_size": 16
+        },
+        {
+          "index": "0x2831",
+          "name": "Lenze status word",
+          "type": "UINT",
+          "bit_size": 16
+        },
+        {
+          "index": "0x6061",
+          "name": "Modes of operation display",
+          "type": "SINT",
+          "bit_size": 8
+        },
+        {
+          "index": "0x603F",
+          "name": "Error code",
+          "type": "UINT",
+          "bit_size": 16
+        },
+        {
+          "index": "0x606C",
+          "name": "Velocity actual value",
+          "type": "DINT",
+          "bit_size": 32
+        },
+        {
+          "index": "0x6077",
+          "name": "Torque actual value",
+          "type": "INT",
+          "bit_size": 16
+        },
+        {
+          "index": "0x6064",
+          "name": "Position actual value",
+          "type": "DINT",
+          "bit_size": 32
+        }
+      ]
+    },
+    {
+      "index": "0x1A03",
+      "name": "Axis A: vl",
+      "direction": "Tx",
+      "sm": 0,
+      "entries": [
+        {
+          "index": "0x6041",
+          "name": "Statusword",
+          "type": "UINT",
+          "bit_size": 16
+        },
+        {
+          "index": "0x2831",
+          "name": "Lenze status word",
+          "type": "UINT",
+          "bit_size": 16
+        },
+        {
+          "index": "0x6061",
+          "name": "Modes of operation display",
+          "type": "SINT",
+          "bit_size": 8
+        },
+        {
+          "index": "0x603F",
+          "name": "Error code",
+          "type": "UINT",
+          "bit_size": 16
+        },
+        {
+          "index": "0x6044",
+          "name": "vl velocity actual value",
+          "type": "INT",
+          "bit_size": 16
+        }
+      ]
+    },
+    {
+      "index": "0x1A04",
+      "name": "Axis A: TP",
+      "direction": "Tx",
+      "sm": 3,
+      "entries": [
+        {
+          "index": "0x60B9",
+          "name": "Touch probe status",
+          "type": "UINT",
+          "bit_size": 16
+        },
+        {
+          "index": "0x60BA",
+          "name": "Touch probe pos1 pos value",
+          "type": "DINT",
+          "bit_size": 32
+        },
+        {
+          "index": "0x60BB",
+          "name": "Touch probe pos1 neg value",
+          "type": "DINT",
+          "bit_size": 32
+        },
+        {
+          "index": "0x60BC",
+          "name": "Touch probe pos2 pos value",
+          "type": "DINT",
+          "bit_size": 32
+        },
+        {
+          "index": "0x60BD",
+          "name": "Touch probe pos2 neg value",
+          "type": "DINT",
+          "bit_size": 32
+        }
+      ]
+    },
+    {
+      "index": "0x1A05",
+      "name": "Axis A: Free configuration",
+      "direction": "Tx",
+      "sm": 0,
+      "entries": []
+    },
+    {
+      "index": "0x1A06",
+      "name": "Axis A: Additional status information",
+      "direction": "Tx",
+      "sm": 3,
+      "entries": [
+        {
+          "index": "0x2833",
+          "name": "Lenze statusword 2",
+          "type": "UINT",
+          "bit_size": 16
+        },
+        {
+          "index": "0x60FD",
+          "name": "Digital inputs",
+          "type": "UDINT",
+          "bit_size": 32
+        }
+      ]
+    },
+    {
+      "index": "0x1A10",
+      "name": "Axis B: csp",
+      "direction": "Tx",
+      "sm": 3,
+      "entries": [
+        {
+          "index": "0x6841",
+          "name": "Statusword",
+          "type": "UINT",
+          "bit_size": 16
+        },
+        {
+          "index": "0x3031",
+          "name": "Lenze status word",
+          "type": "UINT",
+          "bit_size": 16
+        },
+        {
+          "index": "0x6861",
+          "name": "Modes of operation display",
+          "type": "SINT",
+          "bit_size": 8
+        },
+        {
+          "index": "0x683F",
+          "name": "Error code",
+          "type": "UINT",
+          "bit_size": 16
+        },
+        {
+          "index": "0x686C",
+          "name": "Velocity actual value",
+          "type": "DINT",
+          "bit_size": 32
+        },
+        {
+          "index": "0x6877",
+          "name": "Torque actual value",
+          "type": "INT",
+          "bit_size": 16
+        },
+        {
+          "index": "0x6864",
+          "name": "Position actual value",
+          "type": "DINT",
+          "bit_size": 32
+        },
+        {
+          "index": "0x68F4",
+          "name": "Following error actual value",
+          "type": "DINT",
+          "bit_size": 32
+        }
+      ]
+    },
+    {
+      "index": "0x1A11",
+      "name": "Axis B: cst",
+      "direction": "Tx",
+      "sm": 0,
+      "entries": [
+        {
+          "index": "0x6841",
+          "name": "Statusword",
+          "type": "UINT",
+          "bit_size": 16
+        },
+        {
+          "index": "0x3031",
+          "name": "Lenze status word",
+          "type": "UINT",
+          "bit_size": 16
+        },
+        {
+          "index": "0x6861",
+          "name": "Modes of operation display",
+          "type": "SINT",
+          "bit_size": 8
+        },
+        {
+          "index": "0x683F",
+          "name": "Error code",
+          "type": "UINT",
+          "bit_size": 16
+        },
+        {
+          "index": "0x686C",
+          "name": "Velocity actual value",
+          "type": "DINT",
+          "bit_size": 32
+        },
+        {
+          "index": "0x6877",
+          "name": "Torque actual value",
+          "type": "INT",
+          "bit_size": 16
+        }
+      ]
+    },
+    {
+      "index": "0x1A12",
+      "name": "Axis B: csv",
+      "direction": "Tx",
+      "sm": 0,
+      "entries": [
+        {
+          "index": "0x6841",
+          "name": "Statusword",
+          "type": "UINT",
+          "bit_size": 16
+        },
+        {
+          "index": "0x3031",
+          "name": "Lenze status word",
+          "type": "UINT",
+          "bit_size": 16
+        },
+        {
+          "index": "0x6861",
+          "name": "Modes of operation display",
+          "type": "SINT",
+          "bit_size": 8
+        },
+        {
+          "index": "0x683F",
+          "name": "Error code",
+          "type": "UINT",
+          "bit_size": 16
+        },
+        {
+          "index": "0x686C",
+          "name": "Velocity actual value",
+          "type": "DINT",
+          "bit_size": 32
+        },
+        {
+          "index": "0x6877",
+          "name": "Torque actual value",
+          "type": "INT",
+          "bit_size": 16
+        },
+        {
+          "index": "0x6864",
+          "name": "Position actual value",
+          "type": "DINT",
+          "bit_size": 32
+        }
+      ]
+    },
+    {
+      "index": "0x1A13",
+      "name": "Axis B: vl",
+      "direction": "Tx",
+      "sm": 0,
+      "entries": [
+        {
+          "index": "0x6841",
+          "name": "Statusword",
+          "type": "UINT",
+          "bit_size": 16
+        },
+        {
+          "index": "0x3031",
+          "name": "Lenze status word",
+          "type": "UINT",
+          "bit_size": 16
+        },
+        {
+          "index": "0x6861",
+          "name": "Modes of operation display",
+          "type": "SINT",
+          "bit_size": 8
+        },
+        {
+          "index": "0x683F",
+          "name": "Error code",
+          "type": "UINT",
+          "bit_size": 16
+        },
+        {
+          "index": "0x6844",
+          "name": "vl velocity actual value",
+          "type": "INT",
+          "bit_size": 16
+        }
+      ]
+    },
+    {
+      "index": "0x1A14",
+      "name": "Axis B: TP",
+      "direction": "Tx",
+      "sm": 3,
+      "entries": [
+        {
+          "index": "0x68B9",
+          "name": "Touch probe status",
+          "type": "UINT",
+          "bit_size": 16
+        },
+        {
+          "index": "0x68BA",
+          "name": "Touch probe pos1 pos value",
+          "type": "DINT",
+          "bit_size": 32
+        },
+        {
+          "index": "0x68BB",
+          "name": "Touch probe pos1 neg value",
+          "type": "DINT",
+          "bit_size": 32
+        },
+        {
+          "index": "0x68BC",
+          "name": "Touch probe pos2 pos value",
+          "type": "DINT",
+          "bit_size": 32
+        },
+        {
+          "index": "0x68BD",
+          "name": "Touch probe pos2 neg value",
+          "type": "DINT",
+          "bit_size": 32
+        }
+      ]
+    },
+    {
+      "index": "0x1A15",
+      "name": "Axis B: Free configuration",
+      "direction": "Tx",
+      "sm": 0,
+      "entries": []
+    },
+    {
+      "index": "0x1A16",
+      "name": "Axis B: Additional status information",
+      "direction": "Tx",
+      "sm": 3,
+      "entries": [
+        {
+          "index": "0x3033",
+          "name": "Lenze statusword 2",
+          "type": "UINT",
+          "bit_size": 16
+        },
+        {
+          "index": "0x68FD",
+          "name": "Digital inputs",
+          "type": "UDINT",
+          "bit_size": 32
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,247 @@
+{
+  "vendor": {
+    "id": "1337",
+    "name": "Yaskawa Electric Corporation"
+  },
+  "count": 8,
+  "mappings": [
+    {
+      "index": "0x1600",
+      "name": "1st Receive PDO mapping",
+      "direction": "Rx",
+      "sm": 0,
+      "entries": [
+        {
+          "index": "0x6040",
+          "name": "Control word",
+          "type": "UINT",
+          "bit_size": 16
+        },
+        {
+          "index": "0x607A",
+          "name": "Target position",
+          "type": "DINT",
+          "bit_size": 32
+        },
+        {
+          "index": "0x60FF",
+          "name": "Target velocity",
+          "type": "DINT",
+          "bit_size": 32
+        },
+        {
+          "index": "0x6071",
+          "name": "Target torque",
+          "type": "INT",
+          "bit_size": 16
+        },
+        {
+          "index": "0x6072",
+          "name": "Max torque",
+          "type": "UINT",
+          "bit_size": 16
+        },
+        {
+          "index": "0x6060",
+          "name": "Modes of operation",
+          "type": "SINT",
+          "bit_size": 8
+        },
+        {
+          "index": "0x0000",
+          "name": "",
+          "type": "",
+          "bit_size": 8
+        },
+        {
+          "index": "0x60B8",
+          "name": "Touch probe function",
+          "type": "UINT",
+          "bit_size": 16
+        }
+      ]
+    },
+    {
+      "index": "0x1601",
+      "name": "2nd Receive PDO mapping",
+      "direction": "Rx",
+      "sm": 2,
+      "entries": [
+        {
+          "index": "0x6040",
+          "name": "Control word",
+          "type": "UINT",
+          "bit_size": 16
+        },
+        {
+          "index": "0x607A",
+          "name": "Target position",
+          "type": "DINT",
+          "bit_size": 32
+        }
+      ]
+    },
+    {
+      "index": "0x1602",
+      "name": "3rd Receive PDO mapping",
+      "direction": "Rx",
+      "sm": 0,
+      "entries": [
+        {
+          "index": "0x6040",
+          "name": "Control word",
+          "type": "UINT",
+          "bit_size": 16
+        },
+        {
+          "index": "0x60FF",
+          "name": "Target velocity",
+          "type": "DINT",
+          "bit_size": 32
+        }
+      ]
+    },
+    {
+      "index": "0x1603",
+      "name": "4th Receive PDO mapping",
+      "direction": "Rx",
+      "sm": 0,
+      "entries": [
+        {
+          "index": "0x6040",
+          "name": "Control word",
+          "type": "UINT",
+          "bit_size": 16
+        },
+        {
+          "index": "0x6071",
+          "name": "Target torque",
+          "type": "INT",
+          "bit_size": 16
+        }
+      ]
+    },
+    {
+      "index": "0x1A00",
+      "name": "1st Transmit PDO mapping",
+      "direction": "Tx",
+      "sm": 0,
+      "entries": [
+        {
+          "index": "0x6041",
+          "name": "Status word",
+          "type": "UINT",
+          "bit_size": 16
+        },
+        {
+          "index": "0x6064",
+          "name": "Position actual value",
+          "type": "DINT",
+          "bit_size": 32
+        },
+        {
+          "index": "0x6077",
+          "name": "Torque actual value",
+          "type": "INT",
+          "bit_size": 16
+        },
+        {
+          "index": "0x60F4",
+          "name": "Following error actual value",
+          "type": "DINT",
+          "bit_size": 32
+        },
+        {
+          "index": "0x6061",
+          "name": "Modes of operation display",
+          "type": "SINT",
+          "bit_size": 8
+        },
+        {
+          "index": "0x0000",
+          "name": "",
+          "type": "",
+          "bit_size": 8
+        },
+        {
+          "index": "0x60B9",
+          "name": "Touch probe status",
+          "type": "UINT",
+          "bit_size": 16
+        },
+        {
+          "index": "0x60BA",
+          "name": "Touch probe 1 position value",
+          "type": "DINT",
+          "bit_size": 32
+        }
+      ]
+    },
+    {
+      "index": "0x1A01",
+      "name": "2nd Transmit PDO mapping",
+      "direction": "Tx",
+      "sm": 3,
+      "entries": [
+        {
+          "index": "0x6041",
+          "name": "Status word",
+          "type": "UINT",
+          "bit_size": 16
+        },
+        {
+          "index": "0x6064",
+          "name": "Position actual value",
+          "type": "DINT",
+          "bit_size": 32
+        }
+      ]
+    },
+    {
+      "index": "0x1A02",
+      "name": "3rd Transmit PDO mapping",
+      "direction": "Tx",
+      "sm": 0,
+      "entries": [
+        {
+          "index": "0x6041",
+          "name": "Status word",
+          "type": "UINT",
+          "bit_size": 16
+        },
+        {
+          "index": "0x6064",
+          "name": "Position actual value",
+          "type": "DINT",
+          "bit_size": 32
+        }
+      ]
+    },
+    {
+      "index": "0x1A03",
+      "name": "4th Transmit PDO mapping",
+      "direction": "Tx",
+      "sm": 0,
+      "entries": [
+        {
+          "index": "0x6041",
+          "name": "Status word",
+          "type": "UINT",
+          "bit_size": 16
+        },
+        {
+          "index": "0x6064",
+          "name": "Position actual value",
+          "type": "DINT",
+          "bit_size": 32
+        },
+        {
+          "index": "0x6077",
+          "name": "Torque actual value",
+          "type": "INT",
+          "bit_size": 16
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,595 @@
+{
+  "vendor": {
+    "id": "#x00100000",
+    "name": "Inovance"
+  },
+  "count": 11,
+  "mappings": [
+    {
+      "index": "0x1600",
+      "name": "Outputs",
+      "direction": "Rx",
+      "sm": 0,
+      "entries": [
+        {
+          "index": "0x6040",
+          "name": "Controlword",
+          "type": "UINT",
+          "bit_size": 16
+        },
+        {
+          "index": "0x607A",
+          "name": "Target position",
+          "type": "DINT",
+          "bit_size": 32
+        },
+        {
+          "index": "0x60B8",
+          "name": "Touch probe function",
+          "type": "UINT",
+          "bit_size": 16
+        }
+      ]
+    },
+    {
+      "index": "0x1701",
+      "name": "Outputs",
+      "direction": "Rx",
+      "sm": 2,
+      "entries": [
+        {
+          "index": "0x6040",
+          "name": "Controlword",
+          "type": "UINT",
+          "bit_size": 16
+        },
+        {
+          "index": "0x607A",
+          "name": "Target position",
+          "type": "DINT",
+          "bit_size": 32
+        },
+        {
+          "index": "0x60B8",
+          "name": "Touch probe function",
+          "type": "UINT",
+          "bit_size": 16
+        },
+        {
+          "index": "0x60FE",
+          "name": "Physical outputs",
+          "type": "UDINT",
+          "bit_size": 32
+        }
+      ]
+    },
+    {
+      "index": "0x1702",
+      "name": "Outputs",
+      "direction": "Rx",
+      "sm": 0,
+      "entries": [
+        {
+          "index": "0x6040",
+          "name": "Controlword",
+          "type": "UINT",
+          "bit_size": 16
+        },
+        {
+          "index": "0x607A",
+          "name": "Target position",
+          "type": "DINT",
+          "bit_size": 32
+        },
+        {
+          "index": "0x60FF",
+          "name": "Target velocity",
+          "type": "DINT",
+          "bit_size": 32
+        },
+        {
+          "index": "0x6071",
+          "name": "Target torque",
+          "type": "INT",
+          "bit_size": 16
+        },
+        {
+          "index": "0x6060",
+          "name": "Modes of operation",
+          "type": "SINT",
+          "bit_size": 8
+        },
+        {
+          "index": "0x60B8",
+          "name": "Touch probe function",
+          "type": "UINT",
+          "bit_size": 16
+        },
+        {
+          "index": "0x607F",
+          "name": "Max profile velocity",
+          "type": "UDINT",
+          "bit_size": 32
+        }
+      ]
+    },
+    {
+      "index": "0x1703",
+      "name": "Outputs",
+      "direction": "Rx",
+      "sm": 0,
+      "entries": [
+        {
+          "index": "0x6040",
+          "name": "Controlword",
+          "type": "UINT",
+          "bit_size": 16
+        },
+        {
+          "index": "0x607A",
+          "name": "Target position",
+          "type": "DINT",
+          "bit_size": 32
+        },
+        {
+          "index": "0x60FF",
+          "name": "Target velocity",
+          "type": "DINT",
+          "bit_size": 32
+        },
+        {
+          "index": "0x6060",
+          "name": "Modes of operation",
+          "type": "SINT",
+          "bit_size": 8
+        },
+        {
+          "index": "0x60B8",
+          "name": "Touch probe function",
+          "type": "UINT",
+          "bit_size": 16
+        },
+        {
+          "index": "0x60E0",
+          "name": "Positive torque limit value",
+          "type": "UINT",
+          "bit_size": 16
+        },
+        {
+          "index": "0x60E1",
+          "name": "Negative torque limit value",
+          "type": "UINT",
+          "bit_size": 16
+        }
+      ]
+    },
+    {
+      "index": "0x1704",
+      "name": "Outputs",
+      "direction": "Rx",
+      "sm": 0,
+      "entries": [
+        {
+          "index": "0x6040",
+          "name": "Controlword",
+          "type": "UINT",
+          "bit_size": 16
+        },
+        {
+          "index": "0x607A",
+          "name": "Target position",
+          "type": "DINT",
+          "bit_size": 32
+        },
+        {
+          "index": "0x60FF",
+          "name": "Target velocity",
+          "type": "DINT",
+          "bit_size": 32
+        },
+        {
+          "index": "0x6071",
+          "name": "Target torque",
+          "type": "INT",
+          "bit_size": 16
+        },
+        {
+          "index": "0x6060",
+          "name": "Modes of operation",
+          "type": "SINT",
+          "bit_size": 8
+        },
+        {
+          "index": "0x60B8",
+          "name": "Touch probe function",
+          "type": "UINT",
+          "bit_size": 16
+        },
+        {
+          "index": "0x607F",
+          "name": "Max profile velocity",
+          "type": "UDINT",
+          "bit_size": 32
+        },
+        {
+          "index": "0x60E0",
+          "name": "Positive torque limit value",
+          "type": "UINT",
+          "bit_size": 16
+        },
+        {
+          "index": "0x60E1",
+          "name": "Negative torque limit value",
+          "type": "UINT",
+          "bit_size": 16
+        }
+      ]
+    },
+    {
+      "index": "0x1705",
+      "name": "Outputs",
+      "direction": "Rx",
+      "sm": 0,
+      "entries": [
+        {
+          "index": "0x6040",
+          "name": "Controlword",
+          "type": "UINT",
+          "bit_size": 16
+        },
+        {
+          "index": "0x607A",
+          "name": "Target position",
+          "type": "DINT",
+          "bit_size": 32
+        },
+        {
+          "index": "0x60FF",
+          "name": "Target velocity",
+          "type": "DINT",
+          "bit_size": 32
+        },
+        {
+          "index": "0x6060",
+          "name": "Modes of operation",
+          "type": "SINT",
+          "bit_size": 8
+        },
+        {
+          "index": "0x60B8",
+          "name": "Touch probe function",
+          "type": "UINT",
+          "bit_size": 16
+        },
+        {
+          "index": "0x60E0",
+          "name": "Positive torque limit value",
+          "type": "UINT",
+          "bit_size": 16
+        },
+        {
+          "index": "0x60E1",
+          "name": "Negative torque limit value",
+          "type": "UINT",
+          "bit_size": 16
+        },
+        {
+          "index": "0x60B2",
+          "name": "Torque offset",
+          "type": "INT",
+          "bit_size": 16
+        }
+      ]
+    },
+    {
+      "index": "0x1A00",
+      "name": "Inputs",
+      "direction": "Tx",
+      "sm": 0,
+      "entries": [
+        {
+          "index": "0x6041",
+          "name": "Statusword",
+          "type": "UINT",
+          "bit_size": 16
+        },
+        {
+          "index": "0x6064",
+          "name": "Position actual value",
+          "type": "DINT",
+          "bit_size": 32
+        },
+        {
+          "index": "0x60B9",
+          "name": "Touch probe status",
+          "type": "UINT",
+          "bit_size": 16
+        },
+        {
+          "index": "0x60BA",
+          "name": "Touch probe pos1 pos value",
+          "type": "DINT",
+          "bit_size": 32
+        },
+        {
+          "index": "0x60BC",
+          "name": "Touch probe pos2 pos value",
+          "type": "DINT",
+          "bit_size": 32
+        },
+        {
+          "index": "0x603F",
+          "name": "Error code",
+          "type": "UINT",
+          "bit_size": 16
+        },
+        {
+          "index": "0x60FD",
+          "name": "Digital inputs",
+          "type": "UDINT",
+          "bit_size": 32
+        }
+      ]
+    },
+    {
+      "index": "0x1B01",
+      "name": "Inputs",
+      "direction": "Tx",
+      "sm": 3,
+      "entries": [
+        {
+          "index": "0x603F",
+          "name": "Error code",
+          "type": "UINT",
+          "bit_size": 16
+        },
+        {
+          "index": "0x6041",
+          "name": "Statusword",
+          "type": "UINT",
+          "bit_size": 16
+        },
+        {
+          "index": "0x6064",
+          "name": "Position actual value",
+          "type": "DINT",
+          "bit_size": 32
+        },
+        {
+          "index": "0x6077",
+          "name": "Torque actual value",
+          "type": "INT",
+          "bit_size": 16
+        },
+        {
+          "index": "0x60F4",
+          "name": "Following error actual value",
+          "type": "DINT",
+          "bit_size": 32
+        },
+        {
+          "index": "0x60B9",
+          "name": "Touch probe status",
+          "type": "UINT",
+          "bit_size": 16
+        },
+        {
+          "index": "0x60BA",
+          "name": "Touch probe pos1 pos value",
+          "type": "DINT",
+          "bit_size": 32
+        },
+        {
+          "index": "0x60BC",
+          "name": "Touch probe pos2 pos value",
+          "type": "DINT",
+          "bit_size": 32
+        },
+        {
+          "index": "0x60FD",
+          "name": "Digital inputs",
+          "type": "UDINT",
+          "bit_size": 32
+        }
+      ]
+    },
+    {
+      "index": "0x1B02",
+      "name": "Inputs",
+      "direction": "Tx",
+      "sm": 0,
+      "entries": [
+        {
+          "index": "0x603F",
+          "name": "Error code",
+          "type": "UINT",
+          "bit_size": 16
+        },
+        {
+          "index": "0x6041",
+          "name": "Statusword",
+          "type": "UINT",
+          "bit_size": 16
+        },
+        {
+          "index": "0x6064",
+          "name": "Position actual value",
+          "type": "DINT",
+          "bit_size": 32
+        },
+        {
+          "index": "0x6077",
+          "name": "Torque actual value",
+          "type": "INT",
+          "bit_size": 16
+        },
+        {
+          "index": "0x6061",
+          "name": "Modes of operation display",
+          "type": "SINT",
+          "bit_size": 8
+        },
+        {
+          "index": "0x60B9",
+          "name": "Touch probe status",
+          "type": "UINT",
+          "bit_size": 16
+        },
+        {
+          "index": "0x60BA",
+          "name": "Touch probe pos1 pos value",
+          "type": "DINT",
+          "bit_size": 32
+        },
+        {
+          "index": "0x60BC",
+          "name": "Touch probe pos2 pos value",
+          "type": "DINT",
+          "bit_size": 32
+        },
+        {
+          "index": "0x60FD",
+          "name": "Digital inputs",
+          "type": "UDINT",
+          "bit_size": 32
+        }
+      ]
+    },
+    {
+      "index": "0x1B03",
+      "name": "Inputs",
+      "direction": "Tx",
+      "sm": 0,
+      "entries": [
+        {
+          "index": "0x603F",
+          "name": "Error code",
+          "type": "UINT",
+          "bit_size": 16
+        },
+        {
+          "index": "0x6041",
+          "name": "Statusword",
+          "type": "UINT",
+          "bit_size": 16
+        },
+        {
+          "index": "0x6064",
+          "name": "Position actual value",
+          "type": "DINT",
+          "bit_size": 32
+        },
+        {
+          "index": "0x6077",
+          "name": "Torque actual value",
+          "type": "INT",
+          "bit_size": 16
+        },
+        {
+          "index": "0x60F4",
+          "name": "Following error actual value",
+          "type": "DINT",
+          "bit_size": 32
+        },
+        {
+          "index": "0x6061",
+          "name": "Modes of operation display",
+          "type": "SINT",
+          "bit_size": 8
+        },
+        {
+          "index": "0x60B9",
+          "name": "Touch probe status",
+          "type": "UINT",
+          "bit_size": 16
+        },
+        {
+          "index": "0x60BA",
+          "name": "Touch probe pos1 pos value",
+          "type": "DINT",
+          "bit_size": 32
+        },
+        {
+          "index": "0x60BC",
+          "name": "Touch probe pos2 pos value",
+          "type": "DINT",
+          "bit_size": 32
+        },
+        {
+          "index": "0x60FD",
+          "name": "Digital inputs",
+          "type": "UDINT",
+          "bit_size": 32
+        }
+      ]
+    },
+    {
+      "index": "0x1B04",
+      "name": "Inputs",
+      "direction": "Tx",
+      "sm": 0,
+      "entries": [
+        {
+          "index": "0x603F",
+          "name": "Error code",
+          "type": "UINT",
+          "bit_size": 16
+        },
+        {
+          "index": "0x6041",
+          "name": "Statusword",
+          "type": "UINT",
+          "bit_size": 16
+        },
+        {
+          "index": "0x6064",
+          "name": "Position actual value",
+          "type": "DINT",
+          "bit_size": 32
+        },
+        {
+          "index": "0x6077",
+          "name": "Torque actual value",
+          "type": "INT",
+          "bit_size": 16
+        },
+        {
+          "index": "0x6061",
+          "name": "Modes of operation display",
+          "type": "SINT",
+          "bit_size": 8
+        },
+        {
+          "index": "0x60F4",
+          "name": "Following error actual value",
+          "type": "DINT",
+          "bit_size": 32
+        },
+        {
+          "index": "0x60B9",
+          "name": "Touch probe status",
+          "type": "UINT",
+          "bit_size": 16
+        },
+        {
+          "index": "0x60BA",
+          "name": "Touch probe pos1 pos value",
+          "type": "DINT",
+          "bit_size": 32
+        },
+        {
+          "index": "0x60BC",
+          "name": "Touch probe pos2 pos value",
+          "type": "DINT",
+          "bit_size": 32
+        },
+        {
+          "index": "0x606C",
+          "name": "Velocity actual value",
+          "type": "DINT",
+          "bit_size": 32
+        }
+      ]
+    }
+  ]
+}

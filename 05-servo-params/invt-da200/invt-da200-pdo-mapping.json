@@ -1,0 +1,139 @@
+{
+  "vendor": {
+    "id": "#x616",
+    "name": "INVT INDUSTRIAL"
+  },
+  "count": 2,
+  "mappings": [
+    {
+      "index": "0x1600",
+      "name": "DO Outputs",
+      "direction": "Rx",
+      "sm": 2,
+      "entries": [
+        {
+          "index": "0x6040",
+          "name": "Control Word",
+          "type": "UINT",
+          "bit_size": 16
+        },
+        {
+          "index": "0x607A",
+          "name": "Target Position",
+          "type": "DINT",
+          "bit_size": 32
+        },
+        {
+          "index": "0x60FF",
+          "name": "Target Velocity",
+          "type": "DINT",
+          "bit_size": 32
+        },
+        {
+          "index": "0x6060",
+          "name": "Mode of Operation",
+          "type": "SINT",
+          "bit_size": 8
+        },
+        {
+          "index": "0x6071",
+          "name": "Target torque",
+          "type": "INT",
+          "bit_size": 16
+        },
+        {
+          "index": "0x60B8",
+          "name": "Touch probe control",
+          "type": "UINT",
+          "bit_size": 16
+        },
+        {
+          "index": "0x60E0",
+          "name": "Positive torque limit",
+          "type": "UINT",
+          "bit_size": 16
+        },
+        {
+          "index": "0x60E1",
+          "name": "Negtive torque limit",
+          "type": "UINT",
+          "bit_size": 16
+        },
+        {
+          "index": "0x607F",
+          "name": "Max profile velocity",
+          "type": "UDINT",
+          "bit_size": 32
+        }
+      ]
+    },
+    {
+      "index": "0x1A00",
+      "name": "DI Inputs",
+      "direction": "Tx",
+      "sm": 3,
+      "entries": [
+        {
+          "index": "0x6041",
+          "name": "Status Word",
+          "type": "UINT",
+          "bit_size": 16
+        },
+        {
+          "index": "0x6064",
+          "name": "Position Actual Value",
+          "type": "DINT",
+          "bit_size": 32
+        },
+        {
+          "index": "0x606C",
+          "name": "Speed Actual Value",
+          "type": "DINT",
+          "bit_size": 32
+        },
+        {
+          "index": "0x6077",
+          "name": "Torque Actual Value",
+          "type": "INT",
+          "bit_size": 16
+        },
+        {
+          "index": "0x6061",
+          "name": "Operation Mode Display",
+          "type": "SINT",
+          "bit_size": 8
+        },
+        {
+          "index": "0x6078",
+          "name": "Current Actual Value",
+          "type": "INT",
+          "bit_size": 16
+        },
+        {
+          "index": "0x60B9",
+          "name": "Touch Probe Status",
+          "type": "UINT",
+          "bit_size": 16
+        },
+        {
+          "index": "0x60BA",
+          "name": "Touch Probe Value",
+          "type": "DINT",
+          "bit_size": 32
+        },
+        {
+          "index": "0x60FE",
+          "name": "Digital outputs",
+          "type": "UDINT",
+          "bit_size": 32
+        },
+        {
+          "index": "0x60FD",
+          "name": "Digital inputs",
+          "type": "UDINT",
+          "bit_size": 32
+        }
+      ]
+    }
+  ]
+}
