@@ -16,8 +16,9 @@ _project_root = Path(__file__).resolve().parent.parent
 _ecat_path = _project_root / "03-ethercat-master" / "bindings"
 _scope_path = _project_root / "04-oscilloscope" / "src"
 _ai_path = _project_root / "06-ai-analyzer"
+_ai_src = _project_root / "06-ai-analyzer" / "ai_analyzer"
 
-for _p in [_ecat_path, _scope_path, _ai_path]:
+for _p in [_ecat_path, _scope_path, _ai_path, _ai_src]:
     if str(_p) not in sys.path:
         sys.path.insert(0, str(_p))
 

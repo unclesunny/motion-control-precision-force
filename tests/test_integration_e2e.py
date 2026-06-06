@@ -18,6 +18,7 @@ for _p in [
     _project_root / "03-ethercat-master" / "bindings",
     _project_root / "04-oscilloscope" / "src",
     _project_root / "06-ai-analyzer",
+	    _project_root / "06-ai-analyzer" / "ai_analyzer",
 ]:
     if str(_p) not in sys.path:
         sys.path.insert(0, str(_p))
