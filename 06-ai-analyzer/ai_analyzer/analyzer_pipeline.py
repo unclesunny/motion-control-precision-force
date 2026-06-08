@@ -23,33 +23,93 @@ Architecture:
                                                  ├─ [safe] → direct output
                                                  ├─ [actionable] → prompt → auth → action
                                                  └─ [ambiguous] → prompt → feedback → refine
+
+Pro/Free: Free shells are imported first. If pro/ai_analyzer/ exists (commercial
+license), the Pro implementations override the shells automatically.
 """
 
+import importlib.util
 import time
+from pathlib import Path
 from typing import Dict, List, Optional
 
-try:
-    from .action_logger import ActionLogger
-    from .ai_annotator import AIAnnotator
-    from .analyzer_base import AIAnnotation, AnalyzerBase
-    from .analyzer_bridge import AIAnalyzerBridge
-    from .current_anomaly import CurrentAnomalyDetector
-    from .hitl_gate import HITLGate
-    from .hitl_types import AuthorizedAction, EngineerFeedback, EngineerPrompt
-    from .mechanical_resonance import MechanicalResonanceDetector
-    from .parameter_recommender import ParameterRecommender, ParameterRecommendation
-    from .tracking_error import TrackingErrorDetector
-except ImportError:
-    from action_logger import ActionLogger
-    from ai_annotator import AIAnnotator
-    from analyzer_base import AIAnnotation, AnalyzerBase
-    from analyzer_bridge import AIAnalyzerBridge
-    from current_anomaly import CurrentAnomalyDetector
-    from hitl_gate import HITLGate
-    from hitl_types import AuthorizedAction, EngineerFeedback, EngineerPrompt
-    from mechanical_resonance import MechanicalResonanceDetector
-    from parameter_recommender import ParameterRecommender, ParameterRecommendation
-    from tracking_error import TrackingErrorDetector
+# ── Pro detection ──────────────────────────────────────────
+_PRO_DIR = Path(__file__).resolve().parent.parent.parent / "pro" / "ai_analyzer"
+_PRO_AVAILABLE = _PRO_DIR.exists() and any(
+    _PRO_DIR.joinpath(f).exists() for f in
+    ["current_anomaly.py", "tracking_error.py", "mechanical_resonance.py"])
+
+
+def _load_pro_module(module_name: str, class_names: List[str]) -> dict:
+    """Load classes from pro/ai_analyzer/ if available.
+
+    Returns dict {class_name: class} for successfully loaded classes.
+    Falls back gracefully — returns empty dict if pro/ not found.
+    """
+    result = {}
+    if not _PRO_AVAILABLE:
+        return result
+    try:
+        spec = importlib.util.spec_from_file_location(
+            f"pro_ai_analyzer.{module_name}",
+            _PRO_DIR / f"{module_name}.py")
+        if spec is None:
+            return result
+        mod = importlib.util.module_from_spec(spec)
+        spec.loader.exec_module(mod)
+        for name in class_names:
+            cls = getattr(mod, name, None)
+            if cls is not None:
+                result[name] = cls
+    except Exception:
+        pass
+    return result
+
+
+# ── Import Free shells (always available) ──────────────────
+from .action_logger import ActionLogger
+from .ai_annotator import AIAnnotator
+from .analyzer_base import AIAnnotation, AnalyzerBase
+from .analyzer_bridge import AIAnalyzerBridge
+from .current_anomaly import CurrentAnomalyDetector
+from .hitl_gate import HITLGate
+from .hitl_types import AuthorizedAction, EngineerFeedback, EngineerPrompt
+from .mechanical_resonance import MechanicalResonanceDetector
+from .parameter_recommender import ParameterRecommender, ParameterRecommendation
+from .tracking_error import TrackingErrorDetector
+
+# ── Override with Pro implementations if available ─────────
+_pro_overrides = {}
+_pro_overrides.update(_load_pro_module(
+    "current_anomaly", ["CurrentAnomalyDetector"]))
+_pro_overrides.update(_load_pro_module(
+    "tracking_error", ["TrackingErrorDetector"]))
+_pro_overrides.update(_load_pro_module(
+    "mechanical_resonance", ["MechanicalResonanceDetector"]))
+_pro_overrides.update(_load_pro_module(
+    "hitl_gate", ["HITLGate"]))
+_pro_overrides.update(_load_pro_module(
+    "parameter_recommender", ["ParameterRecommender", "ParameterRecommendation"]))
+_pro_overrides.update(_load_pro_module(
+    "action_logger", ["ActionLogger"]))
+_pro_overrides.update(_load_pro_module(
+    "tuning_rules", []))
+
+if _pro_overrides:
+    if "CurrentAnomalyDetector" in _pro_overrides:
+        CurrentAnomalyDetector = _pro_overrides["CurrentAnomalyDetector"]
+    if "TrackingErrorDetector" in _pro_overrides:
+        TrackingErrorDetector = _pro_overrides["TrackingErrorDetector"]
+    if "MechanicalResonanceDetector" in _pro_overrides:
+        MechanicalResonanceDetector = _pro_overrides["MechanicalResonanceDetector"]
+    if "HITLGate" in _pro_overrides:
+        HITLGate = _pro_overrides["HITLGate"]
+    if "ParameterRecommender" in _pro_overrides:
+        ParameterRecommender = _pro_overrides["ParameterRecommender"]
+    if "ParameterRecommendation" in _pro_overrides:
+        ParameterRecommendation = _pro_overrides["ParameterRecommendation"]
+    if "ActionLogger" in _pro_overrides:
+        ActionLogger = _pro_overrides["ActionLogger"]
 
 
 class AIAnalyzerPipeline:
