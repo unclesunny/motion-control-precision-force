@@ -59,9 +59,19 @@ PARAM_DESCRIPTIONS: dict = {
     0x60B2: "Torque offset (0.1% rated)",
 }
 
-# ── Brand aliases (Free: default only) ──
+# ── Brand aliases (Free: brand names are public knowledge) ──
 BRAND_ALIASES: dict = {
     "default": "default",
+    "delta-a3": "Delta A3",
+    "yaskawa-sigma7": "Yaskawa Σ-7",
+    "panasonic-a6": "Panasonic A6",
+    "invt-da200": "INVT DA200",
+    "estun-pronet": "Estun ProNet",
+    "leadshine-dm3e": "Leadshine DM3E",
+    "leadshine-cl3": "Leadshine CL3",
+    "elmo-gold": "Elmo Gold",
+    "servotronix-cdhd": "Servotronix CDHD",
+    "lenze-i700": "Lenze i700",
 }
 
 # ── Brand capability notes (empty in Free) ──

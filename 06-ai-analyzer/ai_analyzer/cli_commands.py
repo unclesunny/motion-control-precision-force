@@ -136,7 +136,10 @@ def cmd_recommend_print(pipeline, brand: str = None):
 
 def cmd_params_lookup(index_hex: str) -> dict:
     """Look up a CiA 402 parameter by hex index."""
-    from tuning_rules import PARAM_DESCRIPTIONS
+    try:
+        from .tuning_rules import PARAM_DESCRIPTIONS
+    except ImportError:
+        from tuning_rules import PARAM_DESCRIPTIONS
     try:
         idx = int(index_hex, 16)
     except ValueError:
@@ -153,7 +156,10 @@ def cmd_params_lookup(index_hex: str) -> dict:
 
 def cmd_params_brands() -> dict:
     """List supported servo brands."""
-    from tuning_rules import BRAND_ALIASES
+    try:
+        from .tuning_rules import BRAND_ALIASES
+    except ImportError:
+        from tuning_rules import BRAND_ALIASES
     return {
         "brands": list(BRAND_ALIASES.keys()),
         "count": len(BRAND_ALIASES),
