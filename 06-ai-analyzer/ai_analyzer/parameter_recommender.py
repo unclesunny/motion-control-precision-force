@@ -13,22 +13,28 @@ from typing import List, Optional
 class ParameterRecommendation:
     """Parameter recommendation (Free shell)."""
     index: str = ""
+    subindex: int = 0
     name: str = ""
     action: str = ""
     reason: str = ""
     safety: str = ""
+    current_value: float = 0.0
     target_value: float = 0.0
+    suggested_value: float = 0.0
     confidence: float = 0.0
     brand: str = ""
 
     def to_dict(self) -> dict:
         return {
             "index": self.index,
+            "subindex": self.subindex,
             "name": self.name,
             "action": self.action,
             "reason": self.reason,
             "safety": self.safety,
+            "current_value": self.current_value,
             "target_value": self.target_value,
+            "suggested_value": self.suggested_value,
             "confidence": self.confidence,
             "brand": self.brand,
         }
