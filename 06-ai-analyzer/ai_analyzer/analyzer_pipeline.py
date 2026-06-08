@@ -10,28 +10,43 @@ Usage:
     pipeline = AIAnalyzerPipeline()
     annotations = pipeline.analyze(values, channel_names, buffer_stats)
 
+    # HITL (Human-in-the-Loop) workflow:
+    prompts = pipeline.prompt_engineer(annotations)
+    # ... show prompts to engineer, collect feedback ...
+    refined = pipeline.process_engineer_feedback(prompt_id, feedback)
+    actions = pipeline.get_authorized_actions()
+
 Architecture:
     values → [CurrentAnomalyDetector] ─┐
-            [TrackingErrorDetector]   ─┤→ AIAnnotator → AIAnnotation[]
-            [MechanicalResonanceDetector]┘
+            [TrackingErrorDetector]   ─┤→ AIAnnotator → HITLGate → AIAnnotation[]
+            [MechanicalResonanceDetector]┘       │
+                                                 ├─ [safe] → direct output
+                                                 ├─ [actionable] → prompt → auth → action
+                                                 └─ [ambiguous] → prompt → feedback → refine
 """
 
 import time
 from typing import Dict, List, Optional
 
 try:
+    from .action_logger import ActionLogger
     from .ai_annotator import AIAnnotator
     from .analyzer_base import AIAnnotation, AnalyzerBase
     from .analyzer_bridge import AIAnalyzerBridge
     from .current_anomaly import CurrentAnomalyDetector
+    from .hitl_gate import HITLGate
+    from .hitl_types import AuthorizedAction, EngineerFeedback, EngineerPrompt
     from .mechanical_resonance import MechanicalResonanceDetector
     from .parameter_recommender import ParameterRecommender, ParameterRecommendation
     from .tracking_error import TrackingErrorDetector
 except ImportError:
+    from action_logger import ActionLogger
     from ai_annotator import AIAnnotator
     from analyzer_base import AIAnnotation, AnalyzerBase
     from analyzer_bridge import AIAnalyzerBridge
     from current_anomaly import CurrentAnomalyDetector
+    from hitl_gate import HITLGate
+    from hitl_types import AuthorizedAction, EngineerFeedback, EngineerPrompt
     from mechanical_resonance import MechanicalResonanceDetector
     from parameter_recommender import ParameterRecommender, ParameterRecommendation
     from tracking_error import TrackingErrorDetector
@@ -54,11 +69,29 @@ class AIAnalyzerPipeline:
         bridge: Optional[AIAnalyzerBridge] = None,
         sample_rate_hz: float = 1000.0,
         brand: Optional[str] = None,
+        hitl_gate: Optional[HITLGate] = None,
+        action_logger: Optional[ActionLogger] = None,
+        enable_hitl: bool = True,
+        llm_api_key: Optional[str] = None,
+        axis_id: str = "",
+        slave_position: int = -1,
     ):
         self._analyzers = analyzers if analyzers is not None else self._default_analyzers(sample_rate_hz)
         self._annotator = AIAnnotator()
         self._bridge = bridge if bridge is not None else AIAnalyzerBridge()
         self._recommender = ParameterRecommender(brand=brand)
+        self._axis_id = axis_id
+        self._slave_position = slave_position
+
+        # LLM refiner (lazy imports inside HITLGate)
+        try:
+            from .llm_refiner import LLMDiagnosisRefiner
+            _llm = LLMDiagnosisRefiner(api_key=llm_api_key)
+        except Exception:
+            _llm = None
+        self._hitl_gate = hitl_gate if hitl_gate is not None else HITLGate(brand=brand, llm_refiner=_llm)
+        self._action_logger = action_logger if action_logger is not None else ActionLogger(brand=brand)
+        self._enable_hitl = enable_hitl
         self._events: List[AIAnnotation] = []
         self._sample_count = 0
         self._sample_rate = sample_rate_hz
@@ -83,6 +116,30 @@ class AIAnalyzerPipeline:
     @property
     def recommender(self) -> ParameterRecommender:
         return self._recommender
+
+    @property
+    def hitl_gate(self) -> HITLGate:
+        return self._hitl_gate
+
+    @property
+    def action_logger(self) -> ActionLogger:
+        return self._action_logger
+
+    @property
+    def enable_hitl(self) -> bool:
+        return self._enable_hitl
+
+    @enable_hitl.setter
+    def enable_hitl(self, value: bool):
+        self._enable_hitl = value
+
+    @property
+    def axis_id(self) -> str:
+        return self._axis_id
+
+    @property
+    def slave_position(self) -> int:
+        return self._slave_position
 
     @property
     def recent_events(self) -> List[AIAnnotation]:
@@ -127,6 +184,17 @@ class AIAnalyzerPipeline:
 
         # ── Post-processing: confidence calibration + severity escalation ──
         calibrated = self._annotator.calibrate(raw_annotations)
+
+        # ── Stamp axis identity on every annotation ──
+        for ann in calibrated:
+            ann.axis_id = self._axis_id
+            ann.slave_position = self._slave_position
+
+        # ── HITL classification (when enabled) ──
+        if self._enable_hitl:
+            for ann in calibrated:
+                self._hitl_gate.classify(ann)
+                self._action_logger.log_annotation(ann)
 
         # ── Store events ──
         self._events.extend(calibrated)
@@ -222,6 +290,8 @@ class AIAnalyzerPipeline:
         self._sample_count = 0
         self._events.clear()
         self._annotator.reset()
+        self._hitl_gate.reset()
+        self._action_logger.reset()
         for analyzer in self._analyzers:
             analyzer.reset()
 
@@ -246,17 +316,143 @@ class AIAnalyzerPipeline:
                 return analyzer
         return None
 
-    def recommend(self, annotations: Optional[List[AIAnnotation]] = None
-                  ) -> List[ParameterRecommendation]:
-        """Generate tuning parameter recommendations from recent annotations.
+    # ── HITL (Human-in-the-Loop) Methods ─────────────────────────
+
+    def prompt_engineer(
+        self, annotations: Optional[List[AIAnnotation]] = None
+    ) -> List[EngineerPrompt]:
+        """Generate engineer prompts for actionable/ambiguous annotations.
+
+        Safe annotations are skipped. Actionable annotations get authorization
+        prompts. Ambiguous annotations get multi-modal diagnostic checklists.
 
         Args:
             annotations: Optional list of annotations. If None, uses recent events.
 
         Returns:
+            List of EngineerPrompt for display in the UI.
+        """
+        source = annotations if annotations is not None else self._events[-20:]
+        if not self._enable_hitl:
+            return []
+
+        prompts = self._hitl_gate.generate_prompts(source)
+
+        # Attach parameter previews for actionable prompts
+        for prompt in prompts:
+            if prompt.classification == "actionable":
+                # Find the matching annotation to get recommendations
+                matching = [a for a in source if a.category == prompt.category]
+                if matching:
+                    preview_params = self._recommender.recommend(matching)
+                    prompt.parameter_preview = preview_params
+            self._action_logger.log_prompt(prompt)
+
+        return prompts
+
+    def process_engineer_feedback(
+        self, prompt_id: str, feedback: EngineerFeedback
+    ) -> List[AIAnnotation]:
+        """Process engineer feedback and refine the diagnosis.
+
+        For ambiguous prompts: refines the generic diagnosis → specific sub-category.
+        For actionable prompts: if approved, generates AuthorizedAction entries.
+
+        Args:
+            prompt_id: The prompt ID this feedback responds to.
+            feedback: EngineerFeedback with observations and authorization.
+
+        Returns:
+            Refined AIAnnotation list, or empty if rejected.
+        """
+        if not self._enable_hitl:
+            return []
+
+        self._action_logger.log_feedback(feedback)
+
+        prompt = self._hitl_gate.get_prompt(prompt_id)
+        if prompt is None:
+            # Prompt may have been resolved already
+            return []
+
+        if prompt.classification == "ambiguous":
+            refined = self._hitl_gate.process_feedback(prompt, feedback)
+            for ann in refined:
+                self._action_logger.log_annotation(ann)
+            return refined
+
+        elif prompt.classification == "actionable":
+            if feedback.is_approved:
+                recs = prompt.parameter_preview if prompt.parameter_preview else []
+                if not recs:
+                    # Generate recommendations if not previewed
+                    matching = [
+                        a for a in self._events if a.category == prompt.category
+                    ]
+                    recs = self._recommender.recommend(matching[-3:])
+                authorized = self._hitl_gate.authorize(recs, feedback)
+                for action in authorized:
+                    self._action_logger.log_authorized(action)
+            else:
+                for rec in prompt.parameter_preview:
+                    self._action_logger.log_rejected(
+                        rec, feedback, feedback.notes or "Engineer rejected"
+                    )
+            return []
+
+        return []
+
+    def get_authorized_actions(self) -> List[AuthorizedAction]:
+        """Get all authorized (ready-to-execute) parameter actions.
+
+        These actions have been approved by the engineer and can be
+        safely written to the drive. Each action includes a rollback plan.
+
+        Returns:
+            List of AuthorizedAction, most recent first.
+        """
+        return self._hitl_gate.get_authorized_actions()
+
+    def get_pending_prompts(self) -> List[EngineerPrompt]:
+        """Get prompts waiting for engineer response."""
+        return self._hitl_gate.pending_prompts
+
+    def get_hitl_summary(self) -> str:
+        """Get a human-readable HITL session summary."""
+        return self._action_logger.summary()
+
+    def recommend(self, annotations: Optional[List[AIAnnotation]] = None,
+                  require_authorization: bool = True
+                  ) -> List[ParameterRecommendation]:
+        """Generate tuning parameter recommendations from recent annotations.
+
+        When require_authorization=True (default), annotations classified as
+        'actionable' or 'ambiguous' are flagged with requires_authorization=True
+        and their recommendations should be routed through the HITL gate before
+        execution. The returned ParameterRecommendation list is a READ-ONLY
+        preview — it does NOT authorize any parameter write.
+
+        Args:
+            annotations: Optional list of annotations. If None, uses recent events.
+            require_authorization: If True, invasive parameter changes require
+                                  engineer approval via the HITL gate.
+
+        Returns:
             List of ParameterRecommendation, sorted by priority.
         """
         source = annotations if annotations is not None else self._events[-20:]
+
+        if require_authorization and self._enable_hitl:
+            # Only recommend for safe annotations or already-authorized ones
+            safe_annotations = [
+                a for a in source
+                if a.hitl_classification == "safe" or not a.requires_authorization
+            ]
+            if safe_annotations:
+                return self._recommender.recommend(safe_annotations)
+            # For actionable/ambiguous: return empty — engineer must authorize first
+            return []
+
         return self._recommender.recommend(source)
 
     def format_recommendations(self) -> str:

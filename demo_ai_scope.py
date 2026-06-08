@@ -9,9 +9,16 @@ import sys
 import time
 from pathlib import Path
 
-# Force UTF-8 on Windows terminals
+# Force UTF-8 + ANSI escape code support on Windows terminals
 if sys.platform == "win32":
     sys.stdout.reconfigure(encoding="utf-8", errors="replace")
+    # Enable ANSI virtual terminal processing (Windows 10+)
+    import ctypes
+    kernel32 = ctypes.windll.kernel32
+    for handle in [ctypes.c_void_p(-11), ctypes.c_void_p(-12)]:  # STD_OUTPUT_HANDLE, STD_ERROR_HANDLE
+        mode = ctypes.c_ulong()
+        kernel32.GetConsoleMode(handle, ctypes.byref(mode))
+        kernel32.SetConsoleMode(handle, mode.value | 0x0004)  # ENABLE_VIRTUAL_TERMINAL_PROCESSING
 
 import numpy as np
 

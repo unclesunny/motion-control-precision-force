@@ -28,6 +28,13 @@ except ImportError:
     from analyzer_base import AIAnnotation, AnalyzerBase
     from config import MECHANICAL_RESONANCE, CHANNEL_NAME_INDEX
 
+# ── Mains frequency rejection ──
+# 50/60 Hz mains and their harmonics can couple into current sensors
+# and appear as strong FFT peaks, but they are NOT mechanical resonance.
+_MAINS_FREQUENCIES = [50.0, 60.0]  # Hz — fundamental mains
+_MAINS_TOLERANCE = 3.0             # Hz — ±band around each mains frequency
+_MAINS_MAX_HARMONIC = 6            # reject up to 6th harmonic (300/360 Hz)
+
 
 class MechanicalResonanceDetector(AnalyzerBase):
     """FFT-based mechanical resonance detection on velocity/current channels."""
@@ -42,7 +49,8 @@ class MechanicalResonanceDetector(AnalyzerBase):
         self._harmonic_tol = cfg["harmonic_ratio_tolerance"]
         self._min_freq = cfg["min_frequency_hz"]
         self._max_freq = cfg["max_frequency_hz"]
-        self._min_harmonics = cfg["min_harmonics"]
+        self._min_harmonics = cfg.get("min_harmonics", 1)
+        self._strong_peak_snr = cfg.get("strong_peak_snr", 10.0)
         self._sample_rate = sample_rate_hz
 
         # Per-channel circular buffers
@@ -99,9 +107,11 @@ class MechanicalResonanceDetector(AnalyzerBase):
             # ── Harmonic analysis ──
             harmonic_groups = self._find_harmonics(peaks)
 
+            reported_fundamentals = set()
             for fundamental, harmonics in harmonic_groups:
                 if len(harmonics) < self._min_harmonics:
                     continue
+                reported_fundamentals.add(fundamental)
 
                 # Check if this is a known resonance (re-detected)
                 is_known = any(
@@ -151,14 +161,42 @@ class MechanicalResonanceDetector(AnalyzerBase):
                     },
                 ))
 
+            # ── Isolated strong peaks (no harmonics, but still valid resonance) ──
+            for freq, mag in peaks:
+                if freq in reported_fundamentals:
+                    continue  # already reported as harmonic group
+                snr = mag / (noise_floor + 1e-6)
+                if snr > self._strong_peak_snr:
+                    msg = (f"Resonance peak on {ch_name}: {freq:.0f} Hz "
+                           f"(SNR {snr:.0f}x, no harmonics detected). "
+                           f"Consider notch filter at {freq:.0f} Hz (0x610B).")
+                    annotations.append(AIAnnotation(
+                        timestamp=0.0, channel=ch_name,
+                        category="resonance_detected",
+                        severity="info",
+                        confidence=min(1.0, snr / 30.0),
+                        message=msg, value=freq,
+                        metadata={
+                            "fundamental_hz": freq,
+                            "harmonics": [freq],
+                            "noise_floor": noise_floor,
+                            "is_known": False,
+                            "isolated_peak": True,
+                        },
+                    ))
+
         return annotations
 
     def _compute_fft(self, data: np.ndarray) -> Tuple[np.ndarray, np.ndarray, float]:
         """Compute FFT magnitude spectrum and noise floor.
 
+        Automatically detects intermittent (amplitude-modulated) resonance
+        and runs a gated FFT on high-amplitude segments to recover the
+        carrier frequency that standard FFT would miss.
+
         Returns:
             freqs: Frequency bins (Hz)
-            magnitudes: FFT magnitude spectrum
+            magnitudes: FFT magnitude spectrum (standard or gated)
             noise_floor: Median magnitude (noise floor estimate)
         """
         n = len(data)
@@ -167,16 +205,88 @@ class MechanicalResonanceDetector(AnalyzerBase):
         fft = np.fft.rfft(windowed)
         magnitudes = np.abs(fft)
         freqs = np.fft.rfftfreq(n, d=1.0 / self._sample_rate)
-
-        # Noise floor: median magnitude (robust to peaks)
         noise_floor = float(np.median(magnitudes))
+        # Floor: pure sine + DC produces near-zero spectral bins.
+        # Median would be ~0, making threshold=0 and any micro-leakage
+        # qualifies as a peak. Clamp to a meaningful minimum.
+        if noise_floor < 1e-3:
+            noise_floor = max(float(np.mean(np.sort(magnitudes)[:max(1, n // 4)])), 1e-3)
+
+        # ── Amplitude-Gated FFT for intermittent resonance ──
+        # When resonance only appears during accel/decel (intermittent),
+        # the carrier frequency (e.g. 320Hz) is buried under DC + low-freq
+        # load component. Standard FFT sees the envelope, not the carrier.
+        #
+        # Solution: high-pass filter the signal to isolate the HF resonance,
+        # then gate on HF energy to extract active segments.
+        #
+        # GUARD: only activate gated FFT when standard FFT already shows
+        # meaningful HF energy (>min_freq). Without this guard, low-frequency
+        # signals (e.g. 5Hz current modulation) create false peaks from the
+        # concatenation artifacts in the gated segment assembly.
+        std_snr = float(np.max(magnitudes)) / (noise_floor + 1e-6)
+        std_peak_bin = int(np.argmax(magnitudes[1:])) + 1  # skip DC bin 0
+        std_peak_freq = float(freqs[std_peak_bin]) if std_peak_bin < len(freqs) else 0.0
+        hf_content = std_peak_freq > self._min_freq and std_snr > self._peak_ratio
+
+        if n >= 16 and hf_content:
+            # Simple high-pass: subtract moving average (5-sample window)
+            kernel = np.ones(5) / 5
+            hp_signal = data - np.convolve(data, kernel, mode='same')
+            hp_abs = np.abs(hp_signal)
+            hp_mean = np.mean(hp_abs)
+            if hp_mean > 1e-9:
+                mask = hp_abs > hp_mean
+                active_ratio = np.sum(mask) / n
+                # Gating useful when 10-80% of samples have HF energy
+                if 0.10 < active_ratio < 0.80:
+                    idx = np.where(mask)[0]
+                    segments = []
+                    seg_start = idx[0]
+                    for i in range(1, len(idx)):
+                        if idx[i] - idx[i-1] > 3:
+                            segments.append(data[seg_start:idx[i-1]+1])
+                            seg_start = idx[i]
+                    segments.append(data[seg_start:idx[-1]+1])
+
+                    if segments:
+                        gated_data = np.concatenate(segments)
+                        if len(gated_data) > n // 8:
+                            target_n = 2 ** int(np.log2(len(gated_data)))
+                            if target_n >= 64:
+                                gated_data = gated_data[:target_n]
+                                gated_windowed = gated_data * np.hanning(target_n)
+                                gated_fft = np.fft.rfft(gated_windowed)
+                                gated_magnitudes = np.abs(gated_fft)
+                                gated_freqs = np.fft.rfftfreq(target_n, d=1.0 / self._sample_rate)
+                                gated_noise = float(np.median(gated_magnitudes))
+                                gated_snr = float(np.max(gated_magnitudes)) / (gated_noise + 1e-6)
+                                if gated_snr > std_snr * 1.5:
+                                    return gated_freqs, gated_magnitudes, gated_noise
 
         return freqs, magnitudes, noise_floor
+
+    @staticmethod
+    def _is_mains_frequency(freq: float) -> bool:
+        """Check if a frequency falls within a mains rejection band.
+
+        Rejects 50/60 Hz fundamental + harmonics up to _MAINS_MAX_HARMONIC.
+        These appear on Current channels via sensor coupling, not mechanics.
+        """
+        for base in _MAINS_FREQUENCIES:
+            for harmonic in range(1, _MAINS_MAX_HARMONIC + 1):
+                target = base * harmonic
+                if abs(freq - target) <= _MAINS_TOLERANCE:
+                    return True
+        return False
 
     def _find_peaks(
         self, freqs: np.ndarray, magnitudes: np.ndarray, noise_floor: float
     ) -> List[Tuple[float, float]]:
         """Find frequency peaks above noise floor threshold.
+
+        Skips mains frequencies (50/60 Hz and harmonics) which couple
+        into current sensors electrically, not mechanically.
 
         Returns:
             List of (frequency_hz, magnitude) sorted by magnitude descending.
@@ -189,8 +299,10 @@ class MechanicalResonanceDetector(AnalyzerBase):
             if magnitudes[i] > magnitudes[i - 1] and magnitudes[i] > magnitudes[i + 1]:
                 freq = freqs[i]
                 mag = magnitudes[i]
-                # Filter by frequency range and threshold
-                if self._min_freq <= freq <= self._max_freq and mag > threshold:
+                # Filter by frequency range, threshold, and mains rejection
+                if (self._min_freq <= freq <= self._max_freq
+                        and mag > threshold
+                        and not self._is_mains_frequency(freq)):
                     peaks.append((freq, mag))
 
         # Sort by magnitude descending

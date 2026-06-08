@@ -128,7 +128,11 @@ class IQRDetector:
 class CUSUMDetector:
     """Cumulative Sum detector for gradual drift detection.
 
-    Detects sustained positive shift from baseline mean.
+    Detects sustained positive shift from a FIXED reference baseline
+    captured after initial priming. Using a continuously-updating sliding
+    window mean would make the baseline "chase" the drift, preventing
+    detection of slow changes (< 300 samples).
+
     Reference: Page (1954), "Continuous Inspection Schemes"
     """
 
@@ -139,21 +143,28 @@ class CUSUMDetector:
         self.decision_interval = decision_interval   # h in CUSUM literature
         self._cplus = 0.0   # upper CUSUM
         self._cminus = 0.0  # lower CUSUM
-        self._baseline_mean = 0.0
+        self._ref_mean = 0.0       # fixed reference baseline (set once)
+        self._ref_std = 1e-10      # fixed reference std (set once)
+        self._ref_locked = False   # True once baseline is captured
 
     def score(self, value: float) -> float:
         self._window.append(value)
-        if len(self._window) < 30:
+
+        # Prime the reference baseline with the first 100 samples
+        if len(self._window) >= 100 and not self._ref_locked:
+            arr = np.array(self._window)
+            self._ref_mean = float(np.mean(arr))
+            self._ref_std = float(np.std(arr))
+            if self._ref_std > 1e-6:
+                self._ref_locked = True
+
+        if not self._ref_locked:
             return 0.0
 
-        self._baseline_mean = np.mean(self._window)
-        std = np.std(self._window)
-        if std < 1e-10:
-            return 0.0
-
-        normalized = (value - self._baseline_mean) / std
-        self._cplus = max(0, self._cplus + normalized - self.drift_sensitivity)
-        self._cminus = max(0, self._cminus - normalized - self.drift_sensitivity)
+        # Compare against the FIXED reference, not the sliding window
+        normalized = (value - self._ref_mean) / max(self._ref_std, 1e-6)
+        self._cplus = max(0.0, self._cplus + normalized - self.drift_sensitivity)
+        self._cminus = max(0.0, self._cminus - normalized - self.drift_sensitivity)
 
         if self._cplus > self.decision_interval:
             return min(1.0, self._cplus / (self.decision_interval * 2))
@@ -165,7 +176,9 @@ class CUSUMDetector:
         self._window.clear()
         self._cplus = 0.0
         self._cminus = 0.0
-        self._baseline_mean = 0.0
+        self._ref_mean = 0.0
+        self._ref_std = 1e-10
+        self._ref_locked = False
 
 
 class CurrentAnomalyDetector(AnalyzerBase):
@@ -264,6 +277,39 @@ class CurrentAnomalyDetector(AnalyzerBase):
             "cusum": self._cusum_detector.score(current_val),
         }
 
+        # ── Direct CUSUM bypass for mechanical wear ──
+        # Gradual drift is invisible to z-score and IQR (their sliding
+        # windows adapt). CUSUM alone at 0.35 weight can never reach the
+        # 0.55 ensemble threshold. When CUSUM is highly confident and
+        # sustained (≥5 consecutive), emit wear directly.
+        #
+        # DIRECTIONALITY GUARD: a pure oscillation around the reference
+        # mean produces both cplus and cminus growth. True wear drift is
+        # unidirectional (cplus >> cminus). Require cplus > 2× cminus.
+        cusum_score = votes["cusum"]
+        if cusum_score >= 0.8:
+            self._consecutive_count += 1
+            cplus = self._cusum_detector._cplus
+            cminus = self._cusum_detector._cminus
+            is_unidirectional = cplus > max(cminus * 2.0, 1.0)
+            if self._consecutive_count >= 5 and is_unidirectional:
+                annotations.append(AIAnnotation(
+                    timestamp=0.0,
+                    channel="Current",
+                    category="current_wear",
+                    severity="info",
+                    confidence=cusum_score,
+                    message=(f"Gradual current drift detected ({self._consecutive_count} samples). "
+                             f"Ref mean: {self._cusum_detector._ref_mean:.1f}%, "
+                             f"Current: {current_val:.1f}%"),
+                    value=current_val,
+                    metadata={"votes": votes, "dominant": "cusum",
+                              "consecutive": self._consecutive_count,
+                              "cplus": cplus, "cminus": cminus,
+                              "bypass": "cusum_direct"},
+                ))
+            return annotations
+
         weighted_score = sum(
             votes[m] * self._ensemble_weights[m] for m in votes
         )
@@ -276,7 +322,7 @@ class CurrentAnomalyDetector(AnalyzerBase):
             if dominant == "cusum" and self._consecutive_count >= 5:
                 category = "current_wear"
                 message = f"Gradual current drift detected ({self._consecutive_count} samples). "
-                message += f"Mean: {self._cusum_detector._baseline_mean:.1f}%, "
+                message += f"Ref mean: {self._cusum_detector._ref_mean:.1f}%, "
                 message += f"Current: {current_val:.1f}%"
             elif current_val > self._warning_threshold:
                 category = "current_saturation"

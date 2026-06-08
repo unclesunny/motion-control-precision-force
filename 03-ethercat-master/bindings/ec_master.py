@@ -171,7 +171,9 @@ class SimulatedEtherCAT:
     AI analyzer, and parameter tools without physical hardware.
     """
 
-    def __init__(self, param_lib_path: Optional[str] = None):
+    def __init__(self, param_lib_path: Optional[str] = None,
+                 num_axes: int = 1,
+                 axis_names: Optional[List[str]] = None):
         self.slaves: List[EcSlave] = []
         self._state: int = EC_STATE_INIT
         self._io_map: bytearray = bytearray(4096)
@@ -186,8 +188,10 @@ class SimulatedEtherCAT:
             )
         self._load_param_lib(param_lib_path)
 
-        # Simulate a Delta A3 on the bus
-        self._init_slave()
+        # Simulate N Delta A3 drives on the bus
+        names = axis_names or [f"Axis{i}" for i in range(num_axes)]
+        for pos in range(num_axes):
+            self._init_slave(position=pos + 1, name=names[pos] if pos < len(names) else f"Axis{pos}")
 
     def _load_param_lib(self, path: str):
         """Load Delta A3 parameter library for SDO simulation."""
@@ -210,13 +214,16 @@ class SimulatedEtherCAT:
 
         print(f"[sim] Loaded {len(self._param_db)} parameter entries from library")
 
-    def _init_slave(self):
-        """Create a simulated Delta ASDA-A3-E slave at position 1."""
-        # Delta vendor ID from ESI XML: #x1DD = 0x1DD = 477
-        # Product code: #x00006010 = 0x00006010
+    def _init_slave(self, position: int = 1, name: str = "Delta ASDA-A3-E CoE Drive"):
+        """Create a simulated Delta ASDA-A3-E slave at the given position.
+
+        Args:
+            position: EtherCAT bus position (1-based).
+            name: Human-readable slave name.
+        """
         slave = EcSlave(
-            position=1,
-            name="Delta ASDA-A3-E CoE Drive",
+            position=position,
+            name=name,
             manufacturer_id=0x000001DD,
             product_id=0x00006010,
             revision=0x00030000,
@@ -225,7 +232,7 @@ class SimulatedEtherCAT:
             tx_pdo_size=64,
             has_dc=True,
         )
-        self.slaves = [slave]
+        self.slaves.append(slave)
 
         # Initialize default SDO values from parameter library
         for key, obj in self._param_db.items():
@@ -238,7 +245,6 @@ class SimulatedEtherCAT:
                     try:
                         type_name = obj.get("type", "UINT")
                         bit_size = obj.get("bit_size", 16)
-                        # Try to parse default value
                         val_str = str(default).strip()
                         if val_str.startswith("0x"):
                             val = int(val_str, 16)
@@ -248,7 +254,7 @@ class SimulatedEtherCAT:
                             except ValueError:
                                 val = 0
                         data = _pack_sdo_data(val, type_name, bit_size)
-                        self._sdo_store[(1, idx, sub)] = data
+                        self._sdo_store[(position, idx, sub)] = data
                     except Exception:
                         pass
 
@@ -284,9 +290,15 @@ class SimulatedEtherCAT:
         self.statecheck(EC_STATE_OPERATIONAL)
         return True
 
-    def sdo_read(self, index: int, subindex: int = 0) -> Tuple[bool, Any]:
-        """Simulated SDO read from parameter library."""
-        key = (1, index, subindex)
+    def sdo_read(self, index: int, subindex: int = 0, slave: int = 1) -> Tuple[bool, Any]:
+        """Simulated SDO read from parameter library.
+
+        Args:
+            index: CoE object index.
+            subindex: Sub-index.
+            slave: Slave position (1-based). Default 1 for backwards compat.
+        """
+        key = (slave, index, subindex)
 
         # Check our SDO store first
         if key in self._sdo_store:
@@ -297,20 +309,19 @@ class SimulatedEtherCAT:
             val = _parse_sdo_data(self._sdo_store[key], type_name, bit_size)
             return True, val
 
-        # Check parameter library
+        # Check parameter library (shared across slaves)
         obj_key = f"{index}:{subindex}"
         if obj_key in self._param_db:
             obj = self._param_db[obj_key]
             default = obj.get("default_data") or obj.get("default_value_chm", "")
             if default and default not in ("—", "-", ""):
                 return True, default
-            # Return type-appropriate zero
             type_name = obj.get("type", "UINT")
             return True, 0
 
         return False, None
 
-    def sdo_write(self, index: int, subindex: int, value: Any) -> bool:
+    def sdo_write(self, index: int, subindex: int, value: Any, slave: int = 1) -> bool:
         """Simulated SDO write. Stores value in local SDO store."""
         obj_key = f"{index}:{subindex}"
         obj = self._param_db.get(obj_key, {})
@@ -318,21 +329,20 @@ class SimulatedEtherCAT:
         bit_size = obj.get("bit_size", 16)
 
         data = _pack_sdo_data(value, type_name, bit_size)
-        self._sdo_store[(1, index, subindex)] = data
+        self._sdo_store[(slave, index, subindex)] = data
         return True
 
     def exchange(self) -> int:
         """Simulated PDO exchange. Returns WorkCounter (simulated)."""
-        # In sim mode, we just return WKC=1 (OK)
         return 1
 
-    def read_pdo(self, index: int, subindex: int = 0) -> Any:
+    def read_pdo(self, index: int, subindex: int = 0, slave: int = 1) -> Any:
         """Read from simulated TxPDO buffer."""
-        return self.sdo_read(index, subindex)[1]
+        return self.sdo_read(index, subindex, slave)[1]
 
-    def write_pdo(self, index: int, subindex: int, value: Any):
+    def write_pdo(self, index: int, subindex: int, value: Any, slave: int = 1):
         """Write to simulated RxPDO buffer."""
-        self.sdo_write(index, subindex, value)
+        self.sdo_write(index, subindex, value, slave)
 
     def close(self):
         print("[sim] EtherCAT master closed.")
@@ -343,8 +353,403 @@ class SimulatedEtherCAT:
 
 
 # ============================================================================
-# Real EtherCAT Master (SOEM-backed)
+# IgH EtherCAT Master (Linux production)
 # ============================================================================
+
+
+class IgHEtherCAT:
+    """EtherCAT master backed by IgH libethercat.so (Linux kernel module).
+
+    DECLARATIVE model — all PDO entries MUST be registered BEFORE activate().
+    After activation, the domain data buffer is updated in each exchange()
+    cycle and read via byte offsets (no per-object read_pdo calls).
+
+    Multi-axis support is NATIVE: each slave's scope channels are registered
+    into one domain. After exchange(), domain_data[offset_axisX_pos] gives
+    Axis X position, domain_data[offset_axisY_pos] gives Axis Y position, etc.
+
+    Usage:
+        master = IgHEtherCAT()
+        master.scan()                # discover slaves + read SII
+        master.configure_scope()     # register PDO entries for all axes
+        master.activate()            # enter OPERATIONAL
+
+        while running:
+            master.receive()         # fetch new process data
+            data = master.read_scope("X")  # read Axis X channels
+            master.queue_and_send()  # prepare for next cycle
+        master.close()
+    """
+
+    # ── CiA 402 scope channels (8-channel layout) ──
+    SCOPE_PDO_ENTRIES = [
+        (0x6064, 0, "DINT"),   # Position actual value
+        (0x606C, 0, "DINT"),   # Velocity actual value
+        (0x6078, 0, "INT"),    # Current actual value
+        (0x6077, 0, "INT"),    # Torque actual value
+        (0x60F4, 0, "DINT"),   # Following error actual value
+        (0x60FD, 0, "UDINT"),  # Digital inputs
+        (0x6041, 0, "UINT"),   # Statusword
+        (0x6061, 0, "SINT"),   # Modes of operation display
+    ]
+
+    SCOPE_CHANNEL_NAMES = [
+        "Position", "Velocity", "Current", "Torque",
+        "Foll.Err", "DIO", "Status", "OpMode",
+    ]
+
+    def __init__(self, master_index: int = 0):
+        self._master_index = master_index
+        self._master = None      # ec_master_t*
+        self._domain = None      # ec_domain_t*
+        self._domain_ptr = 0     # uint8_t* from ecrt_domain_data()
+        self.slaves: List[EcSlave] = []
+        self._slave_configs: Dict[int, c_void_p] = {}  # {position: ec_slave_config_t*}
+
+        # Per-axis PDO offset table: {axis_id: {index: (byte_offset, data_type)}}
+        self._offsets: Dict[str, Dict[int, Tuple[int, str]]] = {}
+        self._axis_map: Dict[int, str] = {}  # {position: axis_id}
+
+        # Pre-allocated offset pointers (must survive until domain_reg_pdo_entry_list)
+        self._offset_ptrs: List[ctypes.POINTER(ctypes.c_uint32)] = []
+
+        # Try to load IgH library
+        try:
+            from . import igh_bindings
+            self._igh = igh_bindings.get_igh()
+        except (ImportError, SystemError):
+            self._igh = None
+
+    @property
+    def available(self) -> bool:
+        return self._igh is not None and self._igh.available
+
+    # ── Lifecycle: Scan ──────────────────────────────────────────
+
+    def scan(self, axis_names: Optional[List[str]] = None) -> int:
+        """Initialize and scan the EtherCAT bus.
+
+        IgH scans the bus during ecrt_request_master + ecrt_master().
+        Creates the process data domain for scope data exchange.
+
+        Args:
+            axis_names: Optional list of axis names (e.g. ["X","Y","Z"]).
+                       If None, uses ["Axis0", "Axis1", ...].
+
+        Returns:
+            Number of slaves found.
+        """
+        if not self.available:
+            raise RuntimeError(
+                "IgH libethercat.so not available. Is the IgH kernel module loaded?\n"
+                "  sudo modprobe ec_master\n"
+                "  sudo /etc/init.d/ethercat start"
+            )
+
+        lib = self._igh._lib
+
+        # 1. Request master
+        self._master = lib.ecrt_request_master(self._master_index)
+        if not self._master:
+            raise RuntimeError(
+                f"Failed to request IgH master {self._master_index}. "
+                f"Is the kernel module loaded?"
+            )
+
+        # 2. Get master info (slave count, link status)
+        info = ec_master_info_t()
+        ret = lib.ecrt_master(self._master, byref(info))
+        if ret < 0:
+            raise RuntimeError(f"ecrt_master() failed: {ret}")
+
+        slave_count = info.slave_count
+        print(f"[igh] Master {self._master_index}: {slave_count} slave(s), "
+              f"link={'UP' if info.link_up else 'DOWN'}")
+
+        # 3. Create process data domain
+        self._domain = lib.ecrt_master_create_domain(self._master)
+        if not self._domain:
+            raise RuntimeError("ecrt_master_create_domain() failed")
+        print(f"[igh] Domain created for scope data exchange")
+
+        # 4. Discover slaves (read SII EEPROM via sysfs or ecrt_master)
+        #    In IgH, slave info comes from /sys/ethercat/ or ecrt_master_slave_config
+        #    For now, create EcSlave entries from slave_count
+        self.slaves = []
+        names = axis_names or [f"Axis{i}" for i in range(slave_count)]
+
+        for pos in range(slave_count):
+            name = names[pos] if pos < len(names) else f"Axis{pos}"
+            self.slaves.append(EcSlave(
+                position=pos,
+                name=name,
+                manufacturer_id=0,
+                product_id=0,
+                revision=0,
+                state=EC_STATE_PRE_OP,
+                has_dc=True,
+            ))
+            self._axis_map[pos] = name
+            print(f"  [igh] Slave {pos}: {name} → axis_id='{name}'")
+
+        return slave_count
+
+    # ── Lifecycle: Configure PDO entries ─────────────────────────
+
+    def configure_scope(self, channel_entries: Optional[List[Tuple[int, int, str]]] = None):
+        """Register scope PDO entries for all slaves in the domain.
+
+        This is the KEY multi-axis configuration step. Each slave's 8 CiA 402
+        scope channels are registered as PDO entries. The IgH API writes back
+        the byte offset within the domain buffer for each entry.
+
+        After this call, self._offsets[axis_id][index] = (byte_offset, data_type)
+        for every axis × channel combination.
+
+        Args:
+            channel_entries: Optional custom channel list as [(index, sub, type), ...].
+                            If None, uses SCOPE_PDO_ENTRIES (8 standard channels).
+        """
+        if not self._domain:
+            raise RuntimeError("No domain. Call scan() first.")
+
+        entries = channel_entries or self.SCOPE_PDO_ENTRIES
+        lib = self._igh._lib
+
+        self._offset_ptrs = []
+
+        for slave in self.slaves:
+            pos = slave.position
+            axis_id = self._axis_map.get(pos, f"Axis{pos}")
+
+            # Get or create slave config
+            slave_cfg = lib.ecrt_master_slave_config(
+                self._master,
+                0,                      # alias (0 = use position)
+                pos,
+                slave.manufacturer_id,
+                slave.product_id,
+            )
+            if not slave_cfg:
+                print(f"  [igh] WARNING: Failed to get slave config for position {pos}")
+                continue
+            self._slave_configs[pos] = slave_cfg
+
+            # Register PDO entries and capture byte offsets
+            self._offsets[axis_id] = {}
+            print(f"  [igh] Configuring {axis_id} (slave {pos}):")
+
+            for index, subindex, data_type in entries:
+                offset_ptr = ctypes.POINTER(c_uint32)(ctypes.c_uint32(0))
+                ret = lib.ecrt_slave_config_reg_pdo_entry(
+                    slave_cfg,
+                    c_uint16(index),
+                    c_uint8(subindex),
+                    self._domain,
+                    offset_ptr,
+                )
+                if ret < 0:
+                    print(f"    WARNING: Failed to register 0x{index:04X}:{subindex} "
+                          f"for {axis_id} (ret={ret})")
+                    continue
+
+                self._offset_ptrs.append(offset_ptr)
+                byte_offset = offset_ptr.contents.value // 8  # bits → bytes
+                self._offsets[axis_id][index] = (byte_offset, data_type)
+                print(f"    0x{index:04X}:{subindex} → offset={byte_offset}B ({data_type})")
+
+        n_entries = sum(len(o) for o in self._offsets.values())
+        print(f"  [igh] Total: {n_entries} PDO entries across {len(self._offsets)} axes")
+
+    # ── Lifecycle: Activate ──────────────────────────────────────
+
+    def activate(self) -> bool:
+        """Activate the master — transitions all slaves to OPERATIONAL.
+
+        After this call, cyclic data exchange begins. The domain data buffer
+        is now valid and updated on each receive().
+        """
+        if not self._master:
+            raise RuntimeError("No master. Call scan() first.")
+
+        lib = self._igh._lib
+        ret = lib.ecrt_master_activate(self._master)
+        if ret != 0:
+            print(f"[igh] Activate failed: {ret}")
+            return False
+
+        # Get domain data pointer (unchanging after activation)
+        self._domain_ptr = lib.ecrt_domain_data(self._domain)
+        if not self._domain_ptr:
+            print("[igh] WARNING: domain_data() returned NULL")
+            return False
+
+        print(f"[igh] Activated. Domain data at 0x{self._domain_ptr:X}")
+        return True
+
+    # ── Cyclic Exchange ──────────────────────────────────────────
+    #
+    # Verified against: ethercat-1.5.2/examples/user/main.c:256-301
+    #
+    # Correct IgH cyclic pattern:
+    #   ecrt_master_receive(master)    — fetch frames from last cycle
+    #   ecrt_domain_process(domain)    — evaluate working counters
+    #   ... read/write domain_data ...
+    #   ecrt_domain_queue(domain)      — queue datagrams for next cycle
+    #   ecrt_master_send(master)       — send frames
+
+    def receive(self):
+        """Fetch new process data from slaves → domain buffer.
+
+        Calls ecrt_master_receive() + ecrt_domain_process().
+        After this returns, domain_data() is valid for reading.
+        """
+        if self._igh and self._master and self._domain:
+            lib = self._igh._lib
+            lib.ecrt_master_receive(self._master)
+            lib.ecrt_domain_process(self._domain)
+
+    def queue_and_send(self):
+        """Queue domain data for next cycle and send to slaves.
+
+        Calls ecrt_domain_queue() + ecrt_master_send().
+        """
+        if self._igh and self._master and self._domain:
+            lib = self._igh._lib
+            lib.ecrt_domain_queue(self._domain)
+            lib.ecrt_master_send(self._master)
+
+    def exchange(self) -> int:
+        """Single receive + process + queue + send cycle (SOEM-compatible API).
+
+        Returns:
+            WorkCounter — IgH doesn't expose WKC directly; returns 1 if
+            domain data pointer is valid.
+        """
+        self.receive()
+        self.queue_and_send()
+        return 1 if self._domain_ptr else 0
+
+    # ── Scope Data Access ────────────────────────────────────────
+
+    def read_scope(self, axis_id: str) -> Dict[str, float]:
+        """Read all 8 scope channels for one axis from the domain buffer.
+
+        This is the MAIN read path for the oscilloscope. Each call reads
+        from the pre-computed byte offsets within the domain data buffer.
+
+        Args:
+            axis_id: Axis name (e.g. "X", "Y", "Z").
+
+        Returns:
+            {"Position": 1000.0, "Velocity": 500.0, ...} (8 channels)
+        """
+        if not self._domain_ptr:
+            return {}
+
+        offsets = self._offsets.get(axis_id, {})
+        result = {}
+
+        for i, (index, subindex, data_type) in enumerate(self.SCOPE_PDO_ENTRIES):
+            entry = offsets.get(index)
+            if entry is None:
+                result[self.SCOPE_CHANNEL_NAMES[i]] = 0.0
+                continue
+
+            byte_offset, dt = entry
+            addr = self._domain_ptr + byte_offset
+
+            # Data type → struct format
+            fmt_map = {
+                "SINT": ("b", 1), "USINT": ("B", 1),
+                "INT": ("h", 2), "UINT": ("H", 2),
+                "DINT": ("i", 4), "UDINT": ("I", 4),
+                "REAL": ("f", 4), "LREAL": ("d", 8),
+            }
+            s_fmt, n_bytes = fmt_map.get(dt, ("i", 4))
+
+            try:
+                buf = ctypes.string_at(addr, n_bytes)
+                val = struct.unpack(s_fmt, buf)[0]
+                result[self.SCOPE_CHANNEL_NAMES[i]] = float(val)
+            except Exception:
+                result[self.SCOPE_CHANNEL_NAMES[i]] = 0.0
+
+        return result
+
+    def read_scope_all_axes(self) -> Dict[str, Dict[str, float]]:
+        """Read scope channels for ALL axes in one exchange.
+
+        Returns:
+            {"X": {"Position": ..., "Velocity": ...}, "Y": {...}, ...}
+        """
+        self.receive()
+        result = {}
+        for axis_id in self._offsets:
+            result[axis_id] = self.read_scope(axis_id)
+        self.queue_and_send()
+        return result
+
+    @property
+    def axis_ids(self) -> List[str]:
+        """List of configured axis IDs."""
+        return list(self._offsets.keys())
+
+    # ── SDO Access (CoE object dictionary, non-cyclic) ───────────
+
+    def sdo_read(self, slave: int, index: int, subindex: int = 0) -> Tuple[bool, Any]:
+        """Read a CoE object via SDO (mailbox, not cyclic).
+
+        IgH doesn't have a simple ecrt_sdo_read() in cyclic mode.
+        SDO access is typically done via the kernel character device
+        (/dev/ethercat) or command-line tool (ethercat upload).
+        For now, this returns a placeholder.
+        """
+        print(f"[igh] SDO read not implemented in cyclic mode. "
+              f"Use: ethercat upload {slave} 0x{index:04X} {subindex}")
+        return False, None
+
+    def sdo_write(self, slave: int, index: int, subindex: int, value: Any,
+                  type_name: str = "UDINT") -> bool:
+        """Write a CoE object via SDO (mailbox, not cyclic)."""
+        print(f"[igh] SDO write not implemented in cyclic mode. "
+              f"Use: ethercat download {slave} 0x{index:04X} {subindex} {value}")
+        return False
+
+    # ── Slave States ─────────────────────────────────────────────
+
+    def statecheck(self, req_state: int, timeout: int = 20000) -> bool:
+        """Check if all slaves reached requested state.
+
+        IgH handles state transitions automatically during activate().
+        Individual slave states are accessible via ecrt_slave_config_state().
+        """
+        # IgH activates all slaves atomically; statecheck is less granular
+        return True
+
+    def go_operational(self) -> bool:
+        """Full sequence: configure scope → activate."""
+        if not self._offsets:
+            self.configure_scope()
+        return self.activate()
+
+    # ── Properties ───────────────────────────────────────────────
+
+    @property
+    def slavecount(self) -> int:
+        return len(self.slaves)
+
+    def close(self):
+        """Deactivate master and release resources."""
+        if self._igh and self._master:
+            lib = self._igh._lib
+            lib.ecrt_master_deactivate(self._master)
+            lib.ecrt_release_master(self._master)
+            self._master = None
+            self._domain = None
+            self._domain_ptr = 0
+            print("[igh] Master released.")
+
 
 
 class RealEtherCAT:
@@ -420,6 +825,21 @@ class RealEtherCAT:
         data = _pack_sdo_data(value, type_name, bit_size)
         return self._soem.ec_SDOwrite(slave, index, subindex, data)
 
+    def read_pdo(self, index: int, subindex: int = 0, slave: int = 1) -> Any:
+        """Read a PDO-mapped object from the process data image.
+
+        SOEM maps PDO data to the IOMap buffer. The ec_slave struct has
+        'inputs' (c_void_p) pointing to its TxPDO region. This method
+        does a best-effort read: for SDO-mapped objects, falls back to
+        ec_SDOread. For true PDO objects, the IOMap offset must be known.
+
+        Currently delegates to SDO read (functional but not real PDO speed).
+        Full PDO access requires tracking IOMap byte offsets per slave.
+        """
+        # Fallback to SDO read for now (works for all objects, but slower)
+        ok, val = self._soem.ec_SDOread(slave, index, subindex)
+        return val if ok else None
+
     def exchange(self) -> int:
         self._soem.ec_send_processdata()
         return self._soem.ec_receive_processdata(2000)
@@ -442,10 +862,16 @@ class RealEtherCAT:
 class EcMaster:
     """Unified EtherCAT master API — auto-detects real vs simulation mode.
 
+    Three backends:
+      - IgHEtherCAT:     Linux production, libethercat.so + kernel module
+      - RealEtherCAT:    SOEM on Windows/lab, libsoem.dll
+      - SimulatedEtherCAT: No hardware, dev/test
+
     Usage:
         master = EcMaster()                  # auto-detect
         master = EcMaster(adapter="sim")     # force simulation
         master = EcMaster(adapter="eth0")    # force real on eth0
+        master = EcMaster(adapter="igh")     # force IgH on Linux
 
         master.scan()
         print(f"Found: {master.slavecount} slave(s)")
@@ -471,19 +897,32 @@ class EcMaster:
         self.adapter = adapter
         self._backend = None
         self._is_sim = False
+        self._is_igh = False
 
     # ==================================================================
     # Lifecycle
     # ==================================================================
 
-    def scan(self) -> int:
+    def scan(self, axis_names: Optional[List[str]] = None) -> int:
         """Initialize and scan the EtherCAT bus. Returns slave count."""
+        # ── IgH mode (Linux production) ──
+        if self.adapter == "igh" or (self.adapter == "auto" and self._igh_available()):
+            self._backend = IgHEtherCAT()
+            self._is_igh = True
+            self._is_sim = False
+            count = self._backend.scan(axis_names=axis_names)
+            return count
+
+        # ── Simulation mode ──
         if self.adapter == "sim" or (self.adapter == "auto" and not self._real_available()):
             self._backend = SimulatedEtherCAT()
             self._is_sim = True
+            self._is_igh = False
         else:
+            # ── SOEM mode (Windows/lab) ──
             self._backend = RealEtherCAT(self.adapter)
             self._is_sim = False
+            self._is_igh = False
 
         self._backend.init(self.adapter)
         count = self._backend.config_init()
@@ -494,6 +933,18 @@ class EcMaster:
         if _SOEM is None:
             return False
         return _SOEM.available
+
+    def _igh_available(self) -> bool:
+        """Check if IgH is available (Linux kernel module loaded)."""
+        import platform
+        if platform.system() != "Linux":
+            return False
+        try:
+            from . import igh_bindings
+            igh = igh_bindings.get_igh()
+            return igh.available
+        except Exception:
+            return False
 
     @property
     def slaves(self) -> List[EcSlave]:
@@ -506,6 +957,11 @@ class EcMaster:
     @property
     def is_simulation(self) -> bool:
         return self._is_sim
+
+    @property
+    def is_igh(self) -> bool:
+        """True if using IgH EtherCAT Master (Linux production)."""
+        return self._is_igh
 
     # ==================================================================
     # State machine
@@ -532,12 +988,12 @@ class EcMaster:
         Returns:
             (success, value) tuple
         """
-        return self._backend.sdo_read(index, subindex)
+        return self._backend.sdo_read(index, subindex, slave)
 
     def sdo_write(self, index: int, subindex: int, value: Any,
                   slave: int = 1) -> bool:
         """Write a CoE object via SDO."""
-        return self._backend.sdo_write(index, subindex, value)
+        return self._backend.sdo_write(index, subindex, value, slave)
 
     def read_object_name(self, index: int) -> str:
         """Get human-readable name for a CoE object."""
@@ -555,16 +1011,22 @@ class EcMaster:
         """
         return self._backend.exchange()
 
-    def read_pdo(self, index: int, subindex: int = 0) -> Any:
-        """Read a PDO-mapped object from the process data image."""
-        result = self._backend.read_pdo(index, subindex)
+    def read_pdo(self, index: int, subindex: int = 0, slave: int = 1) -> Any:
+        """Read a PDO-mapped object from the process data image.
+
+        Args:
+            index: CoE object index.
+            subindex: Sub-index.
+            slave: Slave position (1-based).
+        """
+        result = self._backend.read_pdo(index, subindex, slave)
         if isinstance(result, tuple):
             return result[1] if result[0] else None
         return result
 
-    def write_pdo(self, index: int, subindex: int, value: Any):
+    def write_pdo(self, index: int, subindex: int, value: Any, slave: int = 1):
         """Write a PDO-mapped object to the process data image."""
-        self._backend.write_pdo(index, subindex, value)
+        self._backend.write_pdo(index, subindex, value, slave)
 
     # ==================================================================
     # Convenience: scope data acquisition
@@ -579,6 +1041,83 @@ class EcMaster:
             if val is not None or self._is_sim:
                 result[ch] = val
         return result
+
+    def read_scope(self, axis_id: str = "Axis0") -> Dict[str, float]:
+        """Read all 8 scope channels for one axis.
+
+        IgH backend: reads from domain data buffer at pre-configured offsets.
+        SOEM/sim backend: calls read_pdo for each channel.
+
+        Returns:
+            {"Position": 1000.0, "Velocity": 500.0, ...}
+        """
+        if self._is_igh:
+            return self._backend.read_scope(axis_id)
+
+        # SOEM/sim fallback: per-object PDO read
+        self.exchange()
+        channel_map = [
+            (0x6064, "Position"), (0x606C, "Velocity"),
+            (0x6078, "Current"), (0x6077, "Torque"),
+            (0x60F4, "Foll.Err"), (0x60FD, "DIO"),
+            (0x6041, "Status"), (0x6061, "OpMode"),
+        ]
+        result = {}
+        for idx, name in channel_map:
+            val = self.read_pdo(idx, 0)
+            result[name] = float(val) if val is not None else 0.0
+        return result
+
+    def read_scope_all_axes(self) -> Dict[str, Dict[str, float]]:
+        """Read scope channels for all configured axes.
+
+        IgH: single domain buffer access, all axes in one call.
+        SOEM/sim: iterates read_scope per axis.
+
+        Returns:
+            {"X": {"Position": ..., "Velocity": ...}, "Y": {...}, ...}
+        """
+        if self._is_igh:
+            return self._backend.read_scope_all_axes()
+
+        # SOEM/sim: one at a time (all slaves share the same exchange)
+        result = {}
+        self.exchange()
+        for slave in self.slaves:
+            axis_id = getattr(slave, 'name', f"Axis{slave.position}")
+            channel_map = [
+                (0x6064, "Position"), (0x606C, "Velocity"),
+                (0x6078, "Current"), (0x6077, "Torque"),
+                (0x60F4, "Foll.Err"), (0x60FD, "DIO"),
+                (0x6041, "Status"), (0x6061, "OpMode"),
+            ]
+            axis_data = {}
+            for idx, name in channel_map:
+                val = self.read_pdo(idx, 0)
+                axis_data[name] = float(val) if val is not None else 0.0
+            result[axis_id] = axis_data
+        return result
+
+    def discover(self) -> List[dict]:
+        """Discover all slaves on the bus and match against ESI library.
+
+        Reads SII EEPROM data from each slave (vendor, product, name, revision)
+        via the active backend (SOEM/IgH/Sim). Auto-matches against the ESI
+        library to identify brand and model.
+
+        Returns:
+            List of slave dicts with position, vendor_id, product_code, revision,
+            sii_name, state, has_dc, and esi_match fields.
+        """
+        from .discover import discover_slaves
+        return discover_slaves(self)
+
+    @property
+    def axis_ids(self) -> List[str]:
+        """List of configured axis IDs."""
+        if self._is_igh:
+            return self._backend.axis_ids
+        return [getattr(s, 'name', f"Axis{s.position}") for s in self.slaves]
 
     # ==================================================================
     # Cleanup

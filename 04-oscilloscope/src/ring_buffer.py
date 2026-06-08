@@ -231,3 +231,35 @@ class RingBuffer:
             parts.append(f"{s['name']}: {s['mean']:.1f}±{s['std']:.1f} "
                          f"[{s['min']:.1f}, {s['max']:.1f}]")
         return " | ".join(parts)
+
+    def to_csv(self, filepath: str, n_samples: int = 0, delimiter: str = ",") -> int:
+        """Export buffer contents to CSV file.
+
+        Args:
+            filepath: Output CSV file path.
+            n_samples: Number of recent samples to export. 0 = all.
+            delimiter: CSV delimiter (default comma).
+
+        Returns:
+            Number of samples written.
+        """
+        import csv
+        data, ts = self.get_recent(n_samples if n_samples > 0 else self.count)
+        n = data.shape[1]
+
+        # Build header: Timestamp, CH1 Name (unit), CH2 Name (unit), ...
+        headers = ["Timestamp (s)"]
+        for i in range(min(self.n_channels, data.shape[0])):
+            name = self.channel_names[i] if i < len(self.channel_names) else f"CH{i+1}"
+            headers.append(name)
+
+        with open(filepath, "w", newline="", encoding="utf-8") as f:
+            writer = csv.writer(f, delimiter=delimiter)
+            writer.writerow(headers)
+            for i in range(n):
+                row = [f"{ts[i]:.6f}"]
+                for ch in range(data.shape[0]):
+                    row.append(f"{data[ch, i]:.6g}")
+                writer.writerow(row)
+
+        return n

@@ -225,23 +225,74 @@ class AIAnalyzerBridge:
         except Exception:
             return None
 
-    # ── CODESYS ST Export ──────────────────────────────────────────
+    # ── CODESYS ST Export (self-contained, no external deps) ──────
 
     def export_codesys_st(
         self, annotations: List[Any], fb_name: str = "FB_ServoDiag"
     ) -> Optional[str]:
-        """Generate CODESYS ST IF-THEN rules from AI annotations.
+        """Generate CODESYS ST code from AI annotations.
 
-        Uses the RuleInjector from SL1 to convert detected anomaly patterns
-        into PLC-compatible fault diagnosis rules.
+        Uses the self-contained CodegenST module (no external dependency).
+        Falls back to legacy RuleInjector if AI&ML Agent is available.
 
         Args:
             annotations: List of AIAnnotation objects.
             fb_name: Target function block name.
 
         Returns:
-            ST code string or None if bridge unavailable/export failed.
+            ST code string or None if generation failed.
         """
+        # ── Primary: self-contained codegen ──
+        try:
+            from .codegen_st import CodegenST
+            gen = CodegenST()
+            return gen.generate_fb_diag(annotations, fb_name)
+        except ImportError:
+            from codegen_st import CodegenST
+            gen = CodegenST()
+            return gen.generate_fb_diag(annotations, fb_name)
+        except Exception:
+            pass
+
+        # ── Fallback: legacy RuleInjector (requires AI&ML Agent) ──
+        return self._export_codesys_legacy(annotations, fb_name)
+
+    def export_codesys_full(
+        self, annotations: List[Any],
+        recommendations: Optional[List[Any]] = None,
+        output_dir: Optional[str] = None,
+    ) -> dict:
+        """Generate complete CODESYS project: FB_ServoDiag + FB_ServoTune + DUT.
+
+        Args:
+            annotations: AI annotations for FB_ServoDiag.
+            recommendations: Parameter recommendations for FB_ServoTune.
+            output_dir: If set, writes .st files to this directory.
+
+        Returns:
+            {"FB_ServoDiag.st": str, "FB_ServoTune.st": str, "DUT_ServoDiag.st": str}
+        """
+        try:
+            from .codegen_st import CodegenST
+        except ImportError:
+            from codegen_st import CodegenST
+
+        gen = CodegenST()
+
+        if output_dir:
+            return gen.export_all(output_dir, annotations, recommendations)
+        else:
+            result = {"DUT_ServoDiag.st": gen.generate_dut()}
+            if annotations:
+                result["FB_ServoDiag.st"] = gen.generate_fb_diag(annotations)
+            if recommendations:
+                result["FB_ServoTune.st"] = gen.generate_fb_tune(recommendations)
+            return result
+
+    def _export_codesys_legacy(
+        self, annotations: List[Any], fb_name: str
+    ) -> Optional[str]:
+        """Legacy export via AI&ML Agent RuleInjector (if available)."""
         if not self.bridge_available:
             return None
 
@@ -263,7 +314,7 @@ class AIAnalyzerBridge:
 
             injector = module.RuleInjector()
             rules = []
-            for ann in annotations[:20]:  # limit to top 20
+            for ann in annotations[:20]:
                 condition = self._annotation_to_condition(ann)
                 if condition:
                     rules.append({
@@ -271,7 +322,6 @@ class AIAnalyzerBridge:
                         "action": ann.suggestion or ann.message,
                         "severity": ann.severity,
                     })
-
             return injector.inject(rules, fb_name) if rules else None
         except Exception:
             return None

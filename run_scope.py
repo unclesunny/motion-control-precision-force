@@ -42,25 +42,43 @@ def check_ai() -> bool:
     return ai_dir.exists() and (ai_dir / "ai_analyzer" / "__init__.py").exists()
 
 
+def _run_with_clean_exit(cmd, stop_msg="Press Ctrl+C to stop"):
+    """Run a subprocess and handle Ctrl+C gracefully — terminates the child too."""
+    print(f"  ({stop_msg})")
+    # Unbuffered: ensure child stdout/stderr go directly to the terminal
+    env = {**__import__("os").environ, "PYTHONUNBUFFERED": "1"}
+    proc = subprocess.Popen(cmd, env=env)
+    try:
+        return proc.wait()
+    except KeyboardInterrupt:
+        print("\nShutting down...")
+        proc.terminate()
+        try:
+            proc.wait(timeout=3)
+        except subprocess.TimeoutExpired:
+            proc.kill()
+            proc.wait()
+        return 0
+
+
 def launch_tk():
     """Launch tkinter oscilloscope."""
     print("→ Launching tkinter scope (143 FPS, 0 deps)")
-    script = SCOPE_DIR / "scope_tk.py"
-    return subprocess.run([sys.executable, str(script)])
+    return _run_with_clean_exit([sys.executable, str(SCOPE_DIR / "scope_tk.py")])
 
 
 def launch_qt():
     """Launch pyqtgraph oscilloscope."""
     print("→ Launching pyqtgraph scope (381 FPS, GPU-accelerated)")
-    script = SCOPE_DIR / "scope_app.py"
-    return subprocess.run([sys.executable, str(script)])
+    return _run_with_clean_exit(
+        [sys.executable, str(SCOPE_DIR / "scope_app.py")],
+        "Close the window to stop")
 
 
 def launch_web():
     """Launch web oscilloscope server."""
     print("→ Launching Web scope (http://localhost:8888)")
-    script = SCOPE_DIR / "scope_server.py"
-    return subprocess.run([sys.executable, str(script)])
+    return _run_with_clean_exit([sys.executable, str(SCOPE_DIR / "scope_server.py")])
 
 
 def launch_demo():
@@ -68,7 +86,7 @@ def launch_demo():
     script = PROJECT / "demo_ai_scope.py"
     if script.exists():
         print("→ Launching AI demo")
-        return subprocess.run([sys.executable, str(script)])
+        return _run_with_clean_exit([sys.executable, str(script)])
     else:
         print("Demo script not found.")
         return 1

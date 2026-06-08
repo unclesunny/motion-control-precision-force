@@ -26,9 +26,18 @@ class AIAnnotation:
     value: float = 0.0          # triggering measurement value
     metadata: Dict[str, Any] = field(default_factory=dict)  # detector-specific diagnostics
 
+    # ── Multi-axis support ──
+    axis_id: str = ""           # which axis ("X", "Y", "Z", "" = unknown)
+    slave_position: int = -1    # EtherCAT slave position (-1 = unknown)
+
+    # ── HITL (Human-in-the-Loop) fields ──
+    requires_authorization: bool = False   # True if this annotation needs engineer approval
+    hitl_classification: str = ""          # "safe" | "actionable" | "ambiguous"
+
     def __repr__(self) -> str:
         sev_icon = {"info": "ℹ", "warning": "⚠", "critical": "🔴"}.get(self.severity, "?")
-        return f"{sev_icon} [{self.category}] {self.channel}: {self.message} ({self.confidence:.0%})"
+        axis_tag = f" [{self.axis_id}]" if self.axis_id else ""
+        return f"{sev_icon}{axis_tag} [{self.category}] {self.channel}: {self.message} ({self.confidence:.0%})"
 
 
 class AnalyzerBase(ABC):

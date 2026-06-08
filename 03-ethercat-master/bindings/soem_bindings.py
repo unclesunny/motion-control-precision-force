@@ -230,6 +230,26 @@ class SOEMLibrary:
         except Exception:
             self._ec_slavecount = None
 
+        # ec_slave array: ec_slavet ec_slave[EC_MAXSLAVE]
+        # This is the KEY to slave discovery — contains SII EEPROM data
+        try:
+            self._ec_slave_array = (ec_slavet * EC_MAXSLAVE).in_dll(dll, "ec_slave")
+        except Exception:
+            self._ec_slave_array = None
+
+    def get_slave(self, position: int):
+        """Get ec_slavet struct for a slave position (0 = first slave).
+
+        Returns the full ec_slavet with SII data: name, vendor (eep_man),
+        product (eep_id), revision (eep_rev), state, etc.
+        Returns None if position is out of range or DLL not loaded.
+        """
+        if not self._available or self._ec_slave_array is None:
+            return None
+        if position < 0 or position >= EC_MAXSLAVE:
+            return None
+        return self._ec_slave_array[position]
+
     # ==================================================================
     # Wrapped API methods
     # ==================================================================
@@ -345,6 +365,17 @@ class SOEMLibrary:
 
 # Singleton
 _soem: Optional[SOEMLibrary] = None
+
+
+def is_available() -> bool:
+    """Check if libsoem.dll exists without loading it — avoids CRT crash."""
+    from pathlib import Path
+    paths = [
+        Path(__file__).resolve().parent.parent / "src" / "SOEM" / "lib" / "win32" / "libsoem.lib",
+        Path("libsoem.dll"),
+        Path("./libsoem.dll"),
+    ]
+    return any(p.exists() for p in paths)
 
 
 def get_soem() -> SOEMLibrary:

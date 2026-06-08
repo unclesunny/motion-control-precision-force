@@ -1,0 +1,14 @@
+{
+  "tasks": [
+    {
+      "id": "69e2c025",
+      "cron": "57 9 * * 1",
+      "prompt": "Review the pre-implementation report at PRE_IMPLEMENTATION_REPORT.md against the current project state:\n\n1. Run `git status` to check what's been committed vs still pending\n2. Re-read PRE_IMPLEMENTATION_REPORT.md §7 (checklist) and §2 (untracked files)\n3. Run `python -m pytest tests/ 06-ai-analyzer/tests/ -q` to confirm test count\n4. Check if hardware has been ordered/received (Phase 1.5 prerequisite)\n5. Report:\n   - Which P0 items are now DONE\n   - Which items still BLOCKED\n   - Any NEW issues found since last review\n   - Update the review log at §10 of the report\n6. If all P0 items are done, suggest moving to P1 items",
+      "createdAt": 1780837498170,
+      "recurring": true,
+      "createdBySessionId": "efa34638-10ec-4d72-bb50-c6aae7ad31a9",
+      "createdByPid": 24980,
+      "lastFiredAt": 1780885620730
+    }
+  ]
+}
