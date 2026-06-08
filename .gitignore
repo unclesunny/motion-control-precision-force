@@ -43,6 +43,11 @@ SERVER_IS_RUNNING.txt
 # Pro modules (commercial license, not public)
 pro/
 
+# Market research and internal reports (competitive intelligence)
+01-market-research/
+PRE_IMPLEMENTATION_REPORT.md
+multi-axis-architecture.md
+
 # Test cache
 .pytest_cache/
 *.pyc
